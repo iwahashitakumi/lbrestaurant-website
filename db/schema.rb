@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_03_081901) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_03_175010) do
   create_table "articles", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.datetime "start_at", null: false
@@ -19,6 +19,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_03_081901) do
     t.string "article_images", default: ""
     t.text "sets", default: "[{\"body\": \"\", \"article_images\": \"\"}]", null: false
     t.integer "category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prefectures", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.integer "code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

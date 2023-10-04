@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_04_043442) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_04_050136) do
   create_table "articles", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.datetime "start_at", null: false
@@ -36,6 +36,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_043442) do
     t.integer "update_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "job_entries", force: :cascade do |t|
+    t.integer "recruit_type", null: false
+    t.string "name", default: "", null: false
+    t.string "name_kana", default: "", null: false
+    t.string "phone_number", default: "", null: false
+    t.string "email", default: "", null: false
+    t.date "birth_date", null: false
+    t.integer "sex", null: false
+    t.string "city_name", default: "", null: false
+    t.string "address", default: "", null: false
+    t.integer "status", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "update_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prefecture_id"], name: "index_job_entries_on_prefecture_id"
   end
 
   create_table "news", force: :cascade do |t|
@@ -87,5 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_043442) do
   end
 
   add_foreign_key "contacts", "users", column: "update_by"
+  add_foreign_key "job_entries", "prefectures"
+  add_foreign_key "job_entries", "users", column: "update_by"
   add_foreign_key "shops", "prefectures"
 end

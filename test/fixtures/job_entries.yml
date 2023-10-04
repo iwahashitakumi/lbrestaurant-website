@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  recruit_type: 1
+  name: MyString
+  name_kana: MyString
+  phone_number: MyString
+  email: MyString
+  birth_date: 2023-10-04
+  sex: 1
+  city_name: MyString
+  address: MyString
+  status: 1
+  prefecture: one
+  update_by: 1
+
+two:
+  recruit_type: 1
+  name: MyString
+  name_kana: MyString
+  phone_number: MyString
+  email: MyString
+  birth_date: 2023-10-04
+  sex: 1
+  city_name: MyString
+  address: MyString
+  status: 1
+  prefecture: two
+  update_by: 1

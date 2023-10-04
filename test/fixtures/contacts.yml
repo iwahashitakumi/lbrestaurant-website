@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contact_type: 1
+  message: MyText
+  name: MyString
+  name_kana: MyString
+  email: MyString
+  phone_number: MyString
+  callback_requested: false
+  contact_method: 1
+  status: 1
+  update_by: 1
+
+two:
+  contact_type: 1
+  message: MyText
+  name: MyString
+  name_kana: MyString
+  email: MyString
+  phone_number: MyString
+  callback_requested: false
+  contact_method: 1
+  status: 1
+  update_by: 1

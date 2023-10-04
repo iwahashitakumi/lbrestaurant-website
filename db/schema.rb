@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_04_031134) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_04_032518) do
   create_table "articles", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.datetime "start_at", null: false
@@ -40,6 +40,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_031134) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "shops", force: :cascade do |t|
+    t.string "name", default: "", null: false
+    t.string "address", default: "", null: false
+    t.text "access", default: "", null: false
+    t.text "business_time", default: "", null: false
+    t.string "phone_number", default: "", null: false
+    t.integer "counter_seats", null: false
+    t.integer "table_seats", null: false
+    t.string "site_name", default: "", null: false
+    t.text "gourmet_site_link", default: "", null: false
+    t.string "shop_images", null: false
+    t.string "city_name", default: "", null: false
+    t.integer "prefecture_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prefecture_id"], name: "index_shops_on_prefecture_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -53,4 +71,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_031134) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "shops", "prefectures"
 end

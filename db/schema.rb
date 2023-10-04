@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_04_032518) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_04_043442) do
   create_table "articles", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.datetime "start_at", null: false
@@ -19,6 +19,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_032518) do
     t.string "article_images", default: ""
     t.text "sets", default: "[{\"body\": \"\", \"article_images\": \"\"}]", null: false
     t.integer "category", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.integer "contact_type", null: false
+    t.text "message", default: "", null: false
+    t.string "name", default: "", null: false
+    t.string "name_kana", default: "", null: false
+    t.string "email", default: "", null: false
+    t.string "phone_number", default: "", null: false
+    t.boolean "callback_requested", null: false
+    t.integer "contact_method", null: false
+    t.integer "status", null: false
+    t.integer "update_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -71,5 +86,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_032518) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contacts", "users", column: "update_by"
   add_foreign_key "shops", "prefectures"
 end

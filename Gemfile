@@ -70,4 +70,5 @@ group :test do
   gem "selenium-webdriver"
   gem 'rails-erd'
 end
+gem "aws-sdk", "~> 3.0"
 gem 'devise'

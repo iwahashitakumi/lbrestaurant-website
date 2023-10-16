@@ -71,4 +71,8 @@ group :test do
   gem 'rails-erd'
 end
 gem "aws-sdk", "~> 3.0"
+gem "vite_rails", "~> 3.0"
+
 gem 'devise'
+
+

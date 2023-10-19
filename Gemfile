@@ -74,5 +74,5 @@ gem "aws-sdk", "~> 3.0"
 gem "vite_rails", "~> 3.0"
 
 gem 'devise'
-
-
+gem 'devise-i18n'
+gem 'devise-i18n-views'

@@ -1,53 +1,28 @@
-<h2>ログイン</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="card col-sm-5 mx-auto mt-5">
+  <div class="card-body">
+    <h3 class="mt-1 mb-3">ログイン</h3>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <%= f.label :email, :class => "form-label" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control" %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "ログイン" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
-<div class="d-flex align-items-center py-4 bg-body-tertiary">
-  <div class="form-signin w-100 m-auto">
-    <form class="text-center">
-      <img class="mb-4" src="../images/bootstrap-logo.svg" alt="" width="72" height="57" loading="lazy">
-      <h1 class="h3 mb-3 fw-normal">ログインして下さい</h1>
-      
-      <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Emailアドレス</label>
-      </div>
-      <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="パスワード">
-        <label for="floatingPassword">パスワード</label>
-      </div>
-
-      <div class="form-check text-start my-3">
-        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          状態を記憶する
-        </label>
-      </div>
-      <button class="btn btn-primary w-100 py-2" type="submit">サインイン</button>
-      <p class="mt-5 mb-3 text-body-secondary">&copy; 2017-2023</p>
-   </form>
+ 
+    <div class="form-group">
+      <%= f.label :password, :class => "form-label" %>
+      <%= f.password_field :password, :class => "form-control" %>
+    <% if devise_mapping.rememberable? %>
+    <div class="form-check">
+      <%= f.check_box :remember_me, :class => "form-check-input" %>
+      <%= f.label :remember_me, :class => "form-check-label" %>
+    </div>
+    <% end %>
+    </div>
+ 
+    <div class="actions">
+      <%= f.submit "ログイン", :class => "btn btn-primary btn-block" %>
+    </div>
+    <% end %>
+ 
+    <%= render "devise/shared/links" %>
   </div>
 </div>

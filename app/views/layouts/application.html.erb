@@ -8,7 +8,6 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= vite_stylesheet_tag 'main.scss' %>
-    <%= javascript_importmap_tags %>
     <%= vite_client_tag %>
     <%= vite_typescript_tag 'application' %>
     <%= vite_react_refresh_tag %>
@@ -26,16 +25,16 @@
 
   <body>
     <% if user_signed_in? %>
-      <div id="header"></div>
-      <div class="container-fluid">
-        <div class="row">
-          <div id="sidebar"></div>
-          <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
-            <%= yield %>
-          </main>
-        </div>
-      </div>
       <%= vite_javascript_tag 'Application.tsx' %>
+      <% props = {
+        usersRootPath: 'usersRootPath',
+        editUserRegistrationPath: 'editUserRegistrationPath',
+        destroyUserSessionPath: 'destroyUserSessionPath',
+      }
+      %>
+      <app-component data-props="<%= props.to_json %>">
+        <%= yield %>
+      </app-component>
     <% else %>
       <%= yield %>
     <% end %>

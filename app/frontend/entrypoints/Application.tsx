@@ -1,36 +1,36 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import {useState} from 'react';
 import Header from '../src/Header'
 import Sidebar from '../src/Sidebar'
+import {rewrap} from "@sonicgarden/rewrap";
 
-function App() {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
+const element = document.getElementById('header');
+const App: React.FC = (props: any) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = React.useCallback(() => {
+    if (isSidebarOpen) {
+      setIsSidebarOpen(false);
+    } else {
+      setIsSidebarOpen(true);
+    }
+  }, [isSidebarOpen]);
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
-  const headerElement = document.getElementById('header');
-  if (headerElement) {
-    ReactDOM.createRoot(headerElement).render(
-      <React.StrictMode>
-        <Header
-          usersRootPath="/users"
-          editUserRegistrationPath="/users/edit"
-          destroyUserSessionPath="/users/sign_out"
-          isSidebarOpen={isSidebarOpen}
-          toggleSidebar={toggleSidebar}
-        />
-      </React.StrictMode>
-    );
-  }
-
-  const sidebarElement = document.getElementById('sidebar');
-  if (sidebarElement) {
-    ReactDOM.createRoot(sidebarElement).render(
-      <React.StrictMode>
+  return <>
+    <Header
+      usersRootPath={props.usersRootPath}
+      editUserRegistrationPath={props.editUserRegistrationPath}
+      destroyUserSessionPath={props.destroyUserSessionPath}
+      toggleSidebar={toggleSidebar}
+    ></Header>
+    <div className="container-fluid">
+      <div className="row">
         <Sidebar isSidebarOpen={isSidebarOpen} />
-      </React.StrictMode>
-    );
-  }
+        <main className={`col-md-9 ${isSidebarOpen ? 'ml-sm-auto' : ''} col-lg-10 px-md-4 py-4`}>
+          {props.children}
+        </main>
+      </div>
+    </div>
+  </>
 }
-export default App;
+
+rewrap('app-component', App, true)

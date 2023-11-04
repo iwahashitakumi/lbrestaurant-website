@@ -1,4 +1,13 @@
 @use '@/stylesheets/application';
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 .row {
   display: block;
 }
@@ -55,7 +64,7 @@
   top: 0;
   bottom: 0;
   padding: 55px 0 0;
-  z-index: 99;
+  z-index: 900;
 }
  
 @media (max-width: 767.98px) {
@@ -79,4 +88,10 @@
 
 .navbar-expand {
   flex-wrap: wrap;
+}
+
+@media (min-width: 576px) {
+  .main-top {
+    margin-top: 58px;
+  }
 }

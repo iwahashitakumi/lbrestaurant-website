@@ -25,7 +25,7 @@ const App: React.FC = (props: any) => {
     <div className="container-fluid">
       <div className="row">
         <Sidebar isSidebarOpen={isSidebarOpen} />
-        <main className={`${isSidebarOpen ? 'ml-sm-auto col-lg-10 col-md-9' : ''}  px-md-4 py-4`}>
+        <main className={`${isSidebarOpen ? 'ml-sm-auto col-lg-10 col-md-9' : ''}  px-md-4 py-4 main-top`}>
           {props.children}
         </main>
       </div>

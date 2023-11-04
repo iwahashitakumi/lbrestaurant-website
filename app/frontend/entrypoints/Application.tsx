@@ -17,15 +17,15 @@ const App: React.FC = (props: any) => {
 
   return <>
     <Header
-      usersRootPath={props.usersRootPath}
-      editUserRegistrationPath={props.editUserRegistrationPath}
-      destroyUserSessionPath={props.destroyUserSessionPath}
+      usersRootPath="/users"
+      editUserRegistrationPath="/users/edit"
+      destroyUserSessionPath="/users/sign_out"
       toggleSidebar={toggleSidebar}
     ></Header>
     <div className="container-fluid">
       <div className="row">
         <Sidebar isSidebarOpen={isSidebarOpen} />
-        <main className={`col-md-9 ${isSidebarOpen ? 'ml-sm-auto' : ''} col-lg-10 px-md-4 py-4`}>
+        <main className={`${isSidebarOpen ? 'ml-sm-auto col-lg-10 col-md-9' : ''}  px-md-4 py-4`}>
           {props.children}
         </main>
       </div>

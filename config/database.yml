@@ -10,7 +10,7 @@ default: &default
   pool: 5
   username: docker
   password: docker
-  host: mysqldb
+  host: mysql_container
   database: my_testdb
 
 development:

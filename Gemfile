@@ -72,6 +72,7 @@ group :test do
 end
 gem "aws-sdk", "~> 3.0"
 gem "vite_rails", "~> 3.0"
+gem 'mysql2'
 
 gem 'devise'
 gem 'devise-i18n'

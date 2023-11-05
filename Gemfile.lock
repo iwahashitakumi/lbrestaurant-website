@@ -1570,6 +1570,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
+    mysql2 (0.5.5)
     net-imap (0.3.7)
       date
       net-protocol
@@ -1698,6 +1699,7 @@ DEPENDENCIES
   devise-i18n-views
   importmap-rails
   jbuilder
+  mysql2
   puma (~> 5.0)
   rails (~> 7.0.8)
   rails-erd

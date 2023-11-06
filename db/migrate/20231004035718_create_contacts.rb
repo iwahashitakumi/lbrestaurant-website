@@ -2,7 +2,7 @@ class CreateContacts < ActiveRecord::Migration[7.0]
   def change
     create_table :contacts do |t|
       t.integer :contact_type, null: false,                         comment: "問い合わせの種類"
-      t.text :message, default: "", null: false,                    comment: "問い合わせの内容"
+      t.text :message, null: false,                                 comment: "問い合わせの内容"
       t.string :name, default: "", null: false,                     comment: "問い合わせ者の名前"
       t.string :name_kana, default: "", null: false,                comment: "問い合わせ者の名前(カナ)"
       t.string :email, default: "", null: false,                    comment: "問い合わせのメールアドレス"

@@ -62,6 +62,6 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_update_path_for(resource)
-    users_root_path
+    admins_root_path
   end
 end

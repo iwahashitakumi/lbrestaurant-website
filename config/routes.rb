@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    registrations: 'users/registrations'
+  devise_for :admins, controllers: {
+    registrations: 'admins/registrations'
   }
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+  devise_scope :admin do
+    get '/admins/sign_out' => 'devise/sessions#destroy'
   end
-  namespace :users do
+  namespace :admins do
     root 'home#show'
   end
 

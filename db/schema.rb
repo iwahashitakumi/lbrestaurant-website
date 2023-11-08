@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_06_071306) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_08_090334) do
+  create_table "admins", charset: "utf8", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name", default: "", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
   create_table "articles", charset: "utf8", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.datetime "start_at", null: false
@@ -93,21 +106,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_06_071306) do
     t.index ["prefecture_id"], name: "index_shops_on_prefecture_id"
   end
 
-  create_table "users", charset: "utf8", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name", default: "", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  add_foreign_key "contacts", "users", column: "update_by"
+  add_foreign_key "contacts", "admins", column: "update_by"
+  add_foreign_key "job_entries", "admins", column: "update_by"
   add_foreign_key "job_entries", "prefectures"
-  add_foreign_key "job_entries", "users", column: "update_by"
   add_foreign_key "shops", "prefectures"
 end

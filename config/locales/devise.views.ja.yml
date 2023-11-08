@@ -2,7 +2,7 @@ ja:
   activerecord:
     errors:
       models:
-        user:
+        admin:
           attributes:
             email:
               taken: "は既に使用されています。"
@@ -18,7 +18,7 @@ ja:
               invalid: "は有効でありません。"
               confirmation: "が内容とあっていません。"
     attributes:
-      user:
+      admin:
         current_password: "現在のパスワード"
         name: 名前
         email: "メールアドレス"
@@ -26,8 +26,8 @@ ja:
         password_confirmation: "確認用パスワード"
         remember_me: "次回から自動的にログイン"
     models:
-      user: "ユーザー"
-  user:
+      admin: "ユーザー"
+  admin:
     confirmations:
       new:
         resend_confirmation_instructions: "アカウント確認メール再送"

@@ -17,9 +17,9 @@ const App: React.FC = (props: any) => {
 
   return <>
     <Header
-      usersRootPath="/users"
-      editUserRegistrationPath="/users/edit"
-      destroyUserSessionPath="/users/sign_out"
+      adminsRootPath="/admins"
+      editAdminRegistrationPath="/admins/edit"
+      destroyAdminSessionPath="/admins/sign_out"
       toggleSidebar={toggleSidebar}
     ></Header>
     <div className="container-fluid">

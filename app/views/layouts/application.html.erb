@@ -24,12 +24,12 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
+    <% if admin_signed_in? %>
       <%= vite_javascript_tag 'Application.tsx' %>
       <% props = {
-        usersRootPath: 'usersRootPath',
-        editUserRegistrationPath: 'editUserRegistrationPath',
-        destroyUserSessionPath: 'destroyUserSessionPath',
+        adminsRootPath: 'adminsRootPath',
+        editAdminRegistrationPath: 'editAdminRegistrationPath',
+        destroyAdminSessionPath: 'destroyAdminSessionPath',
       }
       %>
       <app-component data-props="<%= props.to_json %>">

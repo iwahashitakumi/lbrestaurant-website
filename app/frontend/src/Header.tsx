@@ -1,9 +1,9 @@
 import React from 'react';
 
 interface HeaderProps {
-  usersRootPath: string;
-  editUserRegistrationPath: string;
-  destroyUserSessionPath: string;
+  adminsRootPath: string;
+  editAdminRegistrationPath: string;
+  destroyAdminSessionPath: string;
   isSidebarOpen: boolean;
   toggleSidebar: () => void;
 }
@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = (props) => {
   return (
     <header>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href={props.usersRootPath} className="navbar-brand ps-3 ms-lg-5 mobile-text">
+        <a href={props.adminsRootPath} className="navbar-brand ps-3 ms-lg-5 mobile-text">
           LBrestaurant管理システム
         </a>
         <button
@@ -50,13 +50,13 @@ const Header: React.FC<HeaderProps> = (props) => {
             </a>
             <ul className="dropdown-menu dropdown-menu-end position-absolute" aria-labelledby="navbarDropdown">
               <li>
-                <a href={props.editUserRegistrationPath} className="dropdown-item">
+                <a href={props.editAdminRegistrationPath} className="dropdown-item">
                   アカウント設定
                 </a>
               </li>
               <li>
                 <a
-                  href={props.destroyUserSessionPath}
+                  href={props.destroyAdminSessionPath}
                   className="dropdown-item"
                   data-method="delete"
                   data-confirm="ログアウトしますか？"

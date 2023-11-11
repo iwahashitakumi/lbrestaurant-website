@@ -1,17 +1,17 @@
 <div class="card col-sm-6 mx-auto mt-5">
   <div class="card-body">
     <h3 class="mt-1 mb-3">パスワードをお忘れですか？</h3>
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
- 
-    <div class="form-group">
-      <%= f.label :email, :class => "form-label" %>
-      <%= f.email_field :email, autocomplete: "email", :class => "form-control" %>
-    </div>
- 
-    <div class="actions mt-3">
-      <%= f.submit "パスワードリセット申請", :class => "btn btn-primary btn-block" %>
-    </div>
+    <%= form_with(model: resource, as: resource_name, url: password_path(resource_name), method: :post) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+  
+      <div class="form-group">
+        <%= f.label :email, class: "form-label" %>
+        <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
+      </div>
+  
+      <div class="actions mt-3">
+        <%= f.submit "パスワードリセット申請", class: "btn btn-primary btn-block" %>
+      </div>
     <% end %>
   </div>
 </div>

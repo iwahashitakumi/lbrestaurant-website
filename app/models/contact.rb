@@ -1,3 +1,3 @@
 class Contact < ApplicationRecord
-  belongs_to :user, foreign_key: 'update_by'
+  belongs_to :admin, foreign_key: 'update_by'
 end

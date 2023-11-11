@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :admins, controllers: {
+    registrations: 'admins/registrations'
+  }
+  devise_scope :admin do
+    get '/admins/sign_out' => 'devise/sessions#destroy'
+  end
+  namespace :admins do
+    root 'home#show'
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end

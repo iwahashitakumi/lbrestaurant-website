@@ -8,7 +8,6 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= vite_stylesheet_tag 'main.scss' %>
-    <%= javascript_importmap_tags %>
     <%= vite_client_tag %>
     <%= vite_typescript_tag 'application' %>
     <%= vite_react_refresh_tag %>
@@ -25,6 +24,19 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if admin_signed_in? %>
+      <%= vite_javascript_tag 'Application.tsx' %>
+      <% props = {
+        adminsRootPath: 'adminsRootPath',
+        editAdminRegistrationPath: 'editAdminRegistrationPath',
+        destroyAdminSessionPath: 'destroyAdminSessionPath',
+      }
+      %>
+      <app-component data-props="<%= props.to_json %>">
+        <%= yield %>
+      </app-component>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

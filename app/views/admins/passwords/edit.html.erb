@@ -1,23 +1,21 @@
 <div class="card col-sm-6 mx-auto mt-5">
   <div class="card-body">
-    <h3 class="text-center mt-1 mb-4">パスワードを変更</h3>
+    <h3 class="text-center mt-3 mb-3">パスワードを変更</h3>
 
     <%= form_with(model: resource, as: resource_name, url: password_path(resource_name), method: :put) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="form-group mt-2">
+      <div class="form-group mt-3">
         <%= f.label :password, "新しいパスワード", class: "form-label mt-3" %>
-        <% if @minimum_password_length %>
-          <em>(最低<%= @minimum_password_length %>文字以上)</em>
-        <% end %>
-        <%= f.password_field :password, class: "form-control", autofocus: true, autocomplete: "new-password" %>
+        <% placeholder_password = @minimum_password_length ? "#{@minimum_password_length}文字以上" : "" %>
+        <%= f.password_field :password, class: "form-control", autofocus: true, autocomplete: "new-password", placeholder: "半角英数#{placeholder_password}" %>
       </div>
 
-      <div class="form-group mt-2">
+      <div class="form-group mt-3">
         <%= f.label :password_confirmation, "新しいパスワードの確認", class: "form-label mt-3" %>
-        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password", placeholder: "半角英数#{placeholder_password}" %>
       </div>
 
-      <div class="actions mt-3">
+      <div class="actions mt-5">
         <%= f.submit "パスワードを変更", class: "btn btn-primary" %>
       </div>
       <%= f.hidden_field :reset_password_token %>

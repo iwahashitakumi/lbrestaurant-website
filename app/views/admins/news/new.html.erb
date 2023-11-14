@@ -1,0 +1,7 @@
+<h3>お知らせ新規登録</h3>
+<%= render "admins/shared/flashes" %>
+<div class="container mt-4">
+  <%= form_with model: @news, url: admins_news_index_path, local: true  do |f| %>
+    <%= render partial: 'form', locals: { f: f } %>
+  <% end %>
+</div>

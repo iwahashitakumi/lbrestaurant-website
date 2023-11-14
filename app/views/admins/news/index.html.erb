@@ -9,6 +9,7 @@
         <th>開始日時</th>
         <th>終了日時</th>
         <th>本文</th>        
+        <th>詳細</th>
         <th>編集</th>
         
 
@@ -23,8 +24,9 @@
           <td><%= news.start_at.strftime("%Y/ %m/ %d /%H:%M") %></td>
           <td><%= news.end_at.strftime("%Y/ %m/ %d /%H:%M") %></td>
           <td><%= news.body %></td>
+          <td><%= link_to "詳細", [:admins, news] %></td>
           <td>
-            <td><%= link_to "編集", [:edit_admins, news], class: 'btn btn-warning' %>
+            <%= link_to "編集", [:edit_admins, news] %>
           </td>
         </tr>
       <% end %>

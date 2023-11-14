@@ -16,6 +16,10 @@ class Admins::NewsController < Admins::ApplicationController
       render "new", alert: "お知らせの投稿ができませんでした"
     end
   end
+  
+  def show
+    @news = News.find(params[:id])
+  end
 
   def edit
     @news = News.find(params[:id])

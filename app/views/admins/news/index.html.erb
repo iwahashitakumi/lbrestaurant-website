@@ -8,18 +8,24 @@
         <th>タイトル</th>
         <th>開始日時</th>
         <th>終了日時</th>
-        <th>本文</th>
+        <th>本文</th>        
+        <th>編集</th>
+        
+
       </tr>
     </thead>
 
     <tbody>
       <% @news.each do |news| %>
         <tr>
-          <td><%= news.calendar_date %></td>
+          <td><%= news.calendar_date.strftime("%Y/ %m/ %d") %></td>
           <td><%= news.title %></td>
-          <td><%= news.start_at %></td>
-          <td><%= news.end_at %></td>
+          <td><%= news.start_at.strftime("%Y/ %m/ %d /%H:%M") %></td>
+          <td><%= news.end_at.strftime("%Y/ %m/ %d /%H:%M") %></td>
           <td><%= news.body %></td>
+          <td>
+            <td><%= link_to "編集", [:edit_admins, news], class: 'btn btn-warning' %>
+          </td>
         </tr>
       <% end %>
     </tbody>

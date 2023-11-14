@@ -17,6 +17,20 @@ class Admins::NewsController < Admins::ApplicationController
     end
   end
 
+  def edit
+    @news = News.find(params[:id])
+  end
+
+  def update
+    @news = News.find(params[:id])
+    begin
+      @news.update!(news_params)
+      redirect_to :admins_news_index, notice: "お知らせの内容を変更できました"
+    rescue
+      render 'edit', alert: "お知らせの内容を変更できませんでした"
+    end
+  end
+
   private
   
   def news_params

@@ -1,0 +1,29 @@
+<h3>お知らせ一覧</h3>
+<%= render "admins/shared/flashes" %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>カレンダー日付</th>
+        <th>タイトル</th>
+        <th>開始日時</th>
+        <th>終了日時</th>
+        <th>本文</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @news.each do |news| %>
+        <tr>
+          <td><%= news.calendar_date %></td>
+          <td><%= news.title %></td>
+          <td><%= news.start_at %></td>
+          <td><%= news.end_at %></td>
+          <td><%= news.body %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<p><%= link_to "お知らせ新規登録", new_admins_news_path, class: 'btn btn-primary' %></p>

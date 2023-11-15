@@ -19,10 +19,10 @@
     <tbody>
       <% @news.each do |news| %>
         <tr>
-          <td><%= news.calendar_date.strftime("%Y/ %m/ %d") %></td>
+          <td><%= format_date(news.calendar_date) %></td>
           <td><%= news.title %></td>
-          <td><%= news.start_at.strftime("%Y/ %m/ %d /%H:%M") %></td>
-          <td><%= news.end_at.strftime("%Y/ %m/ %d /%H:%M") %></td>
+          <td><%= format_datetime(news.start_at) %></td>
+          <td><%= format_datetime(news.end_at) %></td>
           <td><%= news.body %></td>
           <td><%= link_to "詳細", [:admins, news] %></td>
           <td>

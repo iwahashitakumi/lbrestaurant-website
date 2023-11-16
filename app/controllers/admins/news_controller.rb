@@ -1,6 +1,8 @@
 class Admins::NewsController < Admins::ApplicationController
   def index
-    @news = News.all.page(params[:page])
+    @q = News.ransack(params[:q])
+    @news = @q.result(distinct: true).page(params[:page])
+    @search_scope = :title_or_body_cont
   end
 
   def new

@@ -70,6 +70,10 @@ group :test do
   gem "selenium-webdriver"
   gem 'rails-erd'
 end
+
+gem 'kaminari'
+gem 'bootstrap5-kaminari-views', '~> 0.0.1'
+
 gem "aws-sdk", "~> 3.0"
 gem "vite_rails", "~> 3.0"
 gem 'mysql2'

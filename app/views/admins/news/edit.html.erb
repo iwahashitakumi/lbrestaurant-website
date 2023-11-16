@@ -1,6 +1,7 @@
-<h3>お知らせ編集</h3>
-<%= render "admins/shared/flashes" %>
+
 <div class="container mt-4">
+  <h3 class="mb-4">お知らせ編集</h3>
+  <%= render "admins/shared/flashes" %>
   <%= form_with model: @news, url: admins_news_path, local: true  do |f| %>
     <%= render partial: 'form', locals: { f: f } %>
   <% end %>

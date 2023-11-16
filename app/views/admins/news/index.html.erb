@@ -1,7 +1,7 @@
-<h3 class="mt-4 mb-4">お知らせ一覧</h3>
-<%= render "admins/shared/flashes" %>
+<div class="container mt-4">
+  <h3 class="mb-4">お知らせ一覧</h3>
+  <%= render "admins/shared/flashes" %>
 
-<div class="container">
   <div class="mb-3"><%= @deleteError %></div>
   <% if @news %>
     <% if @news.size.zero? %>

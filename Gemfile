@@ -71,6 +71,8 @@ group :test do
   gem 'rails-erd'
 end
 
+gem 'ransack'
+
 gem 'kaminari'
 gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 

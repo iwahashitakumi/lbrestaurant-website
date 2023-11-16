@@ -41,3 +41,5 @@
 
   <p><%= link_to "お知らせ新規登録", new_admins_news_path, class: 'btn btn-primary' %></p>
 </div>
+
+<%= paginate @news, theme: 'bootstrap-5' %>

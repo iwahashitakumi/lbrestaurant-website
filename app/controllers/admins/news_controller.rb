@@ -1,6 +1,6 @@
 class Admins::NewsController < Admins::ApplicationController
   def index
-    @news = News.all
+    @news = News.all.page(params[:page])
   end
 
   def new

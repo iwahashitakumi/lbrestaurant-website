@@ -1,37 +1,42 @@
-<h3>お知らせ一覧</h3>
+<!-- これが部分ビューであると仮定しています（例: _news_table.html.erb） -->
+
+<h3 class="mt-4 mb-4">お知らせ一覧</h3>
 <%= render "admins/shared/flashes" %>
-<div class="table-responsive">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>カレンダー日付</th>
-        <th>タイトル</th>
-        <th>開始日時</th>
-        <th>終了日時</th>
-        <th>本文</th>        
-        <th>詳細</th>
-        <th>編集</th>
-        
 
-      </tr>
-    </thead>
+<div class="container">
+  <div class="mb-3"><%= @deleteError %></div>
+  <% if @news %>
+    <% if @news.size.zero? %>
+      <div class="alert alert-info">検索結果は0件です。</div>
+    <% elsif @news.size > 0 %>
+      <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>カレンダー日付</th>
+            <th>タイトル</th>
+            <th>開始日時</th>
+            <th>終了日時</th>
+            <th>本文</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @news.each do |news| %>
+            <tr>
+              <td class="align-middle"><%= format_date(news.calendar_date) %></td>
+              <td class="align-middle"><%= link_to news.title, [:admins, news], class: "text-primary" %></td>
+              <td class="align-middle"><%= format_datetime(news.start_at) %></td>
+              <td class="align-middle"><%= format_datetime(news.end_at) %></td>
+              <td class="align-middle"><%= news.body %></td>
+              <td>
+                <%= link_to "編集", [:edit_admins, news], class: "btn btn-primary btn-sm" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  <% end %>
 
-    <tbody>
-      <% @news.each do |news| %>
-        <tr>
-          <td><%= format_date(news.calendar_date) %></td>
-          <td><%= news.title %></td>
-          <td><%= format_datetime(news.start_at) %></td>
-          <td><%= format_datetime(news.end_at) %></td>
-          <td><%= news.body %></td>
-          <td><%= link_to "詳細", [:admins, news] %></td>
-          <td>
-            <%= link_to "編集", [:edit_admins, news] %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <p><%= link_to "お知らせ新規登録", new_admins_news_path, class: 'btn btn-primary' %></p>
 </div>
-
-<p><%= link_to "お知らせ新規登録", new_admins_news_path, class: 'btn btn-primary' %></p>

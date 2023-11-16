@@ -40,7 +40,7 @@ class Admins::NewsController < Admins::ApplicationController
   def destroy
     @news = News.find(params[:id])
     @news.destroy
-    redirect_to :admins_news_index, notice: "ユーザーを削除しました"
+    redirect_to :admins_news_index, notice: "お知らせを削除しました"
   end
 
   private

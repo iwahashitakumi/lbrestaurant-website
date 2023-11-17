@@ -29,7 +29,7 @@
           <td class="align-middle"><%= link_to news.title, [:admins, news], class: "text-primary" %></td>
           <td class="align-middle"><%= format_datetime(news.start_at) %></td>
           <td class="align-middle"><%= format_datetime(news.end_at) %></td>
-          <td class="align-middle"><%= news.body %></td>
+          <td class="align-middle"><%= news.body.slice(0, 5) %></td>
           <td class="text-center">
             <%= link_to "編集", [:edit_admins, news], class: "btn btn-outline-primary btn-sm" %>
           </td>

@@ -9,6 +9,7 @@ class Admins::NewsController < Admins::ApplicationController
   def new
     @news = News.new
     @news_index_url = session[:news_index_url]
+    @calendar_date_options = calendar_date_options
     @start_at_options = start_at_options
     @end_at_options = end_at_options
   end
@@ -16,6 +17,7 @@ class Admins::NewsController < Admins::ApplicationController
   def create
     @news = News.new(news_params)
     @news_index_url = session[:news_index_url]
+    @calendar_date_options = calendar_date_options
     @start_at_options = start_at_options
     @end_at_options = end_at_options
     begin
@@ -34,6 +36,7 @@ class Admins::NewsController < Admins::ApplicationController
   def edit
     @news = News.find(params[:id])
     @news_index_url = session[:news_index_url]
+    @calendar_date_options = calendar_date_options
     @start_at_options = start_at_options
     @end_at_options = end_at_options
   end
@@ -41,6 +44,7 @@ class Admins::NewsController < Admins::ApplicationController
   def update
     @news = News.find(params[:id])  
     @news_index_url = session[:news_index_url]
+    @calendar_date_options = calendar_date_options
     @start_at_options = start_at_options
     @end_at_options = end_at_options
     begin
@@ -62,6 +66,10 @@ class Admins::NewsController < Admins::ApplicationController
   
   def news_params
     params.require(:news).permit(:calendar_date, :title, :start_at, :end_at, :body)
+  end
+
+  def calendar_date_options
+    { min: (Date.current - 1.year), max: (Date.current + 1.year), value: Date.current }
   end
 
   def start_at_options

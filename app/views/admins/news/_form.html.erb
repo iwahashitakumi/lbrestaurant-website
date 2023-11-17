@@ -1,6 +1,6 @@
 <div class="form-group">
   <%= f.label :calendar_date, class: "my-2" %>
-  <%= f.date_field :calendar_date, class: 'form-control', min: 1.year.ago.to_date, max: 1.year.from_now.to_date, value: Date.current %>
+  <%= f.date_field :calendar_date, class: 'form-control', **@calendar_date_options %>
   <%= render "layouts/error_messages", object: f.object, attribute: :calendar_date %>
 </div>
 

@@ -1,25 +1,25 @@
 <div class="form-group">
-  <%= f.label :calendar_date, '日付' %>
+  <%= f.label :calendar_date, '日付', class: "my-2" %>
   <%= f.date_field :calendar_date, class: 'form-control', min: 1.year.ago.to_date, max: 1.year.from_now.to_date, value: Date.current %>
 </div>
 
 <div class="form-group">
-  <%= f.label :title, 'タイトル' %>
+  <%= f.label :title, 'タイトル', class: "my-2" %>
   <%= f.text_field :title, class: 'form-control' %>
 </div>
 
 <div class="form-group">
-  <%= f.label :start_at, '開始日時' %>
+  <%= f.label :start_at, '開始日時', class: "my-2" %>
   <%= f.datetime_field :start_at, class: 'form-control', **@start_at_options %>
 </div>
 
 <div class="form-group">
-  <%= f.label :end_at, '終了日時' %>
+  <%= f.label :end_at, '終了日時', class: "my-2" %>
   <%= f.datetime_field :end_at, class: 'form-control', **@end_at_options %>
 </div>
 
 <div class="form-group">
-  <%= f.label :body, '本文' %>
+  <%= f.label :body, '本文', class: "my-2" %>
   <%= f.text_area :body, class: 'form-control' %>
 </div>
 

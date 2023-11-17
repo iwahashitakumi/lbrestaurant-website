@@ -69,3 +69,14 @@ ja:
     template:
       body: 次の項目を確認してください
       header: "%{model}に%{count}個のエラーが発生しました"
+  
+  activerecord:
+    models:
+      news: お知らせ
+    attributes:
+      news:
+        calendar_date: 日付
+        title: タイトル
+        start_at: 公開開始時間
+        end_at: 公開終了時間
+        body: 内容

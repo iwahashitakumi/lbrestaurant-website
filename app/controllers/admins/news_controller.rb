@@ -9,11 +9,15 @@ class Admins::NewsController < Admins::ApplicationController
   def new
     @news = News.new
     @news_index_url = session[:news_index_url]
+    @start_at_options = start_at_options
+    @end_at_options = end_at_options
   end
   
   def create
     @news = News.new(news_params)
     @news_index_url = session[:news_index_url]
+    @start_at_options = start_at_options
+    @end_at_options = end_at_options
     begin
       @news.save!
       redirect_to @news_index_url, notice: "お知らせの投稿ができました"
@@ -26,15 +30,19 @@ class Admins::NewsController < Admins::ApplicationController
     @news = News.find(params[:id])
     @news_index_url = session[:news_index_url]
   end
-  
+
   def edit
     @news = News.find(params[:id])
     @news_index_url = session[:news_index_url]
+    @start_at_options = start_at_options
+    @end_at_options = end_at_options
   end
   
   def update
-    @news = News.find(params[:id])
+    @news = News.find(params[:id])  
     @news_index_url = session[:news_index_url]
+    @start_at_options = start_at_options
+    @end_at_options = end_at_options
     begin
       @news.update!(news_params)
       redirect_to @news_index_url, notice: "お知らせの内容を変更できました"
@@ -55,5 +63,12 @@ class Admins::NewsController < Admins::ApplicationController
   def news_params
     params.require(:news).permit(:calendar_date, :title, :start_at, :end_at, :body)
   end
+
+  def start_at_options
+    {  min: Time.current.strftime("%Y/ %m/ %d /%H:%M"), max: (Time.current + 1.year), value: Time.current.strftime("%Y/ %m/ %d /%H:%M") }
+  end
+
+  def end_at_options
+    { min: (Time.current + 1.day).strftime("%Y-%m-%dT%H:%M"), value: (Time.current + 1.day).strftime("%Y-%m-%dT%H:%M") }
+  end
 end
- 

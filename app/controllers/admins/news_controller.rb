@@ -74,14 +74,14 @@ class Admins::NewsController < Admins::ApplicationController
   end
 
   def calendar_date_options
-    { min: (Date.current - 1.year), max: (Date.current + 1.year), value: Date.current }
+    { min: (Time.zone.today - 1.year), max: (Time.zone.today + 1.year), value: Time.zone.today }
   end
 
   def start_at_options
-    {  min: Time.current.strftime("%Y/ %m/ %d /%H:%M"), max: (Time.current + 1.year), value: Time.current.strftime("%Y/ %m/ %d /%H:%M") }
+    {  min: Time.zone.now.strftime("%Y/ %m/ %d /%H:%M"), max: (Time.zone.now + 1.year), value: Time.zone.now.strftime("%Y/ %m/ %d /%H:%M") }
   end
 
   def end_at_options
-    { min: (Time.current + 1.day).strftime("%Y-%m-%dT%H:%M"), value: (Time.current + 1.day).strftime("%Y-%m-%dT%H:%M") }
+    { min: (Time.zone.now + 1.day).strftime("%Y-%m-%dT%H:%M"), value: (Time.zone.now + 1.day).strftime("%Y-%m-%dT%H:%M") }
   end
 end

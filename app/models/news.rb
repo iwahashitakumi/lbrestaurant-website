@@ -8,13 +8,13 @@ class News < ApplicationRecord
   validate :end_at_after_start_at
 
   def start_at_in_future
-    errors.add(:start_at, 'は過去の日時を選択できません') if start_at.present? && start_at < Time.current
+    errors.add(:start_at, 'は過去の日時を選択できません') if start_at.present? && start_at < Time.zone.now
   end
 
   def end_at_after_start_at
     errors.add(:end_at, 'は開始日時より後の日時を選択してください') if start_at.present? && end_at.present? && end_at <= start_at
   end
-  
+
   def self.ransackable_attributes(auth_object = nil)
     ["title", "body"]
   end

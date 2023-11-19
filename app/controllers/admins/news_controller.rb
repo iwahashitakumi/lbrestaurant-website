@@ -57,8 +57,12 @@ class Admins::NewsController < Admins::ApplicationController
   
   def destroy
     @news = News.find(params[:id])
-    @news.destroy
-    redirect_to @news_index_url|| admins_news_index_path, notice: "お知らせを削除しました"
+    begin
+      @news.destroy!
+      redirect_to @news_index_url|| admins_news_index_path, notice: "お知らせを削除しました"
+    rescue
+      render 'index', alert: "お知らせの内容を削除できませんでした"
+    end
   end
   
 

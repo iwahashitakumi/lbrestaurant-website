@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between mb-4">
+    <h3>お知らせ一覧</h3>
+    <%= search_form_for @q, url: admins_news_index_path, class: 'form-inline' do |f| %>
+      <div class="input-group">
+        <%= f.search_field @search_scope, class: 'form-control', placeholder: '検索ワード' %>
+        <div class="input-group-append">
+          <%= f.submit '検索', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= render "admins/shared/flashes" %>
+  <table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>日付</th>
+        <th>タイトル</th>
+        <th>公開開始日時</th>
+        <th>公開終了日時</th>
+        <th>内容</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @news.each do |news| %>
+        <tr>
+          <td class="align-middle"><%= format_date(news.calendar_date) %></td>
+          <td class="align-middle"><%= link_to news.title, [:admins, news], class: "text-primary" %></td>
+          <td class="align-middle"><%= format_datetime(news.start_at) %></td>
+          <td class="align-middle"><%= format_datetime(news.end_at) %></td>
+          <td class="align-middle"><%= news.body.slice(0, 5) %></td>
+          <td class="text-center">
+            <%= link_to "編集", [:edit_admins, news], class: "btn btn-outline-primary btn-sm" %>
+          </td>
+          <td class="text-start">
+            <%= button_to "削除", [:admins, news], { method: :delete, class: "btn btn-outline-danger btn-sm", onclick: "return confirm('本当に削除しますか？');" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <p><%= link_to "お知らせ新規登録", new_admins_news_path, class: 'btn btn-primary' %></p>
+</div>
+
+<%= paginate @news, theme: 'bootstrap-5' %>

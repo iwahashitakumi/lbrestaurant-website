@@ -24,7 +24,11 @@ const App: React.FC = (props: any) => {
     ></Header>
     <div className="container-fluid">
       <div className="row">
-        <Sidebar isSidebarOpen={isSidebarOpen} />
+        <Sidebar
+         isSidebarOpen={isSidebarOpen}
+         adminsNewsIndexPath="/admins/news"
+         newAdminsNewsPath="/admins/news/new"
+         ></Sidebar>
         <main className={`${isSidebarOpen ? 'ml-sm-auto col-lg-10 col-md-9' : ''}  px-md-4 py-4 main-top`}>
           {props.children}
         </main>

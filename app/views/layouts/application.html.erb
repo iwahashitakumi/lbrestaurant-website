@@ -26,13 +26,7 @@
   <body>
     <% if admin_signed_in? %>
       <%= vite_javascript_tag 'Application.tsx' %>
-      <% props = {
-        adminsRootPath: 'adminsRootPath',
-        editAdminRegistrationPath: 'editAdminRegistrationPath',
-        destroyAdminSessionPath: 'destroyAdminSessionPath',
-      }
-      %>
-      <app-component data-props="<%= props.to_json %>">
+      <app-component>
         <%= yield %>
       </app-component>
     <% else %>

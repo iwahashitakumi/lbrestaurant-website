@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   namespace :admins do
     root 'home#show'
     resources :news
+    resources :shops
   end
 end

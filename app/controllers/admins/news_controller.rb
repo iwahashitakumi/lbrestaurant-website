@@ -62,7 +62,7 @@ class Admins::NewsController < Admins::ApplicationController
       @news.destroy!
       redirect_to @news_index_url|| admins_news_index_path, notice: "お知らせを削除しました"
     rescue
-      render 'index', alert: "お知らせの内容を削除できませんでした"
+      render 'index', alert: "お知らせを削除できませんでした"
     end
   end
   

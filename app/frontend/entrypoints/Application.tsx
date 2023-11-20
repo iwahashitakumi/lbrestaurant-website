@@ -28,6 +28,8 @@ const App: React.FC = (props: any) => {
          isSidebarOpen={isSidebarOpen}
          adminsNewsIndexPath="/admins/news"
          newAdminsNewsPath="/admins/news/new"
+         adminsShopsPath="/admins/shops"
+         newAdminsShopsPath="/admins/shops/new"
          ></Sidebar>
         <main className={`${isSidebarOpen ? 'ml-sm-auto col-lg-10 col-md-9' : ''}  px-md-4 py-4 main-top`}>
           {props.children}

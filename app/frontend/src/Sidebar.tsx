@@ -3,6 +3,8 @@ import React from 'react';
 interface SidebarProps {
   adminsNewsIndexPath: string;
   newAdminsNewsPath: string;
+  adminsShopsPath: string;
+  newAdminsShopsPath: string;
   isSidebarOpen: boolean;
 }
 
@@ -23,20 +25,17 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
               <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li><a href={props.adminsNewsIndexPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">一覧</a></li>
                 <li><a href={props.newAdminsNewsPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">新規作成</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">レポート</a></li>
               </ul>
             </div>
           </li>
           <li className="mb-1">
             <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0 text-white" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-              ダッシュボード
+              店舗
             </button>
             <div className="collapse" id="dashboard-collapse">
               <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">概要</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">毎週</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">毎月</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">毎年</a></li>
+                <li><a href={props.adminsShopsPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">一覧</a></li>
+                <li><a href={props.newAdminsShopsPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">新規作成</a></li>
               </ul>
             </div>
           </li>

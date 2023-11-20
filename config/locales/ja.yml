@@ -73,6 +73,7 @@ ja:
   activerecord:
     models:
       news: お知らせ
+      shop: 店舗
     attributes:
       news:
         calendar_date: 日付
@@ -80,3 +81,16 @@ ja:
         start_at: 公開開始時間
         end_at: 公開終了時間
         body: 内容
+      shop:
+        name: 店舗名
+        prefecture_id: 都道府県
+        city_name: 市区町村
+        address: 地名・番地
+        access: アクセス
+        business_time: 営業時間
+        phone_number: 電話番号
+        counter_seats: カウンター席数
+        table_seats: テーブル席数
+        site_name: グルメサイト名
+        gourmet_site_link: グルメサイトのリンク
+        shop_images: 店舗画像

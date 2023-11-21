@@ -1526,6 +1526,13 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    carrierwave (3.0.4)
+      activemodel (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      addressable (~> 2.6)
+      image_processing (~> 1.1)
+      marcel (~> 1.0.0)
+      ssrf_filter (~> 1.0)
     choice (0.2.0)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
@@ -1544,10 +1551,14 @@ GEM
     devise-i18n-views (0.3.7)
     dry-cli (1.0.0)
     erubi (1.12.0)
+    ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (1.2.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -1590,6 +1601,7 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mini_magick (4.12.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
@@ -1667,6 +1679,8 @@ GEM
     rexml (3.2.6)
     ruby-graphviz (1.2.5)
       rexml
+    ruby-vips (2.2.0)
+      ffi (~> 1.12)
     rubyzip (2.3.2)
     selenium-webdriver (4.13.1)
       rexml (~> 3.2, >= 3.2.5)
@@ -1680,6 +1694,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.6-x86_64-darwin)
+    ssrf_filter (1.1.2)
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     stringio (3.0.8)
@@ -1721,6 +1736,7 @@ DEPENDENCIES
   bootsnap
   bootstrap5-kaminari-views (~> 0.0.1)
   capybara
+  carrierwave
   debug
   devise
   devise-i18n

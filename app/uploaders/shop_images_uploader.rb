@@ -17,7 +17,14 @@ class ShopImagesUploader < CarrierWave::Uploader::Base
   def default_url(*args)
      ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default_shop_image.png"].compact.join('_'))
   end
+  
+  def extension_whitelist
+    %w(jpg jpeg gif png)
+  end
 
+  def size_range
+    0..5.megabytes
+  end
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #

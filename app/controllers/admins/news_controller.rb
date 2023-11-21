@@ -24,7 +24,8 @@ class Admins::NewsController < Admins::ApplicationController
       @news.save!
       redirect_to @news_index_url, notice: "お知らせの投稿ができました"
     rescue
-      render "new", alert: "お知らせの投稿ができませんでした"
+      flash.now[:alert] = "お知らせの投稿ができませんでした"
+      render "new"
     end
   end
   
@@ -51,7 +52,8 @@ class Admins::NewsController < Admins::ApplicationController
       @news.update!(news_params)
       redirect_to @news_index_url, notice: "お知らせの内容を変更できました"
     rescue
-      render 'edit', alert: "お知らせの内容を変更できませんでした"
+      flash.now[:alert] = "お知らせの内容を変更できませんでした"
+      render 'edit'
     end
   end
   
@@ -62,7 +64,8 @@ class Admins::NewsController < Admins::ApplicationController
       @news.destroy!
       redirect_to @news_index_url|| admins_news_index_path, notice: "お知らせを削除しました"
     rescue
-      render 'index', alert: "お知らせを削除できませんでした"
+      flash.now[:alert] = "お知らせを削除できませんでした"
+      render 'index'
     end
   end
   

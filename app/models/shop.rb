@@ -1,3 +1,4 @@
 class Shop < ApplicationRecord
-  belongs_to :prefecture
+  mount_uploader :shop_images, ShopImagesUploader
+  
 end

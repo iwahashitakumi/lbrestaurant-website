@@ -13,6 +13,9 @@ module LbrestaurantWebsite
     config.load_defaults 7.0
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+      html_tag.html_safe
+    end
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

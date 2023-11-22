@@ -1,0 +1,8 @@
+<div class="container mt-4">
+  <h3 class="mb-4">店舗情報編集</h3>
+  <%= render "admins/shared/flashes" %>
+  
+  <%= form_with model: @shop, url: admins_shop_path, local: true  do |f| %>
+    <%= render partial: 'form', locals: { f: f } %>
+  <% end %>
+</div>

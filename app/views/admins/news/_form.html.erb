@@ -1,29 +1,34 @@
 <div class="mb-4">
   <%= f.label :calendar_date, class: "form-label" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.date_field :calendar_date, class: 'form-control', **@calendar_date_options, value: f.object.calendar_date %>
   <%= render "layouts/error_messages", object: f.object, attribute: :calendar_date %>
 </div>
 
 <div class="mb-4">
   <%= f.label :title, class: "form-label" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.text_field :title, class: 'form-control', value: f.object.title %>
   <%= render "layouts/error_messages", object: f.object, attribute: :title %>
 </div>
 
 <div class="mb-4">
   <%= f.label :start_at, class: "form-label" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.datetime_field :start_at, class: 'form-control', **@start_at_options, value: f.object.start_at&.strftime("%Y-%m-%dT%H:%M") %>
   <%= render "layouts/error_messages", object: f.object, attribute: :start_at %>
 </div>
 
 <div class="mb-4">
   <%= f.label :end_at, class: "form-label" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.datetime_field :end_at, class: 'form-control', **@end_at_options, value: f.object.end_at&.strftime("%Y-%m-%dT%H:%M") %>
   <%= render "layouts/error_messages", object: f.object, attribute: :end_at %>
 </div>
 
 <div class="mb-4">
   <%= f.label :body, class: "form-label" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.text_area :body, class: 'form-control', value: f.object.body %>
   <%= render "layouts/error_messages", object: f.object, attribute: :body %>
 </div>

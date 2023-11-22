@@ -35,6 +35,17 @@ class Admins::ShopsController < Admins::ApplicationController
       render 'edit', alert: "店舗の内容を変更できませんでした"
     end
   end
+  
+  def destroy
+    @shop = Shop.find(params[:id])
+    @shops_index_url = session[:shops_index_url]
+    begin
+      @shop.destroy!
+      redirect_to @shops_index_url|| admins_shops_path, notice: "店舗を削除しました"
+    rescue
+      render 'index', alert: "店舗を削除できませんでした"
+    end
+  end
 
   private
   

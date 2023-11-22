@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_08_090334) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_22_114939) do
   create_table "admins", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -98,7 +98,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_08_090334) do
     t.integer "table_seats", null: false
     t.string "site_name", default: "", null: false
     t.text "gourmet_site_link", null: false
-    t.string "shop_images", null: false
+    t.string "shop_images"
     t.string "city_name", default: "", null: false
     t.bigint "prefecture_id", null: false
     t.datetime "created_at", null: false

@@ -81,7 +81,7 @@ class Admins::NewsController < Admins::ApplicationController
   end
 
   def start_at_options
-    {  min: Time.zone.now.strftime("%Y/ %m/ %d /%H:%M"), max: (Time.zone.now + 1.year), value: Time.zone.now.strftime("%Y/ %m/ %d /%H:%M") }
+    {  min: Time.zone.now.strftime("%Y-%m-%dT%H:%M"), max: (Time.zone.now + 1.year), value: Time.zone.now.strftime("%Y-%m-%dT%H:%M") }
   end
 
   def end_at_options

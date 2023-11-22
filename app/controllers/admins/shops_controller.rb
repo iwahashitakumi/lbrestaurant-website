@@ -1,4 +1,10 @@
 class Admins::ShopsController < Admins::ApplicationController
+  def index
+    @q = Shop.ransack(params[:q])
+    @shops = @q.result(distinct: true).page(params[:page])
+    session[:shops_index_url] = request.url
+  end
+
   def new
     @shop = Shop.new
     @prefectures = Prefecture.all

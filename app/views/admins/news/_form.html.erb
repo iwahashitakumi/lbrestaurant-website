@@ -33,13 +33,19 @@
   <%= render "layouts/error_messages", object: f.object, attribute: :body %>
 </div>
 
-<div class="custom-mt-3">
-  <ul class="list-inline">
-    <% if f.object.new_record? %>
+<% if f.object.new_record? %>
+  <div class="custom-mt-3">
+    <ul class="list-inline">
       <li class="list-inline-item"><%= f.submit "登録完了する", class: 'btn btn-primary' %></li>
-    <% else %>
+      <li class="list-inline-item"><%= link_to "お知らせ一覧に戻る", @news_index_url, class: 'btn btn-secondary' %></li>
+    </ul>
+  </div>
+<% else %>
+  <div class="custom-mt-3">
+    <ul class="list-inline">
       <li class="list-inline-item"><%= f.submit "編集を完了する", class: 'btn btn-primary' %></li>
-    <% end %>
-    <li class="list-inline-item"><%= link_to "お知らせ一覧に戻る", @news_index_url, class: 'btn btn-secondary' %></li>
-  </ul>
-</div>
+      <li class="list-inline-item"><%= link_to "お知らせ一覧に戻る", @news_index_url, class: 'btn btn-secondary' %></li>
+    </ul>
+  </div>
+<% end %>
+

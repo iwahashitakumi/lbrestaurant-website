@@ -1,45 +1,46 @@
+<!-- カレンダー日付 -->
 <div class="mb-4">
   <%= f.label :calendar_date, class: "form-label" %>
-  <%= f.date_field :calendar_date, class: 'form-control', **@calendar_date_options %>
+  <%= f.date_field :calendar_date, class: 'form-control', **@calendar_date_options, value: f.object.calendar_date %>
   <%= render "layouts/error_messages", object: f.object, attribute: :calendar_date %>
 </div>
 
+<!-- タイトル -->
 <div class="mb-4">
   <%= f.label :title, class: "form-label" %>
-  <%= f.text_field :title, class: 'form-control' %>
+  <%= f.text_field :title, class: 'form-control', value: f.object.title %>
   <%= render "layouts/error_messages", object: f.object, attribute: :title %>
 </div>
 
+<!-- 開始日時 -->
 <div class="mb-4">
   <%= f.label :start_at, class: "form-label" %>
-  <%= f.datetime_field :start_at, class: 'form-control', **@start_at_options %>
+  <%= f.datetime_field :start_at, class: 'form-control', **@start_at_options, value: f.object.start_at.strftime("%Y-%m-%dT%H:%M") %>
   <%= render "layouts/error_messages", object: f.object, attribute: :start_at %>
 </div>
 
+<!-- 終了日時 -->
 <div class="mb-4">
   <%= f.label :end_at, class: "form-label" %>
-  <%= f.datetime_field :end_at, class: 'form-control', **@end_at_options %>
+  <%= f.datetime_field :end_at, class: 'form-control', **@end_at_options, value: f.object.end_at.strftime("%Y-%m-%dT%H:%M") %>
   <%= render "layouts/error_messages", object: f.object, attribute: :end_at %>
 </div>
 
+<!-- 本文 -->
 <div class="mb-4">
   <%= f.label :body, class: "form-label" %>
-  <%= f.text_area :body, class: 'form-control' %>
+  <%= f.text_area :body, class: 'form-control', value: f.object.body %>
   <%= render "layouts/error_messages", object: f.object, attribute: :body %>
 </div>
 
-<% if f.object.new_record? %>
-  <div class="custom-mt-3">
-    <ul class="list-inline">
+<!-- ボタン -->
+<div class="custom-mt-3">
+  <ul class="list-inline">
+    <% if f.object.new_record? %>
       <li class="list-inline-item"><%= f.submit "登録完了する", class: 'btn btn-primary' %></li>
-      <li class="list-inline-item"><%= link_to "お知らせ一覧に戻る", @news_index_url, class: 'btn btn-secondary' %></li>
-    </ul>
-  </div>
-<% else %>
-  <div class="custom-mt-3">
-    <ul class="list-inline">
+    <% else %>
       <li class="list-inline-item"><%= f.submit "編集を完了する", class: 'btn btn-primary' %></li>
-      <li class="list-inline-item"><%= link_to "お知らせ一覧に戻る", @news_index_url, class: 'btn btn-secondary' %></li>
-    </ul>
-  </div>
-<% end %>
+    <% end %>
+    <li class="list-inline-item"><%= link_to "お知らせ一覧に戻る", @news_index_url, class: 'btn btn-secondary' %></li>
+  </ul>
+</div>

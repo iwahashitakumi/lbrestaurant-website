@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <%= render "admins/shared/flashes" %>
+  <div class="card col-sm-9 mx-auto mt-5 d-flex">
+    <div class="card-body p-5">
+      <h2 class="mb-4 text-center fw-bold"><%= @shop.name %>の詳細情報</h2>
+      <div class="d-flex justify-content-between">
+        <div class="col-md-5">
+          <% if @shop.shop_images? %>
+            <%= image_tag @shop.shop_images.url, class: "img-fluid" %>
+          <% else %>
+            <%= image_tag '/assets/default_shop_image.png', alt: '店舗画像', class: "img-fluid" %>
+          <% end %>
+        </div>
+        <div class="col-md-5">
+          <p><strong>住所:</strong> <%= @shop.address %><%= @shop.prefecture.name %><%= @shop.city_name %></p>
+          <p><strong>営業時間:</strong> <%= @shop.business_time %></p>
+          <p><strong>アクセス:</strong> <%= @shop.access %></p>
+          <p><strong>電話番号:</strong> <%= @shop.phone_number %></p>
+          <p><strong>カウンター席数:</strong> <%= @shop.counter_seats %>席</p>
+          <p><strong>テーブル席数:</strong> <%= @shop.table_seats %>席</p>
+          <p><strong>グルメサイト:</strong> <%= link_to @shop.site_name, @shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer" %></p>
+        </div>
+      </div>
+
+      <div class="custom-mt-3">
+        <%= link_to "一覧に戻る", @shops_index_url, class: 'btn btn-secondary' %>
+      </div>
+    </div>
+  </div>
+</div>

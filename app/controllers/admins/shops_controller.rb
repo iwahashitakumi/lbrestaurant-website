@@ -23,6 +23,11 @@ class Admins::ShopsController < Admins::ApplicationController
       render "new"
     end
   end
+  
+  def show
+    @shop = Shop.find(params[:id])
+    @shops_index_url = session[:shops_index_url]
+  end
 
   def edit
     @shop = Shop.find(params[:id])

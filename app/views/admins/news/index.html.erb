@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="d-flex justify-content-between mb-4">
-    <h3>お知らせ一覧</h3>
+    <h3 class="fw-bold">お知らせ一覧</h3>
     <%= search_form_for @q, url: admins_news_index_path, class: 'form-inline' do |f| %>
       <div class="input-group">
         <%= f.search_field @search_scope, class: 'form-control', placeholder: 'タイトルや内容で検索' %>

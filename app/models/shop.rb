@@ -4,7 +4,7 @@ class Shop < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :prefecture_id, presence: true
   validates :city_name, presence: true
-  validates :address, presence: true, uniqueness: true
+  validates :address, presence: true
   validates :business_time, presence: true
   validates :access, presence: true
   VALID_PHONE_REGEX = /\A0[-\d]{11,12}\z/

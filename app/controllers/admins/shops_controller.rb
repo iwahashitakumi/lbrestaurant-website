@@ -43,7 +43,8 @@ class Admins::ShopsController < Admins::ApplicationController
       @shop.update!(shop_params)
       redirect_to @shops_index_url, notice: "店舗の内容を変更できました"
     rescue
-      render 'edit', alert: "店舗の内容を変更できませんでした"
+      flash.now[:alert] = "店舗の内容を変更できませんでした"
+      render 'edit'
     end
   end
   
@@ -54,7 +55,8 @@ class Admins::ShopsController < Admins::ApplicationController
       @shop.destroy!
       redirect_to @shops_index_url|| admins_shops_path, notice: "店舗を削除しました"
     rescue
-      render 'index', alert: "店舗を削除できませんでした"
+      flash.now[:alert] = "店舗を削除できませんでした"
+      render 'index'
     end
   end
 

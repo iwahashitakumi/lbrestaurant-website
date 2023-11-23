@@ -13,4 +13,12 @@ class Shop < ApplicationRecord
   validates :table_seats, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :site_name, presence: true
   validates :gourmet_site_link, presence: true, format: { with: URI.regexp }
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["name","city_name", "address"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["prefecture"]
+  end
 end

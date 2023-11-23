@@ -2,6 +2,7 @@ class Admins::ShopsController < Admins::ApplicationController
   def index
     @q = Shop.ransack(params[:q])
     @shops = @q.result(distinct: true).page(params[:page])
+    @search_residence_scope = :prefecture_name_or_city_name_or_address_cont
     session[:shops_index_url] = request.url
   end
 

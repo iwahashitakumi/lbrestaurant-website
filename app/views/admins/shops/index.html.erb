@@ -1,4 +1,4 @@
-<div class="container mt-4 mobile-gutter">
+<div class="container mt-4 mobile-gutter p-3">
   <div class="d-flex justify-content-between mb-4 mobile-block">
     <h3 class="fw-bold">店舗一覧</h3>
     <%= search_form_for @q, url: admins_shops_path, class: 'form-inline' do |f| %>
@@ -44,10 +44,10 @@
             <td class="align-middle"><%= shop.counter_seats %></td>
             <td class="align-middle"><%= shop.table_seats %></td>
             <td class="align-middle"><%= link_to shop.site_name, shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer", class: "text-primary" %></td>
-            <td class="text-center">
+            <td class="text-center align-middle">
               <%= link_to "編集", [:edit_admins, shop], class: "btn btn-outline-primary btn-sm" %>
             </td>
-            <td class="text-start">
+            <td class="text-start align-middle">
               <%= button_to "削除", [:admins, shop], { method: :delete, class: "btn btn-outline-danger btn-sm", onclick: "return confirm('本当に削除しますか？');" } %>
             </td>
           </tr>

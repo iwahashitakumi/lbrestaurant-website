@@ -1,4 +1,4 @@
-<div class="container mt-4 mobile-gutter">
+<div class="container mt-4 mobile-gutter p-3">
   <div class="d-flex justify-content-between mb-4 mobile-block">
     <h3 class="fw-bold">お知らせ一覧</h3>
     <%= search_form_for @q, url: admins_news_index_path, class: 'form-inline' do |f| %>
@@ -31,10 +31,10 @@
             <td class="align-middle"><%= format_datetime(news.start_at) %></td>
             <td class="align-middle"><%= format_datetime(news.end_at) %></td>
             <td class="align-middle"><%= news.body.slice(0, 5) %></td>
-            <td class="text-center">
+            <td class="text-center align-middle">
               <%= link_to "編集", [:edit_admins, news], class: "btn btn-outline-primary btn-sm" %>
             </td>
-            <td class="text-start">
+            <td class="text-start align-middle">
               <%= button_to "削除", [:admins, news], { method: :delete, class: "btn btn-outline-danger btn-sm", onclick: "return confirm('本当に削除しますか？');" } %>
             </td>
           </tr>

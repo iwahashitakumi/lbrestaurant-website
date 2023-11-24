@@ -31,7 +31,7 @@ const App: React.FC = (props: any) => {
          adminsShopsPath="/admins/shops"
          newAdminsShopsPath="/admins/shops/new"
          ></Sidebar>
-        <main className={`${isSidebarOpen ? 'ml-sm-auto col-lg-10 col-md-9' : ''}  px-md-4 py-4 main-top`}>
+        <main className={`${isSidebarOpen ? 'ml-sm-auto col-lg-10 col-md-9' : ''}  px-md-4 py-md-4 main-top`}>
           {props.children}
         </main>
       </div>

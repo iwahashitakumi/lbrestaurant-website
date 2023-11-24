@@ -125,3 +125,9 @@ em {
     --bs-gutter-x: 0;
   }
 }
+
+@media (max-width: 576px) {
+  .mobile-card-border {
+    --bs-card-border-width: 0; /* または適切な値に変更 */
+  }
+}

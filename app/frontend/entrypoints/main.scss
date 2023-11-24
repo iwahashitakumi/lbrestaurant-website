@@ -119,3 +119,9 @@ em {
     display: block !important;
   }
 }
+
+@media (max-width: 576px) {
+  .mobile-gutter {
+    --bs-gutter-x: 0;
+  }
+}

@@ -22,8 +22,8 @@ const App: React.FC = (props: any) => {
       destroyAdminSessionPath="/admins/sign_out"
       toggleSidebar={toggleSidebar}
     ></Header>
-    <div className="container-fluid">
-      <div className="row">
+    <div className="container-fluid mobile-gutter">
+      <div className="row mobile-gutter">
         <Sidebar
          isSidebarOpen={isSidebarOpen}
          adminsNewsIndexPath="/admins/news"

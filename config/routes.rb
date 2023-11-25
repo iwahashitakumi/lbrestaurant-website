@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     root 'home#show'
     resources :news
     resources :shops
+    resources :articles
   end
 end

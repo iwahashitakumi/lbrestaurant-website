@@ -71,6 +71,8 @@ group :test do
   gem 'rails-erd'
 end
 
+gem 'pry-rails'
+
 gem 'ransack'
 gem 'carrierwave'
 

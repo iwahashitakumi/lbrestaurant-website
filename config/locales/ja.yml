@@ -94,3 +94,11 @@ ja:
         site_name: グルメサイト名
         gourmet_site_link: グルメサイトのリンク
         shop_images: 店舗画像
+  
+  enumerize:
+    article:
+      category:
+        event: 会社イベント
+        company_trip: 社員旅行
+        staff_introduction: スタッフ紹介
+        other: その他

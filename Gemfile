@@ -71,6 +71,9 @@ group :test do
   gem 'rails-erd'
 end
 
+gem 'enumerize'
+
+
 gem 'pry-rails'
 
 gem 'ransack'

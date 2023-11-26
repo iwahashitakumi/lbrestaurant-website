@@ -80,7 +80,9 @@
   <span class="badge rounded-pill text-bg-success">任意</span>
   <%= f.file_field :shop_images, class: 'form-control', accept: 'image/*' %>
   <%= f.hidden_field :shop_images_cache %>
+  <span class="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>
 </div>
+
 
 <% if f.object.new_record? %>
   <div class="mt-5">

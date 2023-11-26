@@ -28,6 +28,8 @@ const App: React.FC = (props: any) => {
          isSidebarOpen={isSidebarOpen}
          adminsNewsIndexPath="/admins/news"
          newAdminsNewsPath="/admins/news/new"
+         adminsArticlesPath="/admins/articles"
+         newAdminsArticlesPath="/admins/articles/new"
          adminsShopsPath="/admins/shops"
          newAdminsShopsPath="/admins/shops/new"
          ></Sidebar>

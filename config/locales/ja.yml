@@ -74,6 +74,7 @@ ja:
     models:
       news: お知らせ
       shop: 店舗
+      article: ブログ
     attributes:
       news:
         calendar_date: 日付
@@ -94,6 +95,14 @@ ja:
         site_name: グルメサイト名
         gourmet_site_link: グルメサイトのリンク
         shop_images: 店舗画像
+      article:
+        title: "タイトル"
+        start_at: "公開開始日時"
+        end_at: "公開終了日時"
+        body: "内容"
+        article_images: "ブログ画像"
+        sets: "セット情報"
+        category: "カテゴリー"
   
   enumerize:
     article:

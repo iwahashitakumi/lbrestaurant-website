@@ -1550,6 +1550,8 @@ GEM
     devise-i18n (1.12.0)
       devise (>= 4.9.0)
     devise-i18n-views (0.3.7)
+    discard (1.3.0)
+      activerecord (>= 4.2, < 8)
     dry-cli (1.0.0)
     enumerize (2.7.0)
       activesupport (>= 3.2)
@@ -1749,6 +1751,7 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
+  discard
   enumerize
   importmap-rails
   jbuilder

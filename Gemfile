@@ -73,6 +73,7 @@ end
 
 gem 'enumerize'
 
+gem 'discard'
 
 gem 'pry-rails'
 

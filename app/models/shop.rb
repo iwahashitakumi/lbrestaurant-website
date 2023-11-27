@@ -1,4 +1,5 @@
 class Shop < ApplicationRecord
+  include Discard::Model
   mount_uploader :shop_images, ShopImagesUploader
   belongs_to :prefecture
   validates :name, presence: true, uniqueness: true

@@ -1,6 +1,6 @@
 class Admins::ShopsController < Admins::ApplicationController
   def index
-    @q = Shop.ransack(params[:q])
+    @q = Shop.kept.ransack(params[:q])
     @shops = @q.result(distinct: true).page(params[:page])
     @search_residence_scope = :prefecture_name_or_city_name_or_address_cont
     session[:shops_index_url] = request.url
@@ -53,7 +53,7 @@ class Admins::ShopsController < Admins::ApplicationController
     @shop = Shop.find(params[:id])
     @shops_index_url = session[:shops_index_url]
     begin
-      @shop.destroy!
+      @shop.discard!
       redirect_to @shops_index_url|| admins_shops_path, notice: "店舗を削除しました"
     rescue
       flash.now[:alert] = "店舗を削除できませんでした"

@@ -46,3 +46,4 @@ node_modules
 .idea/
 vendor/bundle/
 /public/uploads
+/.env

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_22_114939) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_27_084100) do
   create_table "admins", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -103,6 +103,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_22_114939) do
     t.bigint "prefecture_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "discarded_at", comment: "店舗管理の論理削除機能"
+    t.index ["discarded_at"], name: "index_shops_on_discarded_at"
     t.index ["prefecture_id"], name: "index_shops_on_prefecture_id"
   end
 

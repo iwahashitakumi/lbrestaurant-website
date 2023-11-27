@@ -11,6 +11,8 @@ class Admins::ShopsController < Admins::ApplicationController
     @discarded_shops = @q.result(distinct: true).page(params[:page])
     @search_residence_scope = :prefecture_name_or_city_name_or_address_cont
     @shops_index_url = session[:shops_index_url]
+    @is_discarded = true
+    session[:shops_discarded_url] = request.url
   end
 
   def new
@@ -35,6 +37,8 @@ class Admins::ShopsController < Admins::ApplicationController
   def show
     @shop = Shop.find(params[:id])
     @shops_index_url = session[:shops_index_url]
+    @shops_discarded_url = session[:shops_discarded_url]
+    @is_discarded = params[:is_discarded].present?
   end
 
   def edit

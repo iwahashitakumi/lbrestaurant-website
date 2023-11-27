@@ -23,8 +23,13 @@
       </div>
 
       <div class="mt-5">
-        <%= link_to "一覧に戻る", @shops_index_url, class: 'btn btn-secondary' %>
+        <% if @is_discarded %>
+          <%= link_to "削除済み一覧に戻る", @shops_discarded_url, class: 'btn btn-secondary' %>
+        <% else %>
+          <%= link_to "一覧に戻る", @shops_index_url, class: 'btn btn-secondary' %>
+        <% end %>
       </div>
+
     </div>
   </div>
 </div>

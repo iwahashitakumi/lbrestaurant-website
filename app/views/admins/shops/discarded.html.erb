@@ -37,7 +37,7 @@
       <tbody>
         <% @discarded_shops.each do |discarded_shop| %>
           <tr>
-            <td class="align-middle"><%= link_to discarded_shop.name, [:admins, discarded_shop], class: "text-primary" %></td>
+            <td class="align-middle"><%= link_to discarded_shop.name, [:admins, discarded_shop, is_discarded: @is_discarded], class: "text-primary" %></td>
             <td class="align-middle"><%= "#{discarded_shop.prefecture.name}#{discarded_shop.city_name}#{discarded_shop.address}" %></td>
             <td class="align-middle"><%= discarded_shop.business_time %></td>
             <td class="align-middle"><%= discarded_shop.phone_number %></td>

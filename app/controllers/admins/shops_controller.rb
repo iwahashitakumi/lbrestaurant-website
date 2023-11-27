@@ -6,6 +6,13 @@ class Admins::ShopsController < Admins::ApplicationController
     session[:shops_index_url] = request.url
   end
 
+  def discarded
+    @q = Shop.discarded.ransack(params[:q])
+    @discarded_shops = @q.result(distinct: true).page(params[:page])
+    @search_residence_scope = :prefecture_name_or_city_name_or_address_cont
+    @shops_index_url = session[:shops_index_url]
+  end
+
   def new
     @shop = Shop.new
     @prefectures = Prefecture.all
@@ -60,6 +67,19 @@ class Admins::ShopsController < Admins::ApplicationController
       render 'index'
     end
   end
+
+  def restore
+    @shop = Shop.find(params[:id])
+    @shops_index_url = session[:shops_index_url]
+    begin
+      @shop.undiscard!
+      redirect_to @shops_index_url, notice: "店舗を元に戻しました"
+    rescue
+      flash.now[:alert] = "店舗を復活できませんでした"
+      render 'discarded'
+    end
+  end
+  
 
   private
   

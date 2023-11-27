@@ -56,7 +56,12 @@
     </table>
   </div>
 
-  <p><%= link_to "店舗新規登録", new_admins_shop_path, class: 'btn btn-primary' %></p>
+  <div>
+    <ul class="list-inline">
+      <li class="list-inline-item"><%= link_to "店舗新規登録", new_admins_shop_path, class: 'btn btn-primary' %></li>
+      <li class="list-inline-item"><%= link_to "削除済み店舗一覧", discarded_admins_shops_path, class: 'btn btn-outline-secondary' %></li>
+    </ul>
+  </div>
 </div>
 
 <%= paginate @shops, theme: 'bootstrap-5' %>

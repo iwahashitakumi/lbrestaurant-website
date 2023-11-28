@@ -27,17 +27,7 @@
 </div>
 
 <div class="mb-4">
-  <%= f.fields_for :sets, index: SecureRandom.hex(4) do |set_f| %>
-    <%= set_f.label :body, class: "form-label" %>
-    <span class="badge rounded-pill text-bg-danger">必須</span>
-    <%= set_f.text_area :body, class: 'form-control' %>
-    <%= render "layouts/error_messages", object: f.object, attribute: :body %>
-
-    <%= set_f.label :article_images, class: "form-label" %>
-    <span class="badge rounded-pill text-bg-success">任意</span>
-    <%= set_f.file_field :article_images, class: 'form-control', accept: 'image/*' %>
-    <%= set_f.hidden_field :article_images_cache %>
-  <% end %>
+  <articlesets-component>
 </div>
 
 <% if f.object.new_record? %>

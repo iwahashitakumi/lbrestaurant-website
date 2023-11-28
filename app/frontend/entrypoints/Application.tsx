@@ -3,9 +3,14 @@ import {useState} from 'react';
 import Header from '../src/Header'
 import Sidebar from '../src/Sidebar'
 import {rewrap} from "@sonicgarden/rewrap";
+import ArticleSets from "../src/ArticleSets";
+
 
 const element = document.getElementById('header');
 const App: React.FC = (props: any) => {
+  React.useEffect(() => {
+    rewrap('articlesets-component', ArticleSets, true);
+  }, []);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = React.useCallback(() => {
     if (isSidebarOpen) {

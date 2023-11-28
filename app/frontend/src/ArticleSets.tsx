@@ -36,7 +36,7 @@ const SetsForm: React.FC<SetsFormProps> = ({ index, totalSets, set, onRemove, on
         onChange={(e) => handleInputChange('body', e)}
         className="form-control"
       />
-      {/* エラーメッセージの表示 */}
+      
       {set.errors.body && set.errors.body.map((error, errorIndex) => (
         <div key={`body_error_${index}_${errorIndex}`} className="text-danger">
           {error}
@@ -61,7 +61,6 @@ const SetsForm: React.FC<SetsFormProps> = ({ index, totalSets, set, onRemove, on
         name={`article[sets_attributes][${index}][article_images_cache]`}
         value={set.article_images_cache || ''}
       />
-      {/* エラーメッセージの表示 */}
       {set.errors.article_images && set.errors.article_images.map((error, errorIndex) => (
         <div key={`article_images_error_${index}_${errorIndex}`} className="text-danger">
           {error}
@@ -78,7 +77,6 @@ const SetsForm: React.FC<SetsFormProps> = ({ index, totalSets, set, onRemove, on
 };
 
 const ArticleSets: React.FC = () => {
-  // エラーメッセージの初期値を設定
   const initialSet = {
     body: '',
     article_images: null,
@@ -102,7 +100,6 @@ const ArticleSets: React.FC = () => {
   };
 
   const handleSetChange = (index: number, key: string, value: string | File | null) => {
-    // エラーメッセージをリセット
     const newSets = [...sets];
     newSets[index] = { ...newSets[index], [key]: value, errors: {} };
     setSets(newSets);

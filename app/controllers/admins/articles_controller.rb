@@ -22,6 +22,7 @@ class Admins::ArticlesController < Admins::ApplicationController
       redirect_to @articles_index_url, notice: "店舗の登録ができました"
     rescue
       flash.now[:alert] = "店舗の登録ができませんでした"
+      puts @article.errors.full_messages
       render "new"
     end
   end

@@ -3,9 +3,9 @@ class Article < ApplicationRecord
   def sets=(value)
     logger.info("Received sets data: #{value}")
     if value.is_a?(Hash)
-      self.body = value['body']
-      self.article_images = value['article_images']
-    end
+    self.body = value['body']
+    self.article_images = value['article_images']
+  end
     super(value)
   end
 

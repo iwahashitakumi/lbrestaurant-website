@@ -1,15 +1,5 @@
 class Article < ApplicationRecord
-  serialize :sets, JSON
-  def sets=(value)
-    logger.info("Received sets data: #{value}")
-    if value.is_a?(Hash)
-      self.body = value['body']
-      self.article_images = value['article_images']
-    end
-    super(value)
-  end
-
-  def sets
+  def contents
     { 'body' => body, 'article_images' => article_images }
   end
   mount_uploader :article_images, ArticleImagesUploader
@@ -21,7 +11,7 @@ class Article < ApplicationRecord
   validates :title, presence: true, length: { minimum: 5, maximum: 100 }
   validates :start_at, presence: true
   validates :end_at, presence: true
-  validates :sets, presence: true
+  validates :contents, presence: true
   validate :start_at_in_future
   validate :end_at_after_start_at
 

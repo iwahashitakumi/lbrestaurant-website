@@ -3,13 +3,13 @@ import {useState} from 'react';
 import Header from '../src/Header'
 import Sidebar from '../src/Sidebar'
 import {rewrap} from "@sonicgarden/rewrap";
-import ArticleSets from "../src/ArticleSets";
+import ArticleContents from "../src/ArticleContents";
 
 
 const element = document.getElementById('header');
 const App: React.FC = (props: any) => {
   React.useEffect(() => {
-    rewrap('articlesets-component', ArticleSets, true);
+    rewrap('articlecontents-component', ArticleContents, true);
   }, []);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = React.useCallback(() => {

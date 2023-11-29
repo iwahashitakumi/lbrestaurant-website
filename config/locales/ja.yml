@@ -100,7 +100,7 @@ ja:
         start_at: "公開開始日時"
         end_at: "公開終了日時"
         category: "カテゴリー"
-        sets:
+        contents:
           body: "内容"
           article_images: "ブログ画像"
         

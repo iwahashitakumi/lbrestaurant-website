@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_27_084100) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_29_054541) do
   create_table "admins", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -28,9 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_27_084100) do
     t.string "title", default: "", null: false
     t.datetime "start_at", null: false
     t.datetime "end_at", null: false
-    t.text "body", null: false
-    t.string "article_images", default: ""
-    t.text "sets", null: false
+    t.json "sets", null: false
     t.integer "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

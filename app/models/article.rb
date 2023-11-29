@@ -21,7 +21,6 @@ class Article < ApplicationRecord
   validates :title, presence: true, length: { minimum: 5, maximum: 100 }
   validates :start_at, presence: true
   validates :end_at, presence: true
-  validates :body, presence: true
   validates :sets, presence: true
   validate :start_at_in_future
   validate :end_at_after_start_at

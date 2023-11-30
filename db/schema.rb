@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_30_015117) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_30_065249) do
   create_table "admins", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -28,7 +28,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_30_015117) do
     t.string "title", default: "", null: false
     t.datetime "start_at", null: false
     t.datetime "end_at", null: false
-    t.json "contents", null: false
     t.integer "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,6 +47,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_30_015117) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["update_by"], name: "fk_rails_281088f36f"
+  end
+
+  create_table "contents", charset: "utf8", force: :cascade do |t|
+    t.text "body", null: false, comment: "ブログの内容"
+    t.string "article_images", comment: "ブログの画像"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "article_id", null: false, comment: "contentsテーブルに外部キー(article_id)を追加"
+    t.index ["article_id"], name: "index_contents_on_article_id"
   end
 
   create_table "job_entries", charset: "utf8", force: :cascade do |t|
@@ -107,6 +115,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_30_015117) do
   end
 
   add_foreign_key "contacts", "admins", column: "update_by"
+  add_foreign_key "contents", "articles"
   add_foreign_key "job_entries", "admins", column: "update_by"
   add_foreign_key "job_entries", "prefectures"
   add_foreign_key "shops", "prefectures"

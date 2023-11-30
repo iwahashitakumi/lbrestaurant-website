@@ -48,7 +48,7 @@ class Admins::ShopsController < Admins::ApplicationController
   end
   
   def update
-    @shops = Shops.find(params[:id])
+    @shop = Shop.find(params[:id])
     @prefectures = Prefecture.all
     @shops_index_url = session[:shops_index_url]
     begin

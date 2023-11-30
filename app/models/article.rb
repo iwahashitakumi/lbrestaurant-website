@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
   has_many :contents, dependent: :destroy
+  accepts_nested_attributes_for :contents, allow_destroy: true
   extend Enumerize
 
   enumerize :category, in: { event: 0, company_trip: 1, staff_introduction: 2, other: 3 }

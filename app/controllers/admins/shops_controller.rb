@@ -88,6 +88,6 @@ class Admins::ShopsController < Admins::ApplicationController
   private
   
   def shop_params
-    params.require(:shop).permit(:name, :address, :access, :business_time, :phone_number, :counter_seats, :table_seats, :site_name, :gourmet_site_link, :city_name, :shop_images, :prefecture_id)
+    params.require(:shop).permit(:name, :address, :access, :business_time, :phone_number, :counter_seat, :table_seat, :site_name, :gourmet_site_link, :city_name, :shop_image, :prefecture_id)
   end
 end

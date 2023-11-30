@@ -48,17 +48,17 @@
 </div>
 
 <div class="mb-4">
-  <%= f.label :counter_seats, class: "form-label" %>
+  <%= f.label :counter_seat, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.number_field :counter_seats, class: 'form-control', value: f.object.counter_seats, placeholder: "数字だけを入力" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :counter_seats %>
+  <%= f.number_field :counter_seat, class: 'form-control', value: f.object.counter_seat, placeholder: "数字だけを入力" %>
+  <%= render "layouts/error_messages", object: f.object, attribute: :counter_seat %>
 </div>
 
 <div class="mb-4">
-  <%= f.label :table_seats, class: "form-label" %>
+  <%= f.label :table_seat, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.number_field :table_seats, class: 'form-control', value: f.object.table_seats, placeholder: "数字だけを入力" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :table_seats %>
+  <%= f.number_field :table_seat, class: 'form-control', value: f.object.table_seat, placeholder: "数字だけを入力" %>
+  <%= render "layouts/error_messages", object: f.object, attribute: :table_seat %>
 </div>
 
 <div class="mb-4">
@@ -76,10 +76,10 @@
 </div>
 
 <div class="mb-4">
-  <%= f.label :shop_images, class: "form-label" %>
+  <%= f.label :shop_image, class: "form-label" %>
   <span class="badge rounded-pill text-bg-success">任意</span>
-  <%= f.file_field :shop_images, class: 'form-control', accept: 'image/*' %>
-  <%= f.hidden_field :shop_images_cache %>
+  <%= f.file_field :shop_image, class: 'form-control', accept: 'image/*' %>
+  <%= f.hidden_field :shop_image_cache %>
   <span class="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>
 </div>
 

@@ -90,11 +90,11 @@ ja:
         access: アクセス
         business_time: 営業時間
         phone_number: 電話番号
-        counter_seats: カウンター席数
-        table_seats: テーブル席数
+        counter_seat: カウンター席数
+        table_seat: テーブル席数
         site_name: グルメサイト名
         gourmet_site_link: グルメサイトのリンク
-        shop_images: 店舗画像
+        shop_image: 店舗画像
       article:
         title: "タイトル"
         start_at: "公開開始日時"

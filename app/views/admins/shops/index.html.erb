@@ -41,8 +41,8 @@
             <td class="align-middle"><%= "#{shop.prefecture.name}#{shop.city_name}#{shop.address}" %></td>
             <td class="align-middle"><%= shop.business_time %></td>
             <td class="align-middle"><%= shop.phone_number %></td>
-            <td class="align-middle"><%= shop.counter_seats %></td>
-            <td class="align-middle"><%= shop.table_seats %></td>
+            <td class="align-middle"><%= shop.counter_seat %></td>
+            <td class="align-middle"><%= shop.table_seat %></td>
             <td class="align-middle"><%= link_to shop.site_name, shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer", class: "text-primary" %></td>
             <td class="text-center align-middle">
               <%= link_to "編集", [:edit_admins, shop], class: "btn btn-outline-primary btn-sm" %>

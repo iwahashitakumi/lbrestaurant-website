@@ -5,8 +5,8 @@
       <h2 class="mb-5 text-center fw-bold"><%= @shop.name %>の詳細情報</h2>
       <div class="d-flex justify-content-between flex-wrap">
         <div class="col-md-5 mb-4">
-          <% if @shop.shop_images? %>
-            <%= image_tag @shop.shop_images.url, class: "img-fluid" %>
+          <% if @shop.shop_image? %>
+            <%= image_tag @shop.shop_image.url, class: "img-fluid" %>
           <% else %>
             <%= image_tag '/assets/default_shop_image.png', alt: '店舗画像', class: "img-fluid" %>
           <% end %>
@@ -16,8 +16,8 @@
           <p><strong>営業時間:</strong> <%= @shop.business_time %></p>
           <p><strong>アクセス:</strong> <%= @shop.access %></p>
           <p><strong>電話番号:</strong> <%= @shop.phone_number %></p>
-          <p><strong>カウンター席数:</strong> <%= @shop.counter_seats %>席</p>
-          <p><strong>テーブル席数:</strong> <%= @shop.table_seats %>席</p>
+          <p><strong>カウンター席数:</strong> <%= @shop.counter_seat %>席</p>
+          <p><strong>テーブル席数:</strong> <%= @shop.table_seat %>席</p>
           <p><strong>グルメサイト:</strong> <%= link_to @shop.site_name, @shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer" %></p>
         </div>
       </div>

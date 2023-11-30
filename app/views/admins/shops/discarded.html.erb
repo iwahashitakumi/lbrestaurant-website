@@ -41,8 +41,8 @@
             <td class="align-middle"><%= "#{discarded_shop.prefecture.name}#{discarded_shop.city_name}#{discarded_shop.address}" %></td>
             <td class="align-middle"><%= discarded_shop.business_time %></td>
             <td class="align-middle"><%= discarded_shop.phone_number %></td>
-            <td class="align-middle"><%= discarded_shop.counter_seats %></td>
-            <td class="align-middle"><%= discarded_shop.table_seats %></td>
+            <td class="align-middle"><%= discarded_shop.counter_seat %></td>
+            <td class="align-middle"><%= discarded_shop.table_seat %></td>
             <td class="align-middle"><%= link_to discarded_shop.site_name, discarded_shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer", class: "text-primary" %></td>
             <td class="align-middle">
               <%= button_to "復元", [:restore_admins, discarded_shop], { method: :post, class: "btn btn-outline-danger btn-sm", onclick: "return confirm('本当に復元しますか？');" } %>

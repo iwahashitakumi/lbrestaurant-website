@@ -11,7 +11,7 @@ interface Article {
   contents: Content[];
 }
 
-const ArticleContents: React.FC = () => {
+const ArticleContents: React.FC = (props: any) => {
   const [contents, setContents] = useState<Article['contents']>([]);
 
   useEffect(() => {
@@ -23,6 +23,17 @@ const ArticleContents: React.FC = () => {
       setContents(parsedData.contents || [{ body: '', article_images: { url: null }, article_images_cache: '' }]);
     }
   }, []);
+
+  const handleChange = (index: number, field: keyof Content, value: any) => {
+    setContents((prevContents) => {
+      const newContents: Content[] = [...prevContents];
+      newContents[index] = {
+        ...newContents[index],
+        [field]: field === 'article_images' ? { url: URL.createObjectURL(value[0]) } : value,
+      };
+      return newContents;
+    });
+  };
 
   const handleAddContent = () => {
     setContents((prevContents) => [
@@ -41,10 +52,14 @@ const ArticleContents: React.FC = () => {
     }
   };
 
-  const handleChange = (index: number, field: keyof Content, value: any) => {
+  const handleError = (index: number) => {
+    // エラーが発生した場合に値を保持する処理を追加
     setContents((prevContents) => {
       const newContents = [...prevContents];
-      newContents[index][field] = value;
+      newContents[index] = {
+        ...newContents[index],
+        // エラーが発生したフィールドの値をデフォルト値に戻すか、適切な処理を行う
+      };
       return newContents;
     });
   };
@@ -52,7 +67,7 @@ const ArticleContents: React.FC = () => {
   return (
     <div>
       {contents.map((content, index) => (
-        <div key={index} style={{ marginBottom: '10px' }}>
+        <div key={index}>
           <>
             <label className="form-label">内容</label>
             <span className="badge rounded-pill text-bg-danger">必須</span>
@@ -64,26 +79,34 @@ const ArticleContents: React.FC = () => {
               onChange={(e) => handleChange(index, 'body', e.target.value)}
               name={`article[contents_attributes][${index}][body]`}
             />
-            
+            {props.children}
+
             <label className="form-label">画像</label>
             <span className="badge rounded-pill text-bg-success">任意</span>
             <input
               type="file"
               className="form-control"
               accept="image/*"
-              onChange={(e) => handleChange(index, 'article_images', e.target.files)}
+              onChange={(e) => {
+                try {
+                  handleChange(index, 'article_images', e.target.files);
+                } catch (error) {
+                  console.error(error);
+                  handleError(index);
+                }
+              }}
               name={`article[contents_attributes][${index}][article_images]`}
             />
             <input type="hidden" value={content.article_images_cache} name={`article[contents_attributes][${index}][article_images_cache]`} />
             <span className="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>
-            {contents.length > 1 && index === contents.length - 1 && (
-              <button type="button" onClick={() => handleRemoveContent(index)} className="btn btn-danger" style={{ marginLeft: '10px' }}>
-                -
-              </button>
-            )}
           </>
         </div>
       ))}
+      {contents.length > 1 && (
+        <button type="button" onClick={() => handleRemoveContent(index)} className="btn btn-danger">
+          -
+        </button>
+      )}
       <button type="button" onClick={handleAddContent} className="btn btn-primary">
         +
       </button>

@@ -29,6 +29,7 @@
   <div class="mb-4">
     <%= f.fields_for :contents do |c| %>
       <articlecontents-component  data-props="<%= c.object.to_json %>">
+        <%= render "layouts/error_messages", object: c.object, attribute: :body %>
       </articlecontents-component>
     <% end %>
   </div>

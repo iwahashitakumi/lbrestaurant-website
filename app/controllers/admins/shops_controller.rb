@@ -28,7 +28,7 @@ class Admins::ShopsController < Admins::ApplicationController
     @prefectures = Prefecture.all
     begin
       @shop.save!
-      redirect_to @shops_index_url, notice: "店舗の登録ができました"
+      redirect_to @shops_index_url, notice: "#{@shop.name}の登録ができました"
     rescue
       flash.now[:alert] = "店舗の登録ができませんでした"
       render "new"
@@ -48,9 +48,9 @@ class Admins::ShopsController < Admins::ApplicationController
     @prefectures = Prefecture.all
     begin
       @shop.update!(shop_params)
-      redirect_to @shops_index_url, notice: "店舗の内容を変更できました"
+      redirect_to @shops_index_url, notice: "#{@shop.name}の内容を変更できました"
     rescue
-      flash.now[:alert] = "店舗の内容を変更できませんでした"
+      flash.now[:alert] = "#{@shop.name}の内容を変更できませんでした"
       render 'edit'
     end
   end
@@ -58,9 +58,9 @@ class Admins::ShopsController < Admins::ApplicationController
   def destroy
     begin
       @shop.discard!
-      redirect_to @shops_index_url|| admins_shops_path, notice: "店舗を削除しました"
+      redirect_to @shops_index_url|| admins_shops_path, notice: "#{@shop.name}を削除しました"
     rescue
-      flash.now[:alert] = "店舗を削除できませんでした"
+      flash.now[:alert] = "#{@shop.name}を削除できませんでした"
       render 'index'
     end
   end
@@ -68,9 +68,9 @@ class Admins::ShopsController < Admins::ApplicationController
   def restore
     begin
       @shop.undiscard!
-      redirect_to @shops_index_url, notice: "店舗を元に戻しました"
+      redirect_to @shops_index_url, notice: "#{@shop.name}を復元ました"
     rescue
-      flash.now[:alert] = "店舗を復活できませんでした"
+      flash.now[:alert] = "#{@shop.name}を復元できませんでした"
       render 'discarded'
     end
   end

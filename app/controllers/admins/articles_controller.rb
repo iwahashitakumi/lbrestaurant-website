@@ -26,6 +26,28 @@ class Admins::ArticlesController < Admins::ApplicationController
       render "new"
     end
   end
+
+  def edit
+    @article = Article.find(params[:id])
+    @articles_index_url = session[:articles_index_url]
+    @start_at_options = start_at_options
+    @end_at_options = end_at_options
+  end
+  
+  def update
+    @article = Article.find(params[:id])  
+    @articles_index_url = session[:articles_index_url]
+    @start_at_options = start_at_options
+    @end_at_options = end_at_options
+    begin
+      @article.update!(article_params)
+      redirect_to @articles_index_url, notice: "ブログの内容を変更できました"
+    rescue
+      flash.now[:alert] = "ブログの内容を変更できませんでした"
+      render 'edit'
+    end
+  end
+
   
   private
   

@@ -26,13 +26,15 @@
   <%= render "layouts/error_messages", object: f.object, attribute: :end_at %>
 </div>
 
-  <div class="mb-4">
-    <%= f.fields_for :contents do |c| %>
-      <articlecontents-component  data-props="<%= c.object.to_json %>">
-        <%= render "layouts/error_messages", object: c.object, attribute: :body %>
-      </articlecontents-component>
-    <% end %>
-  </div>
+
+<div class="mb-4">
+  <%= f.fields_for :contents do |c| %>
+    <articlecontents-component
+      data-props="<%= { body: c.object.body, article_images: c.object.article_images, article_images_cache: c.object.article_images_cache, object: c.object, attribute: 'body' }.to_json %>"
+    >
+    </articlecontents-component>
+  <% end %>
+</div>
 
 <% if f.object.new_record? %>
   <div class="mt-5">

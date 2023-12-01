@@ -4,25 +4,26 @@ interface Content {
   body: string;
   article_images: { url: string | null };
   article_images_cache: string;
-  _destroy?: boolean;
+  errors?: { body?: string[]; };
 }
 
 interface Article {
   contents: Content[];
 }
 
-const ArticleContents: React.FC = (props: any) => {
+const ArticleContents = (props: any) => {
   const [contents, setContents] = useState<Article['contents']>([]);
 
   useEffect(() => {
-    const element = document.querySelector('[data-props]');
-    const dataProps = element?.getAttribute('data-props');
+    const initialContent: Content = {
+      body: props.body || '',
+      article_images: { url: props.article_images || null },
+      article_images_cache: props.article_images_cache || '',
+      errors: {},
+    };
 
-    if (dataProps) {
-      const parsedData = JSON.parse(dataProps);
-      setContents(parsedData.contents || [{ body: '', article_images: { url: null }, article_images_cache: '' }]);
-    }
-  }, []);
+    setContents([initialContent]);
+  }, [props.body, props.article_images, props.article_images_cache]);
 
   const handleChange = (index: number, field: keyof Content, value: any) => {
     setContents((prevContents) => {
@@ -30,18 +31,22 @@ const ArticleContents: React.FC = (props: any) => {
       newContents[index] = {
         ...newContents[index],
         [field]: field === 'article_images' ? { url: URL.createObjectURL(value[0]) } : value,
+        errors: { ...newContents[index].errors, [props.attribute]: undefined },
       };
       return newContents;
     });
   };
 
-  const handleError = (index: number) => {
-    // エラーが発生した場合に値を保持する処理を追加
+  const handleError = (index: number, field: keyof Content, error: Error) => {
+    console.error(`Error at index ${index}, field ${field}: ${error.message}`);
+    
+    const attribute = props.attribute;
+    
     setContents((prevContents) => {
       const newContents = [...prevContents];
       newContents[index] = {
         ...newContents[index],
-        // エラーが発生したフィールドの値をデフォルト値に戻すか、適切な処理を行う
+        errors: { ...newContents[index].errors, [attribute]: [error.message] },
       };
       return newContents;
     });
@@ -50,7 +55,7 @@ const ArticleContents: React.FC = (props: any) => {
   const handleAddContent = () => {
     setContents((prevContents) => [
       ...prevContents,
-      { body: '', article_images: { url: null }, article_images_cache: '' },
+      { body: '', article_images: { url: null }, article_images_cache: '', errors: {} },
     ]);
   };
 
@@ -79,7 +84,6 @@ const ArticleContents: React.FC = (props: any) => {
               onChange={(e) => handleChange(index, 'body', e.target.value)}
               name={`article[contents_attributes][${index}][body]`}
             />
-            {props.children}
 
             <label className="form-label">画像</label>
             <span className="badge rounded-pill text-bg-success">任意</span>
@@ -91,13 +95,17 @@ const ArticleContents: React.FC = (props: any) => {
                 try {
                   handleChange(index, 'article_images', e.target.files);
                 } catch (error) {
-                  console.error(error);
-                  handleError(index);
+                  handleError(index, 'article_images', error);
                 }
               }}
               name={`article[contents_attributes][${index}][article_images]`}
             />
-            <input type="hidden" value={content.article_images_cache} name={`article[contents_attributes][${index}][article_images_cache]`} />
+
+            <input
+              type="hidden"
+              value={content.article_images_cache}
+              name={`article[contents_attributes][${index}][article_images_cache]`}
+            />
             <span className="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>
           </>
         </div>

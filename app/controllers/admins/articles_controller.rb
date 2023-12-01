@@ -7,6 +7,7 @@ class Admins::ArticlesController < Admins::ApplicationController
 
   def new
     @article = Article.new
+    @article.contents.build
     @start_at_options = start_at_options
     @end_at_options = end_at_options
     @articles_index_url = session[:articles_index_url]

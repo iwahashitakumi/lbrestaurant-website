@@ -1,7 +1,7 @@
 <div class="mb-4">
   <%= f.label :category, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.select :category, Article.category.options, { prompt: '選択してください' }, class: 'form-select' %>
+  <%= f.select :category, Article.category.options, { prompt: '選択してください' }, { selected: f.object.category, class: 'form-select' } %>
   <%= render "layouts/error_messages", object: f.object, attribute: :category %>
 </div>
 
@@ -26,9 +26,12 @@
   <%= render "layouts/error_messages", object: f.object, attribute: :end_at %>
 </div>
 
-<div class="mb-4">
-  <articlecontents-component>
-</div>
+  <div class="mb-4">
+    <%= f.fields_for :contents do |c| %>
+      <articlecontents-component  data-props="<%= c.object.to_json %>">
+      </articlecontents-component>
+    <% end %>
+  </div>
 
 <% if f.object.new_record? %>
   <div class="mt-5">

@@ -35,6 +35,18 @@ const ArticleContents: React.FC = (props: any) => {
     });
   };
 
+  const handleError = (index: number) => {
+    // エラーが発生した場合に値を保持する処理を追加
+    setContents((prevContents) => {
+      const newContents = [...prevContents];
+      newContents[index] = {
+        ...newContents[index],
+        // エラーが発生したフィールドの値をデフォルト値に戻すか、適切な処理を行う
+      };
+      return newContents;
+    });
+  };
+
   const handleAddContent = () => {
     setContents((prevContents) => [
       ...prevContents,
@@ -50,18 +62,6 @@ const ArticleContents: React.FC = (props: any) => {
         return newContents;
       });
     }
-  };
-
-  const handleError = (index: number) => {
-    // エラーが発生した場合に値を保持する処理を追加
-    setContents((prevContents) => {
-      const newContents = [...prevContents];
-      newContents[index] = {
-        ...newContents[index],
-        // エラーが発生したフィールドの値をデフォルト値に戻すか、適切な処理を行う
-      };
-      return newContents;
-    });
   };
 
   return (
@@ -103,7 +103,7 @@ const ArticleContents: React.FC = (props: any) => {
         </div>
       ))}
       {contents.length > 1 && (
-        <button type="button" onClick={() => handleRemoveContent(index)} className="btn btn-danger">
+        <button type="button" onClick={() => handleRemoveContent(contents.length - 1)} className="btn btn-danger">
           -
         </button>
       )}

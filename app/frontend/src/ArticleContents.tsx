@@ -84,7 +84,15 @@ const ArticleContents = (props: any) => {
               onChange={(e) => handleChange(index, 'body', e.target.value)}
               name={`article[contents_attributes][${index}][body]`}
             />
-
+          {props.object.errors?.[props.attribute] && props.object.errors[props.attribute].length > 0 && (
+            <div className="text-danger">
+              <ul className="mb-0">
+                {props.object.errors[props.attribute].map((message, i) => (
+                  <li key={i}>{message}</li>
+                ))}
+              </ul>
+            </div>
+          )}
             <label className="form-label">画像</label>
             <span className="badge rounded-pill text-bg-success">任意</span>
             <input

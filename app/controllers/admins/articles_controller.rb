@@ -19,10 +19,9 @@ class Admins::ArticlesController < Admins::ApplicationController
     @articles_index_url = session[:articles_index_url]
     begin
       @article.save!
-      redirect_to @articles_index_url, notice: "店舗の登録ができました"
+      redirect_to @articles_index_url, notice: "ブログの登録ができました"
     rescue
-      flash.now[:alert] = "店舗の登録ができませんでした"
-      puts @article.errors.full_messages
+      flash.now[:alert] = "ブログの登録ができませんでした"
       render "new"
     end
   end
@@ -30,7 +29,7 @@ class Admins::ArticlesController < Admins::ApplicationController
   private
   
   def article_params
-    params.require(:article).permit(:title, :start_at, :end_at, :category, contents: [:body, :article_images])
+    params.require(:article).permit(:title, :start_at, :end_at, :category, contents_attributes: [:body, :article_images,:article_images_cache, :_destroy])
   end  
 
   def start_at_options

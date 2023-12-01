@@ -4,14 +4,13 @@ interface Content {
   body: string;
   article_images: { url: string | null };
   article_images_cache: string;
-  errors?: { body?: string[]; };
 }
 
 interface Article {
   contents: Content[];
 }
 
-const ArticleContents = (props: any) => {
+const ArticleContents: React.FC = (props: any) => {
   const [contents, setContents] = useState<Article['contents']>([]);
 
   useEffect(() => {
@@ -19,7 +18,6 @@ const ArticleContents = (props: any) => {
       body: props.body || '',
       article_images: { url: props.article_images || null },
       article_images_cache: props.article_images_cache || '',
-      errors: {},
     };
 
     setContents([initialContent]);
@@ -31,22 +29,6 @@ const ArticleContents = (props: any) => {
       newContents[index] = {
         ...newContents[index],
         [field]: field === 'article_images' ? { url: URL.createObjectURL(value[0]) } : value,
-        errors: { ...newContents[index].errors, [props.attribute]: undefined },
-      };
-      return newContents;
-    });
-  };
-
-  const handleError = (index: number, field: keyof Content, error: Error) => {
-    console.error(`Error at index ${index}, field ${field}: ${error.message}`);
-    
-    const attribute = props.attribute;
-    
-    setContents((prevContents) => {
-      const newContents = [...prevContents];
-      newContents[index] = {
-        ...newContents[index],
-        errors: { ...newContents[index].errors, [attribute]: [error.message] },
       };
       return newContents;
     });
@@ -84,15 +66,14 @@ const ArticleContents = (props: any) => {
               onChange={(e) => handleChange(index, 'body', e.target.value)}
               name={`article[contents_attributes][${index}][body]`}
             />
-          {props.object.errors?.[props.attribute] && props.object.errors[props.attribute].length > 0 && (
-            <div className="text-danger">
-              <ul className="mb-0">
-                {props.object.errors[props.attribute].map((message, i) => (
-                  <li key={i}>{message}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+            {content.body === '' && (
+              <div className="text-danger">
+                <ul className="mb-0">
+                  <li>{props.body_error_message}</li>
+                </ul>
+              </div>
+            )}
+
             <label className="form-label">画像</label>
             <span className="badge rounded-pill text-bg-success">任意</span>
             <input
@@ -100,11 +81,7 @@ const ArticleContents = (props: any) => {
               className="form-control"
               accept="image/*"
               onChange={(e) => {
-                try {
-                  handleChange(index, 'article_images', e.target.files);
-                } catch (error) {
-                  handleError(index, 'article_images', error);
-                }
+                handleChange(index, 'article_images', e.target.files);
               }}
               name={`article[contents_attributes][${index}][article_images]`}
             />
@@ -118,6 +95,7 @@ const ArticleContents = (props: any) => {
           </>
         </div>
       ))}
+
       {contents.length > 1 && (
         <button type="button" onClick={() => handleRemoveContent(contents.length - 1)} className="btn btn-danger">
           -

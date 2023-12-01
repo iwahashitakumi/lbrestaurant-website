@@ -30,7 +30,7 @@
 <div class="mb-4">
   <%= f.fields_for :contents do |c| %>
     <articlecontents-component
-      data-props="<%= { body: c.object.body, article_images: c.object.article_images, article_images_cache: c.object.article_images_cache, object: c.object, attribute: 'body' }.to_json %>"
+      data-props="<%= { body: c.object.body, article_images: c.object.article_images, article_images_cache: c.object.article_images_cache, object: c.object, attribute: 'body',body_error_message: "内容を入力してください" }.to_json %>"
     >
     </articlecontents-component>
   <% end %>

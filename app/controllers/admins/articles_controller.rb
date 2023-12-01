@@ -48,6 +48,17 @@ class Admins::ArticlesController < Admins::ApplicationController
     end
   end
 
+  def destroy
+    @article = Article.find(params[:id])
+    @articles_index_url = session[:articles_index_url]
+    begin
+      @article.destroy!
+      redirect_to @articles_index_url|| admins_articles_path, notice: "ブログを削除しました"
+    rescue
+      flash.now[:alert] = "ブログを削除できませんでした"
+      render 'index'
+    end
+  end
   
   private
   

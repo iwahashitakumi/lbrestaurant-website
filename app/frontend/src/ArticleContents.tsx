@@ -10,13 +10,20 @@ interface Article {
   contents: Content[];
 }
 
-const ArticleContents: React.FC = (props: any) => {
+interface ArticleContentsProps {
+  body: string;
+  article_images: { url: string | null };
+  article_images_cache: string;
+  body_error_message: string;
+}
+
+const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
   const [contents, setContents] = useState<Article['contents']>([]);
 
   useEffect(() => {
     const initialContent: Content = {
       body: props.body || '',
-      article_images: { url: props.article_images || null },
+      article_images: { url: props.article_images.url || null },
       article_images_cache: props.article_images_cache || '',
     };
 

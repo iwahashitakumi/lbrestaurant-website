@@ -6,29 +6,17 @@ interface Content {
   article_images_cache: string;
 }
 
-interface Article {
-  contents: Content[];
-}
-
 interface ArticleContentsProps {
-  body: string;
-  article_images: { url: string | null };
-  article_images_cache: string;
+  contents: Content[];
   body_error_message: string;
 }
 
 const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
-  const [contents, setContents] = useState<Article['contents']>([]);
+  const [contents, setContents] = useState<ArticleContentsProps['contents']>(props.contents);
 
   useEffect(() => {
-    const initialContent: Content = {
-      body: props.body || '',
-      article_images: { url: props.article_images.url || null },
-      article_images_cache: props.article_images_cache || '',
-    };
-
-    setContents([initialContent]);
-  }, [props.body, props.article_images, props.article_images_cache]);
+    setContents(props.contents);
+  }, [props.contents]);
 
   const handleChange = (index: number, field: keyof Content, value: any) => {
     setContents((prevContents) => {
@@ -80,7 +68,7 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
                 </ul>
               </div>
             )}
-
+  
             <label className="form-label">画像</label>
             <span className="badge rounded-pill text-bg-success">任意</span>
             <input

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 interface Content {
+  id: number;
   body: string;
-  article_images: { url: string | null };
+  article_images: FileList | null;
   article_images_cache: string;
 }
 
@@ -19,20 +20,33 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
   }, [props.contents]);
 
   const handleChange = (index: number, field: keyof Content, value: any) => {
-    setContents((prevContents) => {
-      const newContents: Content[] = [...prevContents];
-      newContents[index] = {
-        ...newContents[index],
-        [field]: field === 'article_images' ? { url: URL.createObjectURL(value[0]) } : value,
-      };
-      return newContents;
-    });
+    const newContents: Content[] = [...contents];
+    const updatedContent: Content = {
+      ...newContents[index],
+      [field]: field === 'article_images' ? value : value,
+    };
+
+    if (!isContentModified(updatedContent, newContents[index])) {
+      return;
+    }
+
+    newContents[index] = updatedContent;
+    setContents(newContents);
+  };
+
+  const isContentModified = (updatedContent: Content, existingContent: Content) => {
+    return (
+      updatedContent.body !== existingContent.body ||
+      (updatedContent.article_images &&
+        existingContent.article_images &&
+        updatedContent.article_images.length !== existingContent.article_images.length)
+    );
   };
 
   const handleAddContent = () => {
     setContents((prevContents) => [
       ...prevContents,
-      { body: '', article_images: { url: null }, article_images_cache: '', errors: {} },
+      { id: Date.now(), body: '', article_images: null, article_images_cache: '' },
     ]);
   };
 
@@ -49,7 +63,7 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
   return (
     <div>
       {contents.map((content, index) => (
-        <div key={index}>
+        <div key={content.id}>
           <>
             <label className="form-label">内容</label>
             <span className="badge rounded-pill text-bg-danger">必須</span>
@@ -68,7 +82,7 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
                 </ul>
               </div>
             )}
-  
+
             <label className="form-label">画像</label>
             <span className="badge rounded-pill text-bg-success">任意</span>
             <input

@@ -27,6 +27,12 @@ class Admins::ArticlesController < Admins::ApplicationController
     end
   end
 
+  def show
+    @article = Article.find(params[:id])
+    @articles_index_url = session[:articles_index_url]
+  end
+  
+
   def edit
     @article = Article.find(params[:id])
     @articles_index_url = session[:articles_index_url]
@@ -63,7 +69,7 @@ class Admins::ArticlesController < Admins::ApplicationController
   private
   
   def article_params
-    params.require(:article).permit(:title, :start_at, :end_at, :category, contents_attributes: [:body, :article_images,:article_images_cache, :_destroy])
+    params.require(:article).permit(:title, :start_at, :end_at, :category, contents_attributes: [:id, :body, :article_images,:article_images_cache, :_destroy])
   end  
 
   def start_at_options

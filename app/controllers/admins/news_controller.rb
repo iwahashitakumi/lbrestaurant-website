@@ -1,7 +1,7 @@
 class Admins::NewsController < Admins::ApplicationController
-  before_action :set_news, only: [:show, :edit, :update, :destroy]
-  before_action :set_shops_index_url, only: [:new, :create, :show, :edit, :update, :destroy]
-  before_action :set_news_time_options, only: [:new, :create, :edit, :update]
+  before_action :assign_news, only: [:show, :edit, :update, :destroy]
+  before_action :assign_shops_index_url, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :assign_news_time_options, only: [:new, :create, :edit, :update]
  
   def index
     @q = News.ransack(params[:q])
@@ -65,15 +65,15 @@ class Admins::NewsController < Admins::ApplicationController
   
 
   private
-  def set_news
+  def assign_news
     @news = News.find(params[:id])
   end
 
-  def set_shops_index_url
+  def assign_shops_index_url
     @news_index_url = session[:news_index_url]
   end
 
-  def set_news_time_options
+  def assign_news_time_options
     @calendar_date_options = calendar_date_options
     @start_at_options = start_at_options
     @end_at_options = end_at_options

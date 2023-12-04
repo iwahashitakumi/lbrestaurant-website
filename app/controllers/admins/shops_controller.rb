@@ -1,7 +1,7 @@
 class Admins::ShopsController < Admins::ApplicationController
-  before_action :set_shops_index_url, only: [:discarded, :new, :create, :show, :edit, :update, :destroy, :restore]
-  before_action :set_shops_discarded_url, only: [:show]
-  before_action :set_shop, only: [:show, :edit, :update, :destroy, :restore]
+  before_action :assign_shops_index_url, only: [:discarded, :new, :create, :show, :edit, :update, :destroy, :restore]
+  before_action :assign_shops_discarded_url, only: [:show]
+  before_action :assign_shop, only: [:show, :edit, :update, :destroy, :restore]
 
   def index
     @q = Shop.kept.ransack(params[:q])
@@ -82,15 +82,15 @@ class Admins::ShopsController < Admins::ApplicationController
     params.require(:shop).permit(:name, :address, :access, :business_time, :phone_number, :counter_seat, :table_seat, :site_name, :gourmet_site_link, :city_name, :shop_image,:shop_image_cache, :prefecture_id)
   end
   
-  def set_shop
+  def assign_shop
     @shop = Shop.find(params[:id])
   end
 
-  def set_shops_index_url
+  def assign_shops_index_url
     @shops_index_url = session[:shops_index_url]
   end
   
-  def set_shops_discarded_url
+  def assign_shops_discarded_url
     @shops_discarded_url = session[:shops_discarded_url]
   end
 end

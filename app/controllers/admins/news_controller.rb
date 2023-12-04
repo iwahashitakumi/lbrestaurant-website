@@ -1,6 +1,6 @@
 class Admins::NewsController < Admins::ApplicationController
   before_action :assign_news, only: [:show, :edit, :update, :destroy]
-  before_action :assign_shops_index_url, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :assign_news_index_url, only: [:new, :create, :show, :edit, :update, :destroy]
   before_action :assign_news_time_options, only: [:new, :create, :edit, :update]
  
   def index
@@ -69,7 +69,7 @@ class Admins::NewsController < Admins::ApplicationController
     @news = News.find(params[:id])
   end
 
-  def assign_shops_index_url
+  def assign_news_index_url
     @news_index_url = session[:news_index_url]
   end
 

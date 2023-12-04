@@ -1,4 +1,8 @@
 class Admins::ArticlesController < Admins::ApplicationController
+  before_action :assign_article, only: [:show, :edit, :update, :destroy]
+  before_action :assign_articles_index_url, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :assign_article_time_options, only: [:new, :create, :edit, :update]
+
   def index
     @q = Article.ransack(params[:q])
     @articles = @q.result(distinct: true).page(params[:page])
@@ -8,16 +12,10 @@ class Admins::ArticlesController < Admins::ApplicationController
   def new
     @article = Article.new
     @article.contents.build
-    @start_at_options = start_at_options
-    @end_at_options = end_at_options
-    @articles_index_url = session[:articles_index_url]
   end
   
   def create
     @article = Article.new(article_params)
-    @start_at_options = start_at_options
-    @end_at_options = end_at_options
-    @articles_index_url = session[:articles_index_url]
     begin
       @article.save!
       redirect_to @articles_index_url, notice: "ブログの登録ができました"
@@ -28,23 +26,13 @@ class Admins::ArticlesController < Admins::ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
-    @articles_index_url = session[:articles_index_url]
   end
   
 
   def edit
-    @article = Article.find(params[:id])
-    @articles_index_url = session[:articles_index_url]
-    @start_at_options = start_at_options
-    @end_at_options = end_at_options
   end
   
   def update
-    @article = Article.find(params[:id])  
-    @articles_index_url = session[:articles_index_url]
-    @start_at_options = start_at_options
-    @end_at_options = end_at_options
     begin
       @article.update!(article_params)
       redirect_to @articles_index_url, notice: "ブログの内容を変更できました"
@@ -55,8 +43,6 @@ class Admins::ArticlesController < Admins::ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
-    @articles_index_url = session[:articles_index_url]
     begin
       @article.destroy!
       redirect_to @articles_index_url|| admins_articles_path, notice: "ブログを削除しました"
@@ -67,6 +53,19 @@ class Admins::ArticlesController < Admins::ApplicationController
   end
   
   private
+
+  def assign_article
+    @article = Article.find(params[:id])
+  end
+
+  def assign_articles_index_url
+    @articles_index_url = session[:articles_index_url]
+  end
+
+  def assign_article_time_options
+    @start_at_options = start_at_options
+    @end_at_options = end_at_options
+  end
   
   def article_params
     params.require(:article).permit(:title, :start_at, :end_at, :category, contents_attributes: [:id, :body, :article_image,:article_image_cache, :_destroy])

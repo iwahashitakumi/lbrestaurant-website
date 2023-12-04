@@ -19,4 +19,12 @@ class Article < ApplicationRecord
   def end_at_after_start_at
     errors.add(:end_at, 'は開始日時より後の日時を選択してください') if start_at.present? && end_at.present? && end_at <= start_at
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["title"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    []
+  end
 end

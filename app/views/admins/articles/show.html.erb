@@ -18,8 +18,8 @@
           <div class="mb-4">
             <p><strong>内容:</strong> <%= content.body %></p>
             <div class="mt-4 text-center">
-              <% if content.article_images.present? %>
-                <%= image_tag(content.article_images.url, alt: 'ブログ画像', class: "img-fluid", style: "width:50%;") %>
+              <% if content.article_image.present? %>
+                <%= image_tag(content.article_image.url, alt: 'ブログ画像', class: "img-fluid", style: "width:50%;") %>
               <% end %>
             </div>
           </div>

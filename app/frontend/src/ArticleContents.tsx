@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 interface Content {
   id?: number;
   body: string;
-  article_images: FileList | null;
-  article_images_cache: string;
+  article_image: FileList | null;
+  article_image_cache: string;
   _destroy?: boolean;
 }
 
@@ -24,7 +24,7 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
     const newContents: Content[] = [...contents];
     const updatedContent: Content = {
       ...newContents[index],
-      [field]: field === 'article_images' ? value : value,
+      [field]: field === 'article_image' ? value : value,
     };
 
     if (!isContentModified(updatedContent, newContents[index])) {
@@ -38,16 +38,16 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
   const isContentModified = (updatedContent: Content, existingContent: Content) => {
     return (
       updatedContent.body !== existingContent.body ||
-      (updatedContent.article_images &&
-        existingContent.article_images &&
-        updatedContent.article_images.length !== existingContent.article_images.length)
+      (updatedContent.article_image &&
+        existingContent.article_image &&
+        updatedContent.article_image.length !== existingContent.article_image.length)
     );
   };
 
   const handleAddContent = () => {
     setContents((prevContents) => [
       ...prevContents,
-      { body: '', article_images: null, article_images_cache: '' },
+      { body: '', article_image: null, article_image_cache: '' },
     ]);
   };
 
@@ -102,15 +102,15 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
                 className="form-control"
                 accept="image/*"
                 onChange={(e) => {
-                  handleChange(index, 'article_images', e.target.files);
+                  handleChange(index, 'article_image', e.target.files);
                 }}
-                name={`article[contents_attributes][${index}][article_images]`}
+                name={`article[contents_attributes][${index}][article_image]`}
               />
 
               <input
                 type="hidden"
-                value={content.article_images_cache}
-                name={`article[contents_attributes][${index}][article_images_cache]`}
+                value={content.article_image_cache}
+                name={`article[contents_attributes][${index}][article_image_cache]`}
               />
 
               <span className="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>

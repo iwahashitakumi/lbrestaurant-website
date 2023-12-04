@@ -69,7 +69,7 @@ class Admins::ArticlesController < Admins::ApplicationController
   private
   
   def article_params
-    params.require(:article).permit(:title, :start_at, :end_at, :category, contents_attributes: [:id, :body, :article_images,:article_images_cache, :_destroy])
+    params.require(:article).permit(:title, :start_at, :end_at, :category, contents_attributes: [:id, :body, :article_image,:article_image_cache, :_destroy])
   end  
 
   def start_at_options

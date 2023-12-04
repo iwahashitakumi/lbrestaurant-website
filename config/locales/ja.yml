@@ -103,7 +103,7 @@ ja:
         category: カテゴリー
       content:
         body: 内容
-        article_images: ブログ画像
+        article_image: ブログ画像
   
   enumerize:
     article:

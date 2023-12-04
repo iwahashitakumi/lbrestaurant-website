@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 interface Content {
-  id: number;
+  id?: number;
   body: string;
   article_images: FileList | null;
   article_images_cache: string;
+  _destroy?: boolean;
 }
 
 interface ArticleContentsProps {
@@ -46,7 +47,7 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
   const handleAddContent = () => {
     setContents((prevContents) => [
       ...prevContents,
-      { id: Date.now(), body: '', article_images: null, article_images_cache: '' },
+      { body: '', article_images: null, article_images_cache: '' },
     ]);
   };
 
@@ -54,7 +55,11 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
     if (contents.length > 1) {
       setContents((prevContents) => {
         const newContents = [...prevContents];
-        newContents.splice(index, 1);
+        if (newContents[index].id) {
+          newContents[index] = { ...newContents[index], _destroy: true };
+        } else {
+          newContents.splice(index, 1);
+        }
         return newContents;
       });
     }
@@ -63,53 +68,61 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
   return (
     <div>
       {contents.map((content, index) => (
-        <div key={content.id}>
-          <>
-            <label className="form-label">内容</label>
-            <span className="badge rounded-pill text-bg-danger">必須</span>
-            <input
-              type="text"
-              className="form-control"
-              value={content.body}
-              placeholder="内容を入力"
-              onChange={(e) => handleChange(index, 'body', e.target.value)}
-              name={`article[contents_attributes][${index}][body]`}
-            />
-            {content.body === '' && (
-              <div className="text-danger">
-                <ul className="mb-0">
-                  <li>{props.body_error_message}</li>
-                </ul>
-              </div>
-            )}
+        <div key={index}>
+          {content.id && (
+            <>
+              <input type="hidden" name={`article[contents_attributes][${index}][id]`} value={content.id} />
+              {content._destroy && (
+                <input type="hidden" name={`article[contents_attributes][${index}][_destroy]`} value="true" />
+              )}
+            </>
+          )}
 
-            <label className="form-label">画像</label>
-            <span className="badge rounded-pill text-bg-success">任意</span>
-            <input
-              type="file"
-              className="form-control"
-              accept="image/*"
-              onChange={(e) => {
-                handleChange(index, 'article_images', e.target.files);
-              }}
-              name={`article[contents_attributes][${index}][article_images]`}
-            />
+          <label className="form-label">内容</label>
+          <span className="badge rounded-pill text-bg-danger">必須</span>
+          <input
+            type="text"
+            className="form-control"
+            value={content.body}
+            placeholder="内容を入力"
+            onChange={(e) => handleChange(index, 'body', e.target.value)}
+            name={`article[contents_attributes][${index}][body]`}
+          />
+          {content.body === '' && (
+            <div className="text-danger">
+              <ul className="mb-0">
+                <li>{props.body_error_message}</li>
+              </ul>
+            </div>
+          )}
 
-            <input
-              type="hidden"
-              value={content.article_images_cache}
-              name={`article[contents_attributes][${index}][article_images_cache]`}
-            />
-            <span className="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>
-          </>
+          <label className="form-label">画像</label>
+          <span className="badge rounded-pill text-bg-success">任意</span>
+          <input
+            type="file"
+            className="form-control"
+            accept="image/*"
+            onChange={(e) => {
+              handleChange(index, 'article_images', e.target.files);
+            }}
+            name={`article[contents_attributes][${index}][article_images]`}
+          />
+
+          <input
+            type="hidden"
+            value={content.article_images_cache}
+            name={`article[contents_attributes][${index}][article_images_cache]`}
+          />
+        
+          {contents.length > 1 && (
+            <button type="button" onClick={() => handleRemoveContent(index)} className="btn btn-danger">
+              -
+            </button>
+          )}
+          <span className="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>
         </div>
       ))}
 
-      {contents.length > 1 && (
-        <button type="button" onClick={() => handleRemoveContent(contents.length - 1)} className="btn btn-danger">
-          -
-        </button>
-      )}
       <button type="button" onClick={handleAddContent} className="btn btn-primary">
         +
       </button>

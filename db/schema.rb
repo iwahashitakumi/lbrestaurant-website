@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_30_065249) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_04_170103) do
   create_table "admins", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_30_065249) do
 
   create_table "contents", charset: "utf8", force: :cascade do |t|
     t.text "body", null: false, comment: "ブログの内容"
-    t.string "article_images", comment: "ブログの画像"
+    t.string "article_image", comment: "ブログの画像"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "article_id", null: false, comment: "contentsテーブルに外部キー(article_id)を追加"

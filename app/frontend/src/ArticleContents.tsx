@@ -112,13 +112,16 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
                 value={content.article_images_cache}
                 name={`article[contents_attributes][${index}][article_images_cache]`}
               />
-              
-              {contents.filter(content=>!content._destroy).length > 1 && (
-                <button type="button" onClick={() => handleRemoveContent(index)} className="btn btn-danger">
-                  -
-                </button>
-              )}
+
               <span className="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>
+
+              {contents.filter(content=>!content._destroy).length > 1 && (
+                <div className="mt-1">
+                  <button type="button" onClick={() => handleRemoveContent(index)} className="btn btn-danger">
+                    -
+                  </button>
+                </div>
+              )}
             </>
           )}
         </div>

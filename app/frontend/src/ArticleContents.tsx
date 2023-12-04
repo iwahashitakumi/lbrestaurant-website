@@ -69,15 +69,6 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
     <div>
       {contents.map((content, index) => (
         <div key={index}>
-          {content.id && (
-            <>
-              <input type="hidden" name={`article[contents_attributes][${index}][id]`} value={content.id} />
-              {content._destroy && (
-                <input type="hidden" name={`article[contents_attributes][${index}][_destroy]`} value="true" />
-              )}
-            </>
-          )}
-
           {content._destroy ? (
             <>
               <input type="hidden" name={`article[contents_attributes][${index}][_destroy]`} value="true" />
@@ -85,6 +76,7 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
             </>
           ) : (
             <>
+              <input type="hidden" name={`article[contents_attributes][${index}][id]`} value={content.id} />
               <label className="form-label">内容</label>
               <span className="badge rounded-pill text-bg-danger">必須</span>
               <input

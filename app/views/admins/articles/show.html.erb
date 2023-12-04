@@ -5,8 +5,10 @@
       <h3 class="text-center mb-4 fw-bold">ブログ詳細</h3>
       <div class="text-center mb-4">
         <h5><%= @article.category_text %></h5>
+      </div>
+      <div class="mb-4">
         <small class="text-muted">
-          <%= "公開日時: " + format_datetime(@article.start_at) %><br>
+          <%= "公開開始日時: " + format_datetime(@article.start_at) %><br>
           <%= "公開終了日時: " + format_datetime(@article.end_at) %>
         </small>
       </div>
@@ -15,9 +17,11 @@
         <% @article.contents.each do |content| %>
           <div class="mb-4">
             <p><strong>内容:</strong> <%= content.body %></p>
-            <% if content.article_images.present? %>
-              <%= image_tag(content.article_images.url, class: "img-fluid") %>
-            <% end %>
+            <div class="mt-4 text-center">
+              <% if content.article_images.present? %>
+                <%= image_tag(content.article_images.url, alt: 'ブログ画像', class: "img-fluid", style: "width:50%;") %>
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>

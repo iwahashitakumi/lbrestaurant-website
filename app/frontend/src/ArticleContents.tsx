@@ -113,7 +113,7 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
                 name={`article[contents_attributes][${index}][article_images_cache]`}
               />
               
-              {contents.length > 1 && (
+              {contents.filter(content=>!content._destroy).length > 1 && (
                 <button type="button" onClick={() => handleRemoveContent(index)} className="btn btn-danger">
                   -
                 </button>

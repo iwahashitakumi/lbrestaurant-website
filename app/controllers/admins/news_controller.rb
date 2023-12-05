@@ -12,16 +12,10 @@ class Admins::NewsController < Admins::ApplicationController
 
   def new
     @news = News.new
-    @calendar_date_options = calendar_date_options
-    @start_at_options = start_at_options
-    @end_at_options = end_at_options
   end
   
   def create
     @news = News.new(news_params)
-    @calendar_date_options = calendar_date_options
-    @start_at_options = start_at_options
-    @end_at_options = end_at_options
     begin
       @news.save!
       redirect_to @news_index_url, notice: "お知らせの投稿ができました"
@@ -35,15 +29,9 @@ class Admins::NewsController < Admins::ApplicationController
   end
 
   def edit
-    @calendar_date_options = calendar_date_options
-    @start_at_options = start_at_options
-    @end_at_options = end_at_options
   end
   
   def update
-    @calendar_date_options = calendar_date_options
-    @start_at_options = start_at_options
-    @end_at_options = end_at_options
     begin
       @news.update!(news_params)
       redirect_to @news_index_url, notice: "お知らせの内容を変更できました"

@@ -106,6 +106,10 @@ ja:
         article_image: ブログ画像
   
   enumerize:
+    admin:
+      role:
+        member: メンバー
+        admin: 管理者
     article:
       category:
         event: 会社イベント

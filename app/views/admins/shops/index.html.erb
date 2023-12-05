@@ -1,6 +1,6 @@
 <div class="container mt-4 mobile-gutter p-3">
   <div class="d-flex justify-content-between mb-4 mobile-block">
-    <h3 class="fw-bold">店舗一覧</h3>
+    <h3 class="fw-bold"><%= link_to '店舗一覧', admins_shops_path, class: 'text-dark text-decoration-none' %></h3>
     <%= search_form_for @q, url: admins_shops_path, class: 'form-inline' do |f| %>
       <div class="d-flex mobile-block">
         <div class="input-group">
@@ -11,7 +11,7 @@
         </div>
         <div class="ms-2"></div>
         <div class="input-group">
-          <%= f.search_field @search_scope, class: 'form-control', placeholder: '住所で検索' %>
+          <%= f.search_field @search_residence_scope, class: 'form-control', placeholder: '住所で検索' %>
           <div class="input-group-append">
             <%= f.submit '検索', class: 'btn btn-primary' %>
           </div>
@@ -41,8 +41,8 @@
             <td class="align-middle"><%= "#{shop.prefecture.name}#{shop.city_name}#{shop.address}" %></td>
             <td class="align-middle"><%= shop.business_time %></td>
             <td class="align-middle"><%= shop.phone_number %></td>
-            <td class="align-middle"><%= shop.counter_seats %></td>
-            <td class="align-middle"><%= shop.table_seats %></td>
+            <td class="align-middle"><%= shop.counter_seat %></td>
+            <td class="align-middle"><%= shop.table_seat %></td>
             <td class="align-middle"><%= link_to shop.site_name, shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer", class: "text-primary" %></td>
             <td class="text-center align-middle">
               <%= link_to "編集", [:edit_admins, shop], class: "btn btn-outline-primary btn-sm" %>
@@ -56,7 +56,12 @@
     </table>
   </div>
 
-  <p><%= link_to "店舗新規登録", new_admins_shop_path, class: 'btn btn-primary' %></p>
+  <div>
+    <ul class="list-inline">
+      <li class="list-inline-item"><%= link_to "店舗新規登録", new_admins_shop_path, class: 'btn btn-primary' %></li>
+      <li class="list-inline-item"><%= link_to "削除済み店舗一覧", discarded_admins_shops_path, class: 'btn btn-outline-secondary' %></li>
+    </ul>
+  </div>
 </div>
 
 <%= paginate @shops, theme: 'bootstrap-5' %>

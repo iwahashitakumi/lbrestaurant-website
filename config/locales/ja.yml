@@ -74,6 +74,8 @@ ja:
     models:
       news: お知らせ
       shop: 店舗
+      article: ブログ
+      content: コンテンツ
     attributes:
       news:
         calendar_date: 日付
@@ -89,8 +91,24 @@ ja:
         access: アクセス
         business_time: 営業時間
         phone_number: 電話番号
-        counter_seats: カウンター席数
-        table_seats: テーブル席数
+        counter_seat: カウンター席数
+        table_seat: テーブル席数
         site_name: グルメサイト名
         gourmet_site_link: グルメサイトのリンク
-        shop_images: 店舗画像
+        shop_image: 店舗画像
+      article:
+        title: タイトル
+        start_at: 公開開始日時
+        end_at: 公開終了日時
+        category: カテゴリー
+      content:
+        body: 内容
+        article_image: ブログ画像
+  
+  enumerize:
+    article:
+      category:
+        event: 会社イベント
+        company_trip: 社員旅行
+        staff_introduction: スタッフ紹介
+        other: その他

@@ -1,4 +1,8 @@
 class Admins::NewsController < Admins::ApplicationController
+  before_action :assign_news, only: [:show, :edit, :update, :destroy]
+  before_action :assign_news_index_url, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :assign_news_time_options, only: [:new, :create, :edit, :update]
+ 
   def index
     @q = News.ransack(params[:q])
     @news = @q.result(distinct: true).page(params[:page])
@@ -8,7 +12,6 @@ class Admins::NewsController < Admins::ApplicationController
 
   def new
     @news = News.new
-    @news_index_url = session[:news_index_url]
     @calendar_date_options = calendar_date_options
     @start_at_options = start_at_options
     @end_at_options = end_at_options
@@ -16,7 +19,6 @@ class Admins::NewsController < Admins::ApplicationController
   
   def create
     @news = News.new(news_params)
-    @news_index_url = session[:news_index_url]
     @calendar_date_options = calendar_date_options
     @start_at_options = start_at_options
     @end_at_options = end_at_options
@@ -30,21 +32,15 @@ class Admins::NewsController < Admins::ApplicationController
   end
   
   def show
-    @news = News.find(params[:id])
-    @news_index_url = session[:news_index_url]
   end
 
   def edit
-    @news = News.find(params[:id])
-    @news_index_url = session[:news_index_url]
     @calendar_date_options = calendar_date_options
     @start_at_options = start_at_options
     @end_at_options = end_at_options
   end
   
   def update
-    @news = News.find(params[:id])  
-    @news_index_url = session[:news_index_url]
     @calendar_date_options = calendar_date_options
     @start_at_options = start_at_options
     @end_at_options = end_at_options
@@ -58,8 +54,6 @@ class Admins::NewsController < Admins::ApplicationController
   end
   
   def destroy
-    @news = News.find(params[:id])
-    @news_index_url = session[:news_index_url]
     begin
       @news.destroy!
       redirect_to @news_index_url|| admins_news_index_path, notice: "お知らせを削除しました"
@@ -71,7 +65,20 @@ class Admins::NewsController < Admins::ApplicationController
   
 
   private
-  
+  def assign_news
+    @news = News.find(params[:id])
+  end
+
+  def assign_news_index_url
+    @news_index_url = session[:news_index_url]
+  end
+
+  def assign_news_time_options
+    @calendar_date_options = calendar_date_options
+    @start_at_options = start_at_options
+    @end_at_options = end_at_options
+  end
+
   def news_params
     params.require(:news).permit(:calendar_date, :title, :start_at, :end_at, :body)
   end

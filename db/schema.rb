@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_22_114939) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_04_170103) do
   create_table "admins", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -28,9 +28,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_22_114939) do
     t.string "title", default: "", null: false
     t.datetime "start_at", null: false
     t.datetime "end_at", null: false
-    t.text "body", null: false
-    t.string "article_images", default: ""
-    t.text "sets", null: false
     t.integer "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,6 +47,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_22_114939) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["update_by"], name: "fk_rails_281088f36f"
+  end
+
+  create_table "contents", charset: "utf8", force: :cascade do |t|
+    t.text "body", null: false, comment: "ブログの内容"
+    t.string "article_image", comment: "ブログの画像"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "article_id", null: false, comment: "contentsテーブルに外部キー(article_id)を追加"
+    t.index ["article_id"], name: "index_contents_on_article_id"
   end
 
   create_table "job_entries", charset: "utf8", force: :cascade do |t|
@@ -94,19 +100,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_22_114939) do
     t.text "access", null: false
     t.text "business_time", null: false
     t.string "phone_number", default: "", null: false
-    t.integer "counter_seats", null: false
-    t.integer "table_seats", null: false
+    t.integer "counter_seat", null: false
+    t.integer "table_seat", null: false
     t.string "site_name", default: "", null: false
     t.text "gourmet_site_link", null: false
-    t.string "shop_images"
+    t.string "shop_image"
     t.string "city_name", default: "", null: false
     t.bigint "prefecture_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "discarded_at", comment: "店舗管理の論理削除機能"
+    t.index ["discarded_at"], name: "index_shops_on_discarded_at"
     t.index ["prefecture_id"], name: "index_shops_on_prefecture_id"
   end
 
   add_foreign_key "contacts", "admins", column: "update_by"
+  add_foreign_key "contents", "articles"
   add_foreign_key "job_entries", "admins", column: "update_by"
   add_foreign_key "job_entries", "prefectures"
   add_foreign_key "shops", "prefectures"

@@ -1,14 +1,14 @@
 <div class="mb-4">
-  <%= f.label :calendar_date, class: "form-label" %>
+  <%= f.label :category, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.date_field :calendar_date, class: 'form-control', **@calendar_date_options, value: f.object.calendar_date %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :calendar_date %>
+  <%= f.select :category, Article.category.options, { prompt: '選択してください' }, { selected: f.object.category, class: 'form-select' } %>
+  <%= render "layouts/error_messages", object: f.object, attribute: :category %>
 </div>
 
 <div class="mb-4">
   <%= f.label :title, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.text_field :title, class: 'form-control', value: f.object.title %>
+  <%= f.text_field :title, class: 'form-control', value: f.object.title, placeholder: "社員旅行など" %>
   <%= render "layouts/error_messages", object: f.object, attribute: :title %>
 </div>
 
@@ -26,26 +26,26 @@
   <%= render "layouts/error_messages", object: f.object, attribute: :end_at %>
 </div>
 
+
 <div class="mb-4">
-  <%= f.label :body, class: "form-label" %>
-  <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.text_area :body, class: 'form-control', value: f.object.body %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :body %>
+    <articlecontents-component
+      data-props="<%= { contents: f.object.contents, body_error_message: "内容を入力してください" }.to_json %>"
+    >
+    </articlecontents-component>
 </div>
 
 <% if f.object.new_record? %>
   <div class="mt-5">
     <ul class="list-inline">
       <li class="list-inline-item"><%= f.submit "登録完了する", class: 'btn btn-primary' %></li>
-      <li class="list-inline-item"><%= link_to "お知らせ一覧に戻る", @news_index_url, class: 'btn btn-secondary' %></li>
+      <li class="list-inline-item"><%= link_to "ブログ一覧に戻る", @articles_index_url, class: 'btn btn-secondary' %></li>
     </ul>
   </div>
 <% else %>
   <div class="mt-5">
     <ul class="list-inline">
       <li class="list-inline-item"><%= f.submit "編集を完了する", class: 'btn btn-primary' %></li>
-      <li class="list-inline-item"><%= link_to "お知らせ一覧に戻る", @news_index_url, class: 'btn btn-secondary' %></li>
+      <li class="list-inline-item"><%= link_to "ブログ一覧に戻る", @articles_index_url, class: 'btn btn-secondary' %></li>
     </ul>
   </div>
 <% end %>
-

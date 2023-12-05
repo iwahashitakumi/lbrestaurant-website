@@ -71,7 +71,14 @@ group :test do
   gem 'rails-erd'
 end
 
+gem 'enumerize'
+
+gem 'discard'
+
+gem 'pry-rails'
+
 gem 'ransack'
+gem 'carrierwave'
 
 gem 'kaminari'
 gem 'bootstrap5-kaminari-views', '~> 0.0.1'
@@ -79,6 +86,8 @@ gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 gem "aws-sdk", "~> 3.0"
 gem "vite_rails", "~> 3.0"
 gem 'mysql2'
+gem 'fog-aws'
+gem 'dotenv-rails'
 
 gem 'devise'
 gem 'devise-i18n'

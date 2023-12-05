@@ -45,3 +45,5 @@ node_modules
 .DS_Store
 .idea/
 vendor/bundle/
+/public/uploads
+/.env

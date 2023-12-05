@@ -3,6 +3,11 @@ import React from 'react';
 interface SidebarProps {
   adminsNewsIndexPath: string;
   newAdminsNewsPath: string;
+  adminsArticlesPath: string;
+  newAdminsArticlesPath: string;
+  adminsShopsPath: string;
+  discardedAdminsShopsPath: string;
+  newAdminsShopsPath: string;
   isSidebarOpen: boolean;
 }
 
@@ -16,40 +21,36 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
         </a>
         <ul className="list-unstyled ps-0">
           <li className="mb-1">
-            <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0 text-white" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+            <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0 text-white" data-bs-toggle="collapse" data-bs-target="#news-collapse" aria-expanded="true">
               お知らせ
             </button>
-            <div className="collapse show" id="home-collapse">
+            <div className="collapse show" id="news-collapse">
               <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li><a href={props.adminsNewsIndexPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">一覧</a></li>
                 <li><a href={props.newAdminsNewsPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">新規作成</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">レポート</a></li>
               </ul>
             </div>
           </li>
           <li className="mb-1">
-            <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0 text-white" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-              ダッシュボード
+          <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0 text-white" data-bs-toggle="collapse" data-bs-target="#article-collapse" aria-expanded="false">
+              ブログ
             </button>
-            <div className="collapse" id="dashboard-collapse">
+            <div className="collapse" id="article-collapse">
               <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">概要</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">毎週</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">毎月</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">毎年</a></li>
+                <li><a href={props.adminsArticlesPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">一覧</a></li>
+                <li><a href={props.newAdminsArticlesPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">新規作成</a></li>
               </ul>
             </div>
           </li>
           <li className="mb-1">
-            <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0 text-white" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-              注文
+            <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0 text-white" data-bs-toggle="collapse" data-bs-target="#shop-collapse" aria-expanded="false">
+              店舗
             </button>
-            <div className="collapse" id="orders-collapse">
+            <div className="collapse" id="shop-collapse">
               <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">新品</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">処理済み</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">出荷済み</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">返品</a></li>
+                <li><a href={props.adminsShopsPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">一覧</a></li>
+                <li><a href={props.discardedAdminsShopsPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">削除一覧</a></li>
+                <li><a href={props.newAdminsShopsPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">新規作成</a></li>
               </ul>
             </div>
           </li>

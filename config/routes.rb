@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins, controllers: {
-    registrations: 'admins/registrations'
-  }
+  devise_for :admins
 
   devise_scope :admin do
     get '/admins/sign_out' => 'devise/sessions#destroy'
@@ -24,5 +22,6 @@ Rails.application.routes.draw do
       end
     end
     resources :articles
+    resources :admin_users
   end
 end

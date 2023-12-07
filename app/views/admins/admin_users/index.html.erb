@@ -19,12 +19,16 @@
             <td class="align-middle"><%= admin_user.role_text %></td>
             <td class="align-middle"><%= link_to admin_user.name, admins_admin_user_path(admin_user), class: "text-primary" %></td>
             <td class="align-middle"><%= admin_user.email %></td>
-            <td class="text-center align-middle">
-              <%= link_to "編集", edit_admins_admin_user_path(admin_user), class: "btn btn-outline-primary btn-sm" %>
-            </td>
-            <td class="text-start align-middle">
-              <%= button_to "削除", admins_admin_user_path(admin_user), { method: :delete, class: "btn btn-outline-danger btn-sm", onclick: "return confirm('本当に削除しますか？');" } %>
-            </td>
+            <% if current_admin && (admin_user.id != 1 || current_admin.id == 1) %>
+              <td class="text-center align-middle">
+                <%= link_to "編集", edit_admins_admin_user_path(admin_user), class: "btn btn-outline-primary btn-sm" %>
+              </td>
+              <td class="text-start align-middle">
+                <%= button_to "削除", admins_admin_user_path(admin_user), { method: :delete, class: "btn btn-outline-danger btn-sm", onclick: "return confirm('本当に削除しますか？');" } %>
+              </td>
+            <% else %>
+              <td colspan="2" class="text-center align-middle"></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>

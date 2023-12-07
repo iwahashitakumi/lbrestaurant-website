@@ -6,7 +6,5 @@ class Admin < ApplicationRecord
   enumerize :role, in: { member: 0, admin: 1 }, default: :member, predicates: true
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
-  validates :name,
-  length: { minimum: 2, maximum: 20 }
-  validates :role, presence: true
+  validates :name, length: { minimum: 2, maximum: 20 }
 end

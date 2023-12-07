@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <%= render "admins/shared/flashes" %>
+  <div class="card col-sm-9 mx-auto mt-5">
+    <div class="card-body p-5 mx-5">
+      <h2 class="mb-4 text-center fw-bold"><%= @admin_user.name %>の詳細情報</h2>
+      
+      <div class="border-bottom pt-3 mb-3">
+        <h3 class="ml-2">役割</h3>
+        <p class="text-center"><%= @admin_user.role_text %></p>
+      </div>
+      
+      <div class="border-bottom pt-3 mb-3">
+        <h3 class="">名前</h3>
+        <p class="text-center"><%= @admin_user.name %></p>
+      </div>
+      
+      <div class="border-bottom pt-3 mb-3">
+        <h3 class="">メールアドレス</h3>
+        <p class="text-center"><%= @admin_user.email %></p>
+      </div>
+      
+      <div class="pt-3 mb-3">
+        <h3 class="">パスワード</h3>
+        <p class="text-center">******</p>
+      </div>
+      
+      <div class="mt-5">
+        <%= link_to "一覧に戻る", @admin_users_index_url, class: 'btn btn-secondary' %>
+      </div>
+    </div>
+  </div>
+</div>

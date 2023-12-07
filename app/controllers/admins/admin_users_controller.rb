@@ -1,7 +1,7 @@
 class Admins::AdminUsersController < Admins::ApplicationController
   before_action :assign_admin_user, only: [:show, :edit, :update, :destroy]
   before_action :assign_admin_users_index_url, only: [:new, :create, :show, :edit, :update, :destroy]
-
+  
   def new
     @admin_user = Admin.new
   end
@@ -14,6 +14,19 @@ class Admins::AdminUsersController < Admins::ApplicationController
     rescue
       flash.now[:alert] = "管理ユーザーの登録ができませんでした"
       render "new"
+    end
+  end
+
+  def edit
+  end
+  
+  def update
+    begin
+      @admin_user.update!(admin_user_params)
+      redirect_to @admin_users_index_url, notice: "#{@admin_user.name}の内容を変更できました"
+    rescue
+      flash.now[:alert] = "#{@admin_user.name}の内容を変更できませんでした"
+      render 'edit'
     end
   end
   

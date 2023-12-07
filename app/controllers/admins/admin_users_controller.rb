@@ -1,6 +1,7 @@
 class Admins::AdminUsersController < Admins::ApplicationController
   before_action :assign_admin_user, only: [:show, :edit, :update, :destroy]
   before_action :assign_admin_users_index_url, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :authenticate_owner_for_edit_and_destroy!, only: [:edit, :update, :destroy]
 
   def index
     @q = Admin.ransack(params[:q])
@@ -62,5 +63,12 @@ class Admins::AdminUsersController < Admins::ApplicationController
   def assign_admin_users_index_url
     @admin_users_index_url = session[:admin_users_index_url]
   end
+
+  def authenticate_owner_for_edit_and_destroy!
+    unless current_admin && (@admin_user.id != 1 || current_admin.id == 1)
+      flash[:alert] = "オーナー情報を編集する権限がありません。"
+      redirect_to admins_admin_users_path
+    end
+  end  
 end
 

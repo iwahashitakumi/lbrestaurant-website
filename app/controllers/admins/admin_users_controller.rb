@@ -1,6 +1,12 @@
 class Admins::AdminUsersController < Admins::ApplicationController
   before_action :assign_admin_user, only: [:show, :edit, :update, :destroy]
   before_action :assign_admin_users_index_url, only: [:new, :create, :show, :edit, :update, :destroy]
+
+  def index
+    @q = Admin.ransack(params[:q])
+    @admin_users = @q.result(distinct: true).page(params[:page])
+    session[:admin_users_index_url] = request.url
+  end
   
   def new
     @admin_user = Admin.new

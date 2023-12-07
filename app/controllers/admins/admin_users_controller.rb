@@ -29,6 +29,16 @@ class Admins::AdminUsersController < Admins::ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    begin
+      @admin_user.destroy!
+      redirect_to @admin_users_index_url|| admins_admin_users_path, notice: "#{@admin_user.name}を削除しました"
+    rescue
+      flash.now[:alert] = "#{@admin_user.name}を削除できませんでした"
+      render 'index'
+    end
+  end
   
   private
   

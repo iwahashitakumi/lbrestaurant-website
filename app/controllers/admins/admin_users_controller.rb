@@ -1,6 +1,7 @@
 class Admins::AdminUsersController < Admins::ApplicationController
   before_action :assign_admin_user, only: [:show, :edit, :update, :destroy]
   before_action :assign_admin_users_index_url, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :authenticate_role!
   before_action :authenticate_owner_for_edit_and_destroy!, only: [:edit, :update, :destroy]
 
   def index
@@ -69,6 +70,13 @@ class Admins::AdminUsersController < Admins::ApplicationController
       flash[:alert] = "オーナー情報を編集する権限がありません。"
       redirect_to admins_admin_users_path
     end
-  end  
+  end
+
+  def authenticate_role!
+    if current_admin.member?
+      flash[:alert] = "管理者権限がありません。"
+      redirect_to admins_root_path
+    end
+  end
 end
 

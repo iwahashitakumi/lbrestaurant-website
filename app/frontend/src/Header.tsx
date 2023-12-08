@@ -10,6 +10,13 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
+  const handleLogoutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const confirmLogout = window.confirm('本当にログアウトしますか？');
+    if (!confirmLogout) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <header>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
@@ -51,16 +58,12 @@ const Header: React.FC<HeaderProps> = (props) => {
             </a>
             <ul className="dropdown-menu dropdown-menu-end position-absolute" aria-labelledby="navbarDropdown">
               <li>
-                <div
-                  className="dropdown-item"
-                >
+                <div className="dropdown-item">
                   {props.currentAdminRole}
                 </div>
               </li>
               <li>
-                <div
-                  className="dropdown-item"
-                >
+                <div className="dropdown-item">
                   {props.currentAdminName}
                 </div>
               </li>
@@ -69,7 +72,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                   href={props.destroyAdminSessionPath}
                   className="dropdown-item"
                   data-method="delete"
-                  data-confirm="ログアウトしますか？"
+                  onClick={handleLogoutClick}
                 >
                   ログアウト
                 </a>

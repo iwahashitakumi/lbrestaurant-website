@@ -31,16 +31,17 @@ const App: React.FC = (props: any) => {
     <div className="container-fluid mobile-gutter">
       <div className="row mobile-gutter">
         <Sidebar
-         isSidebarOpen={isSidebarOpen}
-         adminsNewsIndexPath="/admins/news"
-         newAdminsNewsPath="/admins/news/new"
-         adminsArticlesPath="/admins/articles"
-         newAdminsArticlesPath="/admins/articles/new"
-         adminsShopsPath="/admins/shops"
-         discardedAdminsShopsPath="/admins/shops/discarded"
-         newAdminsShopsPath="/admins/shops/new"
-         newAdminsAdminUsersPath="/admins/admin_users/new"
-         adminsAdminUsersPath="/admins/admin_users"
+          currentAdminRole={props.currentAdminRole}
+          isSidebarOpen={isSidebarOpen}
+          adminsNewsIndexPath="/admins/news"
+          newAdminsNewsPath="/admins/news/new"
+          adminsArticlesPath="/admins/articles"
+          newAdminsArticlesPath="/admins/articles/new"
+          adminsShopsPath="/admins/shops"
+          discardedAdminsShopsPath="/admins/shops/discarded"
+          newAdminsShopsPath="/admins/shops/new"
+          newAdminsAdminUsersPath="/admins/admin_users/new"
+          adminsAdminUsersPath="/admins/admin_users"
          ></Sidebar>
         <main className={`${isSidebarOpen ? 'ml-sm-auto col-lg-10 col-md-9' : ''}  px-md-4 py-md-4 main-top`}>
           {props.children}

@@ -10,6 +10,7 @@ interface SidebarProps {
   newAdminsShopsPath: string;
   adminsAdminUsersPath: string;
   newAdminsAdminUsersPath: string;
+  currentAdminRole: string;
   isSidebarOpen: boolean;
 }
 
@@ -57,17 +58,19 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
             </div>
           </li>
           <li className="border-top my-3"></li>
-          <li className="mb-1">
-            <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0 text-white" data-bs-toggle="collapse" data-bs-target="#admin-user-collapse" aria-expanded="false">
-              アカウント
-            </button>
-            <div className="collapse" id="admin-user-collapse">
-              <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href={props.adminsAdminUsersPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">管理ユーザー一覧</a></li>
-                <li><a href={props.newAdminsAdminUsersPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">管理ユーザ新規作成</a></li>
-              </ul>
-            </div>
-          </li>
+          {props.currentAdminRole !== 'メンバー' && (
+            <li className="mb-1">
+              <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0 text-white" data-bs-toggle="collapse" data-bs-target="#admin-user-collapse" aria-expanded="false">
+                アカウント
+              </button>
+              <div className="collapse" id="admin-user-collapse">
+                <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href={props.adminsAdminUsersPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">管理ユーザー一覧</a></li>
+                  <li><a href={props.newAdminsAdminUsersPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">管理ユーザ新規作成</a></li>
+                </ul>
+              </div>
+            </li>
+          )}
         </ul>
       </div>
     </nav>

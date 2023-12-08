@@ -8,4 +8,12 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, length: { minimum: 2, maximum: 20 }
   validates :role, presence: true
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["name", "role"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    []
+  end
 end

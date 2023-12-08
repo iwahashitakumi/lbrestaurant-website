@@ -8,6 +8,8 @@ interface SidebarProps {
   adminsShopsPath: string;
   discardedAdminsShopsPath: string;
   newAdminsShopsPath: string;
+  adminsAdminUsersPath: string;
+  newAdminsAdminUsersPath: string;
   isSidebarOpen: boolean;
 }
 
@@ -56,15 +58,13 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
           </li>
           <li className="border-top my-3"></li>
           <li className="mb-1">
-            <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0 text-white" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+            <button className="btn btn-toggle d-inline-flex align-items-center rounded border-0 text-white" data-bs-toggle="collapse" data-bs-target="#admin-user-collapse" aria-expanded="false">
               アカウント
             </button>
-            <div className="collapse" id="account-collapse">
+            <div className="collapse" id="admin-user-collapse">
               <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">新プロジェクト...</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">プロフィール</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">設定</a></li>
-                <li><a href="#" className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">サインアウト</a></li>
+                <li><a href={props.adminsAdminUsersPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">管理ユーザー一覧</a></li>
+                <li><a href={props.newAdminsAdminUsersPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">管理ユーザ新規作成</a></li>
               </ul>
             </div>
           </li>

@@ -2,9 +2,10 @@ import React from 'react';
 
 interface HeaderProps {
   adminsRootPath: string;
-  editAdminRegistrationPath: string;
   destroyAdminSessionPath: string;
   isSidebarOpen: boolean;
+  currentAdminName: string;
+  currentAdminRole: string;
   toggleSidebar: () => void;
 }
 
@@ -50,9 +51,18 @@ const Header: React.FC<HeaderProps> = (props) => {
             </a>
             <ul className="dropdown-menu dropdown-menu-end position-absolute" aria-labelledby="navbarDropdown">
               <li>
-                <a href={props.editAdminRegistrationPath} className="dropdown-item">
-                  アカウント設定
-                </a>
+                <div
+                  className="dropdown-item"
+                >
+                  {props.currentAdminRole}
+                </div>
+              </li>
+              <li>
+                <div
+                  className="dropdown-item"
+                >
+                  {props.currentAdminName}
+                </div>
               </li>
               <li>
                 <a

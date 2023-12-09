@@ -3,7 +3,7 @@ class Admin < ApplicationRecord
   has_many :job_entries, foreign_key: 'update_by'
   
   extend Enumerize
-  enumerize :role, in: { member: 0, admin: 1 }, default: :member, predicates: true
+  enumerize :role, in: { member: 0, admin: 1, owner: 2 }, default: :member, predicates: true
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
   validates :name, length: { minimum: 2, maximum: 20 }

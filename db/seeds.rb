@@ -56,5 +56,5 @@ Admin.create!(
   email: 'zig235@au.com',
   password: 'zig235235',
   name: '岩橋拓海',
-  role: Admin.role.admin.value
+  role: Admin.role.owner.value
 )

@@ -110,6 +110,7 @@ ja:
       role:
         member: メンバー
         admin: 管理者
+        owner: オーナー
     article:
       category:
         event: 会社イベント

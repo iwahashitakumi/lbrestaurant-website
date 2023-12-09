@@ -1,7 +1,7 @@
 <div class="mb-4">
   <%= f.label :role, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.select :role, Admin.role.options, { prompt: '選択してください' }, { selected: f.object.role, class: 'form-select' } %>
+  <%= f.select :role, Admin.role.options.reject { |_, value| value == 'owner' }, { prompt: '選択してください' }, { selected: f.object.role, class: 'form-select' } %>
   <%= render "layouts/error_messages", object: f.object, attribute: :role %>
 </div>
 

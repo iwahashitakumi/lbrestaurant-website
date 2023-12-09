@@ -66,7 +66,7 @@ class Admins::AdminUsersController < Admins::ApplicationController
   end
 
   def authenticate_owner!
-    if @admin_user.id == 1 && current_admin.id != 1
+    if @admin_user.role == :owner && current_admin.role != :owner
       flash[:alert] = "オーナー情報を編集する権限がありません。"
       redirect_to admins_admin_users_path
     end

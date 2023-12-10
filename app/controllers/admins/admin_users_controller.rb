@@ -10,11 +10,13 @@ class Admins::AdminUsersController < Admins::ApplicationController
   def new
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.new
+    @new_role_options = new_role_options
   end
   
   def create
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.new(admin_user_params)
+    @new_role_options = new_role_options
     begin
       @admin_user.save!
       redirect_to @admin_users_index_url, notice: "#{@admin_user.name}の登録ができました"
@@ -30,17 +32,16 @@ class Admins::AdminUsersController < Admins::ApplicationController
   end
   
   def edit
-    
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
-    @fixed_role_owner_options = fixed_role_owner_options
+    @edit_role_options = edit_role_options
     editable_owner_admin_user!
   end
   
   def update
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
-    @fixed_role_owner_options = fixed_role_owner_options
+    @edit_role_options = edit_role_options
     editable_owner_admin_user!
     begin
       @admin_user.update!(admin_user_params)
@@ -70,12 +71,20 @@ class Admins::AdminUsersController < Admins::ApplicationController
     params.require(:admin).permit(:name, :email, :role, :password, :password_confirmation)
   end
 
-  def fixed_role_owner_options
-    [['オーナー', 'owner']]
+  def new_role_options
+    Admin.role.options.reject { |_, value| value == 'owner' }
   end
 
+  def edit_role_options
+    if @admin_user.role.owner?
+      [['オーナー', 'owner']]
+    else
+      Admin.role.options.reject { |_, value| value == 'owner' }
+    end
+  end
   
 
+  
   def editable_owner_admin_user!
     return if current_admin.role.owner?
     return unless @admin_user.role.owner?

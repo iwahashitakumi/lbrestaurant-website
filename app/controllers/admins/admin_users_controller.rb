@@ -34,16 +34,16 @@ class Admins::AdminUsersController < Admins::ApplicationController
   
   def edit
     authenticate_role!
-    editable_owner_admin_user!
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
+    editable_owner_admin_user!
   end
   
   def update
     authenticate_role!
-    editable_owner_admin_user!
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
+    editable_owner_admin_user!
     begin
       @admin_user.update!(admin_user_params)
       redirect_to @admin_users_index_url, notice: "#{@admin_user.name}の内容を変更できました"
@@ -55,9 +55,9 @@ class Admins::AdminUsersController < Admins::ApplicationController
 
   def destroy
     authenticate_role!
-    editable_owner_admin_user!
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
+    editable_owner_admin_user!
     begin
       @admin_user.destroy!
       redirect_to @admin_users_index_url|| admins_admin_users_path, notice: "#{@admin_user.name}を削除しました"

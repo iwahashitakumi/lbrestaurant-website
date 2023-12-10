@@ -12,6 +12,12 @@ class Article < ApplicationRecord
   validate :start_at_in_future
   validate :end_at_after_start_at
 
+  scope :search_by_category, ->(category) { where(category: category) }
+
+  def self.ransackable_scopes(auth_object = nil)
+    %i(search_by_category)
+  end
+
   def start_at_in_future
     errors.add(:start_at, 'は過去の日時を選択できません') if start_at.present? && start_at < Time.zone.now
   end

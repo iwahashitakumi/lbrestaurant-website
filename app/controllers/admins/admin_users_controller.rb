@@ -1,6 +1,4 @@
 class Admins::AdminUsersController < Admins::ApplicationController
-  before_action :assign_admin_user, only: [:show, :edit, :update, :destroy]
-  before_action :assign_admin_users_index_url, only: [:new, :create, :show, :edit, :update, :destroy]
 
   def index
     authenticate_role!
@@ -11,11 +9,13 @@ class Admins::AdminUsersController < Admins::ApplicationController
   
   def new
     authenticate_role!
+    @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.new
   end
   
   def create
     authenticate_role!
+    @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.new(admin_user_params)
     begin
       @admin_user.save!
@@ -28,16 +28,22 @@ class Admins::AdminUsersController < Admins::ApplicationController
 
   def show
     authenticate_role!
+    @admin_users_index_url = session[:admin_users_index_url]
+    @admin_user = Admin.find(params[:id])
   end
   
   def edit
     authenticate_role!
     editable_owner_admin_user!
+    @admin_users_index_url = session[:admin_users_index_url]
+    @admin_user = Admin.find(params[:id])
   end
   
   def update
     authenticate_role!
     editable_owner_admin_user!
+    @admin_users_index_url = session[:admin_users_index_url]
+    @admin_user = Admin.find(params[:id])
     begin
       @admin_user.update!(admin_user_params)
       redirect_to @admin_users_index_url, notice: "#{@admin_user.name}の内容を変更できました"
@@ -50,6 +56,8 @@ class Admins::AdminUsersController < Admins::ApplicationController
   def destroy
     authenticate_role!
     editable_owner_admin_user!
+    @admin_users_index_url = session[:admin_users_index_url]
+    @admin_user = Admin.find(params[:id])
     begin
       @admin_user.destroy!
       redirect_to @admin_users_index_url|| admins_admin_users_path, notice: "#{@admin_user.name}を削除しました"
@@ -63,14 +71,6 @@ class Admins::AdminUsersController < Admins::ApplicationController
   
   def admin_user_params
     params.require(:admin).permit(:name, :email, :role, :password, :password_confirmation)
-  end
-
-  def assign_admin_user
-    @admin_user = Admin.find(params[:id])
-  end
-
-  def assign_admin_users_index_url
-    @admin_users_index_url = session[:admin_users_index_url]
   end
 
   def editable_owner_admin_user!

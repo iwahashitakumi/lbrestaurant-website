@@ -1,20 +1,18 @@
 class Admins::AdminUsersController < Admins::ApplicationController
+  before_action :authenticate_role!
 
   def index
-    authenticate_role!
     @q = Admin.ransack(params[:q])
     @admin_users = @q.result(distinct: true).page(params[:page])
     session[:admin_users_index_url] = request.url
   end
   
   def new
-    authenticate_role!
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.new
   end
   
   def create
-    authenticate_role!
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.new(admin_user_params)
     begin
@@ -27,13 +25,12 @@ class Admins::AdminUsersController < Admins::ApplicationController
   end
 
   def show
-    authenticate_role!
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
   end
   
   def edit
-    authenticate_role!
+    
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
     @fixed_role_owner_options = fixed_role_owner_options
@@ -41,7 +38,6 @@ class Admins::AdminUsersController < Admins::ApplicationController
   end
   
   def update
-    authenticate_role!
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
     @fixed_role_owner_options = fixed_role_owner_options
@@ -56,7 +52,6 @@ class Admins::AdminUsersController < Admins::ApplicationController
   end
 
   def destroy
-    authenticate_role!
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
     editable_owner_admin_user!

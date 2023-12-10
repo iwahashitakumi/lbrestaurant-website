@@ -1,7 +1,11 @@
 <div class="mb-4">
   <%= f.label :role, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.select :role, (current_admin.role.owner? ? Admin.role.options : Admin.role.options.reject { |_, value| value == 'owner' }), { prompt: '選択してください' }, { selected: f.object.role, class: 'form-select' } %>
+  <% if f.object.new_record? %>
+    <%= f.select :role, Admin.role.options.reject { |_, value| value == 'owner' }, { prompt: '選択してください' }, { selected: f.object.role, class: 'form-select' } %>
+  <% else %>
+    <%= f.select :role, (f.object.role.owner? ? @fixed_role_owner_options : Admin.role.options.reject { |_, value| value == 'owner' }), { prompt: '選択してください' }, { selected: f.object.role, class: 'form-select' } %>
+  <% end %>
   <%= render "layouts/error_messages", object: f.object, attribute: :role %>
 </div>
 

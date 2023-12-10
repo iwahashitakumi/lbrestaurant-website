@@ -36,6 +36,7 @@ class Admins::AdminUsersController < Admins::ApplicationController
     authenticate_role!
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
+    @fixed_role_owner_options = fixed_role_owner_options
     editable_owner_admin_user!
   end
   
@@ -43,6 +44,7 @@ class Admins::AdminUsersController < Admins::ApplicationController
     authenticate_role!
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
+    @fixed_role_owner_options = fixed_role_owner_options
     editable_owner_admin_user!
     begin
       @admin_user.update!(admin_user_params)
@@ -72,6 +74,12 @@ class Admins::AdminUsersController < Admins::ApplicationController
   def admin_user_params
     params.require(:admin).permit(:name, :email, :role, :password, :password_confirmation)
   end
+
+  def fixed_role_owner_options
+    [['オーナー', 'owner']]
+  end
+
+  
 
   def editable_owner_admin_user!
     return if current_admin.role.owner?

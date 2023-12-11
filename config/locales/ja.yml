@@ -130,3 +130,14 @@ ja:
         company_trip: 社員旅行
         staff_introduction: スタッフ紹介
         other: その他
+      contact:
+        contact_type:
+          store_service: 店舗・サービスについて
+          business_negotiations: 物件・食材・備品などの商談について
+          job_entry: 採用に関する事について
+          franchise: ＦＣ募集について
+          other: その他
+        status:
+          not_started: 未対応
+          in_progress: 対応中
+          completed: 対応済み

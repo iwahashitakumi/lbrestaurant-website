@@ -28,7 +28,7 @@ class Admins::ShopsController < Admins::ApplicationController
     @prefectures = Prefecture.all
     begin
       @shop.save!
-      redirect_to @shops_index_url, notice: "#{@shop.name}の登録ができました"
+      redirect_to index_path_for_redirect, notice: "#{@shop.name}の登録ができました"
     rescue
       flash.now[:alert] = "店舗の登録ができませんでした"
       render "new"
@@ -54,7 +54,7 @@ class Admins::ShopsController < Admins::ApplicationController
     @prefectures = Prefecture.all
     begin
       @shop.update!(shop_params)
-      redirect_to @shops_index_url, notice: "#{@shop.name}の内容を変更できました"
+      redirect_to index_path_for_redirect, notice: "#{@shop.name}の内容を変更できました"
     rescue
       flash.now[:alert] = "#{@shop.name}の内容を変更できませんでした"
       render 'edit'
@@ -62,11 +62,10 @@ class Admins::ShopsController < Admins::ApplicationController
   end
   
   def destroy
-    @shops_index_url = session[:shops_index_url]
     @shop = Shop.find(params[:id])
     begin
       @shop.discard!
-      redirect_to @shops_index_url|| admins_shops_path, notice: "#{@shop.name}を削除しました"
+      redirect_to index_path_for_redirect, notice: "#{@shop.name}を削除しました"
     rescue
       flash.now[:alert] = "#{@shop.name}を削除できませんでした"
       render 'index'
@@ -74,11 +73,10 @@ class Admins::ShopsController < Admins::ApplicationController
   end
 
   def restore
-    @shops_index_url = session[:shops_index_url]
     @shop = Shop.find(params[:id])
     begin
       @shop.undiscard!
-      redirect_to @shops_index_url, notice: "#{@shop.name}を復元ました"
+      redirect_to index_path_for_redirect, notice: "#{@shop.name}を復元ました"
     rescue
       flash.now[:alert] = "#{@shop.name}を復元できませんでした"
       render 'discarded'
@@ -90,6 +88,10 @@ class Admins::ShopsController < Admins::ApplicationController
   
   def shop_params
     params.require(:shop).permit(:name, :address, :access, :business_time, :phone_number, :counter_seat, :table_seat, :site_name, :gourmet_site_link, :city_name, :shop_image,:shop_image_cache, :prefecture_id)
+  end
+
+  def index_path_for_redirect
+    session[:shops_index_url] = request.url || admins_shops_path
   end
   
 end

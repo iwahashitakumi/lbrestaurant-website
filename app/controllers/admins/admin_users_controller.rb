@@ -19,7 +19,7 @@ class Admins::AdminUsersController < Admins::ApplicationController
     @new_role_options = new_role_options
     begin
       @admin_user.save!
-      redirect_to @admin_users_index_url, notice: "#{@admin_user.name}の登録ができました"
+      redirect_to index_path_for_redirect, notice: "#{@admin_user.name}の登録ができました"
     rescue
       flash.now[:alert] = "管理ユーザーの登録ができませんでした"
       render "new"
@@ -45,7 +45,7 @@ class Admins::AdminUsersController < Admins::ApplicationController
     editable_owner_admin_user!
     begin
       @admin_user.update!(admin_user_params)
-      redirect_to @admin_users_index_url, notice: "#{@admin_user.name}の内容を変更できました"
+      redirect_to index_path_for_redirect, notice: "#{@admin_user.name}の内容を変更できました"
     rescue
       flash.now[:alert] = "#{@admin_user.name}の内容を変更できませんでした"
       render 'edit'
@@ -53,12 +53,11 @@ class Admins::AdminUsersController < Admins::ApplicationController
   end
 
   def destroy
-    @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
     editable_owner_admin_user!
     begin
       @admin_user.destroy!
-      redirect_to @admin_users_index_url|| admins_admin_users_path, notice: "#{@admin_user.name}を削除しました"
+      redirect_to index_path_for_redirect, notice: "#{@admin_user.name}を削除しました"
     rescue
       flash.now[:alert] = "#{@admin_user.name}を削除できませんでした"
       render 'index'
@@ -82,8 +81,10 @@ class Admins::AdminUsersController < Admins::ApplicationController
       Admin.role.options.reject { |_, value| value == 'owner' }
     end
   end
-  
 
+  def index_path_for_redirect
+    session[:admin_users_index_url] || admins_admin_users_path
+  end
   
   def editable_owner_admin_user!
     return if current_admin.role.owner?

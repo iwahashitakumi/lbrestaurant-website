@@ -4,12 +4,15 @@ interface HeaderProps {
   adminsRootPath: string;
   destroyAdminSessionPath: string;
   isSidebarOpen: boolean;
-  currentAdminName: string;
-  currentAdminRole: string;
+  currentAdmin: {
+    currentAdminName: string;
+    currentAdminRole: string;
+  };
   toggleSidebar: () => void;
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
+  console.log(props.currentAdmin);
   const handleLogoutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const confirmLogout = window.confirm('本当にログアウトしますか？');
     if (!confirmLogout) {
@@ -59,12 +62,12 @@ const Header: React.FC<HeaderProps> = (props) => {
             <ul className="dropdown-menu dropdown-menu-end position-absolute" aria-labelledby="navbarDropdown">
               <li>
                 <div className="dropdown-item">
-                  {props.currentAdminRole}
+                {props.currentAdmin.currentAdminRole}
                 </div>
               </li>
               <li>
                 <div className="dropdown-item">
-                  {props.currentAdminName}
+                {props.currentAdmin.currentAdminName}
                 </div>
               </li>
               <li>

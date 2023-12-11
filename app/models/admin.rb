@@ -15,6 +15,10 @@ class Admin < ApplicationRecord
     %i(search_by_role)
   end
 
+  def data_props
+    { currentAdminName: name, currentAdminRole: role_text }
+  end
+
   def self.ransackable_attributes(auth_object = nil)
     ["name", "role"]
   end

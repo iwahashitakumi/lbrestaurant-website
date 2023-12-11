@@ -100,4 +100,3 @@ class Admins::AdminUsersController < Admins::ApplicationController
     end
   end
 end
-

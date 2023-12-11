@@ -23,5 +23,6 @@ Rails.application.routes.draw do
     end
     resources :articles
     resources :admin_users
+    resources :contacts
   end
 end

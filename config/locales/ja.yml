@@ -76,6 +76,7 @@ ja:
       shop: 店舗
       article: ブログ
       content: コンテンツ
+      contact: 問い合わせ
     attributes:
       news:
         calendar_date: 日付
@@ -104,6 +105,18 @@ ja:
       content:
         body: 内容
         article_image: ブログ画像
+      contact:
+        contact_type: お問い合わせタイプ
+        message: 問い合わせ内容
+        name: 名前
+        name_kana: 名前（カナ）
+        email: メールアドレス
+        phone_number: 電話番号
+        callback_requested: 折り返し希望の有無
+        contact_method: 連絡方法
+        status: 問い合わせステータス
+        update_by: 更新者
+        
   
   enumerize:
     admin:

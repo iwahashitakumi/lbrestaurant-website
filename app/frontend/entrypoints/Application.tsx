@@ -24,8 +24,7 @@ const App: React.FC = (props: any) => {
     <Header
       adminsRootPath="/admins"
       destroyAdminSessionPath="/admins/sign_out"
-      currentAdminName={props.currentAdminName}
-      currentAdminRole={props.currentAdminRole}
+      currentAdmin={props.currentAdmin}
       toggleSidebar={toggleSidebar}
     ></Header>
     <div className="container-fluid mobile-gutter">

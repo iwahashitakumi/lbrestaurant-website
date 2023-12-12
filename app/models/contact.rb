@@ -1,5 +1,5 @@
 class Contact < ApplicationRecord
-  belongs_to :admin, foreign_key: 'update_by'
+  belongs_to :admin, foreign_key: 'update_by', optional: true
 
   extend Enumerize
   enumerize :contact_type, in: { store_service: 0, business_negotiations: 1, job_entry: 2, franchise: 3, other: 4 }, scope: true, predicates: true

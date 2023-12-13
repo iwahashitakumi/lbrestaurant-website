@@ -1,5 +1,11 @@
 class Admins::ContactsController < Admins::ApplicationController
 
+  def index
+    @q = Contact.ransack(params[:q])
+    @contacts = @q.result(distinct: true).page(params[:page])
+    session[:contacts_index_url] = request.url
+  end
+
   private
 
   def contact_params

@@ -1,0 +1,44 @@
+<div class="container mt-4 mobile-gutter p-3">
+  <div class="d-flex justify-content-between mb-4 mobile-block">
+    <h3 class="fw-bold"><%= link_to '問い合わせ一覧', admins_contacts_path, class: 'text-dark text-decoration-none' %></h3>
+  </div>
+  <%= render "admins/shared/flashes" %>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>問い合わせタイプ</th>
+          <th>問い合わせ内容</th>
+          <th>お名前</th>
+          <th>折り返し希望の有無</th>
+          <th>連絡方法</th>
+          <th>問い合わせステータス</th>
+          <th>対応管理者</th>
+          <th>更新時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @contacts.each do |contact| %>
+          <tr>
+            <td class="align-middle"><%= contact.contact_type_text %></td>
+            <td class="align-middle"><%= link_to contact.message.slice(0, 5), [:admins, contact], class: "text-primary" %></td>
+            <td class="align-middle">
+              <div class="d-flex flex-column">
+                <span class="text-muted small"><%= contact.name_kana %></span>
+                <span><%= contact.name %></span>
+              </div>
+            </td>
+            <td class="align-middle <%= contact.callback_requested ? 'text-success' : 'text-danger' %>">
+              <%= contact.callback_requested ? '希望' : '不要' %>
+            </td>
+            <td class="align-middle"><%= contact.contact_method_text %></td>
+            <td class="align-middle"><%= contact.status_text %></td>
+            <td class="align-middle"><%= contact.admin ? contact.admin.name : '未指定' %></td>
+            <td class="align-middle"><%= format_datetime(contact.updated_at) %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+<%= paginate @contacts, theme: 'bootstrap-5' %>

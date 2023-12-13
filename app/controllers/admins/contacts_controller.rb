@@ -6,6 +6,23 @@ class Admins::ContactsController < Admins::ApplicationController
     session[:contacts_index_url] = request.url
   end
 
+  def show
+    @contacts_index_url = session[:contacts_index_url]
+    @contact = Contact.find(params[:id])
+  end
+
+  def update
+    @contacts_index_url = session[:contacts_index_url]
+    @contact = Contact.find(params[:id])
+    begin
+      @contact.update!(contact_params)
+      redirect_to @contacts_index_url, notice: "#{@contact.name}の内容を変更できました"
+    rescue
+      flash.now[:alert] = "#{@contact.name}の内容を変更できませんでした"
+      render 'show'
+    end
+  end
+
   private
 
   def contact_params

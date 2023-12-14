@@ -65,3 +65,29 @@
     link "タイトル:#{news.title}の詳細", admins_news_path(news)
     parent :admins_news_index
   end
+
+#店舗関連
+  crumb :admins_shops do
+    link "店舗一覧", admins_shops_path
+    parent :admins_root
+  end
+
+  crumb :discarded_admins_shops do
+    link "削除した店舗一覧", discarded_admins_shops_path
+    parent :admins_shops
+  end
+
+  crumb :new_admins_shop do
+    link "店舗登録", new_admins_shop_path
+    parent :admins_shops
+  end
+
+  crumb :edit_admins_shop do
+    link "店舗編集", edit_admins_shop_path
+    parent :admins_shops
+  end
+
+  crumb :admins_shop do |shop|
+    link "タイトル:#{shop.name}の詳細", admins_shop_path(shop)
+    parent :admins_shops
+  end

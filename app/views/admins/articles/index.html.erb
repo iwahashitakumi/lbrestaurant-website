@@ -1,3 +1,4 @@
+<% breadcrumb :admins_articles %>
 <div class="d-flex justify-content-between mb-4 mobile-block">
   <h3 class="fw-bold"><%= link_to 'ブログ一覧', admins_articles_path, class: 'text-dark text-decoration-none' %></h3>
   <%= search_form_for @q, url: admins_articles_path, class: 'form-inline' do |f| %>

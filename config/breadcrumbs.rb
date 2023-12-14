@@ -22,6 +22,26 @@ crumb :admins_admin_user do |admin_user|
   parent :admins_admin_users
 end
 
+crumb :admins_articles do
+  link "ブログ一覧", admins_articles_path
+  parent :admins_root
+end
+
+crumb :new_admins_article do
+  link "ブログ登録", new_admins_article_path
+  parent :admins_articles
+end
+
+crumb :edit_admins_article do
+  link "ブログ編集", edit_admins_article_path
+  parent :admins_articles
+end
+
+crumb :admins_article do |article|
+  link "タイトル:#{article.title}の詳細", admins_article_path(article)
+  parent :admins_articles
+end
+
 crumb :admins_news_index do
   link "お知らせ一覧", admins_news_index_path
   parent :admins_root

@@ -137,3 +137,9 @@ em {
     padding: 8px;
   }
 }
+
+@media (max-width: 576px) {
+  .mobile-p-3 {
+    padding: 1rem;
+  }
+}

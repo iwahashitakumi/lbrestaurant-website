@@ -2,23 +2,17 @@ crumb :admins_root do
   link "ホーム", admins_root_path
 end
 
-# crumb :project do |project|
-#   link project.name, project_path(project)
-#   parent :projects
-# end
+crumb :admins_admin_users do
+  link "管理ユーザー一覧", admins_admin_users_path
+  parent :admins_root
+end
 
-# crumb :project_issues do |project|
-#   link "Issues", project_issues_path(project)
-#   parent :project, project
-# end
+crumb :new_admins_admin_user do
+  link "管理ユーザー登録", new_admins_admin_user_path
+  parent :admins_admin_users
+end
 
-# crumb :issue do |issue|
-#   link issue.title, issue_path(issue)
-#   parent :project_issues, issue.project
-# end
-
-# If you want to split your breadcrumbs configuration over multiple files, you
-# can create a folder named `config/breadcrumbs` and put your configuration
-# files there. All *.rb files (e.g. `frontend.rb` or `products.rb`) in that
-# folder are loaded and reloaded automatically when you change them, just like
-# this file (`config/breadcrumbs.rb`).
+crumb :edit_admins_admin_user do
+  link "管理ユーザー編集", edit_admins_admin_user_path
+  parent :admins_admin_users
+end

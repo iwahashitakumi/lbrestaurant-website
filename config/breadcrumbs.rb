@@ -45,6 +45,17 @@
     parent :admins_articles
   end
 
+#問い合わせ関連
+  crumb :admins_contacts do
+    link "問い合わせ一覧", admins_contacts_path
+    parent :admins_root
+  end
+
+  crumb :admins_contact do |contact|
+    link "#{contact.name}さんの詳細", admins_contact_path(contact)
+    parent :admins_contacts
+  end
+
 #お知らせ関連
   crumb :admins_news_index do
     link "お知らせ一覧", admins_news_index_path

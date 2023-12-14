@@ -1,4 +1,8 @@
-<% breadcrumb :admins_shop, @shop %>
+<% if @is_discarded %>
+  <% breadcrumb :admins_shop_discarded, @shop %>
+<% else %>
+  <% breadcrumb :admins_shop, @shop %>
+<% end %>
 <%= render "admins/shared/flashes" %>
 <div class="card col-sm-9 mx-auto mt-5 d-flex">
   <div class="card-body p-5">

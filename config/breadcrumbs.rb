@@ -91,3 +91,8 @@
     link "タイトル:#{shop.name}の詳細", admins_shop_path(shop)
     parent :admins_shops
   end
+
+  crumb :admins_shop_discarded do |shop|
+    link "タイトル:#{shop.name}の詳細", admins_shop_path(shop)
+    parent :discarded_admins_shops
+  end

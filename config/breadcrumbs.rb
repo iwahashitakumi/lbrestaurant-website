@@ -1,10 +1,6 @@
-crumb :root do
-  link "Home", root_path
+crumb :admins_root do
+  link "ホーム", admins_root_path
 end
-
-# crumb :projects do
-#   link "Projects", projects_path
-# end
 
 # crumb :project do |project|
 #   link project.name, project_path(project)

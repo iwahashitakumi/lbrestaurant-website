@@ -1,67 +1,65 @@
-<div class="container mt-4 mobile-gutter p-3">
-  <div class="d-flex justify-content-between mb-4 mobile-block">
-    <h3 class="fw-bold"><%= link_to '店舗一覧', admins_shops_path, class: 'text-dark text-decoration-none' %></h3>
-    <%= search_form_for @q, url: admins_shops_path, class: 'form-inline' do |f| %>
-      <div class="d-flex mobile-block">
-        <div class="input-group">
-          <%= f.search_field :name_cont, class: 'form-control', placeholder: '店舗名で検索' %>
-          <div class="input-group-append">
-            <%= f.submit '検索', class: 'btn btn-primary' %>
-          </div>
-        </div>
-        <div class="ms-2"></div>
-        <div class="input-group">
-          <%= f.search_field @search_residence_scope, class: 'form-control', placeholder: '住所で検索' %>
-          <div class="input-group-append">
-            <%= f.submit '検索', class: 'btn btn-primary' %>
-          </div>
+<div class="d-flex justify-content-between mb-4 mobile-block">
+  <h3 class="fw-bold"><%= link_to '店舗一覧', admins_shops_path, class: 'text-dark text-decoration-none' %></h3>
+  <%= search_form_for @q, url: admins_shops_path, class: 'form-inline' do |f| %>
+    <div class="d-flex mobile-block">
+      <div class="input-group">
+        <%= f.search_field :name_cont, class: 'form-control', placeholder: '店舗名で検索' %>
+        <div class="input-group-append">
+          <%= f.submit '検索', class: 'btn btn-primary' %>
         </div>
       </div>
-    <% end %>
-  </div>
-  <%= render "admins/shared/flashes" %>
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <thead class="table-dark">
+      <div class="ms-2"></div>
+      <div class="input-group">
+        <%= f.search_field @search_residence_scope, class: 'form-control', placeholder: '住所で検索' %>
+        <div class="input-group-append">
+          <%= f.submit '検索', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= render "admins/shared/flashes" %>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>店舗名</th>
+        <th>住所</th>
+        <th>営業時間</th>
+        <th>電話番号</th>
+        <th>カウンター席数</th>
+        <th>テーブル席数</th>
+        <th>グルメサイト</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shops.each do |shop| %>
         <tr>
-          <th>店舗名</th>
-          <th>住所</th>
-          <th>営業時間</th>
-          <th>電話番号</th>
-          <th>カウンター席数</th>
-          <th>テーブル席数</th>
-          <th>グルメサイト</th>
-          <th colspan="2"></th>
+          <td class="align-middle"><%= link_to shop.name, [:admins, shop], class: "text-primary" %></td>
+          <td class="align-middle"><%= "#{shop.prefecture.name}#{shop.city_name}#{shop.address}" %></td>
+          <td class="align-middle"><%= shop.business_time %></td>
+          <td class="align-middle"><%= shop.phone_number %></td>
+          <td class="align-middle"><%= shop.counter_seat %></td>
+          <td class="align-middle"><%= shop.table_seat %></td>
+          <td class="align-middle"><%= link_to shop.site_name, shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer", class: "text-primary" %></td>
+          <td class="text-center align-middle">
+            <%= link_to "編集", [:edit_admins, shop], class: "btn btn-outline-primary btn-sm" %>
+          </td>
+          <td class="text-start align-middle">
+            <%= button_to "削除", [:admins, shop], { method: :delete, class: "btn btn-outline-danger btn-sm", onclick: "return confirm('本当に削除しますか？');" } %>
+          </td>
         </tr>
-      </thead>
-      <tbody>
-        <% @shops.each do |shop| %>
-          <tr>
-            <td class="align-middle"><%= link_to shop.name, [:admins, shop], class: "text-primary" %></td>
-            <td class="align-middle"><%= "#{shop.prefecture.name}#{shop.city_name}#{shop.address}" %></td>
-            <td class="align-middle"><%= shop.business_time %></td>
-            <td class="align-middle"><%= shop.phone_number %></td>
-            <td class="align-middle"><%= shop.counter_seat %></td>
-            <td class="align-middle"><%= shop.table_seat %></td>
-            <td class="align-middle"><%= link_to shop.site_name, shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer", class: "text-primary" %></td>
-            <td class="text-center align-middle">
-              <%= link_to "編集", [:edit_admins, shop], class: "btn btn-outline-primary btn-sm" %>
-            </td>
-            <td class="text-start align-middle">
-              <%= button_to "削除", [:admins, shop], { method: :delete, class: "btn btn-outline-danger btn-sm", onclick: "return confirm('本当に削除しますか？');" } %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-  <div>
-    <ul class="list-inline">
-      <li class="list-inline-item"><%= link_to "店舗新規登録", new_admins_shop_path, class: 'btn btn-primary' %></li>
-      <li class="list-inline-item"><%= link_to "削除済み店舗一覧", discarded_admins_shops_path, class: 'btn btn-outline-secondary' %></li>
-    </ul>
-  </div>
+<div>
+  <ul class="list-inline">
+    <li class="list-inline-item"><%= link_to "店舗新規登録", new_admins_shop_path, class: 'btn btn-primary' %></li>
+    <li class="list-inline-item"><%= link_to "削除済み店舗一覧", discarded_admins_shops_path, class: 'btn btn-outline-secondary' %></li>
+  </ul>
 </div>
 
 <%= paginate @shops, theme: 'bootstrap-5' %>

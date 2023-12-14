@@ -23,13 +23,14 @@
 
   </head>
 
-  <body>
-    <% if admin_signed_in? %>
-      <%= vite_javascript_tag 'Application.tsx' %>
-        <app-component data-props="<%= { currentAdmin: current_admin.data_props }.to_json %>">
-      <%= yield %>
-    <% else %>
-      <%= yield %>
-    <% end %>
-  </body>
+  <% if admin_signed_in? %>
+    <%= vite_javascript_tag 'Application.tsx' %>
+    <app-component data-props="<%= { currentAdmin: current_admin.data_props }.to_json %>">
+      <div class="container mt-4 mobile-gutter p-3">
+        <%= yield %>
+      </div>
+    </app-component>
+  <% else %>
+    <%= yield %>
+  <% end %>
 </html>

@@ -28,8 +28,8 @@
     <app-component data-props="<%= { currentAdmin: current_admin.data_props }.to_json %>">
       <div class="container mobile-gutter mobile-p-3">
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb custom-breadcrumb" >
-            <%= breadcrumbs separator: " &rsaquo; " %>
+          <ol class="breadcrumb" >
+            <%= breadcrumbs separator: " &rsaquo; ", class: "custom-breadcrumb" %>
           </ol>
         </nav>
         <%= yield %>

@@ -91,7 +91,7 @@ class Admins::ShopsController < Admins::ApplicationController
   end
 
   def index_path_for_redirect
-    session[:shops_index_url] = request.url || admins_shops_path
+    session[:shops_index_url] || admins_shops_path
   end
   
 end

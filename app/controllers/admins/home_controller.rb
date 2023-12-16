@@ -11,8 +11,9 @@ class Admins::HomeController < Admins::ApplicationController
     @latest_shop = Shop.order(created_at_desc).first
     @news = News.all
     @total_news = @news.size
-    @total_news_unstarted = News.where("start_at > ?", Time.zone.now).count
+    @total_news_unstarted = News.where(unstarted).count
     @latest_news = News.order(created_at_desc).first
+    @total_articles_unstarted = Article.where(unstarted).count
   end
 
   private
@@ -23,5 +24,9 @@ class Admins::HomeController < Admins::ApplicationController
 
   def created_at_desc
     [created_at: :desc]
+  end
+
+  def unstarted
+    ["start_at > ?", Time.zone.now]
   end
 end

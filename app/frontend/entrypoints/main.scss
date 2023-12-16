@@ -7,6 +7,10 @@ header {
   width: 100%;
   z-index: 1000;
 }
+.top-dropdown-padding {
+  --bs-dropdown-padding-x: initial;
+  --bs-dropdown-padding-y: initial;
+}
 
 .dropdown-toggle { outline: 0; }
 
@@ -145,4 +149,8 @@ em {
   color: #6c757d;
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
+}
+
+.top-alert-margin-bottom {
+  --bs-alert-margin-bottom: initial;
 }

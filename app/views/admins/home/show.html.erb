@@ -1,6 +1,29 @@
 <% breadcrumb :admins_root %>
 <%= render "admins/shared/flashes" %>
-<h1 class="h2">Dashboard</h1>
+<div class="d-flex justify-content-between mb-4 mobile-block">
+  <h3 class="fw-bold">トップ画面</h3>
+  <div class="dropdown ml-auto">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      通知
+    </button>
+    <div class="dropdown-menu dropdown-menu-end top-dropdown-padding" aria-labelledby="dropdownMenuButton" style="min-width: 350px;">
+      <div class="card p-3">
+        <h5 class="card-header">未公開のお知らせとブログ</h5>
+        <div class="card-body">
+          <p class="mb-0">・未公開のお知らせ: <%= @total_news_unstarted %>件</p>
+          <p>・未公開のブログ: <%= @total_articles_unstarted %>件</p>
+        </div>
+        <h5 class="card-header">本日の問い合わせと応募</h5>
+        <div class="card-body">
+          <p class="mb-0">・本日の問い合わせ:<%= @total_contacts_created_today %>件</p>
+          <p class="mb-0">・本日の応募:</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="row my-4">
   <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
     <div class="card h-100">
@@ -62,7 +85,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row my-4">
   <div class="col-12 mb-4 mb-lg-0">
       <div class="card">
           <h5 class="card-header">最新の問い合わせ</h5>

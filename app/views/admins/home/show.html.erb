@@ -23,7 +23,6 @@
   </div>
 </div>
 
-
 <div class="row my-4">
   <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
     <div class="card h-100">
@@ -31,8 +30,9 @@
       <div class="card-body">
         <h5 class="card-title">問い合わせ件数：<%= @total_contacts %>件</h5>
         <p class="card-text">公開画面へのリンク(仮)</p>
-        <p class="card-text">本日の問い合わせ件数:<%= @total_contacts_created_today %></p>
         <p class="card-text  text-danger">未対応の問い合わせは<%= @total_contacts_with_not_started %>件です</p>
+      </div>
+      <div class="m-3">
         <%= link_to '確認する', admins_contacts_path(q: {search_by_status: :not_started}), class: 'btn btn-primary' %>
       </div>
     </div>
@@ -43,8 +43,9 @@
       <div class="card-body">
         <h5 class="card-title">応募件数：件</h5>
         <p class="card-text">公開画面へのリンク(仮)</p>
-        <p class="card-text">本日の応募件数:</p>
         <p class="card-text  text-danger">未対応の応募は件です</p>
+      </div>
+      <div class="m-3">
         <%= link_to '確認する', admins_contacts_path(q: {search_by_status: :not_started}), class: 'btn btn-primary' %>
       </div>
     </div>
@@ -59,11 +60,15 @@
           <p class="card-text  text-success">最新の店舗名:<br>
             <%= @latest_shop.name %>
           </p>
-          <%= link_to '確認する', admins_shop_path(@latest_shop.id), class: 'btn btn-primary' %>
         <% else %>
           <p class="card-text">公開されている店舗はありません</p>
         <% end %>
       </div>
+      <% if @latest_shop %>
+        <div class="m-3">
+          <%= link_to '確認する', admins_shop_path(@latest_shop.id), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
@@ -76,11 +81,15 @@
           <p class="card-text  text-success">最新のお知らせ名:<br>
             <%= @latest_news.title %>
           </p>
-          <%= link_to '確認する', admins_news_path(@latest_news.id), class: 'btn btn-primary'  %>
         <% else %>
           <p class="card-text">公開されているお知らせはありません</p>
         <% end %>
       </div>
+      <% if @latest_news %>
+        <div class="m-3">
+          <%= link_to '確認する', admins_news_path(@latest_news.id), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

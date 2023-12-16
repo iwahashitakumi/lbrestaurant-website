@@ -32,6 +32,14 @@
       <div class="card-body">
         <h5 class="card-title">店舗数：<%= @total_contacts %>店舗</h5>
         <p class="card-text">公開画面へのリンク(仮)</p>
+        <% if @latest_shop %>
+          <p class="card-text  text-success">最新の店舗名:<br>
+            <%= @latest_shop.name %>
+          </p>
+          <%= link_to '確認する', admins_shop_path(@latest_shop.id), class: 'btn btn-primary' %>
+        <% else %>
+          <p class="card-text">公開されている店舗はありません</p>
+        <% end %>
       </div>
     </div>
   </div>
@@ -41,6 +49,14 @@
       <div class="card-body">
         <h5 class="card-title">お知らせ件数：<%= @total_news %>件</h5>
         <p class="card-text">公開画面へのリンク(仮)</p>
+        <% if @latest_news %>
+          <p class="card-text  text-success">最新のお知らせ名:<br>
+            <%= @latest_news.title %>
+          </p>
+          <%= link_to '確認する', admins_news_path(@latest_news.id), class: 'btn btn-primary'  %>
+        <% else %>
+          <p class="card-text">公開されているお知らせはありません</p>
+        <% end %>
       </div>
     </div>
   </div>

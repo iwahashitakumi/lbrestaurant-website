@@ -6,8 +6,10 @@ class Admins::HomeController < Admins::ApplicationController
     @total_contacts_created_today = Contact.where(created_today).size
     @shops = Shop.all
     @total_shops = @shops.size
+    @latest_shop = Shop.order(created_at_desc).first
     @news = News.all
     @total_news = @news.size
+    @latest_news = News.order(created_at_desc).first
   end
 
   private
@@ -15,5 +17,8 @@ class Admins::HomeController < Admins::ApplicationController
   def created_today
     ["created_at >= ?", Time.zone.now.beginning_of_day]
   end
-  
+
+  def created_at_desc
+    [created_at: :desc]
+  end
 end

@@ -61,3 +61,58 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-12 mb-4 mb-lg-0">
+      <div class="card">
+          <h5 class="card-header">最新の問い合わせ</h5>
+          <div class="card-body">
+              <div class="table-responsive">
+                  <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">問い合わせタイプ</th>
+                          <th scope="col">お名前</th>
+                          <th scope="col">折り返し希望の有無</th>
+                          <th scope="col">連絡方法</th>
+                          <th scope="col">対応状況</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% if @latest_contact.present? %>
+                          <tr>
+                            <th scope="row"><%= @latest_contact.contact_type_text %></th>
+                            <td>
+                              <small><%= @latest_contact.name_kana %></small><br>
+                              <%= @latest_contact.name %>
+                            </td>
+                            <td class="<%= @latest_contact.callback_requested ? 'text-success' : 'text-danger' %>"><%= @latest_contact.callback_requested ? '希望' : '不要' %></td>
+                            <td><%= @latest_contact.contact_method_text %></td>
+                            <td><%= @latest_contact.status_text %></td>
+                            <td><%= link_to '確認する', admins_contact_path(@latest_contact.id), class: 'btn btn-primary' %></td>
+                          </tr>
+                          <% if @prior_latest_contact.present? %>
+                            <tr>
+                              <th scope="row"><%= @prior_latest_contact.contact_type_text %></th>
+                              <td>
+                                <small><%= @prior_latest_contact.name_kana %></small><br>
+                                <%= @prior_latest_contact.name %>
+                              </td>
+                              <td class="<%= @prior_latest_contact.callback_requested ? 'text-success' : 'text-danger' %>"><%= @prior_latest_contact.callback_requested ? '希望' : '不要' %></td>
+                              <td><%= @prior_latest_contact.contact_method_text %></td>
+                              <td><%= @prior_latest_contact.status_text %></td>
+                              <td><%= link_to '確認する', admins_contact_path(@prior_latest_contact.id), class: 'btn btn-primary' %></td>
+                            </tr>
+                          <% end %>
+                        <% else %>
+                          <tr>
+                            <th scope="row">問い合わせはありません</th>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

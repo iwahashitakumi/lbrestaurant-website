@@ -4,6 +4,8 @@ class Admins::HomeController < Admins::ApplicationController
     @total_contacts = @contacts.size
     @total_contacts_with_not_started = Contact.with_status(:not_started).size
     @total_contacts_created_today = Contact.where(created_today).size
+    @latest_contact = Contact.order(created_at_desc).first
+    @prior_latest_contact = Contact.order(created_at_desc).second
     @shops = Shop.all
     @total_shops = @shops.size
     @latest_shop = Shop.order(created_at_desc).first

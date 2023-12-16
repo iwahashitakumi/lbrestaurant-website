@@ -9,6 +9,7 @@ class Admins::HomeController < Admins::ApplicationController
     @latest_shop = Shop.order(created_at_desc).first
     @news = News.all
     @total_news = @news.size
+    @total_news_unstarted = News.where("start_at > ?", Time.zone.now).count
     @latest_news = News.order(created_at_desc).first
   end
 

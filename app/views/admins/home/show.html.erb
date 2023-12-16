@@ -1,7 +1,43 @@
 <% breadcrumb :admins_root %>
-
 <%= render "admins/shared/flashes" %>
-
-
 <h1 class="h2">Dashboard</h1>
-
+<div class="row my-4">
+  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+    <div class="card h-100">
+      <h5 class="card-header">問い合わせ</h5>
+      <div class="card-body">
+        <h5 class="card-title">問い合わせ件数：<%= @total_contacts %>件</h5>
+        
+        <%= link_to '確認する', admins_contacts_path(q: {search_by_status: :not_started}), class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+    <div class="card h-100">
+      <h5 class="card-header">応募</h5>
+      <div class="card-body">
+        <h5 class="card-title">応募件数：件</h5>
+        
+        <%= link_to '確認する', admins_contacts_path(q: {search_by_status: :not_started}), class: 'btn btn-primary mt-auto' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+    <div class="card h-100">
+      <h5 class="card-header">店舗</h5>
+      <div class="card-body">
+        <h5 class="card-title">店舗数：<%= @total_contacts %>店舗</h5>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+    <div class="card h-100">
+      <h5 class="card-header">お知らせ</h5>
+      <div class="card-body">
+        <h5 class="card-title">お知らせ件数：<%= @total_news %>件</h5>
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 class JobEntry < ApplicationRecord
-  belongs_to :admin, foreign_key: 'update_by'
+  belongs_to :admin, foreign_key: 'update_by', optional: true
   belongs_to :prefecture
 
   extend Enumerize

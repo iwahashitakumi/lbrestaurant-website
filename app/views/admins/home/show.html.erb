@@ -3,7 +3,7 @@
 <div class="d-flex justify-content-between mb-4 mobile-block">
   <h3 class="fw-bold">トップ画面</h3>
   <div class="dropdown ml-auto">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       通知
     </button>
     <div class="dropdown-menu dropdown-menu-end top-dropdown-padding" aria-labelledby="dropdownMenuButton" style="min-width: 350px;">
@@ -16,7 +16,7 @@
         <h5 class="card-header">本日の問い合わせと応募</h5>
         <div class="card-body">
           <p class="mb-0">・本日の問い合わせ:<%= @total_contacts_created_today %>件</p>
-          <p class="mb-0">・本日の応募:</p>
+          <p class="mb-0">・本日の応募:<%= @total_jobentries_created_today %>件</p>
         </div>
       </div>
     </div>

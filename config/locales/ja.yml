@@ -77,6 +77,7 @@ ja:
       article: ブログ
       content: コンテンツ
       contact: 問い合わせ
+      job_entry: 採用応募
     attributes:
       news:
         calendar_date: 日付
@@ -115,6 +116,19 @@ ja:
         callback_requested: 折り返し希望の有無
         contact_method: 連絡方法
         status: 対応状況
+        update_by: 更新者
+      job_entry:
+        recruit_type: 採用タイプ
+        name: 名前
+        name_kana: 名前(カナ)
+        phone_number: 電話番号
+        email: メールアドレス
+        birth_date: 誕生日
+        sex: 性別
+        city_name: 市区町村
+        address: 地名・番地
+        status: 対応状況
+        prefecture_id: 都道府県
         update_by: 更新者
         
   

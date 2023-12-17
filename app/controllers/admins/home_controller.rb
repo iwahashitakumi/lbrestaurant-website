@@ -6,6 +6,8 @@ class Admins::HomeController < Admins::ApplicationController
     @total_contacts_created_today = Contact.where(created_today).size
     @latest_contact = Contact.order(created_at_desc).first
     @prior_latest_contact = Contact.order(created_at_desc).second
+    @job_entries = JobEntry.all
+    @total_job_entries = @job_entries.size
     @total_jobentries_created_today = JobEntry.where(created_today).size
     @shops = Shop.all
     @total_shops = @shops.size

@@ -53,8 +53,8 @@ prefectures.each do |prefecture|
 end
 
 Admin.create!(
-  email: 'zig235@au.com',
-  password: 'zig235235',
-  name: '岩橋拓海',
+  email: ENV['ADMIN_EMAIL'],
+  password: ENV['ADMIN_PASSWORD'],
+  name: ENV['ADMIN_NAME'],
   role: Admin.role.owner.value
 )

@@ -10,6 +10,7 @@
         <th>採用応募タイプ</th>
         <th>お名前</th>
         <th>性別</th>
+        <th>生年月日</th>
         <th>住所</th>
         <th>対応状況</th>
         <th>対応管理者</th>
@@ -27,6 +28,7 @@
             </div>
           </td>
           <td class="align-middle"><%= job_entry.sex_text %></td>
+          <td class="align-middle"><%= format_date(job_entry.birth_date) %>
           <td class="align-middle"><%= "#{job_entry.prefecture.name}#{job_entry.city_name}#{job_entry.address}" %></td>
           <td class="align-middle"><%= job_entry.status_text %></td>
           <td class="align-middle"><%= job_entry.admin ? job_entry.admin.name : '未指定' %></td>

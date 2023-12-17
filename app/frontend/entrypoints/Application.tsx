@@ -31,6 +31,7 @@ const App: React.FC = (props: any) => {
       <div className="row mobile-gutter">
         <Sidebar
           currentAdminRole={props.currentAdminRole}
+          adminsContactsPath="/admins/contacts"
           isSidebarOpen={isSidebarOpen}
           adminsNewsIndexPath="/admins/news"
           newAdminsNewsPath="/admins/news/new"

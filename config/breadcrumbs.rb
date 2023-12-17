@@ -56,6 +56,17 @@
     parent :admins_contacts
   end
 
+#採用応募関連
+  crumb :admins_job_entries do
+    link "採用応募一覧", admins_job_entries_path
+    parent :admins_root
+  end
+
+  crumb :admins_contact do |contact|
+    link "#{contact.name}さんの詳細", admins_contact_path(contact)
+    parent :admins_job_entries
+  end
+
 #お知らせ関連
   crumb :admins_news_index do
     link "お知らせ一覧", admins_news_index_path

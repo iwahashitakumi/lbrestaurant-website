@@ -11,6 +11,18 @@ class Admins::JobEntriesController < Admins::ApplicationController
     @job_entry = JobEntry.find(params[:id])
   end
 
+  def update
+    @job_entries_index_url = session[:job_entries_index_url]
+    @job_entry = JobEntry.find(params[:id])
+    begin
+      @job_entry.update!(job_entry_params)
+      redirect_to @job_entries_index_url, notice: "#{@job_entry.name}の対応状況を変更しました"
+    rescue
+      flash.now[:alert] = "#{@job_entry.name}の対応状況を変更できませんでした"
+      render 'show'
+    end
+  end
+
   private
 
   def job_entry_params

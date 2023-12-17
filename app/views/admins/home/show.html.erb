@@ -16,7 +16,7 @@
         <h5 class="card-header">本日の問い合わせと応募</h5>
         <div class="card-body">
           <p class="mb-0">・本日の問い合わせ:<%= @total_contacts_created_today %>件</p>
-          <p class="mb-0">・本日の応募:<%= @total_jobentries_created_today %>件</p>
+          <p class="mb-0">・本日の応募:<%= @total_job_entries_created_today %>件</p>
         </div>
       </div>
     </div>
@@ -118,7 +118,7 @@
                               <small><%= @latest_contact.name_kana %></small><br>
                               <%= @latest_contact.name %>
                             </td>
-                            <td class="<%= @latest_contact.callback_requested ? 'text-success' : 'text-danger' %>"><%= @latest_contact.callback_requested ? '希望' : '不要' %></td>
+                            <td><%= @latest_contact.callback_requested ? 'text-success' : 'text-danger' %>"><%= @latest_contact.callback_requested ? '希望' : '不要' %></td>
                             <td><%= @latest_contact.contact_method_text %></td>
                             <td><%= @latest_contact.status_text %></td>
                             <td><%= link_to '確認する', admins_contact_path(@latest_contact.id), class: 'btn btn-primary' %></td>
@@ -139,6 +139,65 @@
                         <% else %>
                           <tr>
                             <th scope="row">問い合わせはありません</th>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="row my-4">
+  <div class="col-12 mb-4 mb-lg-0">
+      <div class="card">
+          <h5 class="card-header">最新の採用応募</h5>
+          <div class="card-body">
+              <div class="table-responsive">
+                  <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">採用タイプ</th>
+                          <th scope="col">お名前</th>
+                          <th scope="col">性別</th>
+                          <th scope="col">生年月日</th>
+                          <th scope="col">住所</th>
+                          <th scope="col">連絡方法</th>
+                          <th scope="col">対応状況</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% if @latest_job_entries.present? %>
+                          <tr>
+                            <th scope="row"><%= @latest_job_entries.recruit_type_text %></th>
+                            <td>
+                              <small><%= @latest_job_entries.name_kana %></small><br>
+                              <%= @latest_job_entries.name %>
+                            </td>
+                            <td><%= @latest_job_entries.sex_text %></td>
+                            <td><%= format_date(@latest_job_entries.birth_date) %></td>
+                            <td><%= "#{@latest_job_entries.prefecture.name}#{@latest_job_entries.city_name}#{@latest_job_entries.address}" %></td>
+                            <td><%= @latest_job_entries.status_text %></td>
+                            <td><%= link_to '確認する', admins_job_entry_path(@latest_job_entries.id), class: 'btn btn-primary' %></td>
+                          </tr>
+                          <% if @prior_latest_job_entries.present? %>
+                            <tr>
+                              <th scope="row"><%= @prior_latest_job_entries.recruit_type_text %></th>
+                              <td>
+                                <small><%= @prior_latest_job_entries.name_kana %></small><br>
+                                <%= @prior_latest_job_entries.name %>
+                              </td>
+                              <td><%= @prior_latest_job_entries.sex_text %></td>
+                              <td><%= format_date(@prior_latest_job_entries.birth_date) %></td>
+                              <td><%= "#{@prior_latest_job_entries.prefecture.name}#{@prior_latest_job_entries.city_name}#{@prior_latest_job_entries.address}" %></td>
+                              <td><%= @prior_latest_job_entries.status_text %></td>
+                              <td><%= link_to '確認する', admins_job_entry_path(@prior_latest_job_entries.id), class: 'btn btn-primary' %></td>
+                            </tr>
+                          <% end %>
+                        <% else %>
+                          <tr>
+                            <th scope="row">採用応募はありません</th>
                           </tr>
                         <% end %>
                       </tbody>

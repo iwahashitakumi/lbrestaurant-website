@@ -62,8 +62,8 @@
     parent :admins_root
   end
 
-  crumb :admins_contact do |contact|
-    link "#{contact.name}さんの詳細", admins_contact_path(contact)
+  crumb :admins_job_entry do |job_entry|
+    link "#{job_entry.name}さんの詳細", admins_job_entry_path(job_entry)
     parent :admins_job_entries
   end
 

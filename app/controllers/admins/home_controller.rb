@@ -8,6 +8,7 @@ class Admins::HomeController < Admins::ApplicationController
     @prior_latest_contact = Contact.order(created_at_desc).second
     @job_entries = JobEntry.all
     @total_job_entries = @job_entries.size
+    @total_job_entries_with_not_started = JobEntry.with_status(:not_started).size
     @total_jobentries_created_today = JobEntry.where(created_today).size
     @shops = Shop.all
     @total_shops = @shops.size

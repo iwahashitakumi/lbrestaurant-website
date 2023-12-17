@@ -3,6 +3,7 @@ class Admins::JobEntriesController < Admins::ApplicationController
   def index
     @q = JobEntry.ransack(params[:q])
     @job_entries = @q.result(distinct: true).page(params[:page])
+    @search_residence_scope = :prefecture_name_or_city_name_or_address_cont
     session[:job_entries_index_url] = request.url
   end
 

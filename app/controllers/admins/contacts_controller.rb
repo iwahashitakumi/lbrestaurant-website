@@ -16,9 +16,9 @@ class Admins::ContactsController < Admins::ApplicationController
     @contact = Contact.find(params[:id])
     begin
       @contact.update!(contact_params)
-      redirect_to @contacts_index_url, notice: "#{@contact.name}の内容を変更できました"
+      redirect_to @contacts_index_url, notice: "#{@contact.name}の対応状況を変更できました"
     rescue
-      flash.now[:alert] = "#{@contact.name}の内容を変更できませんでした"
+      flash.now[:alert] = "#{@contact.name}の対応状況を変更できませんでした"
       render 'show'
     end
   end

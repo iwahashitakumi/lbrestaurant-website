@@ -32,6 +32,7 @@ const App: React.FC = (props: any) => {
         <Sidebar
           currentAdminRole={props.currentAdminRole}
           adminsContactsPath="/admins/contacts"
+          adminsJobEntriesPath="/admins/job_entries"
           isSidebarOpen={isSidebarOpen}
           adminsNewsIndexPath="/admins/news"
           newAdminsNewsPath="/admins/news/new"

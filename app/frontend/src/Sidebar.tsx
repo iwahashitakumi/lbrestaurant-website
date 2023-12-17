@@ -2,6 +2,7 @@ import React from 'react';
 
 interface SidebarProps {
   adminsContactsPath: string;
+  adminsJobEntriesPath: string;
   adminsNewsIndexPath: string;
   newAdminsNewsPath: string;
   adminsArticlesPath: string;
@@ -30,6 +31,7 @@ const Sidebar: React.FC<SidebarProps> = (props) => {
             <div className="collapse show" id="contact-entry-collapse">
               <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li><a href={props.adminsContactsPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white">問い合わせ一覧</a></li>
+                <li><a href={props.adminsJobEntriesPath} className="link-body-emphasis d-inline-flex text-decoration-none rounded text-white"> 採用一覧</a></li>
               </ul>
             </div>
           </li>

@@ -2,13 +2,24 @@ import React from 'react';
 
 interface HeaderProps {
   adminsRootPath: string;
-  editAdminRegistrationPath: string;
   destroyAdminSessionPath: string;
   isSidebarOpen: boolean;
+  currentAdmin: {
+    currentAdminName: string;
+    currentAdminRole: string;
+  };
   toggleSidebar: () => void;
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
+  console.log(props.currentAdmin);
+  const handleLogoutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const confirmLogout = window.confirm('本当にログアウトしますか？');
+    if (!confirmLogout) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <header>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
@@ -50,16 +61,21 @@ const Header: React.FC<HeaderProps> = (props) => {
             </a>
             <ul className="dropdown-menu dropdown-menu-end position-absolute" aria-labelledby="navbarDropdown">
               <li>
-                <a href={props.editAdminRegistrationPath} className="dropdown-item">
-                  アカウント設定
-                </a>
+                <div className="dropdown-item">
+                {props.currentAdmin.currentAdminRole}
+                </div>
+              </li>
+              <li>
+                <div className="dropdown-item">
+                {props.currentAdmin.currentAdminName}
+                </div>
               </li>
               <li>
                 <a
                   href={props.destroyAdminSessionPath}
                   className="dropdown-item"
                   data-method="delete"
-                  data-confirm="ログアウトしますか？"
+                  onClick={handleLogoutClick}
                 >
                   ログアウト
                 </a>

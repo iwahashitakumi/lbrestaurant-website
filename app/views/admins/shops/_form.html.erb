@@ -2,77 +2,77 @@
   <%= f.label :name, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.text_field :name, class: 'form-control', value: f.object.name, placeholder: "焼き鳥とおつまみ佐藤 大阪店" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :name %>
+  <%= show_error_messages(f.object, :name) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :prefecture_id, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.collection_select :prefecture_id, @prefectures, :id, :name, { prompt: "選択してください" }, { selected: f.object.prefecture_id, class: 'form-select' } %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :prefecture_id %>
+  <%= show_error_messages(f.object, :prefecture_id) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :city_name, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.text_field :city_name, class: 'form-control', value: f.object.city_name, placeholder: "大阪市北区" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :city_name %>
+  <%= show_error_messages(f.object, :city_name) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :address, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.text_field :address, class: 'form-control', value: f.object.address, placeholder: "梅田1丁目1-1" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :address %>
+  <%= show_error_messages(f.object, :address) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :business_time, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.text_field :business_time, class: 'form-control', value: f.object.business_time, placeholder: "17:00～24:00（L.O.23:00）土日祝だけ昼12:00から営業" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :business_time %>
+  <%= show_error_messages(f.object, :business_time) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :access, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.text_field :access, class: 'form-control', value: f.object.access, placeholder: "ＪＲ大阪環状線 大阪 徒歩4分" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :access %>
+  <%= show_error_messages(f.object, :access) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :phone_number, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.text_field :phone_number, class: 'form-control', value: f.object.phone_number, placeholder: "012-3456-789" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :phone_number %>
+  <%= show_error_messages(f.object, :phone_number) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :counter_seat, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.number_field :counter_seat, class: 'form-control', value: f.object.counter_seat, placeholder: "数字だけを入力" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :counter_seat %>
+  <%= show_error_messages(f.object, :counter_seat) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :table_seat, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.number_field :table_seat, class: 'form-control', value: f.object.table_seat, placeholder: "数字だけを入力" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :table_seat %>
+  <%= show_error_messages(f.object, :table_seat) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :site_name, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.text_field :site_name, class: 'form-control', value: f.object.site_name, placeholder: "食べログ" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :site_name %>
+  <%= show_error_messages(f.object, :site_name) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :gourmet_site_link, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.text_field :gourmet_site_link, class: 'form-control', value: f.object.gourmet_site_link, placeholder: "店舗のグルメサイトのリンクを入力" %>
-  <%= render "layouts/error_messages", object: f.object, attribute: :gourmet_site_link %>
+  <%= show_error_messages(f.object, :gourmet_site_link) %>
 </div>
 
 <div class="mb-4">
@@ -82,7 +82,6 @@
   <%= f.hidden_field :shop_image_cache %>
   <span class="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>
 </div>
-
 
 <% if f.object.new_record? %>
   <div class="mt-5">

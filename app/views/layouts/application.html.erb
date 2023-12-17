@@ -26,9 +26,8 @@
   <body>
     <% if admin_signed_in? %>
       <%= vite_javascript_tag 'Application.tsx' %>
-      <app-component>
-        <%= yield %>
-      </app-component>
+        <app-component data-props="<%= { currentAdmin: current_admin.data_props }.to_json %>">
+      <%= yield %>
     <% else %>
       <%= yield %>
     <% end %>

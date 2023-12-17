@@ -1,0 +1,54 @@
+<div class="mb-4">
+  <%= f.label :role, class: "form-label" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
+  <% if f.object.new_record? %>
+    <%= f.select :role, @new_role_options, { prompt: '選択してください' }, { selected: f.object.role, class: 'form-select' } %>
+  <% else %>
+    <%= f.select :role, @edit_role_options, { prompt: '選択してください' }, { selected: f.object.role, class: 'form-select' } %>
+  <% end %>
+  <%= show_error_messages(f.object, :role) %>
+</div>
+
+<div class="mb-4">
+  <%= f.label :name, class: "form-label mt-3" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
+  <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "食べ物太郎" %>
+  <%= show_error_messages(f.object, :name) %>
+</div>
+
+<div class="mb-4">
+  <%= f.label :email, class: "form-label mt-3" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
+  <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "mail@example.com" %>
+  <%= show_error_messages(f.object, :email) %>
+</div>
+
+<div class="mb-4">
+  <%= f.label :password, class: "form-label mt-3" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
+  <%= f.password_field :password, class: "form-control", placeholder: "半角英数6文字以上" %>
+  <%= show_error_messages(f.object, :password) %>
+</div>
+
+<div class="mb-4">
+  <%= f.label :password_confirmation, class: "form-label mt-3" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
+  <%= f.password_field :password_confirmation, class: "form-control", placeholder: "半角英数6文字以上" %>
+  <%= show_error_messages(f.object, :password_confirmation) %>
+</div>
+
+<% if f.object.new_record? %>
+  <div class="mt-5">
+    <ul class="list-inline">
+      <li class="list-inline-item"><%= f.submit "登録完了する", class: 'btn btn-primary' %></li>
+      <li class="list-inline-item"><%= link_to "管理ユーザー一覧に戻る", @admin_users_index_url, class: 'btn btn-secondary' %></li>
+    </ul>
+  </div>
+<% else %>
+  <div class="mt-5">
+    <ul class="list-inline">
+      <li class="list-inline-item"><%= f.submit "編集を完了する", class: 'btn btn-primary' %></li>
+      <li class="list-inline-item"><%= link_to "管理ユーザー一覧に戻る", @admin_users_index_url, class: 'btn btn-secondary' %></li>
+    </ul>
+  </div>
+<% end %>

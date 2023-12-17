@@ -9,7 +9,9 @@ class Admins::HomeController < Admins::ApplicationController
     @job_entries = JobEntry.all
     @total_job_entries = @job_entries.size
     @total_job_entries_with_not_started = JobEntry.with_status(:not_started).size
-    @total_jobentries_created_today = JobEntry.where(created_today).size
+    @total_job_entries_created_today = JobEntry.where(created_today).size
+    @latest_job_entries = JobEntry.order(created_at_desc).first
+    @prior_latest_job_entries = JobEntry.order(created_at_desc).second
     @shops = Shop.all
     @total_shops = @shops.size
     @latest_shop = Shop.order(created_at_desc).first

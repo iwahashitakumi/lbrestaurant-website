@@ -6,6 +6,11 @@ class Admins::JobEntriesController < Admins::ApplicationController
     session[:job_entries_index_url] = request.url
   end
 
+  def show
+    @job_entries_index_url = session[:job_entries_index_url]
+    @job_entry = JobEntry.find(params[:id])
+  end
+
   private
 
   def job_entry_params

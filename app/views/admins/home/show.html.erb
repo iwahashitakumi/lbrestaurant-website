@@ -1,4 +1,150 @@
+<% breadcrumb :admins_root %>
 <%= render "admins/shared/flashes" %>
+<div class="d-flex justify-content-between mb-4 mobile-block">
+  <h3 class="fw-bold">トップ画面</h3>
+  <div class="dropdown ml-auto">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      通知
+    </button>
+    <div class="dropdown-menu dropdown-menu-end top-dropdown-padding" aria-labelledby="dropdownMenuButton" style="min-width: 350px;">
+      <div class="card p-3">
+        <h5 class="card-header">未公開のお知らせとブログ</h5>
+        <div class="card-body">
+          <p class="mb-0">・未公開のお知らせ: <%= @total_news_unstarted %>件</p>
+          <p>・未公開のブログ: <%= @total_articles_unstarted %>件</p>
+        </div>
+        <h5 class="card-header">本日の問い合わせと応募</h5>
+        <div class="card-body">
+          <p class="mb-0">・本日の問い合わせ:<%= @total_contacts_created_today %>件</p>
+          <p class="mb-0">・本日の応募:</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="row my-4">
+  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+    <div class="card h-100">
+      <h5 class="card-header">問い合わせ</h5>
+      <div class="card-body">
+        <h5 class="card-title">問い合わせ件数：<%= @total_contacts %>件</h5>
+        <p class="card-text">公開画面へのリンク(仮)</p>
+        <p class="card-text  text-danger">未対応の問い合わせは<%= @total_contacts_with_not_started %>件です</p>
+      </div>
+      <div class="m-3">
+        <%= link_to '確認する', admins_contacts_path(q: {search_by_status: :not_started}), class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+    <div class="card h-100">
+      <h5 class="card-header">応募</h5>
+      <div class="card-body">
+        <h5 class="card-title">応募件数：件</h5>
+        <p class="card-text">公開画面へのリンク(仮)</p>
+        <p class="card-text  text-danger">未対応の応募は件です</p>
+      </div>
+      <div class="m-3">
+        <%= link_to '確認する', admins_contacts_path(q: {search_by_status: :not_started}), class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+    <div class="card h-100">
+      <h5 class="card-header">店舗</h5>
+      <div class="card-body">
+        <h5 class="card-title">店舗数：<%= @total_contacts %>店舗</h5>
+        <p class="card-text">公開画面へのリンク(仮)</p>
+        <% if @latest_shop %>
+          <p class="card-text  text-success">最新の店舗名:<br>
+            <%= @latest_shop.name %>
+          </p>
+        <% else %>
+          <p class="card-text">公開されている店舗はありません</p>
+        <% end %>
+      </div>
+      <% if @latest_shop %>
+        <div class="m-3">
+          <%= link_to '確認する', admins_shop_path(@latest_shop.id), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+    <div class="card h-100">
+      <h5 class="card-header">お知らせ</h5>
+      <div class="card-body">
+        <h5 class="card-title">お知らせ件数：<%= @total_news %>件</h5>
+        <p class="card-text">公開画面へのリンク(仮)</p>
+        <% if @latest_news %>
+          <p class="card-text  text-success">最新のお知らせ名:<br>
+            <%= @latest_news.title %>
+          </p>
+        <% else %>
+          <p class="card-text">公開されているお知らせはありません</p>
+        <% end %>
+      </div>
+      <% if @latest_news %>
+        <div class="m-3">
+          <%= link_to '確認する', admins_news_path(@latest_news.id), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<h1 class="h2">Dashboard</h1>
+<div class="row my-4">
+  <div class="col-12 mb-4 mb-lg-0">
+      <div class="card">
+          <h5 class="card-header">最新の問い合わせ</h5>
+          <div class="card-body">
+              <div class="table-responsive">
+                  <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">問い合わせタイプ</th>
+                          <th scope="col">お名前</th>
+                          <th scope="col">折り返し希望の有無</th>
+                          <th scope="col">連絡方法</th>
+                          <th scope="col">対応状況</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% if @latest_contact.present? %>
+                          <tr>
+                            <th scope="row"><%= @latest_contact.contact_type_text %></th>
+                            <td>
+                              <small><%= @latest_contact.name_kana %></small><br>
+                              <%= @latest_contact.name %>
+                            </td>
+                            <td class="<%= @latest_contact.callback_requested ? 'text-success' : 'text-danger' %>"><%= @latest_contact.callback_requested ? '希望' : '不要' %></td>
+                            <td><%= @latest_contact.contact_method_text %></td>
+                            <td><%= @latest_contact.status_text %></td>
+                            <td><%= link_to '確認する', admins_contact_path(@latest_contact.id), class: 'btn btn-primary' %></td>
+                          </tr>
+                          <% if @prior_latest_contact.present? %>
+                            <tr>
+                              <th scope="row"><%= @prior_latest_contact.contact_type_text %></th>
+                              <td>
+                                <small><%= @prior_latest_contact.name_kana %></small><br>
+                                <%= @prior_latest_contact.name %>
+                              </td>
+                              <td class="<%= @prior_latest_contact.callback_requested ? 'text-success' : 'text-danger' %>"><%= @prior_latest_contact.callback_requested ? '希望' : '不要' %></td>
+                              <td><%= @prior_latest_contact.contact_method_text %></td>
+                              <td><%= @prior_latest_contact.status_text %></td>
+                              <td><%= link_to '確認する', admins_contact_path(@prior_latest_contact.id), class: 'btn btn-primary' %></td>
+                            </tr>
+                          <% end %>
+                        <% else %>
+                          <tr>
+                            <th scope="row">問い合わせはありません</th>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

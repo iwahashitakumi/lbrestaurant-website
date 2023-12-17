@@ -118,7 +118,7 @@
                               <small><%= @latest_contact.name_kana %></small><br>
                               <%= @latest_contact.name %>
                             </td>
-                            <td><%= @latest_contact.callback_requested ? 'text-success' : 'text-danger' %>"><%= @latest_contact.callback_requested ? '希望' : '不要' %></td>
+                            <td class="<%= @latest_contact.callback_requested ? 'text-success' : 'text-danger' %>"><%= @latest_contact.callback_requested ? '希望' : '不要' %></td>
                             <td><%= @latest_contact.contact_method_text %></td>
                             <td><%= @latest_contact.status_text %></td>
                             <td><%= link_to '確認する', admins_contact_path(@latest_contact.id), class: 'btn btn-primary' %></td>

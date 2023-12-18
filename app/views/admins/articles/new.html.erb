@@ -1,11 +1,10 @@
-<div class="container mt-4 mobile-gutter">
-  <%= render "admins/shared/flashes" %>
-  <div class="card col-sm-9 mx-auto mt-5 mobile-card-border">
-    <div class="card-body">
-      <h3 class="text-center mt-3 mb-5 fw-bold">ブログ新規登録</h3>
-      <%= form_with model: @article, url: admins_articles_path, local: true, multipart: true  do |f| %>
-        <%= render partial: 'form', locals: { f: f } %>
-      <% end %>
-    </div>
+<% breadcrumb :new_admins_article %>
+<%= render "admins/shared/flashes" %>
+<div class="card col-sm-9 mx-auto mt-5 mobile-card-border">
+  <div class="card-body">
+    <h3 class="text-center mt-3 mb-5 fw-bold">ブログ新規登録</h3>
+    <%= form_with model: @article, url: admins_articles_path, local: true, multipart: true  do |f| %>
+      <%= render partial: 'form', locals: { f: f } %>
+    <% end %>
   </div>
 </div>

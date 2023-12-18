@@ -11,7 +11,7 @@ const App: React.FC = (props: any) => {
   React.useEffect(() => {
     rewrap('articlecontents-component', ArticleContents, true);
   }, []);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const toggleSidebar = React.useCallback(() => {
     if (isSidebarOpen) {
       setIsSidebarOpen(false);
@@ -31,6 +31,8 @@ const App: React.FC = (props: any) => {
       <div className="row mobile-gutter">
         <Sidebar
           currentAdminRole={props.currentAdminRole}
+          adminsContactsPath="/admins/contacts"
+          adminsJobEntriesPath="/admins/job_entries"
           isSidebarOpen={isSidebarOpen}
           adminsNewsIndexPath="/admins/news"
           newAdminsNewsPath="/admins/news/new"

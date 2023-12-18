@@ -23,5 +23,7 @@ Rails.application.routes.draw do
     end
     resources :articles
     resources :admin_users
+    resources :contacts, only: [:index, :update, :show]
+    resources :job_entries, only: [:index, :update, :show]
   end
 end

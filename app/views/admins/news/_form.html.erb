@@ -8,7 +8,7 @@
 <div class="mb-4">
   <%= f.label :title, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.text_field :title, class: 'form-control', value: f.object.title %>
+  <%= f.text_field :title, class: 'form-control', value: f.object.title, placeholder: "タイトルを入力" %>
   <%= show_error_messages(f.object, :title) %>
 </div>
 
@@ -29,7 +29,7 @@
 <div class="mb-4">
   <%= f.label :body, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.text_area :body, class: 'form-control', value: f.object.body %>
+  <%= f.text_area :body, class: 'form-control', value: f.object.body, placeholder: "内容を入力" %>
   <%= show_error_messages(f.object, :body) %>
 </div>
 

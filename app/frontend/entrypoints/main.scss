@@ -151,6 +151,25 @@ em {
   }
 }
 
+@media (max-width: 576px) {
+  .mobile-mx-0 {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .mobile-ml-0 {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .mobile-text-center {
+    text-align: center !important;
+  }
+}
+
 .custom-breadcrumb {
   background-color: #e9ecef;
   color: #6c757d;

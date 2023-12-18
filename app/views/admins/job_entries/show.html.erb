@@ -16,7 +16,7 @@
         <p><strong>電話番号:</strong><%= @job_entry.phone_number %></p>
         <p><strong>住所:</strong><%= "#{@job_entry.prefecture.name}#{@job_entry.city_name}#{@job_entry.address}" %>
       </div>
-      <div class="col-md-5 mb-4 text-end">
+      <div class="col-md-5 mb-4 text-end mobile-disable-text-end">
         <%= form_with(model: @job_entry, url: admins_job_entry_path(@job_entry), method: :patch) do |f| %>
           <div class="mb-3">
             <%= f.label :status, "ステータス:" %>

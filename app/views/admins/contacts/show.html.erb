@@ -13,7 +13,7 @@
         <strong>メールアドレス:</strong><%= @contact.email %><br>
         <strong>電話番号:</strong><%= @contact.phone_number %><br>
       </div>
-      <div class="col-md-5 mb-4 text-end">
+      <div class="col-md-5 mb-4 text-end mobile-disable-text-end">
         <%= form_with(model: @contact, url: admins_contact_path(@contact), method: :patch) do |f| %>
           <div class="mb-3">
             <%= f.label :status, "ステータス:" %>

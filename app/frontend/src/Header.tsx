@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = (props) => {
   };
 
   return (
-    <header>
+    <header className="admin-header">
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <a href={props.adminsRootPath} className="navbar-brand ps-3 ms-lg-5 mobile-text">
           LBrestaurant管理システム

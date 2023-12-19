@@ -26,4 +26,8 @@ Rails.application.routes.draw do
     resources :contacts, only: [:index, :update, :show]
     resources :job_entries, only: [:index, :update, :show]
   end
+
+  scope module: :public do
+    root 'home#show'
+  end
 end

@@ -70,6 +70,13 @@ a:hover {
   padding-bottom: 150px;
 }
 
+@media screen and (max-width: 768px){
+  .contents {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+
 @media screen and (max-width: 576px){
  .contents {
     padding-top: 60px;
@@ -78,11 +85,11 @@ a:hover {
 }
 
 .contents-wrap {
-  max-width: 980px;
+  max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 50px;
+  background-color: #fff ;
 }
 
 @media (max-width: 576px){

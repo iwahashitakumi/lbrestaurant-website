@@ -231,6 +231,11 @@ a:hover {
   position: relative;
 }
 
+@media (max-width: 576px) {
+  .nav-item {
+    margin: 0 !important;
+  }
+}
 
 
 .navbar a i,

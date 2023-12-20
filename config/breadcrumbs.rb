@@ -1,4 +1,4 @@
-#トップ画面
+#管理トップ画面
   crumb :admins_root do
     link "ホーム", admins_root_path
   end
@@ -24,7 +24,7 @@
     parent :admins_admin_users
   end
 
-#ブログ関連
+#管理ブログ関連
   crumb :admins_articles do
     link "ブログ一覧", admins_articles_path
     parent :admins_root
@@ -45,7 +45,7 @@
     parent :admins_articles
   end
 
-#問い合わせ関連
+#管理問い合わせ関連
   crumb :admins_contacts do
     link "問い合わせ一覧", admins_contacts_path
     parent :admins_root
@@ -56,7 +56,7 @@
     parent :admins_contacts
   end
 
-#採用応募関連
+#管理採用応募関連
   crumb :admins_job_entries do
     link "採用応募一覧", admins_job_entries_path
     parent :admins_root
@@ -67,7 +67,7 @@
     parent :admins_job_entries
   end
 
-#お知らせ関連
+#管理お知らせ関連
   crumb :admins_news_index do
     link "お知らせ一覧", admins_news_index_path
     parent :admins_root
@@ -88,7 +88,7 @@
     parent :admins_news_index
   end
 
-#店舗関連
+#管理店舗関連
   crumb :admins_shops do
     link "店舗一覧", admins_shops_path
     parent :admins_root
@@ -118,3 +118,7 @@
     link "タイトル:#{shop.name}の詳細", admins_shop_path(shop)
     parent :discarded_admins_shops
   end
+
+
+
+

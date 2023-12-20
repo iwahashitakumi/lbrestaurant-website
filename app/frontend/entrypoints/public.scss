@@ -6,16 +6,6 @@ body {
   color: #4d4643;
 }
 
-.header-link {
-  color: #f03c02;
-  text-decoration: none;
-}
-
-.header-link:hover {
-  color: #fd5c28;
-  text-decoration: none;
-}
-
 h1,
 h2,
 h3,
@@ -67,19 +57,40 @@ h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
-  height: 70px;
-  transition: all 0.5s;
+.header {
   z-index: 997;
-  transition: all 0.5s;
   background: #fff;
+  padding: 20px 40px;
+  border-bottom: 1px solid #ddd;
 }
 
-#header.fixed-top {
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+@media screen and (max-width: 680px){
+  .header {
+    padding: 0;
+  }
 }
 
-#header .logo h1 {
+@media screen and (max-width: 680px){
+  .header-sm {
+    padding: 15px 10px;
+  }
+}
+
+@media screen and (max-width: 680px){
+  .header-linklist {
+    padding: 40px 20px;
+    background-color: #FAFAFA;
+  }
+}
+
+@media screen and (max-width: 680px){
+  .navbar-brand-sm {
+    margin-right: 109px !important;
+  }
+}
+
+
+.header .logo h1 {
   font-size: 28px;
   margin: 0;
   padding: 10px 0;
@@ -89,20 +100,14 @@ h6 {
   text-transform: uppercase;
 }
 
-#header .logo h1 a,
-#header .logo h1 a:hover {
-  color: #2b2320;
-  text-decoration: none;
-}
-
-#header .logo img {
-  padding: 0;
-  margin: 0;
-  max-height: 40px;
-}
-
 .scrolled-offset {
   margin-top: 70px;
+}
+
+@media (max-width: 576px) {
+  .header-mobile-text {
+    font-size: 20px !important;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -113,6 +118,21 @@ h6 {
 */
 .navbar {
   padding: 0;
+}
+
+@media screen and (max-width: 680px){
+  .nav-list {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    padding: 40px 20px 33px;
+    background-color: #FAFAFA;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .05);
+    text-align: center;
+    z-index: 9999;
+  }
 }
 
 .navbar ul {
@@ -127,18 +147,7 @@ h6 {
   position: relative;
 }
 
-.navbar a,
-.navbar a:focus {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0 10px 20px;
-  font-size: 13px;
-  color: #65534c;
-  white-space: nowrap;
-  text-transform: uppercase;
-  transition: 0.3s;
-}
+
 
 .navbar a i,
 .navbar a:focus i {
@@ -254,10 +263,6 @@ h6 {
 @media (max-width: 991px) {
   .mobile-nav-toggle {
     display: block;
-  }
-
-  .navbar ul {
-    display: none;
   }
 }
 

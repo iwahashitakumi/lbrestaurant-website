@@ -202,6 +202,8 @@ a:hover {
   padding: 0;
 }
 
+
+
 @media screen and (max-width: 576px){
   .nav-list {
     display: block;
@@ -242,7 +244,7 @@ a:hover {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #f03c02;
+  color: #f03c02 !important;
 }
 
 .navbar .getstarted,

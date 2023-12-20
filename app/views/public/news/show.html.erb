@@ -6,5 +6,8 @@
       <li class="time"><%= format_date(@news.calendar_date) %></li>
     </ul>
   </div>
-  <p><%=safe_join(@news.body.split("\n"),tag(:br))%></p>
+  <div class="newsBodybox">
+    <p><%=safe_join(@news.body.split("\n"),tag(:br))%></p>
+  </div>
 </div>
+

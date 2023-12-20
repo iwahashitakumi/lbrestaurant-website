@@ -48,6 +48,24 @@ a:hover {
   opacity: 1;
 }
 
+.pagination {
+  --bs-pagination-border-width: initial;
+  --bs-pagination-bg: initial;
+  position: relative;
+  margin: 40px;
+  margin-top: 24px;
+  text-align: center;
+  font-family: "Ubuntu";
+  font-size: 18px;
+  line-height: 1;
+  color: #000;
+}
+
+.pagination a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .contents {
   padding-top: 120px;
   padding-bottom: 150px;

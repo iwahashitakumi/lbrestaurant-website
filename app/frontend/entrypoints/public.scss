@@ -2,17 +2,19 @@
 @import 'main.scss';
 
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #4d4643;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Meiryo, YuGothic, "Yu Gothic Medium", "Yu Gothic", 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', sans-serif;
+  line-height: 1.625;
+  color: #000;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Muli", sans-serif;
+a {
+  text-decoration: none;
+  color: var(--bs-nav-link-color);
+}
+
+a:hover {
+  color: #fd5c28;
+  text-decoration: none;
 }
 
 .back-to-top {
@@ -45,6 +47,59 @@ h6 {
   opacity: 1;
 }
 
+
+.contents-wrap {
+  max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+@media (max-width: 576px){
+  .content-wrap {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.content-info {
+  border-bottom: 1px solid #999;
+}
+
+.h1style {
+  position: relative;
+  height: 132px;
+  margin-bottom: 106px;
+  padding-top: 58px;
+  font-size: 2.125rem;
+  text-align: center;
+}
+
+.h1style::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 45px;
+  height: 4px;
+  background-color: #666;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 576px){
+  .h1style {
+    height: 80px;
+    margin-bottom: 40px;
+    padding-top: 30px;
+    background-size: 95% auto;
+    background-position: center center;
+    font-size: 1.6rem
+  }
+}
+
 /*--------------------------------------------------------------
 # Disable AOS delay on mobile
 --------------------------------------------------------------*/
@@ -64,26 +119,26 @@ h6 {
   border-bottom: 1px solid #ddd;
 }
 
-@media screen and (max-width: 680px){
+@media screen and (max-width: 576px){
   .header {
     padding: 0;
   }
 }
 
-@media screen and (max-width: 680px){
+@media screen and (max-width: 576px){
   .header-sm {
     padding: 15px 10px;
   }
 }
 
-@media screen and (max-width: 680px){
+@media screen and (max-width: 576px){
   .header-linklist {
     padding: 40px 20px;
     background-color: #FAFAFA;
   }
 }
 
-@media screen and (max-width: 680px){
+@media screen and (max-width: 576px){
   .navbar-brand-sm {
     margin-right: 109px !important;
   }
@@ -120,7 +175,7 @@ h6 {
   padding: 0;
 }
 
-@media screen and (max-width: 680px){
+@media screen and (max-width: 576px){
   .nav-list {
     display: block;
     position: absolute;
@@ -644,33 +699,17 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Services
+# お知らせ
 --------------------------------------------------------------*/
-.services .icon-box {
-  padding: 50px 20px;
-  margin-top: 35px;
-  margin-bottom: 25px;
-  text-align: center;
-  border: 1px solid #ebe6e4;
-  height: 200px;
-  position: relative;
-  background: #faf9f8;
+.date {
+  padding-top: 16px;
+  font-size: 1.25rem;
 }
 
-.services .icon {
-  position: absolute;
-  top: -36px;
-  left: calc(50% - 36px);
-  transition: 0.2s;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 72px;
-  height: 72px;
-  background: #f03c02;
+@media (max-width: 576px) {
+  .date {
+    font-size: 1rem;
+  }
 }
 
 .services .icon i {
@@ -2184,23 +2223,4 @@ section {
   margin-top: 70px;
 }
 
-.h1style {
-  position: relative;
-  height: 132px;
-  margin-bottom: 106px;
-  padding-top: 58px;
-  font-size: 2.125rem;
-  text-align: center;
-}
 
-.h1style::after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 45px;
-  height: 4px;
-  background-color: #666;
-  transform: translateX(-50%);
-}

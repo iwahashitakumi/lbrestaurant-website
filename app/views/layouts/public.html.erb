@@ -24,8 +24,10 @@
   </head>
   <body>
     <%= render 'public/shared/header' %>
-    <main class="main-top">
-      <%= yield %>
-    </main>
+    <div class="contents">
+      <main>
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>

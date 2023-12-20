@@ -5,6 +5,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Meiryo, YuGothic, "Yu Gothic Medium", "Yu Gothic", 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', sans-serif;
   line-height: 1.625;
   color: #000;
+  background-color: #eeeeee;
 }
 
 a {
@@ -47,7 +48,17 @@ a:hover {
   opacity: 1;
 }
 
+.contents {
+  padding-top: 120px;
+  padding-bottom: 150px;
+}
 
+@media screen and (max-width: 576px){
+ .contents {
+    padding-top: 60px;
+    padding-bottom: 75px;
+ }
+}
 
 .contents-wrap {
   max-width: 980px;

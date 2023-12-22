@@ -13,7 +13,7 @@ class News < ApplicationRecord
   validate :end_at_after_start_at
   
   scope :before_published, -> { where('start_at <= ?', Time.zone.now) }
-  scope :next_expired, -> { where('end_at >= ?', Time.zone.now) }
+  scope :next_expired, -> { where('end_at <= ?', Time.zone.now) }
   scope :search_by_state, ->(state) { where(state: state) }
 
   def self.ransackable_scopes(auth_object = nil)

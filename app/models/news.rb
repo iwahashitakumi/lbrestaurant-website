@@ -1,7 +1,7 @@
 class News < ApplicationRecord
 
   extend Enumerize
-  enumerize :state, in: { unpublished: 0, published: 1, expired: 2 }, default: :unpublished, scope: true, predicates: true
+  enumerize :state, in: { unpublished: 0, published: 1, expired: 2 }, default: :unpublished, predicates: true, scope: :shallow
 
   validates :calendar_date, presence: true
   validates :state, presence: true
@@ -12,7 +12,6 @@ class News < ApplicationRecord
   validate :start_at_in_future
   validate :end_at_after_start_at
   
-
   scope :search_by_state, ->(state) { where(state: state) }
 
   def self.ransackable_scopes(auth_object = nil)

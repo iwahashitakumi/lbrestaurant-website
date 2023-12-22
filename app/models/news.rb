@@ -1,4 +1,8 @@
 class News < ApplicationRecord
+
+  extend Enumerize
+  enumerize :state, in: { unpublished: 0, published: 1, expired: 2 }, default: :unpublished, scope: true, predicates: true
+
   validates :calendar_date, presence: true
   validates :title, presence: true, length: { minimum: 5, maximum: 100 }
   validates :start_at, presence: true
@@ -6,6 +10,7 @@ class News < ApplicationRecord
   validates :body, presence: true
   validate :start_at_in_future
   validate :end_at_after_start_at
+  
 
   def start_at_in_future
     errors.add(:start_at, 'は過去の日時を選択できません') if start_at.present? && start_at < Time.zone.now

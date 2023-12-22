@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   extend Enumerize
 
   enumerize :category, in: { event: 0, company_trip: 1, staff_introduction: 2, other: 3 }
+  enumerize :state, in: { unpublished: 0, published: 1, expired: 2 }, default: :unpublished, scope: true, predicates: true
 
   validates :category, presence: true
   validates :title, presence: true, length: { minimum: 5, maximum: 100 }

@@ -4,6 +4,7 @@ class News < ApplicationRecord
   enumerize :state, in: { unpublished: 0, published: 1, expired: 2 }, default: :unpublished, scope: true, predicates: true
 
   validates :calendar_date, presence: true
+  validates :state, presence: true
   validates :title, presence: true, length: { minimum: 5, maximum: 100 }
   validates :start_at, presence: true
   validates :end_at, presence: true

@@ -15,9 +15,10 @@ class Article < ApplicationRecord
   validate :end_at_after_start_at
 
   scope :search_by_category, ->(category) { where(category: category) }
+  scope :search_by_state, ->(state) { where(state: state) }
 
   def self.ransackable_scopes(auth_object = nil)
-    %i(search_by_category)
+    %i(search_by_category search_by_state)
   end
 
   def start_at_in_future
@@ -29,7 +30,7 @@ class Article < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["title", "category"]
+    ["title", "category", "state"]
   end
 
   def self.ransackable_associations(auth_object = nil)

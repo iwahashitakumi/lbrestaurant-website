@@ -13,6 +13,12 @@ class News < ApplicationRecord
   validate :end_at_after_start_at
   
 
+  scope :search_by_state, ->(state) { where(state: state) }
+
+  def self.ransackable_scopes(auth_object = nil)
+    %i(search_by_state)
+  end
+
   def start_at_in_future
     errors.add(:start_at, 'は過去の日時を選択できません') if start_at.present? && start_at < Time.zone.now
   end
@@ -22,7 +28,7 @@ class News < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["title", "body"]
+    ["title", "body", "state"]
   end
 
   def self.ransackable_associations(auth_object = nil)

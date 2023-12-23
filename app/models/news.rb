@@ -1,7 +1,7 @@
 class News < ApplicationRecord
 
   extend Enumerize
-  enumerize :status, in: { unpublished: 0, published: 1, expired: 2 }, default: :unpublished, predicates: true, scope: true
+  enumerize :status, in: { unpublished: 0, published: 1, expired: 2 }, default: :unpublished, predicates: true, scope: :shallow
 
   validates :calendar_date, presence: true
   validates :status, presence: true

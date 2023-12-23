@@ -11,7 +11,7 @@ set :output, "#{Rails.root}/log/cron.log"
 
 
 every :minute do
-  rake 'news_state:change_to_be_published'
-  rake 'news_state:change_to_be_expire'
+  rake 'news_status:change_to_be_published'
+  rake 'news_status:change_to_be_expire'
 end
 

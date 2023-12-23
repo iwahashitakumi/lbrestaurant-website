@@ -4,10 +4,10 @@ class Article < ApplicationRecord
   extend Enumerize
 
   enumerize :category, in: { event: 0, company_trip: 1, staff_introduction: 2, other: 3 }
-  enumerize :state, in: { unpublished: 0, published: 1, expired: 2 }, default: :unpublished, scope: true, predicates: true
+  enumerize :status, in: { unpublished: 0, published: 1, expired: 2 }, default: :unpublished, scope: true, predicates: true
 
   validates :category, presence: true
-  validates :state, presence: true
+  validates :status, presence: true
   validates :title, presence: true, length: { minimum: 5, maximum: 100 }
   validates :start_at, presence: true
   validates :end_at, presence: true
@@ -15,10 +15,10 @@ class Article < ApplicationRecord
   validate :end_at_after_start_at
 
   scope :search_by_category, ->(category) { where(category: category) }
-  scope :search_by_state, ->(state) { where(state: state) }
+  scope :search_by_status, ->(status) { where(status: status) }
 
   def self.ransackable_scopes(auth_object = nil)
-    %i(search_by_category search_by_state)
+    %i(search_by_category search_by_status)
   end
 
   def start_at_in_future
@@ -30,7 +30,7 @@ class Article < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["title", "category", "state"]
+    ["title", "category", "status"]
   end
 
   def self.ransackable_associations(auth_object = nil)

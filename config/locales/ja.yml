@@ -85,7 +85,7 @@ ja:
         start_at: 公開開始時間
         end_at: 公開終了時間
         body: 内容
-        state: 公開状態
+        status: 公開状況
       shop:
         name: 店舗名
         prefecture_id: 都道府県
@@ -104,7 +104,7 @@ ja:
         start_at: 公開開始日時
         end_at: 公開終了日時
         category: カテゴリー
-        state: 公開状態
+        status: 公開状況
       content:
         body: 内容
         article_image: ブログ画像
@@ -141,7 +141,7 @@ ja:
         admin: 管理者
         owner: オーナー
     news:
-      state:
+      status:
         unpublished: 公開待ち
         published:  公開済み
         expired: 公開終了
@@ -151,7 +151,7 @@ ja:
         company_trip: 社員旅行
         staff_introduction: スタッフ紹介
         other: その他
-      state:
+      status:
         unpublished: 公開待ち
         published:  公開済み
         expired: 公開終了

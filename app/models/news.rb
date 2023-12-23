@@ -12,7 +12,7 @@ class News < ApplicationRecord
   validate :start_at_in_future
   validate :end_at_after_start_at
   
-  scope :before_published, -> { where("start_at <= ? AND end_at > ?", Time.current, Time.current) }
+  scope :before_published, -> { where("start_at <= ? AND end_at > ?", Time.zone.now, Time.zone.now) }
   scope :next_expired, -> { where('end_at <= ?', Time.zone.now) }
   scope :search_by_status, ->(status) { where(status: status) }
 

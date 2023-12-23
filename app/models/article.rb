@@ -3,8 +3,8 @@ class Article < ApplicationRecord
   accepts_nested_attributes_for :contents, allow_destroy: true
   extend Enumerize
 
-  enumerize :category, in: { event: 0, company_trip: 1, staff_introduction: 2, other: 3 }
-  enumerize :status, in: { unpublished: 0, published: 1, expired: 2 }, default: :unpublished, scope: true, predicates: true
+  enumerize :category, in: { event: 1, company_trip: 2, staff_introduction: 3, other: 4 }
+  enumerize :status, in: { unpublished: 1, published: 2, expired: 3 }, default: :unpublished, scope: true, predicates: true
 
   validates :category, presence: true
   validates :status, presence: true

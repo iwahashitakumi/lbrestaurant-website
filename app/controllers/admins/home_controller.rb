@@ -41,7 +41,7 @@ class Admins::HomeController < Admins::ApplicationController
   end
 
   def load_articles
-    @total_articles_unstarted = Article.with_state(:unpublished).count
+    @total_articles_unstarted = Article.with_status(:unpublished).count
   end
 
   def created_today

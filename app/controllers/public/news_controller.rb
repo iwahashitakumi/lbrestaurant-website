@@ -1,9 +1,9 @@
 class Public::NewsController < Public::ApplicationController
   def index
-    @news = News.published.page(params[:page]).per(4)
+    @news = News.with_status(:published).page(params[:page]).per(4)
   end
 
   def show
-    @news = News.published.find(params[:id])
+    @news = News.with_status(:published).find(params[:id])
   end
 end

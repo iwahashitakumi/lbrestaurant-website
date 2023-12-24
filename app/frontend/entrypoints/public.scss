@@ -839,11 +839,14 @@ section {
 --------------------------------------------------------------*/
 .article-card {
   border: solid 1px #cccccc;
+}
+
+.article-image {
   position: relative;
   overflow: hidden;
 }
 
-.article-card:hover::before {
+.article-image:hover::before {
   content: "";
   position: absolute;
   top: 0;
@@ -851,11 +854,11 @@ section {
   bottom: 0;
   left: 0;
   background-color: rgba(200, 200, 200, 0.3);
-  pointer-events: none; /* オーバーレイがホバーを遮らないようにする */
+  pointer-events: none;
 }
 
-.article-card:hover {
-  background-color: transparent; /* ホバー時に通常の背景を透明にする */
+.article-image:hover {
+  background-color: transparent;
 }
 
 

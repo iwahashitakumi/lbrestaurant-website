@@ -6,9 +6,11 @@
         <div class="col-md-6 col-12 mt-4">
           <div class="article-card">
             <%= link_to [article] do %>
-              <% if article.contents.first.article_image.present? %>
-                <%= image_tag(article.contents.first.article_image.url, alt: 'ブログ画像', class: "img-fluid", style: "width:100%; height:250px;") %>
-              <% end %>
+              <div class="article-image">
+                <% if article.contents.first.article_image.present? %>
+                  <%= image_tag(article.contents.first.article_image.url, alt: 'ブログ画像', class: "img-fluid", style: "width:100%; height:250px;") %>
+                <% end %>
+              </div>
               <div class="article-info">
                 <div class="article-title"><%= article.title %></div>
                 <div class="article-category">

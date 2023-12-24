@@ -73,23 +73,13 @@
   </div>
   <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
     <div class="card h-100">
-      <h5 class="card-header">お知らせ</h5>
+      <h5 class="card-header">お知らせとブログ</h5>
       <div class="card-body">
         <h5 class="card-title">お知らせ件数：<%= @total_news %>件</h5>
-        <p class="card-text"><%= link_to '公開画面へのリンク', news_index_path %></p>
-        <% if @latest_news %>
-          <p class="card-text  text-success">最新のお知らせ名:<br>
-            <%= @latest_news.title %>
-          </p>
-        <% else %>
-          <p class="card-text">公開されているお知らせはありません</p>
-        <% end %>
+        <h5 class="card-title">ブログ件数：<%= @total_articles %>件</h5>
+        <p class="card-text mt-5"><%= link_to '(お知らせ)公開画面へのリンク', news_index_path %></p>
+        <p class="card-text"><%= link_to '(ブログ)公開画面へのリンク', articles_path %></p>
       </div>
-      <% if @latest_news %>
-        <div class="m-3">
-          <%= link_to '最新', admins_news_path(@latest_news.id), class: 'btn btn-primary' %>
-        </div>
-      <% end %>
     </div>
   </div>
 </div>

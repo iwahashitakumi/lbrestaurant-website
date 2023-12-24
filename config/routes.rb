@@ -30,5 +30,6 @@ Rails.application.routes.draw do
   scope module: :public do
     root 'home#show'
     resources :news, only: [:index, :show]
+    resources :articles, only: [:index, :show]
   end
 end

@@ -1791,6 +1791,7 @@ DEPENDENCIES
   jbuilder
   kaminari
   letter_opener_web (~> 1.0)
+  mini_magick
   mysql2
   pry-rails
   puma (~> 5.0)

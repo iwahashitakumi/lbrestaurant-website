@@ -3,6 +3,7 @@
   <h3 class="fw-bold"><%= link_to 'お知らせ一覧', admins_news_index_path, class: 'text-dark text-decoration-none' %></h3>
   <%= search_form_for @q, url: admins_news_index_path, class: 'form-inline' do |f| %>
     <div class="input-group">
+      <%= f.select :search_by_status, News.status.options, { include_blank: '全ての公開状態' }, class: 'form-select-sm me-4' %>
       <%= f.search_field @search_scope, class: 'form-control', placeholder: 'タイトルや内容で検索' %>
       <div class="input-group-append">
         <%= f.submit '検索', class: 'btn btn-primary' %>
@@ -15,6 +16,7 @@
   <table class="table table-hover">
     <thead class="table-dark">
       <tr>
+        <th>公開状態</th>
         <th>日付</th>
         <th>タイトル</th>
         <th>公開開始日時</th>
@@ -26,6 +28,7 @@
     <tbody>
       <% @news.each do |news| %>
         <tr>
+          <td class="align-middle"><%= news.status_text %></td>
           <td class="align-middle"><%= format_date(news.calendar_date) %></td>
           <td class="align-middle"><%= link_to news.title, [:admins, news], class: "text-primary" %></td>
           <td class="align-middle"><%= format_datetime(news.start_at) %></td>

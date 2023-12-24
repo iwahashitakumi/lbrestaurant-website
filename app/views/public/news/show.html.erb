@@ -1,0 +1,13 @@
+<h1 class="h1style mb-5rem fw-bold">お知らせ!</h1>
+<div class="contents-wrap">
+  <div class="newsTitlebox">
+    <h1><%= @news.title %></h1>
+    <ul>
+      <li class="time"><%= format_date(@news.calendar_date) %></li>
+    </ul>
+  </div>
+  <div class="newsBodybox">
+    <p><%=safe_join(@news.body.split("\n"),tag(:br))%></p>
+  </div>
+</div>
+

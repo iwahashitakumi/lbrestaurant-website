@@ -1,10 +1,10 @@
 ja:
   views:
     pagination:
-      first: "&laquo; 最初"
-      last: "最後 &raquo;"
-      previous: "&lsaquo; 前"
-      next: "次 &rsaquo;"
+      first: "&laquo; 最初のページ"
+      last: "最後のページ &raquo;"
+      previous: "&lsaquo; 前のページ"
+      next: "次のページ &rsaquo;"
       truncate: "..."
   activerecord:
     errors:
@@ -85,6 +85,7 @@ ja:
         start_at: 公開開始時間
         end_at: 公開終了時間
         body: 内容
+        status: 公開状況
       shop:
         name: 店舗名
         prefecture_id: 都道府県
@@ -103,6 +104,7 @@ ja:
         start_at: 公開開始日時
         end_at: 公開終了日時
         category: カテゴリー
+        status: 公開状況
       content:
         body: 内容
         article_image: ブログ画像
@@ -138,12 +140,21 @@ ja:
         member: メンバー
         admin: 管理者
         owner: オーナー
+    news:
+      status:
+        unpublished: 公開待ち
+        published:  公開済み
+        expired: 公開終了
     article:
       category:
         event: 会社イベント
         company_trip: 社員旅行
         staff_introduction: スタッフ紹介
         other: その他
+      status:
+        unpublished: 公開待ち
+        published:  公開済み
+        expired: 公開終了
     contact:
       contact_type:
         store_service: 店舗・サービスについて

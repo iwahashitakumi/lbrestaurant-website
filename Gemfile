@@ -72,6 +72,7 @@ group :test do
 end
 
 gem 'enumerize'
+gem 'whenever', require: false
 
 gem 'discard'
 

@@ -76,7 +76,7 @@
       <h5 class="card-header">お知らせ</h5>
       <div class="card-body">
         <h5 class="card-title">お知らせ件数：<%= @total_news %>件</h5>
-        <p class="card-text">公開画面へのリンク(仮)</p>
+        <p class="card-text"><%= link_to '公開画面へのリンク', news_index_path %></p>
         <% if @latest_news %>
           <p class="card-text  text-success">最新のお知らせ名:<br>
             <%= @latest_news.title %>

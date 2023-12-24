@@ -1,0 +1,16 @@
+<h1 class="h1style mb-5rem fw-bold">お知らせ!</h1>
+<div class="contents-wrap">
+  <% if @news.present? %>
+    <% @news.each do |news| %>
+      <div class="content-info">
+        <div class="date fw-bold"><%= format_date(news.calendar_date) %></div>
+        <div class="title py-3"><%= link_to news.title, [news] %></div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="title py-3 text-center">
+      <h2>お知らせはありません!</h2>
+    </div>
+  <% end %>
+</div>
+<%= paginate @news, theme: 'bootstrap-5' %>

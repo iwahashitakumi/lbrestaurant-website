@@ -16,7 +16,7 @@
     <div class="mt-4">
       <% @article.contents.each do |content| %>
         <div class="mb-4">
-          <p><strong>内容:</strong> <%= content.body %></p>
+          <p><strong>内容:</strong><%= safe_join(content.body.split("\n"),tag(:br))%></p>
           <div class="mt-4 text-center">
             <% if content.article_image.present? %>
               <%= image_tag(content.article_image.url, alt: 'ブログ画像', class: "img-fluid", style: "width:50%;") %>

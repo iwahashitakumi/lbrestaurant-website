@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_05_083416) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_23_154206) do
   create_table "admins", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_05_083416) do
     t.integer "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", null: false, comment: "ブログの状態"
   end
 
   create_table "contacts", charset: "utf8", force: :cascade do |t|
@@ -86,6 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_05_083416) do
     t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", null: false, comment: "お知らせの状態"
   end
 
   create_table "prefectures", charset: "utf8", force: :cascade do |t|

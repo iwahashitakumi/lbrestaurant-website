@@ -36,12 +36,12 @@ class Admins::HomeController < Admins::ApplicationController
   def load_news
     @news = News.all
     @total_news = @news.size
-    @total_news_unstarted = News.where(unstarted).count
+    @total_news_unstarted = News.with_status(:unpublished).count
     @latest_news = News.order(created_at_desc).first
   end
 
   def load_articles
-    @total_articles_unstarted = Article.where(unstarted).count
+    @total_articles_unstarted = Article.with_status(:unpublished).count
   end
 
   def created_today

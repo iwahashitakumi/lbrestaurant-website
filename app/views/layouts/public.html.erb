@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= vite_stylesheet_tag 'main.scss' %>
+    <%= vite_stylesheet_tag 'public.scss' %>
     <%= vite_client_tag %>
     <%= vite_typescript_tag 'application' %>
     <%= vite_react_refresh_tag %>
@@ -24,8 +24,10 @@
   </head>
   <body>
     <%= render 'public/shared/header' %>
-    <main class="ml-sm-auto col-lg-10 col-md-9 px-md-4 py-md-4 main-top">
-      <%= yield %>
-    </main>
+    <div class="contents">
+      <main>
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>

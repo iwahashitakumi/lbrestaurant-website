@@ -12,7 +12,7 @@
     </div>
     <h4 class="card-title"><%= @news.title %></h4>
     <div class="mt-4">
-      <p><%= @news.body %></p>
+      <p><%= safe_join(@news.body.split("\n"),tag(:br))%></p>
     </div>
     <div class="mt-4">
       <%= link_to "一覧に戻る", @news_index_url, class: 'btn btn-secondary' %>

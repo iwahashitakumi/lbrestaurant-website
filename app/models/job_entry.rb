@@ -4,9 +4,9 @@ class JobEntry < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :recruit_type, in: {regular_employee: 0, franchisee: 1}, scope: true, predicates: true
-  enumerize :sex, in: {male: 0, female: 1}, scope: true, predicates: true
-  enumerize :status, in: {not_started: 0, in_progress: 1, completed: 2}, default: :not_started, scope: true, predicates: true
+  enumerize :recruit_type, in: {regular_employee: 1, franchisee: 2}, scope: true, predicates: true
+  enumerize :sex, in: {male: 1, female: 2}, scope: true, predicates: true
+  enumerize :status, in: {not_started: 1, in_progress: 2, completed: 3}, default: :not_started, scope: true, predicates: true
 
   scope :search_by_recruit_type, ->(type) { where(recruit_type: type) }
   scope :search_by_sex, ->(method) { where(sex: method) }

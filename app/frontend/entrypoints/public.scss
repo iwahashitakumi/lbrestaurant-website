@@ -752,7 +752,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# news
+# News
 --------------------------------------------------------------*/
 .date {
   padding-top: 16px;
@@ -835,26 +835,43 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Portfolio
+# Artile
 --------------------------------------------------------------*/
-.portfolio #portfolio-flters {
-  padding: 0;
-  margin: 0 auto 50px auto;
-  list-style: none;
-  text-align: center;
+.article-card {
+  border: solid 1px #cccccc;
+  position: relative;
+  overflow: hidden;
 }
 
-.portfolio #portfolio-flters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 8px 20px 10px 20px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #4d4643;
-  transition: all 0.3s;
-  border-radius: 50px;
+.article-card:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(200, 200, 200, 0.3);
+  pointer-events: none; /* オーバーレイがホバーを遮らないようにする */
+}
+
+.article-card:hover {
+  background-color: transparent; /* ホバー時に通常の背景を透明にする */
+}
+
+
+.article-info {
+  padding: 20px 22px;
+  min-height: 112px;
+}
+
+.article-title {
+  font-size: 18px;
+  
+}
+
+.article-category {
+  font-size: 13px;
+  margin-top: 3rem;
 }
 
 .portfolio #portfolio-flters li:hover,

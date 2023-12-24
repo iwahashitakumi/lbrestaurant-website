@@ -11,6 +11,23 @@ module ApplicationHelper
     end
   end
 
+
+  def category_text_color(category)
+    case category.to_sym
+    when :event
+      'text-danger'
+    when :company_trip
+      'text-primary'
+    when :staff_introduction
+      'text-success'
+    when :other
+      'text-warning'
+    else
+      'text-white'
+    end
+  end
+
+
   def format_datetime(datetime)
     datetime.strftime("%Y/ %m/ %d /%H:%M")
   end

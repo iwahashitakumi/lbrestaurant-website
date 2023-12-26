@@ -13,6 +13,12 @@
                   <% else %>
                     <%= image_tag(article.contents.first.article_image.url(:pc), alt: 'ブログ画像', class: "img-fluid") %>
                   <% end %>
+                <% else %>
+                  <% if request.from_smartphone? %>
+                    <img src="/assets/default_blog_image.png" class="default-article-image">
+                  <% else %>
+                    <img src="/assets/default_blog_image.png" class="default-article-image">
+                  <% end %>
                 <% end %>
               </div>
               <div class="article-info">

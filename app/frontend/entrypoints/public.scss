@@ -861,6 +861,17 @@ section {
   background-color: transparent;
 }
 
+.default-article-image {
+  width: 542px;
+  height: 242px;
+}
+
+@media screen and (max-width: 576px){
+  .default-article-image {
+    width: 242px;
+    height: 150px;
+  }
+}
 
 .article-info {
   padding: 20px 22px;

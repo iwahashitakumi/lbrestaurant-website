@@ -71,6 +71,7 @@ group :test do
   gem 'rails-erd'
 end
 
+gem 'rack-user_agent'
 gem 'enumerize'
 gem 'whenever', require: false
 

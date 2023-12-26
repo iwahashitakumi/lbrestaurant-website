@@ -1,7 +1,7 @@
 class ArticleImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?    
@@ -32,10 +32,13 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process resize_to_fit: [50, 50]
-  # end
+  version :pc do
+    process resize_to_fill: [524, 242]
+  end
+
+  version :mobile do
+    process resize_to_fill: [242, 150]
+  end
 
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -48,4 +51,10 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  def full_filename(for_file)
+    super.tap do |file_path|
+      Rails.cache.delete([cache_dir, file_path].join('/'))
+    end
+  end
 end

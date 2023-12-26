@@ -867,9 +867,14 @@ section {
   min-height: 112px;
 }
 
+@media (max-width: 576px) {
+  .article-info {
+    padding: 12px 16px;
+  }
+}
+
 .article-title {
   font-size: 18px;
-  
 }
 
 .article-category {

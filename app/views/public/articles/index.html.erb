@@ -8,7 +8,11 @@
             <%= link_to [article] do %>
               <div class="article-image">
                 <% if article.contents.first.article_image.present? %>
-                  <%= image_tag(article.contents.first.article_image.url, alt: 'ブログ画像', class: "img-fluid", style: "width:100%; height:250px;") %>
+                  <% if request.from_smartphone? %>
+                    <%= image_tag(article.contents.first.article_image.url(:mobile), alt: 'ブログ画像', class: "img-fluid") %>
+                  <% else %>
+                    <%= image_tag(article.contents.first.article_image.url(:pc), alt: 'ブログ画像', class: "img-fluid") %>
+                  <% end %>
                 <% end %>
               </div>
               <div class="article-info">

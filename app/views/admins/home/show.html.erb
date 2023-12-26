@@ -77,8 +77,8 @@
       <div class="card-body">
         <h5 class="card-title">お知らせ件数：<%= @total_news %>件</h5>
         <h5 class="card-title">ブログ件数：<%= @total_articles %>件</h5>
-        <p class="card-text mt-5"><%= link_to '(お知らせ)公開画面へのリンク', news_index_path %></p>
-        <p class="card-text"><%= link_to '(ブログ)公開画面へのリンク', articles_path %></p>
+        <p class="card-text mt-5"><%= link_to '(お知らせ)公開画面へのリンク', news_index_path, target: "_blank" %></p>
+        <p class="card-text"><%= link_to '(ブログ)公開画面へのリンク', articles_path, target: "_blank" %></p>
       </div>
     </div>
   </div>

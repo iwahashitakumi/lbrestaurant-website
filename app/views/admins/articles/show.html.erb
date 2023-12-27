@@ -14,7 +14,6 @@
         <%= "公開終了日時: " + format_datetime(@article.end_at) %>
       </small>
     </div>
-    <h4 class="card-title"><%= @article.title %></h4>
     <div class="mt-4">
       <div class="articleContentbox">
         <% @article.contents.each do |content| %>

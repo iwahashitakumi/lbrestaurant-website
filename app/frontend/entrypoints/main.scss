@@ -1,6 +1,8 @@
 @use '@/stylesheets/application';
 
-
+li {
+  list-style: none;
+}
 
 em {
   font-style: normal;

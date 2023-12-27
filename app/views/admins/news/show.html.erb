@@ -2,15 +2,18 @@
 <%= render "admins/shared/flashes" %>
 <div class="card col-sm-9 mx-auto mt-5">
   <div class="card-body p-3 p-sm-5">
-    <h2 class="text-center mb-4 fw-bold">お知らせ詳細</h2>
+    <div class="newsHeaderbox">
+      <h1><%= @news.title %></h1>
+      <ul>
+        <li class="time"><%= format_date(@news.calendar_date) %></li>
+      </ul>
+    </div>
     <div class="text-center mb-4">
-      <h5><%= @news.calendar_date %></h5>
       <small class="text-muted">
         <%= "公開日時: " + format_datetime(@news.start_at) %><br>
         <%= "公開終了日時: " + format_datetime(@news.end_at) %>
       </small>
     </div>
-    <h4 class="card-title"><%= @news.title %></h4>
     <div class="mt-4">
       <p><%= safe_join(@news.body.split("\n"),tag(:br))%></p>
     </div>

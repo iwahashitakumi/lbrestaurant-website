@@ -755,18 +755,18 @@ section {
 /*--------------------------------------------------------------
 # News
 --------------------------------------------------------------*/
-.date {
+.news-date {
   padding-top: 16px;
   font-size: 1.25rem;
 }
 
 @media (max-width: 576px) {
-  .date {
+  .news-date {
     font-size: 1rem;
   }
 }
 
-.newsTitlebox {
+.newsHeaderbox {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -776,12 +776,12 @@ section {
 }
 
 @media screen and (max-width: 768px){
-  .newsTitlebox {
+  .newsHeaderbox {
     flex-wrap: wrap;
   }
 }
 
-.newsTitlebox h1 {
+.newsHeaderbox h1 {
   font-size: 32px;
   line-height: 1.25;
   padding: 20px 0;
@@ -789,20 +789,21 @@ section {
 }
 
 @media screen and (max-width: 768px) {
-  .newsTitlebox h1 {
+  .newsHeaderbox h1 {
     width: 100%;
     font-size: 24px;
     padding: 20px 0 0;
   }
 }
 
-.newsBodybox {
+.newsContentbox {
   margin-top: 60px;
 }
 
 /*--------------------------------------------------------------
 # Artile
 --------------------------------------------------------------*/
+
 .article-card {
   border: solid 1px #cccccc;
 }

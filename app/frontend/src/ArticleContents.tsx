@@ -79,8 +79,7 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
               <input type="hidden" name={`article[contents_attributes][${index}][id]`} value={content.id} />
               <label className="form-label">内容</label>
               <span className="badge rounded-pill text-bg-danger">必須</span>
-              <input
-                type="text"
+              <textarea
                 className="form-control"
                 value={content.body}
                 placeholder="内容を入力"

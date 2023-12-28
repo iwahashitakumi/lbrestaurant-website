@@ -24,7 +24,7 @@
               <div class="article-info">
                 <div class="article-title"><%= article.title %></div>
                 <div class="article-category">
-                  カテゴリー / <span class="<%= category_text_color(article.category) %>"><%= article.category_text %></span>
+                  カテゴリー / <span class="<%= @category_css_class %>"><%= article.category_text %></span>
                 </div>
               </div>
             <% end %>

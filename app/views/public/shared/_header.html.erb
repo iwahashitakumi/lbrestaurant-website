@@ -19,10 +19,10 @@
           <a class="nav-link fw-bold" href="#">店舗情報</a>
         </li>
         <li class="nav-item ms-5">
-          <%= link_to "お知らせ", news_index_path, class: "nav-link fw-bold #{'active' if controller_name == 'news' && (action_name == 'show' || action_name == 'index')}" %>
+          <%= link_to "お知らせ", news_index_path, class: "nav-link fw-bold #{'active' if controller_name == 'news' && ['show', 'index'].include?(action_name)}" %>
         </li>
         <li class="nav-item ms-5">
-          <%= link_to "ブログ", articles_path , class: "nav-link fw-bold #{'active' if controller_name == 'articles' && (action_name == 'show' || action_name == 'index')}" %>
+          <%= link_to "ブログ", articles_path , class: "nav-link fw-bold #{'active' if controller_name == 'articles' && ['show', 'index'].include?(action_name)}" %>
         </li>
         <li class="nav-item ms-5">
           <a class="nav-link fw-bold" href="#">採用情報</a>

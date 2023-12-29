@@ -7,23 +7,28 @@
 <div class="card col-sm-9 mx-auto mt-5 d-flex">
   <div class="card-body p-5 mobile-p-3">
     <h2 class="mb-5 text-center fw-bold"><%= @shop.name %>の詳細情報</h2>
-    <div class="d-flex justify-content-between flex-wrap">
-      <div class="col-md-5 mb-4">
+    <div class="d-flex flex-wrap">
+      <div class="col-md-6 mb-4 p-3 mobile-p-0">
         <% if @shop.shop_image? %>
           <%= image_tag @shop.shop_image.url, class: "img-fluid" %>
         <% else %>
           <%= image_tag '/assets/default_shop_image.png', alt: '店舗画像', class: "img-fluid" %>
         <% end %>
       </div>
-      <div class="col-md-5 mb-4">
-        <p><strong>郵便番号:</strong> <%= @shop.postcode %></p>
-        <p><strong>住所:</strong> <%= @shop.address %><%= @shop.prefecture.name %><%= @shop.city_name %></p>
-        <p><strong>営業時間:</strong> <%=safe_join(@shop.business_time.split("\n"),tag(:br))%></p>
-        <p><strong>アクセス:</strong> <%=safe_join(@shop.access.split("\n"),tag(:br))%></p>
-        <p><strong>電話番号:</strong> <%= @shop.phone_number %></p>
-        <p><strong>カウンター席数:</strong> <%= @shop.counter_seat %>席</p>
-        <p><strong>テーブル席数:</strong> <%= @shop.table_seat %>席</p>
-        <p><strong>グルメサイト:</strong> <%= link_to @shop.site_name, @shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer" %></p>
+      <div class="col-md-6 mb-4 p-3 mobile-p-0">
+        <dl class="shop-info">
+          <dt>住所</dt>
+          <dd>
+            〒<%= @shop.postcode %><br>
+            <%= @shop.address %><%= @shop.prefecture.name %><%= @shop.city_name %>
+          </dd>
+          <dt>営業時間</dt><dd><%=safe_join(@shop.business_time.split("\n"),tag(:br))%></dd>
+          <dt>アクセス</dt><dd><%=safe_join(@shop.access.split("\n"),tag(:br))%></dd>
+          <dt>電話番号</dt><dd class="text-decoration-underline"><%= @shop.phone_number %></dd>
+          <dt>カウンター席数</dt><dd><%= @shop.counter_seat %>席</dd>
+          <dt>テーブル席数</dt><dd><%= @shop.table_seat %>席</dd>
+          <dt>グルメサイト</dt><dd class="text-decoration-underline"><%= link_to @shop.site_name, @shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer" %></dd>
+        </dl>
       </div>
     </div>
 

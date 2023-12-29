@@ -36,14 +36,14 @@
 <div class="mb-4">
   <%= f.label :business_time, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.text_field :business_time, class: 'form-control', value: f.object.business_time, placeholder: "17:00～24:00（L.O.23:00）土日祝だけ昼12:00から営業" %>
+  <%= f.text_area :business_time, class: 'form-control', value: f.object.business_time, placeholder: "17:00～24:00（L.O.23:00）土日祝だけ昼12:00から営業" %>
   <%= show_error_messages(f.object, :business_time) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :access, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.text_field :access, class: 'form-control', value: f.object.access, placeholder: "ＪＲ大阪環状線 大阪 徒歩4分" %>
+  <%= f.text_area :access, class: 'form-control', value: f.object.access, placeholder: "ＪＲ大阪環状線 大阪 徒歩4分" %>
   <%= show_error_messages(f.object, :access) %>
 </div>
 

@@ -18,8 +18,8 @@
       <div class="col-md-5 mb-4">
         <p><strong>郵便番号:</strong> <%= @shop.postcode %></p>
         <p><strong>住所:</strong> <%= @shop.address %><%= @shop.prefecture.name %><%= @shop.city_name %></p>
-        <p><strong>営業時間:</strong> <%= @shop.business_time %></p>
-        <p><strong>アクセス:</strong> <%= @shop.access %></p>
+        <p><strong>営業時間:</strong> <%=safe_join(@shop.business_time.split("\n"),tag(:br))%></p>
+        <p><strong>アクセス:</strong> <%=safe_join(@shop.access.split("\n"),tag(:br))%></p>
         <p><strong>電話番号:</strong> <%= @shop.phone_number %></p>
         <p><strong>カウンター席数:</strong> <%= @shop.counter_seat %>席</p>
         <p><strong>テーブル席数:</strong> <%= @shop.table_seat %>席</p>

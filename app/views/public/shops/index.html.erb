@@ -28,8 +28,8 @@
                   〒<%= shop.postcode %><br>
                   <%= shop.address %><%= shop.prefecture.name %><%= shop.city_name %>
                 </dd>
-                <dt>営業時間</dt><dd><%= shop.business_time %></dd>
-                <dt>アクセス</dt><dd><%= shop.access %></dd>
+                <dt>営業時間</dt><dd><%=safe_join(shop.business_time.split("\n"),tag(:br))%></dd>
+                <dt>アクセス</dt><dd><%=safe_join(shop.access.split("\n"),tag(:br))%></dd>
                 <dt>電話番号</dt><dd class="text-decoration-underline"><%= shop.phone_number %></dd>
                 <dt>カウンター席数</dt><dd><%= shop.counter_seat %>席</dd>
                 <dt>テーブル席数</dt><dd><%= shop.table_seat %>席</dd>

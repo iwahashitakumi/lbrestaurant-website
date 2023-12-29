@@ -1,0 +1,20 @@
+<h1 class="h1style mb-5rem fw-bold">楽しいブログを更新中!</h1>
+<div class="contents-wrap">
+  <div class="article-wrap">
+    <div class="articleHeaderbox">
+      <h1><%= @article.title %></h1>
+      <ul>
+        <li class="time">カテゴリー / <span class="<%= @article.category %>-category"><%= @article.category_text %></span></li>
+      </ul>
+    </div>
+    <div class="articleContentbox">
+      <% @article.contents.each do |content| %>
+        <% if content.article_image.present? %>
+          <div class="article-show-image"><%= image_tag(content.article_image.url, alt: 'ブログ画像', class: "img-fluid") %></div>
+        <% end %>
+        <p><%=safe_join(content.body.split("\n"),tag(:br))%></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+

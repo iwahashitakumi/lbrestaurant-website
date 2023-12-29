@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import RichTextEditor from './RichTextEditor';
 
 interface Content {
   id?: number;
@@ -69,60 +70,46 @@ const ArticleContents: React.FC<ArticleContentsProps> = (props) => {
     <div>
       {contents.map((content, index) => (
         <div key={index}>
-          {content._destroy ? (
-            <>
-              <input type="hidden" name={`article[contents_attributes][${index}][_destroy]`} value="true" />
-              <input type="hidden" name={`article[contents_attributes][${index}][id]`} value={content.id} />
-            </>
-          ) : (
-            <>
-              <input type="hidden" name={`article[contents_attributes][${index}][id]`} value={content.id} />
-              <label className="form-label">内容</label>
-              <span className="badge rounded-pill text-bg-danger">必須</span>
-              <input
-                type="text"
-                className="form-control"
-                value={content.body}
-                placeholder="内容を入力"
-                onChange={(e) => handleChange(index, 'body', e.target.value)}
-                name={`article[contents_attributes][${index}][body]`}
-              />
-              {content.body === '' && (
-                <div className="text-danger">
-                  <ul className="mb-0">
-                    <li>{props.body_error_message}</li>
-                  </ul>
-                </div>
-              )}
+          <label className="form-label">内容</label>
+          <span className="badge rounded-pill text-bg-danger">必須</span>
+          <RichTextEditor
+            value={content.body}
+            onChange={(value) => handleChange(index, 'body', value)}
+          />
+          {content.body === '' && (
+            <div className="text-danger">
+              <ul className="mb-0">
+                <li>{props.body_error_message}</li>
+              </ul>
+            </div>
+          )}
+          
+          <label className="form-label">画像</label>
+          <span className="badge rounded-pill text-bg-success">任意</span>
+          <input
+            type="file"
+            className="form-control"
+            accept="image/*"
+            onChange={(e) => {
+              handleChange(index, 'article_image', e.target.files);
+            }}
+            name={`article[contents_attributes][${index}][article_image]`}
+          />
 
-              <label className="form-label">画像</label>
-              <span className="badge rounded-pill text-bg-success">任意</span>
-              <input
-                type="file"
-                className="form-control"
-                accept="image/*"
-                onChange={(e) => {
-                  handleChange(index, 'article_image', e.target.files);
-                }}
-                name={`article[contents_attributes][${index}][article_image]`}
-              />
+          <input
+            type="hidden"
+            value={content.article_image_cache}
+            name={`article[contents_attributes][${index}][article_image_cache]`}
+          />
 
-              <input
-                type="hidden"
-                value={content.article_image_cache}
-                name={`article[contents_attributes][${index}][article_image_cache]`}
-              />
+          <span className="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>
 
-              <span className="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>
-
-              {contents.filter(content=>!content._destroy).length > 1 && (
-                <div className="mt-1">
-                  <button type="button" onClick={() => handleRemoveContent(index)} className="btn btn-danger">
-                    -
-                  </button>
-                </div>
-              )}
-            </>
+          {contents.filter(content=>!content._destroy).length > 1 && (
+            <div className="mt-1">
+              <button type="button" onClick={() => handleRemoveContent(index)} className="btn btn-danger">
+                -
+              </button>
+            </div>
           )}
         </div>
       ))}

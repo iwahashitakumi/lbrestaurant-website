@@ -100,8 +100,9 @@ a:hover {
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
-  padding: 50px;
+  padding: 50px 80px;
   background-color: #fff ;
+  color: #4c4c4c;
 }
 
 @media (max-width: 576px){
@@ -752,20 +753,20 @@ section {
 }
 
 /*--------------------------------------------------------------
-# news
+# News
 --------------------------------------------------------------*/
-.date {
+.news-date {
   padding-top: 16px;
   font-size: 1.25rem;
 }
 
 @media (max-width: 576px) {
-  .date {
+  .news-date {
     font-size: 1rem;
   }
 }
 
-.newsTitlebox {
+.newsHeaderbox {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -775,12 +776,12 @@ section {
 }
 
 @media screen and (max-width: 768px){
-  .newsTitlebox {
+  .newsHeaderbox {
     flex-wrap: wrap;
   }
 }
 
-.newsTitlebox h1 {
+.newsHeaderbox h1 {
   font-size: 32px;
   line-height: 1.25;
   padding: 20px 0;
@@ -788,157 +789,137 @@ section {
 }
 
 @media screen and (max-width: 768px) {
-  .newsTitlebox h1 {
+  .newsHeaderbox h1 {
     width: 100%;
     font-size: 24px;
     padding: 20px 0 0;
   }
 }
 
-.newsBodybox {
+.newsContentbox {
   margin-top: 60px;
 }
 
-.services .icon i {
-  color: #fff;
-  font-size: 24px;
-  line-height: 0;
-}
-
-.services .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-  text-transform: uppercase;
-}
-
-.services .title a {
-  color: #343a40;
-}
-
-.services .icon-box:hover .icon {
-  background: #fff;
-  border: 2px solid #f03c02;
-}
-
-.services .icon-box:hover .icon i {
-  color: #f03c02;
-}
-
-.services .icon-box:hover .title a {
-  color: #f03c02;
-}
-
-.services .description {
-  line-height: 24px;
-  font-size: 14px;
-}
-
 /*--------------------------------------------------------------
-# Portfolio
+# Artile
 --------------------------------------------------------------*/
-.portfolio #portfolio-flters {
-  padding: 0;
-  margin: 0 auto 50px auto;
-  list-style: none;
-  text-align: center;
+
+.article-wrap {
+  padding: 0 80px;
 }
 
-.portfolio #portfolio-flters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 8px 20px 10px 20px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #4d4643;
-  transition: all 0.3s;
-  border-radius: 50px;
+.article-card {
+  border: solid 1px #cccccc;
 }
 
-.portfolio #portfolio-flters li:hover,
-.portfolio #portfolio-flters li.filter-active {
-  color: #fff;
-  background: #f03c02;
+.article-image {
+  position: relative;
+  overflow: hidden;
 }
 
-.portfolio #portfolio-flters li:last-child {
-  margin-right: 0;
-}
-
-.portfolio .portfolio-item {
-  margin-bottom: 30px;
-}
-
-.portfolio .portfolio-item .portfolio-info {
-  opacity: 0;
+.article-image:hover::before {
+  content: "";
   position: absolute;
-  left: 30px;
-  right: 30px;
-  bottom: 0;
-  z-index: 3;
-  transition: all ease-in-out 0.3s;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 15px;
-}
-
-.portfolio .portfolio-item .portfolio-info h4 {
-  font-size: 18px;
-  color: #fff;
-  font-weight: 600;
-  color: #2b2320;
-}
-
-.portfolio .portfolio-item .portfolio-info p {
-  color: #65534c;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.portfolio .portfolio-item .portfolio-info .preview-link,
-.portfolio .portfolio-item .portfolio-info .details-link {
-  position: absolute;
-  right: 40px;
-  font-size: 24px;
-  top: calc(50% - 18px);
-  color: #483b36;
-}
-
-.portfolio .portfolio-item .portfolio-info .preview-link:hover,
-.portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: #f03c02;
-}
-
-.portfolio .portfolio-item .portfolio-info .details-link {
-  right: 10px;
-}
-
-.portfolio .portfolio-item .portfolio-links {
-  opacity: 0;
-  left: 0;
+  top: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(200, 200, 200, 0.3);
+  pointer-events: none;
+}
+
+.article-image:hover {
+  background-color: transparent;
+}
+
+.default-article-image {
+  width: 494px;
+  height: 228px;
+}
+
+@media screen and (max-width: 576px){
+  .default-article-image {
+    width: 242px;
+    height: 111px;
+  }
+}
+
+.article-info {
+  padding: 20px 22px;
+  min-height: 112px;
+}
+
+@media (max-width: 576px) {
+  .article-info {
+    padding: 12px 16px;
+  }
+}
+
+.article-title {
+  font-size: 18px;
+}
+
+.article-category {
+  font-size: 13px;
+  margin-top: 3rem;
+}
+
+.event-category {
+  color: red;
+}
+
+.company_trip-category {
+  color: blue;
+}
+
+.staff_introduction-category {
+  color: green;
+}
+
+.other-category {
+  color: orange;
+}
+
+.article-show-image {
+  margin: 8px 0px;
   text-align: center;
-  z-index: 3;
-  position: absolute;
-  transition: all ease-in-out 0.3s;
 }
 
-.portfolio .portfolio-item .portfolio-links a {
-  color: #fff;
-  margin: 0 2px;
-  font-size: 28px;
+.article-image img {
   display: inline-block;
-  transition: 0.3s;
 }
 
-.portfolio .portfolio-item .portfolio-links a:hover {
-  color: #fe825a;
+.articleHeaderbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #999;
+  border-bottom: 2px dotted #999;
+  padding: 0 12px;
 }
 
-.portfolio .portfolio-item:hover .portfolio-info {
-  opacity: 1;
-  bottom: 20px;
+.articleHeaderbox h1 {
+  font-size: 32px;
+  line-height: 1.25;
+  padding: 20px 0;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .articleHeaderbox h1 {
+    width: 100%;
+    font-size: 24px;
+    padding: 20px 0 0;
+  }
+}
+
+.articleContentbox {
+  margin-top: 60px;
+}
+
+.articleContentbox p {
+  margin: 22px 0px;
+  font-size: 18px;
 }
 
 /*--------------------------------------------------------------

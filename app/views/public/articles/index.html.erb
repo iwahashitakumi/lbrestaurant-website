@@ -1,0 +1,45 @@
+<h1 class="h1style mb-5rem fw-bold">楽しいブログを更新中!</h1>
+<div class="contents-wrap">
+  <% if @articles.present? %>
+    <div class="row  m-0">
+      <% @articles.each do |article| %>
+        <div class="col-md-6 col-12 mt-4">
+          <div class="article-card">
+            <%= link_to [article] do %>
+              <div class="article-image">
+                <% if article.contents.first.article_image.present? %>
+                  <% if request.from_smartphone? %>
+                    <%= image_tag(article.contents.first.article_image.url(:mobile), alt: 'ブログ画像', class: "img-fluid") %>
+                  <% else %>
+                    <%= image_tag(article.contents.first.article_image.url(:pc), alt: 'ブログ画像', class: "img-fluid") %>
+                  <% end %>
+                <% else %>
+                  <% if request.from_smartphone? %>
+                    <img src="/assets/default_blog_image.png" class="default-article-image">
+                  <% else %>
+                    <img src="/assets/default_blog_image.png" class="default-article-image">
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="article-info">
+                <div class="article-title"><%= article.title %></div>
+                <div class="article-category">
+                  カテゴリー / <span class="<%= article.category %>-category"><%= article.category_text %></span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="py-3 text-center">
+      <h2>
+        ブログはまだありません<br>
+        配信開始までお待ちください！
+      </h2>
+    </div>
+  <% end %>
+</div>
+
+<%= paginate @articles, theme: 'bootstrap-5' %>

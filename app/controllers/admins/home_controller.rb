@@ -37,10 +37,11 @@ class Admins::HomeController < Admins::ApplicationController
     @news = News.all
     @total_news = @news.size
     @total_news_unstarted = News.with_status(:unpublished).count
-    @latest_news = News.order(created_at_desc).first
   end
 
   def load_articles
+    @articles = Article.all
+    @total_articles = @articles.size
     @total_articles_unstarted = Article.with_status(:unpublished).count
   end
 

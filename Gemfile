@@ -71,6 +71,7 @@ group :test do
   gem 'rails-erd'
 end
 
+gem 'rack-user_agent'
 gem 'enumerize'
 gem 'whenever', require: false
 
@@ -80,6 +81,7 @@ gem 'pry-rails'
 
 gem 'ransack'
 gem 'carrierwave'
+gem 'mini_magick'
 gem 'gretel'
 
 gem 'kaminari'

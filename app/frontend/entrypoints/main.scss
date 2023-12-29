@@ -75,3 +75,10 @@ em {
 .mb-5rem {
   margin-bottom: 5rem;
 }
+
+@media (max-width: 576px) {
+  .mobile-p-0 {
+    padding: 0 !important;
+  }
+}
+

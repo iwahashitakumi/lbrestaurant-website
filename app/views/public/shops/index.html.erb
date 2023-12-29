@@ -1,12 +1,12 @@
 <h1 class="h1style mb-5rem fw-bold">店舗一覧</h1>
 <div class="shops-wrap">
   <% @shops.each do |shop| %> 
-    <div class="py-3 d-flex align-items-center">
+    <div class="py-2 d-flex align-items-center">
       <div class="text-center shop-title fw-bold">
         <%= shop.name %>
       </div>
       <button class="btn btn-toggle d-inline-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#shopDetails<%= shop.id %>" aria-expanded="false">
-        詳しく見る
+        <span class="d-none d-sm-inline">詳しく見る</span>
       </button>
 
     </div>
@@ -14,14 +14,14 @@
       <div class="shop-card">
         <div class="shop-content">
           <div class="d-flex flex-wrap">
-            <div class="col-md-6 mb-4 p-3">
+            <div class="col-md-6 mb-4 p-3 mobile-p-0">
               <% if shop.shop_image? %>
                 <%= image_tag shop.shop_image.url, class: "img-fluid" %>
               <% else %>
                 <%= image_tag '/assets/default_shop_image.png', alt: '店舗画像', class: "img-fluid" %>
               <% end %>
             </div>
-            <div class="col-md-6 mb-4 p-3">
+            <div class="col-md-6 mb-4 p-3 mobile-p-0">
               <dl class="shop-info">
                 <dt>住所</dt>
                 <dd>

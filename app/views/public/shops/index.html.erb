@@ -2,7 +2,7 @@
 <div class="shops-wrap">
   <% @shops.each do |shop| %> 
     <div class="py-3 d-flex align-items-center">
-      <div class="text-center shop-title">
+      <div class="text-center shop-title fw-bold">
         <%= shop.name %>
       </div>
       <button class="btn btn-toggle d-inline-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#shopDetails<%= shop.id %>" aria-expanded="false">

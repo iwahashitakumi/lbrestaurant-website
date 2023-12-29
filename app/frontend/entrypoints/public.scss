@@ -96,7 +96,7 @@ a:hover {
  }
 }
 
-.contents-wrap {
+.wrap {
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
@@ -106,7 +106,7 @@ a:hover {
 }
 
 @media (max-width: 576px){
-  .contents-wrap {
+  .wrap {
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;

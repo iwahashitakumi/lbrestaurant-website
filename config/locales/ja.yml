@@ -88,6 +88,7 @@ ja:
         status: 公開状況
       shop:
         name: 店舗名
+        postcode: 郵便番号
         prefecture_id: 都道府県
         city_name: 市区町村
         address: 地名・番地

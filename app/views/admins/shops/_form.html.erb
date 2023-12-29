@@ -6,6 +6,13 @@
 </div>
 
 <div class="mb-4">
+  <%= f.label :postcode, class: "form-label" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
+  <%= f.text_field :postcode, class: 'form-control', value: f.object.postcode, placeholder: "7桁で書いてください。" %>
+  <%= show_error_messages(f.object, :postcode) %>
+</div>
+
+<div class="mb-4">
   <%= f.label :prefecture_id, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.collection_select :prefecture_id, @prefectures, :id, :name, { prompt: "選択してください" }, { selected: f.object.prefecture_id, class: 'form-select' } %>

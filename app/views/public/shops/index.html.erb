@@ -1,0 +1,31 @@
+<h1 class="h1style mb-5rem fw-bold">店舗一覧</h1>
+<div class="shops-wrap">
+  <% @shops.each do |shop| %> 
+    <div class="py-3 text-center"><%= shop.name %></div>
+    <div class="shop-card">
+      <div class="shop-content">
+        <div class="d-flex flex-wrap">
+          <div class="col-md-6 mb-4 p-3">
+            <% if shop.shop_image? %>
+              <%= image_tag shop.shop_image.url, class: "img-fluid" %>
+            <% else %>
+              <%= image_tag '/assets/default_shop_image.png', alt: '店舗画像', class: "img-fluid" %>
+            <% end %>
+          </div>
+          <div class="col-md-6 mb-4 p-3">
+            <div class="p-3">
+              <p>住所 <%= shop.address %><%= shop.prefecture.name %><%= shop.city_name %></p>
+              <p>営業時間 <%= shop.business_time %></p>
+              <p>アクセス <%= shop.access %></p>
+              <p>電話番号 <%= shop.phone_number %></p>
+              <p>カウンター席数 <%= shop.counter_seat %>席</p>
+              <p>テーブル席数 <%= shop.table_seat %>席</p>
+              <p>グルメサイト <%= link_to shop.site_name, shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer" %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<%= paginate @shops, theme: 'bootstrap-5' %>

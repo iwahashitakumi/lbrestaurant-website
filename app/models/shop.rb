@@ -2,6 +2,8 @@ class Shop < ApplicationRecord
   include Discard::Model
   mount_uploader :shop_image, ShopImageUploader
   belongs_to :prefecture
+  VALID_POSTAL_CODE_REGEX = /\A\d{3}[-]?\d{4}\z/ 
+  validates :postcode, presence: true, format: { with: VALID_POSTAL_CODE_REGEX }
   validates :name, presence: true, uniqueness: true
   validates :prefecture_id, presence: true
   validates :city_name, presence: true

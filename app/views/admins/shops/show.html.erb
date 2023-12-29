@@ -16,6 +16,7 @@
         <% end %>
       </div>
       <div class="col-md-5 mb-4">
+        <p><strong>郵便番号:</strong> <%= @shop.postcode %></p>
         <p><strong>住所:</strong> <%= @shop.address %><%= @shop.prefecture.name %><%= @shop.city_name %></p>
         <p><strong>営業時間:</strong> <%= @shop.business_time %></p>
         <p><strong>アクセス:</strong> <%= @shop.access %></p>

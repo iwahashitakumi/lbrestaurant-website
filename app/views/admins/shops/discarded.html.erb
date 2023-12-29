@@ -25,24 +25,20 @@
     <thead class="table-dark">
       <tr>
         <th>店舗名</th>
+        <th>郵便番号</th>
         <th>住所</th>
-        <th>営業時間</th>
         <th>電話番号</th>
-        <th>カウンター席数</th>
-        <th>テーブル席数</th>
         <th>グルメサイト</th>
-        <th colspan="1"></th>
+        <th colspan="2"></th>
       </tr>
     </thead>
     <tbody>
       <% @discarded_shops.each do |discarded_shop| %>
         <tr>
           <td class="align-middle"><%= link_to discarded_shop.name, [:admins, discarded_shop, is_discarded: @is_discarded], class: "text-primary" %></td>
+          <td class="align-middle"><%= discarded_shop.postcode %></td>
           <td class="align-middle"><%= "#{discarded_shop.prefecture.name}#{discarded_shop.city_name}#{discarded_shop.address}" %></td>
-          <td class="align-middle"><%= discarded_shop.business_time %></td>
           <td class="align-middle"><%= discarded_shop.phone_number %></td>
-          <td class="align-middle"><%= discarded_shop.counter_seat %></td>
-          <td class="align-middle"><%= discarded_shop.table_seat %></td>
           <td class="align-middle"><%= link_to discarded_shop.site_name, discarded_shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer", class: "text-primary" %></td>
           <td class="align-middle">
             <%= button_to "復元", [:restore_admins, discarded_shop], { method: :post, class: "btn btn-outline-danger btn-sm", onclick: "return confirm('本当に復元しますか？');" } %>

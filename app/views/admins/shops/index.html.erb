@@ -27,7 +27,6 @@
         <th>店舗名</th>
         <th>郵便番号</th>
         <th>住所</th>
-        <th>営業時間</th>
         <th>電話番号</th>
         <th>グルメサイト</th>
         <th colspan="2"></th>
@@ -39,7 +38,6 @@
           <td class="align-middle"><%= link_to shop.name, [:admins, shop], class: "text-primary" %></td>
           <td class="align-middle"><%= shop.postcode %></td>
           <td class="align-middle"><%= "#{shop.prefecture.name}#{shop.city_name}#{shop.address}" %></td>
-          <td class="align-middle"><%= shop.business_time %></td>
           <td class="align-middle"><%= shop.phone_number %></td>
           <td class="align-middle"><%= link_to shop.site_name, shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer", class: "text-primary" %></td>
           <td class="text-center align-middle">

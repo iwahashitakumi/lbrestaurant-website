@@ -786,17 +786,28 @@ section {
 }
 
 .news-date {
-  padding-top: 16px;
   font-size: 1.25rem;
+}
+
+@media (max-width: 576px){
+  .news-show-date{
+    margin-top: 8px;
+  }
 }
 
 .news-title {
   font-size: 18px;
 }
 
+@media (max-width: 576px){
+  .news-title {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 576px) {
   .news-date {
-    font-size: 1rem;
+    font-size: 12px;
   }
 }
 

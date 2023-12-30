@@ -975,7 +975,6 @@ section {
   padding: 12px 24px;
   background-color: #fff ;
   color: #4c4c4c;
-  border-bottom: 1px solid #999;
 }
 
 @media (max-width: 576px){
@@ -983,6 +982,10 @@ section {
     width: 100%;
     padding: 0;
   }
+}
+
+.shop-border{
+  border-bottom: 1px solid rgb(153, 153, 153);
 }
 
 .shop-card {

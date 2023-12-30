@@ -13,6 +13,13 @@
   --bs-dropdown-padding-y: initial;
 }
 
+@media (max-width: 576px) {
+  .Headersub {
+    margin-top: 8px;
+  }
+}
+
+
 .dropdown-toggle { outline: 0; }
 
 #sidebar-toggle-button {
@@ -262,6 +269,13 @@
   border-bottom: 2px dotted #999;
   padding: 0 12px;
 }
+
+@media screen and (max-width: 768px){
+  .articleHeaderbox {
+    flex-wrap: wrap;
+  }
+}
+
 
 .articleHeaderbox h1 {
   font-size: 32px;

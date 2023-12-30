@@ -17,6 +17,13 @@ class Shop < ApplicationRecord
   validates :site_name, presence: true
   validates :gourmet_site_link, presence: true, format: { with: URI.regexp }
 
+  geocoded_by :full_address
+  after_validation :geocode
+
+  def full_address
+    "%s %s"%([self.prefecture.name, self.city_name, self.address])
+  end
+
   def self.ransackable_attributes(auth_object = nil)
     ["name","city_name", "address"]
   end

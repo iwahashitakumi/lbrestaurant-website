@@ -20,7 +20,7 @@
           <dt>住所</dt>
           <dd>
             〒<%= @shop.postcode %><br>
-            <%= @shop.address %><%= @shop.prefecture.name %><%= @shop.city_name %>
+            <%= @shop.prefecture.name %><%= @shop.city_name %><%= @shop.address %>
           </dd>
           <dt>営業時間</dt><dd><%=safe_join(@shop.business_time.split("\n"),tag(:br))%></dd>
           <dt>アクセス</dt><dd><%=safe_join(@shop.access.split("\n"),tag(:br))%></dd>

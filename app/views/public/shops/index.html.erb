@@ -26,7 +26,7 @@
                 <dt>住所</dt>
                 <dd>
                   〒<%= shop.postcode %><br>
-                  <%= shop.address %><%= shop.prefecture.name %><%= shop.city_name %>
+                  <%= shop.prefecture.name %><%= shop.city_name %><%= shop.address %>
                 </dd>
                 <dt>営業時間</dt><dd><%=safe_join(shop.business_time.split("\n"),tag(:br))%></dd>
                 <dt>アクセス</dt><dd><%=safe_join(shop.access.split("\n"),tag(:br))%></dd>
@@ -37,6 +37,45 @@
               </dl>
             </div>
           </div>
+          <div id="map"></div>
+          <style>
+              #map {
+              height: 500px;
+              }
+          </style>
+          <script>
+            function initMap(){
+              let mapPosition = {lat: <%= shop.latitude || 0 %> , lng: <%= shop.longitude || 0 %> };
+              let map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: mapPosition
+              });
+              let transitLayer = new google.maps.TransitLayer();
+              transitLayer.setMap(map);
+
+              let contentString = `
+                <div>
+                  <h4>${'<%= shop.name %>'}</h4>
+                  <p>〒${'<%= shop.postcode %>'}</p>
+                  <p>住所: ${'<%= shop.prefecture.name %>'}${'<%= shop.city_name %>'}${'<%= shop.address %>'}</p>
+                </div>
+              `;
+              let infowindow = new google.maps.InfoWindow({
+                content: contentString
+              });
+
+              let marker = new google.maps.Marker({
+                position: mapPosition,
+                map: map,
+                title: '<%= shop.name %>'
+              });
+              
+              marker.addListener('click', function(){
+                infowindow.open(map, marker);
+              });
+            }
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['MAP_API_KEY'] %>&callback=initMap"async defer></script>
         </div>
       </div>
     </div>

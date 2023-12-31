@@ -38,16 +38,16 @@
                 </dl>
               </div>
             </div>
-            <div id="map"></div>
+            <div id="map<%= shop.id %>" class="googlemap"></div>
             <style>
-                #map {
+                .googlemap {
                 height: 500px;
                 }
             </style>
             <script>
               function initMap(){
                 let mapPosition = {lat: <%= shop.latitude || 0 %> , lng: <%= shop.longitude || 0 %> };
-                let map = new google.maps.Map(document.getElementById('map'), {
+                let map = new google.maps.Map(document.getElementById('map<%= shop.id %>'), {
                   zoom: 15,
                   center: mapPosition
                 });

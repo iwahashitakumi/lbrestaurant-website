@@ -21,7 +21,8 @@ class Shop < ApplicationRecord
   after_validation :geocode
 
   def full_address
-    "%s %s"%([self.prefecture.name, self.city_name, self.address])
+    address_parts = [self.prefecture.name, self.city_name, self.address]
+    address_parts.compact.join(' ')
   end
 
   def self.ransackable_attributes(auth_object = nil)

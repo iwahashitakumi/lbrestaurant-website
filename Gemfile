@@ -77,8 +77,6 @@ gem 'whenever', require: false
 
 gem 'discard'
 
-gem 'geocoder'
-
 gem 'pry-rails'
 
 gem 'ransack'

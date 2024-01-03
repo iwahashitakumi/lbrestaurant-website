@@ -13,6 +13,13 @@
   --bs-dropdown-padding-y: initial;
 }
 
+@media (max-width: 576px) {
+  .Headersub {
+    margin-top: 8px;
+  }
+}
+
+
 .dropdown-toggle { outline: 0; }
 
 #sidebar-toggle-button {
@@ -58,6 +65,15 @@
 .btn-toggle-nav a:hover,
 .btn-toggle-nav a:focus {
   background-color: var(--bs-tertiary-bg);
+}
+
+@media (max-width: 576px) {
+  .btn-sm, .btn-group-sm > .btn {
+    --bs-btn-padding-y: 0.25rem;
+    --bs-btn-padding-x: 0.5rem;
+    --bs-btn-font-size: 0.5rem;
+    --bs-btn-border-radius: var(--bs-border-radius-sm);
+  }
 }
 
 .sidebar {
@@ -171,6 +187,11 @@
   }
 }
 
+.newsHeaderbox ul {
+  padding: 0px;
+  margin: 0px;
+}
+
 .newsContentbox {
   margin-top: 60px;
 }
@@ -249,6 +270,13 @@
   padding: 0 12px;
 }
 
+@media screen and (max-width: 768px){
+  .articleHeaderbox {
+    flex-wrap: wrap;
+  }
+}
+
+
 .articleHeaderbox h1 {
   font-size: 32px;
   line-height: 1.25;
@@ -271,4 +299,39 @@
 .articleContentbox p {
   margin: 22px 0px;
   font-size: 18px;
+}
+
+.shop-info dt {
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.shop-info dd {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 480px){
+  .shop-info dt {
+    display: inline-block;
+    width: 30%;
+  }
+}
+
+@media (min-width: 480px){
+  .shop-info dd {
+    display: inline-block;
+    width: 65%;
+    margin-left: 15px;
+  }
+}
+
+.shop-title {
+  flex: 1 1 auto;
+  font-size: 18px;
+}
+
+@media (max-width: 576px){
+  .shop-title {
+    font-size: 14px;
+  }
 }

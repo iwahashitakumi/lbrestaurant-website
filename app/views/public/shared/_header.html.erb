@@ -16,7 +16,7 @@
           <a class="nav-link fw-bold" href="#">企業情報</a>
         </li>
         <li class="nav-item ms-5">
-          <a class="nav-link fw-bold" href="#">店舗情報</a>
+          <%= link_to "店舗情報", shops_path, class: "nav-link fw-bold #{'active' if controller_name == 'shops' && ['show', 'index'].include?(action_name)}" %>
         </li>
         <li class="nav-item ms-5">
           <%= link_to "お知らせ", news_index_path, class: "nav-link fw-bold #{'active' if controller_name == 'news' && ['show', 'index'].include?(action_name)}" %>

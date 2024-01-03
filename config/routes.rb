@@ -31,5 +31,6 @@ Rails.application.routes.draw do
     root 'home#show'
     resources :news, only: [:index, :show]
     resources :articles, only: [:index, :show]
+    resources :shops, only: [:index]
   end
 end

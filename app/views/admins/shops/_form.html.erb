@@ -6,6 +6,13 @@
 </div>
 
 <div class="mb-4">
+  <%= f.label :postcode, class: "form-label" %>
+  <span class="badge rounded-pill text-bg-danger">必須</span>
+  <%= f.text_field :postcode, class: 'form-control', value: f.object.postcode, placeholder: "7桁で書いてください。" %>
+  <%= show_error_messages(f.object, :postcode) %>
+</div>
+
+<div class="mb-4">
   <%= f.label :prefecture_id, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
   <%= f.collection_select :prefecture_id, @prefectures, :id, :name, { prompt: "選択してください" }, { selected: f.object.prefecture_id, class: 'form-select' } %>
@@ -29,14 +36,14 @@
 <div class="mb-4">
   <%= f.label :business_time, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.text_field :business_time, class: 'form-control', value: f.object.business_time, placeholder: "17:00～24:00（L.O.23:00）土日祝だけ昼12:00から営業" %>
+  <%= f.text_area :business_time, class: 'form-control', value: f.object.business_time, placeholder: "17:00～24:00（L.O.23:00）土日祝だけ昼12:00から営業" %>
   <%= show_error_messages(f.object, :business_time) %>
 </div>
 
 <div class="mb-4">
   <%= f.label :access, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">必須</span>
-  <%= f.text_field :access, class: 'form-control', value: f.object.access, placeholder: "ＪＲ大阪環状線 大阪 徒歩4分" %>
+  <%= f.text_area :access, class: 'form-control', value: f.object.access, placeholder: "ＪＲ大阪環状線 大阪 徒歩4分" %>
   <%= show_error_messages(f.object, :access) %>
 </div>
 
@@ -81,6 +88,13 @@
   <%= f.file_field :shop_image, class: 'form-control', accept: 'image/*' %>
   <%= f.hidden_field :shop_image_cache %>
   <span class="text-muted small mt-2">・5MBまでの画像をアップロードできます。</span>
+</div>
+
+<div class="mb-4">
+  <%= f.label :google_map_iframe, class: "form-label" %>
+  <span class="badge rounded-pill text-bg-danger">任意</span>
+  <%= f.text_field :google_map_iframe, class: 'form-control', value: f.object.google_map_iframe, placeholder: "ifameのq=以降を入力" %>
+  <%= show_error_messages(f.object, :google_map_iframe) %>
 </div>
 
 <% if f.object.new_record? %>

@@ -1,10 +1,10 @@
 <h1 class="h1style mb-5rem fw-bold">お知らせ!</h1>
-<div class="contents-wrap">
+<div class="wrap">
   <% if @news.present? %>
     <% @news.each do |news| %>
-      <div class="content-info">
-        <div class="date fw-bold"><%= format_date(news.calendar_date) %></div>
-        <div class="py-3"><%= link_to news.title, [news] %></div>
+      <div class="news-content">
+        <div class="news-date fw-bold"><%= format_date(news.calendar_date) %></div>
+        <div class="py-3 fw-bold news-title"><%= link_to news.title, [news] %></div>
       </div>
     <% end %>
   <% else %>

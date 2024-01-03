@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_23_154206) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_31_085337) do
   create_table "admins", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -113,6 +113,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_23_154206) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "discarded_at", comment: "店舗管理の論理削除機能"
+    t.string "postcode", null: false, comment: "店舗の郵便番号"
+    t.string "google_map_iframe", comment: "Google Map Iframe"
     t.index ["discarded_at"], name: "index_shops_on_discarded_at"
     t.index ["prefecture_id"], name: "index_shops_on_prefecture_id"
   end

@@ -2,8 +2,6 @@
 @import 'main.scss';
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
   border: 0;
   outline: 0;
   vertical-align: baseline;
@@ -28,6 +26,32 @@ ul {
 a:hover {
   color: #fd5c28;
   text-decoration: none;
+}
+
+.btn-toggle {
+  padding: .25rem .5rem;
+  font-weight: 600;
+  color: var(--bs-emphasis-color);
+  background-color: transparent;
+}
+.btn-toggle:hover,
+.btn-toggle:focus {
+  color: #fd5c28;
+}
+
+.btn-toggle::before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform 0.35s ease;
+  transform-origin: 0.5em 50%;
+}
+
+.btn-toggle[aria-expanded="true"] {
+  color: rgba(var(--bs-emphasis-color-rgb), .85);
+}
+.btn-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
 }
 
 .back-to-top {
@@ -96,7 +120,7 @@ a:hover {
  }
 }
 
-.contents-wrap {
+.wrap {
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
@@ -106,7 +130,7 @@ a:hover {
 }
 
 @media (max-width: 576px){
-  .contents-wrap {
+  .wrap {
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
@@ -755,14 +779,33 @@ section {
 /*--------------------------------------------------------------
 # News
 --------------------------------------------------------------*/
+.news-content {
+  border-bottom: 1px solid #999;
+}
+
 .news-date {
-  padding-top: 16px;
   font-size: 1.25rem;
+}
+
+@media (max-width: 576px){
+  .news-show-date{
+    margin-top: 8px;
+  }
+}
+
+.news-title {
+  font-size: 18px;
+}
+
+@media (max-width: 576px){
+  .news-title {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 576px) {
   .news-date {
-    font-size: 1rem;
+    font-size: 12px;
   }
 }
 
@@ -923,68 +966,79 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Portfolio Details
+# Shop
 --------------------------------------------------------------*/
-.portfolio-details {
-  padding-top: 40px;
+.shops-wrap {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 12px 24px;
+  background-color: #fff ;
+  color: #4c4c4c;
 }
 
-.portfolio-details .portfolio-details-slider img {
+@media (max-width: 576px){
+  .shops-wrap {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.shop-border{
+  border-bottom: 1px solid rgb(153, 153, 153);
+}
+
+.shop-card {
+  padding: 16px;
   width: 100%;
+  background-color: #f5f5f5;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
+@media (min-width: 480px){
+  .shop-content {
+    padding: 36px;
+  }
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #f03c02;
+@media (min-width: 480px){
+  .shop-info {
+    padding: 1rem 1rem 1rem 5rem;
+  }
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #f03c02;
+.shop-info dt {
+  font-weight: bold;
+  vertical-align: top;
 }
 
-.portfolio-details .portfolio-info {
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(43, 35, 32, 0.08);
+.shop-info dd {
+  margin-bottom: 1em;
 }
 
-.portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
+@media (min-width: 480px){
+  .shop-info dt {
+    display: inline-block;
+    width: 30%;
+  }
 }
 
-.portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
+@media (min-width: 480px){
+  .shop-info dd {
+    display: inline-block;
+    width: 65%;
+    margin-left: 15px;
+  }
 }
 
-.portfolio-details .portfolio-info ul li+li {
-  margin-top: 10px;
+.shop-title {
+  flex: 1 1 auto;
+  font-size: 18px;
 }
 
-.portfolio-details .portfolio-description {
-  padding-top: 30px;
-}
-
-.portfolio-details .portfolio-description h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.portfolio-details .portfolio-description p {
-  padding: 0;
+@media (max-width: 576px){
+  .shop-title {
+    font-size: 14px;
+  }
 }
 
 /*--------------------------------------------------------------

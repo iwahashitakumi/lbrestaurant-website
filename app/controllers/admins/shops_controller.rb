@@ -87,7 +87,7 @@ class Admins::ShopsController < Admins::ApplicationController
   private
   
   def shop_params
-    params.require(:shop).permit(:name, :address, :access, :business_time, :phone_number, :counter_seat, :table_seat, :site_name, :gourmet_site_link, :city_name, :shop_image,:shop_image_cache, :prefecture_id)
+    params.require(:shop).permit(:name, :postcode, :address, :access, :business_time, :phone_number, :counter_seat, :table_seat, :site_name, :gourmet_site_link, :city_name, :shop_image,:shop_image_cache, :google_map_iframe, :prefecture_id)
   end
 
   def index_path_for_redirect

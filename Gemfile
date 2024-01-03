@@ -96,3 +96,7 @@ gem 'dotenv-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
+
+gem "pg", "~> 1.5"

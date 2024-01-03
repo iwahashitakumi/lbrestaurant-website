@@ -25,24 +25,20 @@
     <thead class="table-dark">
       <tr>
         <th>店舗名</th>
+        <th>郵便番号</th>
         <th>住所</th>
-        <th>営業時間</th>
         <th>電話番号</th>
-        <th>カウンター席数</th>
-        <th>テーブル席数</th>
         <th>グルメサイト</th>
-        <th colspan="2"></th>
+        <th colspan="2"><%= link_to '公開画面へのリンク', shops_path, target: "_blank" %></th>
       </tr>
     </thead>
     <tbody>
       <% @shops.each do |shop| %>
         <tr>
           <td class="align-middle"><%= link_to shop.name, [:admins, shop], class: "text-primary" %></td>
+          <td class="align-middle"><%= shop.postcode %></td>
           <td class="align-middle"><%= "#{shop.prefecture.name}#{shop.city_name}#{shop.address}" %></td>
-          <td class="align-middle"><%= shop.business_time %></td>
           <td class="align-middle"><%= shop.phone_number %></td>
-          <td class="align-middle"><%= shop.counter_seat %></td>
-          <td class="align-middle"><%= shop.table_seat %></td>
           <td class="align-middle"><%= link_to shop.site_name, shop.gourmet_site_link, target: "_blank", rel: "noopener noreferrer", class: "text-primary" %></td>
           <td class="text-center align-middle">
             <%= link_to "編集", [:edit_admins, shop], class: "btn btn-outline-primary btn-sm" %>

@@ -88,6 +88,7 @@ ja:
         status: 公開状況
       shop:
         name: 店舗名
+        postcode: 郵便番号
         prefecture_id: 都道府県
         city_name: 市区町村
         address: 地名・番地
@@ -99,6 +100,7 @@ ja:
         site_name: グルメサイト名
         gourmet_site_link: グルメサイトのリンク
         shop_image: 店舗画像
+        google_map_iframe: google-map
       article:
         title: タイトル
         start_at: 公開開始日時

@@ -51,6 +51,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'mysql2'
 end
 
 group :development do
@@ -71,6 +72,10 @@ group :test do
   gem 'rails-erd'
 end
 
+group :production do
+  gem "pg", "~> 1.5"
+end
+
 gem 'rack-user_agent'
 gem 'enumerize'
 gem 'whenever', require: false
@@ -89,7 +94,7 @@ gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 
 gem "aws-sdk", "~> 3.0"
 gem "vite_rails", "~> 3.0"
-gem 'mysql2'
+
 gem 'fog-aws'
 gem 'dotenv-rails'
 
@@ -98,5 +103,3 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 
 gem "dockerfile-rails", ">= 1.6", :group => :development
-
-gem "pg", "~> 1.5"

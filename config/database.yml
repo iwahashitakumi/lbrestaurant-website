@@ -1,22 +1,20 @@
-# SQLite. Versions 3.8.0 and up are supported.
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem "sqlite3"
-#
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   pool: 5
   username: docker
   password: docker
-  host: 127.0.0.1
+  host: localhost
   database: my_testdb
 
 development:
   <<: *default
-  database: my_testdb_development
+  database: my_testdb
 
 test:
   <<: *default
   database: my_testdb_test
+
+production:
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>

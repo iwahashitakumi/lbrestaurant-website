@@ -1641,7 +1641,6 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     multi_json (1.15.0)
-    mysql2 (0.5.5)
     net-imap (0.3.7)
       date
       net-protocol
@@ -1805,7 +1804,6 @@ DEPENDENCIES
   kaminari
   letter_opener_web (~> 1.0)
   mini_magick
-  mysql2
   pg (~> 1.5)
   pry-rails
   puma (~> 5.0)

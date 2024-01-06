@@ -2,14 +2,13 @@ version: '3'
 
 services:
   postgresdb:
-    image: postgres:14.9
+    image: postgres:14.10
     container_name: postgres_container
     environment:
-      POSTGRES_DB: my_testdb
+      POSTGRES_DB: lbrestaurant_db
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: docker
       TZ: 'Asia/Tokyo'
-      POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
       - ./docker/db/data:/var/lib/postgresql/data
       - ./docker/db/sql:/docker-entrypoint-initdb.d

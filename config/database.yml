@@ -1,19 +1,20 @@
 default: &default
   adapter: postgresql
-  encoding: utf8
+  encoding: unicode
   pool: 5
   username: docker
   password: docker
   host: localhost
-  database: my_testdb
+  port: 5432
+  database: lbrestaurant_db
 
 development:
   <<: *default
-  database: my_testdb
+  database: lbrestaurant_db_develop
 
 test:
   <<: *default
-  database: my_testdb_test
+  database: lbrestaurant_db_test
 
 production:
   adapter: postgresql

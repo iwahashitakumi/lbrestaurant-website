@@ -9,11 +9,9 @@ services:
       POSTGRES_USER: docker
       POSTGRES_PASSWORD: docker
       TZ: 'Asia/Tokyo'
+      POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
       - ./docker/db/data:/var/lib/postgresql/data
-      - ./docker/db/postgresql.conf:/etc/postgresql/postgresql.conf
       - ./docker/db/sql:/docker-entrypoint-initdb.d
-
     ports:
       - "5432:5432"
-    command: ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]

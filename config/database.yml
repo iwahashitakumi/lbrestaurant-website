@@ -9,7 +9,7 @@ default: &default
 
 development:
   <<: *default
-  database: my_testdb_development
+  database: my_testdb
 
 test:
   <<: *default

@@ -10,7 +10,7 @@ class CreateContacts < ActiveRecord::Migration[7.0]
       t.boolean :callback_requested, null: false,                   comment: "返信の有無"
       t.integer :contact_method, null: false,                       comment: "返信方法"
       t.integer :status, null: false,                               comment: "問い合わせの対応状態"
-      t.integer :update_by, null: true,                             comment: "更新者(外部キー)"
+      t.bigint :update_by, null: true,                             comment: "更新者(外部キー)"
 
       t.timestamps
     end

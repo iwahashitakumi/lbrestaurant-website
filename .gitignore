@@ -47,3 +47,4 @@ node_modules
 vendor/bundle/
 /public/uploads
 /.env
+/docker_mysql/

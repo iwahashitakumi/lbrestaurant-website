@@ -42,7 +42,9 @@
           <td class="align-middle"><%= job_entry.sex_text %></td>
           <td class="align-middle"><%= format_date(job_entry.birth_date) %>
           <td class="align-middle"><%= "#{job_entry.prefecture.name}#{job_entry.city_name}#{job_entry.address}" %></td>
-          <td class="align-middle"><%= job_entry.status_text %></td>
+          <td class="align-middle <%= job_entry.not_started? ? 'text-danger' : 'text-success' %>">
+            <%= job_entry.status_text %>
+          </td>
           <td class="align-middle"><%= job_entry.admin ? job_entry.admin.name : '未指定' %></td>
           <td class="align-middle"><%= format_datetime(job_entry.updated_at) %>
         </tr>

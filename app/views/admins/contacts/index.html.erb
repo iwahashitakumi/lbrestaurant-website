@@ -43,7 +43,9 @@
             <%= contact.callback_requested_text %>
           </td>
           <td class="align-middle"><%= contact.contact_method_text %></td>
-          <td class="align-middle"><%= contact.status_text %></td>
+          <td class="align-middle <%= contact.not_started? ? 'text-danger' : 'text-success' %>">
+            <%= contact.status_text %>
+          </td>
           <td class="align-middle"><%= contact.admin ? contact.admin.name : '未指定' %></td>
           <td class="align-middle"><%= format_datetime(contact.updated_at) %>
         </tr>

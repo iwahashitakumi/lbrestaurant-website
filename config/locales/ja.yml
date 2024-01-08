@@ -111,6 +111,8 @@ ja:
         body: 内容
         article_image: ブログ画像
       contact:
+        need: 希望
+        no_need: 不要
         contact_type: お問い合わせタイプ
         message: 問い合わせ内容
         name: 名前
@@ -164,6 +166,9 @@ ja:
         job_entry: 採用に関する事について
         franchise: ＦＣ募集について
         other: その他
+      callback_requested:
+        need: 希望
+        no_need: 不要
       contact_method:
         email: メールアドレス
         phone_number: 電話番号

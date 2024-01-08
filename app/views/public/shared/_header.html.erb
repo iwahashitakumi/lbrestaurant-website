@@ -16,7 +16,7 @@
           <a class="nav-link fw-bold" href="#">企業情報</a>
         </li>
         <li class="nav-item ms-5">
-          <%= link_to "店舗情報", shops_path, class: "nav-link fw-bold #{'active' if controller_name == 'shops' && ['show', 'index'].include?(action_name)}" %>
+          <%= link_to "店舗情報", shops_path, class: "nav-link fw-bold #{'active' if controller_name == 'shops' && ['index'].include?(action_name)}" %>
         </li>
         <li class="nav-item ms-5">
           <%= link_to "お知らせ", news_index_path, class: "nav-link fw-bold #{'active' if controller_name == 'news' && ['show', 'index'].include?(action_name)}" %>
@@ -26,6 +26,9 @@
         </li>
         <li class="nav-item ms-5">
           <a class="nav-link fw-bold" href="#">採用情報</a>
+        </li>
+        <li class="nav-item ms-5">
+          <%= link_to "問い合わせ", new_contact_path , class: "nav-link fw-bold #{'active' if controller_name == 'contacts' && ['new'].include?(action_name)}" %>
         </li>
       </ul>
     </div>

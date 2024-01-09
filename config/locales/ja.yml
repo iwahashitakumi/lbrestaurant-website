@@ -111,23 +111,23 @@ ja:
         body: 内容
         article_image: ブログ画像
       contact:
-        need: 希望
-        no_need: 不要
+        need: 希望する
+        no_need: 希望しない
         contact_type: お問い合わせタイプ
-        message: 問い合わせ内容
-        name: 名前
+        message: お問い合わせ内容
+        name: お名前
         name_kana: フリガナ
         email: メールアドレス
-        phone_number: 電話番号
-        callback_requested: 折り返し希望の有無
+        phone_number: お電話番号
+        callback_requested: 返信を
         contact_method: 連絡方法
         status: 対応状況
         update_by: 更新者
       job_entry:
         recruit_type: 採用タイプ
-        name: 名前
+        name: お名前
         name_kana: フリガナ
-        phone_number: 電話番号
+        phone_number: お電話番号
         email: メールアドレス
         birth_date: 生年月日
         sex: 性別

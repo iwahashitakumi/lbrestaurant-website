@@ -32,5 +32,11 @@ Rails.application.routes.draw do
     resources :news, only: [:index, :show]
     resources :articles, only: [:index, :show]
     resources :shops, only: [:index]
+    resources :contacts, only: [:new, :create] do
+      collection do
+        post :confirm
+        get :complete
+      end
+    end
   end
 end

@@ -29,7 +29,7 @@
       <h5 class="card-header">問い合わせ</h5>
       <div class="card-body">
         <h5 class="card-title">問い合わせ件数：<%= @total_contacts %>件</h5>
-        <p class="card-text">公開画面へのリンク(仮)</p>
+        <p class="card-text"><%= link_to '(問い合わせ)公開画面へのリンク', new_contact_path, target: "_blank" %></p>
         <p class="card-text  text-danger">未対応の問い合わせは<%= @total_contacts_with_not_started %>件です</p>
       </div>
       <div class="m-3">
@@ -55,7 +55,6 @@
       <h5 class="card-header">店舗</h5>
       <div class="card-body">
         <h5 class="card-title">店舗数：<%= @total_contacts %>店舗</h5>
-        <p class="card-text">公開画面へのリンク(仮)</p>
         <% if @latest_shop %>
           <p class="card-text  text-success">最新の店舗名:<br>
             <%= @latest_shop.name %>
@@ -63,6 +62,7 @@
         <% else %>
           <p class="card-text">公開されている店舗はありません</p>
         <% end %>
+        <p class="card-text mt-5"><%= link_to '(店舗)公開画面へのリンク', shops_path, target: "_blank" %></p>
       </div>
       <% if @latest_shop %>
         <div class="m-3">

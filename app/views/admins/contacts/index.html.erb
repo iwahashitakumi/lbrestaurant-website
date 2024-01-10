@@ -39,11 +39,13 @@
               <span><%= contact.name %></span>
             </div>
           </td>
-          <td class="align-middle <%= contact.callback_requested ? 'text-success' : 'text-danger' %>">
-            <%= contact.callback_requested ? '希望' : '不要' %>
+          <td class="align-middle <%= contact.need? ? 'text-success' : 'text-danger' %>">
+            <%= contact.callback_requested_text %>
           </td>
           <td class="align-middle"><%= contact.contact_method_text %></td>
-          <td class="align-middle"><%= contact.status_text %></td>
+          <td class="align-middle <%= contact.not_started? ? 'text-danger' : 'text-success' %>">
+            <%= contact.status_text %>
+          </td>
           <td class="align-middle"><%= contact.admin ? contact.admin.name : '未指定' %></td>
           <td class="align-middle"><%= format_datetime(contact.updated_at) %>
         </tr>

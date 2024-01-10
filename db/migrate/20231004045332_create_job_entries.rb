@@ -12,7 +12,7 @@ class CreateJobEntries < ActiveRecord::Migration[7.0]
       t.string :address, default: "", null: false,                           comment: "応募者の番地等"
       t.integer :status, null: false,                                        comment: "応募者の処理状況"
       t.references :prefecture, null: false, foreign_key: true,              comment: "応募者の都道府県id"
-      t.integer :update_by, null: true,                                      comment: "更新者(外部キー)"
+      t.bigint :update_by, null: true,                                      comment: "更新者(外部キー)"
 
       t.timestamps
     end

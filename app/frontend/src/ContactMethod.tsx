@@ -21,6 +21,11 @@ const ContactMethod: React.FC<ContactMethodProps> = (props) => {
     setSelectedOption(null);
   };
 
+  const optionTextMap: Record<string, string> = {
+    'email': 'メールアドレス',
+    'phone_number': '電話番号',
+  };
+
   return (
     <React.Fragment>
       <div className="contact-form">
@@ -36,7 +41,7 @@ const ContactMethod: React.FC<ContactMethodProps> = (props) => {
               className="form-check-input"
             />
             <label htmlFor={option} className="form-check-label" lang="ja">
-              {option === 'email' ? "メールアドレス" : option === 'phone_number' ? "電話番号" : option}
+              {optionTextMap[option]}
             </label>
           </div>
         ))}

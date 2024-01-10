@@ -28,7 +28,7 @@
           <a class="nav-link fw-bold" href="#">採用情報</a>
         </li>
         <li class="nav-item ms-5">
-          <%= link_to "問い合わせ", new_contact_path , class: "nav-link fw-bold #{'active' if controller_name == 'contacts' && ['new'].include?(action_name)}" %>
+          <%= link_to "問い合わせ", new_contact_path , class: "nav-link fw-bold #{'active' if controller_name == 'contacts' && ['new', 'confirm', 'complette'].include?(action_name)}" %>
         </li>
       </ul>
     </div>

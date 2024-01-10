@@ -83,58 +83,63 @@
           <p class="text-center fw-bold mb-5">弊社からの返答・返信をご希望の場合は必ずご記入ください。</p>
 
         <table class="table contact-table">
-          <tbody>
-            <tr>
-              <td class="p-0" colSpan="2">
-                <contactmethod-component
-                  data-props="<%= { contactMethodValuesCollect: Contact.contact_method.values.collect }.to_json %>"
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                <%= f.label :contact_method %>
+                <span class="badge rounded-pill text-bg-success">任意</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <contactmethod-component
+                  data-props="<%= { contactMethodValuesCollect: Contact.contact_method.values, contactMethod: f.object.contact_method }.to_json %>"
                 >
                 </contactmethod-component>
-              </td>
-            </tr>
-            <tr>
-              <th class="col-md-4">
-                <div class="contact-label">
-                  <%= f.label :name %>
-                  <span class="badge rounded-pill text-bg-success">任意</span>
-                </div>
-              </th>
-              <td class="col-md-8">
-                <div class="contact-form">
-                  <%= f.text_field :name, class: 'form-control', value: f.object.name, placeholder: "飲食太郎" %>
-                </div>
-              </td>
-            </tr>
+            </td>
+          </tr>
 
-            <tr>
-              <th class="col-md-4">
-                <div class="contact-label">
-                  <%= f.label :name_kana %>
-                  <span class="badge rounded-pill text-bg-success">任意</span>
-                </div>
-              </th>
-              <td class="col-md-8">
-                <div class="contact-form">
-                  <%= f.text_field :name_kana, class: 'form-control', value: f.object.name_kana, placeholder: "インショクタロウ" %>
-                </div>
-              </td>
-            </tr>
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                <%= f.label :name %>
+                <span class="badge rounded-pill text-bg-success">任意</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <div class="contact-form">
+                <%= f.text_field :name, class: 'form-control', value: f.object.name, placeholder: "飲食太郎" %>
+              </div>
+            </td>
+          </tr>
 
-            <tr>
-              <th class="col-md-4">
-                <div class="contact-label">
-                  <%= f.label :phone_number %>
-                  <span class="badge rounded-pill text-bg-success">任意</span>
-                </div>
-              </th>
-              <td class="col-md-8">
-                <div class="contact-form">
-                  <%= f.text_field :phone_number, class: 'form-control', value: f.object.phone_number, placeholder: "012-3456-789" %>
-                </div>
-              </td>
-            </tr>
-          </table>
-        </tbody>
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                <%= f.label :name_kana %>
+                <span class="badge rounded-pill text-bg-success">任意</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <div class="contact-form">
+                <%= f.text_field :name_kana, class: 'form-control', value: f.object.name_kana, placeholder: "インショクタロウ" %>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                <%= f.label :phone_number %>
+                <span class="badge rounded-pill text-bg-success">任意</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <div class="contact-form">
+                <%= f.text_field :phone_number, class: 'form-control', value: f.object.phone_number, placeholder: "012-3456-789" %>
+              </div>
+            </td>
+          </tr>
+        </table>
       </div>
 
       <div class="contact-btn-box">

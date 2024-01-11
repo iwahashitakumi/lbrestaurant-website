@@ -38,11 +38,13 @@ Rails.application.routes.draw do
         get :complete
       end
     end
-    resources :job_entries, only: [:create, :show] do
+    resources :job_entries, only: [:create] do
       collection do
+        get :show
         post :confirm
         get :complete
         get :recruitment_info
+        get :voice
         get :faq
       end
     end

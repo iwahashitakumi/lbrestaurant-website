@@ -11,7 +11,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Meiryo, YuGothic, "Yu Gothic Medium", "Yu Gothic", 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', sans-serif;
   line-height: 1.625;
   color: #000;
-  background-color: #eeeeee;
 }
 
 a {
@@ -1069,64 +1068,174 @@ a:hover {
 
 
 /*--------------------------------------------------------------
-# About Us
+# JobEntry
 --------------------------------------------------------------*/
-.about-us .content {
-  padding: 30px 0;
+
+.wrap-mission {
+  line-height: 1.5;
 }
 
-.about-us .content h3 {
-  font-weight: 700;
-  font-size: 34px;
-}
-
-.about-us .content p {
-  margin-bottom: 0;
-}
-
-.about-us .content .icon-box {
-  margin-top: 25px;
-}
-
-.about-us .content .icon-box h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 5px 0 10px 60px;
-}
-
-.about-us .content .icon-box i {
-  font-size: 48px;
-  float: left;
-  color: #f03c02;
-}
-
-.about-us .content .icon-box p {
-  font-size: 15px;
-  color: #90847f;
-  margin-left: 60px;
-}
-
-.about-us .image {
-  background: url("../img/about.jpg") center center no-repeat;
-  background-size: cover;
-  min-height: 400px;
-}
-
-@media (max-width: 991px) {
-  .about-us .image {
-    text-align: center;
-  }
-
-  .about-us .image img {
-    max-width: 80%;
+@media (max-width: 576px){
+  .job-entry-content {
+    font-size: 14px;
   }
 }
 
-@media (max-width: 667px) {
-  .about-us .image img {
-    max-width: 100%;
+@media (max-width: 576px){
+  .job-entry-content {
+    font-size: 14px;
   }
 }
+
+.recruit_info {
+  height: 0;
+}
+
+.recruit_info tr {
+  margin-top: 1em;
+  border-bottom: 1px dotted #444444;
+}
+
+
+.recruit_info th {
+  font-weight: bold;
+  height: 100%;
+  padding: 1.125em 0;
+  text-align: right;
+  width: 30%;
+}
+
+@media (max-width: 576px){
+  .recruit_info th {
+    padding: 0.86em 0;
+  }
+}
+
+.recruit_info td {
+  padding: 1.29em 0 1.29em 2.14em;
+}
+
+@media (max-width: 576px){
+  .recruit_info td {
+    padding: 0 1 0.86em;
+  }
+}
+
+
+.job-entry-title {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.job-entry-title2 {
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+}
+
+.job-entry-subtitle {
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 576px){
+  .job-entry-title {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .job-entry-title2 {
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .job-entry-subtitle {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.job-entry-table {
+  height: 0;
+}
+
+.job-entry-table th {
+  font-weight: bold;
+  height: 100%;
+  padding: 1.125em 0;
+}
+
+@media (max-width: 576px){
+  .job-entry-table th {
+    display: block;
+    padding: 0.86em 0;
+  }
+}
+
+.job-entry-table td {
+  padding: 1.29em 0 1.29em 2.14em;
+}
+
+@media (max-width: 576px){
+  .job-entry-table td {
+    display: block;
+    padding: 0 0 0.86em;
+  }
+}
+
+.job-entry-label {
+  background-color: #e8e8e8;
+  height: 100%;
+  padding: 1.125em 6.37em 1em 1.56em;
+}
+
+@media (max-width: 576px){
+  .job-entry-label {
+    padding: 12px 60px 12px 10px 
+  }
+}
+
+.job-entry-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+}
+
+@media (max-width: 576px){
+  .job-entry-form {
+    display: block;
+  }
+}
+
+.job-entry-as-radio {
+  margin: 10px 40px 0 0;
+}
+
+.job-entry-btn-box {
+  text-align: center;
+  background-color: #e8e8e8;
+  margin: 24px 0 0;
+  padding: 1.25em 0.625em 1.375em;
+}
+
+@media (min-width: 576px){
+  .job-entry-btn-box .btn {
+    width: 400px;
+  }
+}
+
+.birthday-wrap{
+  font-size: 18px;
+}
+.birthday-wrap select {
+  height: 40px;
+  flex: 1 1 auto;
+  margin: 0 4px;
+  padding: 8px 15px;
+}
+
 
 /*--------------------------------------------------------------
 # Our Team
@@ -1504,7 +1613,7 @@ a:hover {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact .info-wrap {
+.job-entry .info-wrap {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
 }

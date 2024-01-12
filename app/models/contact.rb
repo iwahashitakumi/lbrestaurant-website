@@ -9,7 +9,8 @@ class Contact < ApplicationRecord
 
   validates :contact_type, presence: true
   validates :message, presence: true
-  validates :email, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
   validates :callback_requested, presence: true
 
   scope :search_by_contact_type, ->(type) { where(contact_type: type) }

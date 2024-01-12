@@ -21,6 +21,14 @@ class Public::JobEntriesController < Public::ApplicationController
     end
   end
 
+  def confirm
+    @job_entry = JobEntry.new(job_entry_params)
+    @birth_date_options = birth_date_options
+    @prefectures = Prefecture.all
+    if @job_entry.invalid?
+      render "recruitment_info"
+    end
+  end
 
   private
 

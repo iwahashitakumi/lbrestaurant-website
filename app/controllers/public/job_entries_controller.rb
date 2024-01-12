@@ -30,6 +30,10 @@ class Public::JobEntriesController < Public::ApplicationController
     end
   end
 
+  def complete
+  end
+
+
   private
 
   def job_entry_params

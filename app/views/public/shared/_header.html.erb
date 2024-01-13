@@ -10,10 +10,7 @@
     <div class="header-linklist collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item active ms-5">
-          <a class="nav-link fw-bold" href="#">独立応援システム</a>
-        </li>
-        <li class="nav-item ms-5">
-          <a class="nav-link fw-bold" href="#">企業情報</a>
+          <%= link_to " 会社情報", companies_path, class: "nav-link fw-bold #{'active' if controller_name == 'campanies' && ['show'].include?(action_name)}" %>
         </li>
         <li class="nav-item ms-5">
           <%= link_to "店舗情報", shops_path, class: "nav-link fw-bold #{'active' if controller_name == 'shops' && ['index'].include?(action_name)}" %>
@@ -25,10 +22,10 @@
           <%= link_to "ブログ", articles_path , class: "nav-link fw-bold #{'active' if controller_name == 'articles' && ['show', 'index'].include?(action_name)}" %>
         </li>
         <li class="nav-item ms-5">
-          <a class="nav-link fw-bold" href="#">採用情報</a>
+          <%= link_to "採用情報", job_entries_path , class: "nav-link fw-bold #{'active' if controller_name == 'job_entries' && ['show', 'recruitment_info', 'confirm', 'complete', 'faq'].include?(action_name)}" %>
         </li>
         <li class="nav-item ms-5">
-          <%= link_to "問い合わせ", new_contact_path , class: "nav-link fw-bold #{'active' if controller_name == 'contacts' && ['new', 'confirm', 'complette'].include?(action_name)}" %>
+          <%= link_to "問い合わせ", new_contact_path , class: "nav-link fw-bold #{'active' if controller_name == 'contacts' && ['new', 'confirm', 'complete'].include?(action_name)}" %>
         </li>
       </ul>
     </div>

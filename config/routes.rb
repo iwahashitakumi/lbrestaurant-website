@@ -29,6 +29,11 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'home#show'
+    resources :companies, except: [:index, :create, :new, :edit, :update, :destroy, :show] do
+      collection do
+        get :show
+      end
+    end
     resources :news, only: [:index, :show]
     resources :articles, only: [:index, :show]
     resources :shops, only: [:index]

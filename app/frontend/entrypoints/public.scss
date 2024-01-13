@@ -687,7 +687,109 @@ a:hover {
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
+.company-title {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
 
+.company-title2 {
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+}
+
+.company-subtitle {
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 576px){
+  .company-title {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .company-title2 {
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .company-subtitle {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.company-table {
+  height: 0;
+}
+
+.company-table th {
+  font-weight: bold;
+  height: 100%;
+  padding: 1.125em 0;
+}
+
+@media (max-width: 576px){
+  .company-table th {
+    display: block;
+    padding: 0.86em 0;
+  }
+}
+
+.company-table td {
+  padding: 1.29em 0 1.29em 2.14em;
+}
+
+@media (max-width: 576px){
+  .company-table td {
+    display: block;
+    padding: 0 0 0.86em;
+  }
+}
+
+.company-label {
+  background-color: #e8e8e8;
+  height: 100%;
+  padding: 1.125em 6.37em 1em 1.56em;
+}
+
+@media (max-width: 576px){
+  .company-label {
+    padding: 12px 60px 12px 10px 
+  }
+}
+
+.company-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+}
+
+@media (max-width: 576px){
+  .company-form {
+    display: block;
+  }
+}
+
+.company-as-radio {
+  margin: 10px 40px 0 0;
+}
+
+.company-btn-box {
+  text-align: center;
+  background-color: #e8e8e8;
+  margin: 24px 0 0;
+  padding: 1.25em 0.625em 1.375em;
+}
+
+@media (min-width: 576px){
+  .company-btn-box .btn {
+    width: 400px;
+  }
+}
 
 /*--------------------------------------------------------------
 # News

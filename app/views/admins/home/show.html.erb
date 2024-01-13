@@ -29,7 +29,6 @@
       <h5 class="card-header">問い合わせ</h5>
       <div class="card-body">
         <h5 class="card-title">問い合わせ件数：<%= @total_contacts %>件</h5>
-        <p class="card-text"><%= link_to '(問い合わせ)公開画面へのリンク', new_contact_path, target: "_blank" %></p>
         <p class="card-text  text-danger">未対応の問い合わせは<%= @total_contacts_with_not_started %>件です</p>
       </div>
       <div class="m-3">
@@ -42,7 +41,6 @@
       <h5 class="card-header">応募</h5>
       <div class="card-body">
         <h5 class="card-title">応募件数：<%= @total_job_entries %>件</h5>
-        <p class="card-text">公開画面へのリンク(仮)</p>
         <p class="card-text  text-danger">未対応の応募は<%= @total_job_entries_with_not_started %>件です</p>
       </div>
       <div class="m-3">

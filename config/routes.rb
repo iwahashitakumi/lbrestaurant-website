@@ -44,7 +44,7 @@ Rails.application.routes.draw do
         post :confirm
         get :complete
         get :recruitment_info
-        get :voice
+        get :staff
         get :faq
       end
     end

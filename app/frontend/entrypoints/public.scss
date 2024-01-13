@@ -213,7 +213,7 @@ a:hover {
 
 @media screen and (max-width: 576px){
   .navbar-brand-sm {
-    margin-right: 100px !important;
+    margin-right: 98px !important;
   }
 }
 
@@ -1071,6 +1071,68 @@ a:hover {
 /*--------------------------------------------------------------
 # JobEntry
 --------------------------------------------------------------*/
+.owner-wrap {
+  background-color: #000;
+  color: white;
+  padding-top: 80px;
+  padding-right: 30px;
+  padding-bottom: 120px;
+  padding-left: 30px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  border-width: 0px 0px 0px 0px;
+  border-color: #ffffff;
+  border-style: solid;
+}
+
+.job-entry-wrap {
+  padding-top: 80px;
+  padding-right: 30px;
+  padding-bottom: 120px;
+  padding-left: 30px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  border-width: 0px 0px 0px 0px;
+  border-color: #ffffff;
+  border-style: solid;
+}
+
+.job-info-btn-box {
+  text-align: center;
+  background-color: #0d6efd;
+  margin: 24px 0 0;
+  padding: 1.25em 0.625em 1.375em;
+}
+
+@media (min-width: 576px){
+  .job-info-btn-box .btn {
+    width: 1200px;
+  }
+}
+
+
+.owner-image {
+  width: 600px;
+}
+
+@media (max-width: 576px){
+  .owner-image {
+    width: 250px;
+  }
+}
+
+@media (min-width: 480px){
+  .recruitment-info {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 480px){
+  .recruitment-info p {
+    font-size: 18px;
+  }
+}
+
 .wrap-mission {
   line-height: 2;
 }
@@ -1229,8 +1291,34 @@ a:hover {
   margin: 0 4px;
   padding: 8px 15px;
 }
+.entry_btn {
+  display: none;
+}
 
-
+@media (min-width: 480px) {
+  .entry_btn {
+    height: 250px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 20px;
+    position: fixed;
+    top: 100px;
+    right: 1em;
+    background: white;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    padding-right: 1.5em;
+    padding-left: 0.5em;
+    border: 5px #C7080B solid;
+    color: #444444;
+    font-size: 18px;
+    line-height: 1.2em;
+    text-align: center;
+    display: block;
+  }
+}
 /*--------------------------------------------------------------
 # Our Team
 --------------------------------------------------------------*/

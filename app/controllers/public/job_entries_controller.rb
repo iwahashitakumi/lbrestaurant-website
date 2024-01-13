@@ -33,6 +33,9 @@ class Public::JobEntriesController < Public::ApplicationController
   def complete
   end
 
+  def show
+  end
+
 
   private
 

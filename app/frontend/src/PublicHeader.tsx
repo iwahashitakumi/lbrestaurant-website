@@ -75,20 +75,15 @@ const PublicHeader: React.FC<PublicHeaderProps> = (props) => {
                 ブログ
               </a>
             </li>
-            <li
-              className={`recruit-drop nav-item dropdown ms-5`}
-              onMouseEnter={handleMouseEnter}
-            >
+            <li className={`recruit-drop nav-item dropdown ms-5`} onMouseEnter={handleMouseEnter}>
               <a
                 href={props.JobEntriesPath}
                 className={`nav-link fw-bold ${isActive('job_entries', 'show') || isActive('job_entries', 'recruitment_info') || isActive('job_entries', 'confirm') || isActive('job_entries', 'complete') || isActive('job_entries', 'faq')}`}
-                
-                data-bs-target="#jobEntriesDropdown"
               >
                 採用情報
               </a>
               <div
-                className={`dropdown-menu collapse ${isDropdownVisible ? 'show' : ''}`}
+                className={`dropdown-menu ${isDropdownVisible ? 'show' : ''}`}
                 id="jobEntriesDropdown"
               >
                 <a className="dropdown-item drop-top-line" href={props.JobEntriesRecruitmentPath}>

@@ -23,10 +23,9 @@
 
   </head>
   <body>
-    <%= render 'public/shared/header' %>
     <div class="contents">
       <%= vite_javascript_tag 'PublicApplication.tsx' %>
-      <app-component>
+      <app-component data-props="<%= { ControllerName: controller_name, ActionName: action_name }.to_json %>">
         <%= yield %>
       </app-component>
     </div>

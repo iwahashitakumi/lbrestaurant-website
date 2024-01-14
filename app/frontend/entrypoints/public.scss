@@ -66,6 +66,16 @@ a:hover {
   transform: rotate(90deg);
 }
 
+.drop-top-line {
+  border-top: 1px solid #000;
+}
+
+@media (min-width: 576px) {
+  .drop-bottom-line {
+    border-bottom: 1px solid #000;
+  }
+}
+
 .back-to-top {
   position: fixed;
   visibility: hidden;
@@ -248,6 +258,13 @@ a:hover {
   }
 }
 
+.recruit-drop .dropdown-menu {
+  top: 60px;
+  padding: 0;
+  border-radius: initial !important;
+  text-align: center;
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -286,6 +303,15 @@ a:hover {
 .navbar li {
   position: relative;
 }
+
+@media (max-width: 576px) {
+  .navbar li {
+    border-bottom: 1px solid black;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 
 @media (max-width: 576px) {
   .nav-item {

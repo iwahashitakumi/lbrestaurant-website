@@ -615,6 +615,13 @@ a:hover {
   height: 0;
 }
 
+
+@media (max-width: 576px){
+  .company-table tr {
+    display: block;
+  }
+}
+
 .company-table th {
   font-weight: bold;
   height: 100%;
@@ -993,6 +1000,12 @@ a:hover {
   height: 0;
 }
 
+@media (max-width: 576px){
+  .contact-table tr {
+    display: block;
+  }
+}
+
 .contact-table th {
   font-weight: bold;
   height: 100%;
@@ -1144,6 +1157,13 @@ a:hover {
   border-bottom: 1px dotted #444444;
 }
 
+@media (max-width: 576px){
+  .recruit_info tr {
+    display: block;
+  }
+}
+
+
 
 .recruit_info th {
   font-weight: bold;
@@ -1206,6 +1226,12 @@ a:hover {
 
 .job-entry-table {
   height: 0;
+}
+
+@media (max-width: 576px){
+  .job-entry-table tr {
+    display: block;
+  }
 }
 
 .job-entry-table th {

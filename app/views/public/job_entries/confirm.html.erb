@@ -3,7 +3,7 @@
 <div class="wrap">
   <div class="job-entry-content">
     <h3 class="job-entry-title text-center fw-bold">内容を確認</h3>
-    <div class="table-responsive">
+    <tbody>
       <table class="table job-entry-table">
         <tr>
           <th class="col-md-4">
@@ -117,7 +117,7 @@
           </td>
         </tr>       
       </table>
-    </div>
+    </tbody>
 
     <%= form_with model: @job_entry, local: true do |f| %>
       <%= f.hidden_field :recruit_type %>

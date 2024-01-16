@@ -29,9 +29,12 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'home#show'
-    resources :companies, except: [:index, :create, :new, :edit, :update, :destroy, :show] do
+    resources :lbr, only: [] do
       collection do
         get :show
+        get :about
+        get :company
+        get :staff
       end
     end
     resources :news, only: [:index, :show]
@@ -49,7 +52,6 @@ Rails.application.routes.draw do
         post :confirm
         get :complete
         get :recruitment_info
-        get :staff
         get :faq
       end
     end

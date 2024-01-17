@@ -25,10 +25,9 @@
   <body>
     <%= render 'public/shared/header' %>
     <div class="contents">
-      <%= vite_javascript_tag 'PublicApplication.tsx' %>
-      <app-component>
+      <main>
         <%= yield %>
-      </app-component>
+      <main>
     </div>
     <%= render 'public/shared/footer' %>
   </body>

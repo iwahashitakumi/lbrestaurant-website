@@ -92,6 +92,7 @@
                 </div>
               </th>
               <td class="col-md-8">
+                <%= vite_javascript_tag 'Contact.tsx' %>
                 <contact-component
                     data-props="<%= { contactMethodValuesCollect: Contact.contact_method.values, contactMethod: f.object.contact_method }.to_json %>"
                   >

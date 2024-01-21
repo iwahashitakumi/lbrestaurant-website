@@ -1,16 +1,18 @@
 class Article < ApplicationRecord
   has_many :contents, dependent: :destroy
   accepts_nested_attributes_for :contents, allow_destroy: true
-  extend Enumerize
 
+  extend Enumerize
   enumerize :category, in: { event: 1, company_trip: 2, staff_introduction: 3, other: 4 }
   enumerize :status, in: { unpublished: 1, published: 2, expired: 3 }, default: :unpublished, scope: true, predicates: true
 
-  validates :category, presence: true
-  validates :status, presence: true
-  validates :title, presence: true, length: { minimum: 5, maximum: 100 }
-  validates :start_at, presence: true
-  validates :end_at, presence: true
+  with_options presence: true do
+    validates :category
+    validates :status
+    validates :title, length: { minimum: 5, maximum: 100 }
+    validates :start_at
+    validates :end_at
+  end
   validate :start_at_in_future
   validate :end_at_after_start_at
 

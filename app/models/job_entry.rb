@@ -14,8 +14,7 @@ class JobEntry < ApplicationRecord
   validates :name_kana, presence: true
   validates :sex, presence: true
   validates :birth_date, presence: true
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
+  validates :email, presence: true, length: { maximum: 255 }, email: true
   VALID_PHONE_REGEX = /\A0[-\d]{11,12}\z/
   validates :phone_number, presence: true, format: { with: VALID_PHONE_REGEX }
   validates :prefecture_id, presence: true

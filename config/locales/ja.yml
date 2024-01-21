@@ -124,7 +124,7 @@ ja:
         status: 対応状況
         update_by: 更新者
       job_entry:
-        recruit_type: 採用タイプ
+        recruit_type: 応募するタイプ
         name: お名前
         name_kana: フリガナ
         phone_number: お電話番号
@@ -136,6 +136,8 @@ ja:
         status: 対応状況
         prefecture_id: 都道府県
         update_by: 更新者
+        male: 男性
+        female: 女性
         
   
   enumerize:
@@ -179,7 +181,7 @@ ja:
     job_entry:
       recruit_type:
         regular_employee: 正社員
-        franchisee: フランチャイズ希望
+        franchisee: 暖簾分け希望正社員
       sex:
         male: 男性
         female: 女性

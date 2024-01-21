@@ -3,124 +3,126 @@
 <div class="wrap">
   <div class="contact-content">
     <h3 class="contact-title text-center fw-bold">内容を確認</h3>
-    <div class="table-responsive">
+    <div>
       <table class="table contact-table">
-        <tr>
-          <th class="col-md-4">
-            <div class="contact-label">
-              お問い合わせタイプ
-              <span class="badge rounded-pill text-bg-danger">必須</span>
-            </div>
-          </th>
-          <td class="col-md-8">
-            <div class="contact-form">
-              <%= @contact.contact_type_text %>
-            </div>
-          </td>
-        </tr>
+        <tbody>
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                お問い合わせタイプ
+                <span class="badge rounded-pill text-bg-danger">必須</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <div class="contact-form">
+                <%= @contact.contact_type_text %>
+              </div>
+            </td>
+          </tr>
 
-        <tr>
-          <th class="col-md-4">
-            <div class="contact-label">
-              お問い合わせ内容
-              <span class="badge rounded-pill text-bg-danger">必須</span>
-            </div>
-          </th>
-          <td class="col-md-8">
-            <div class="contact-form">
-              <%= @contact.message %>
-            </div>
-          </td>
-        </tr>
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                お問い合わせ内容
+                <span class="badge rounded-pill text-bg-danger">必須</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <div class="contact-form">
+                <%= @contact.message %>
+              </div>
+            </td>
+          </tr>
 
-        <tr>
-          <th class="col-md-4">
-            <div class="contact-label">
-              メールアドレス
-              <span class="badge rounded-pill text-bg-danger">必須</span>
-            </div>
-          </th>
-          <td class="col-md-8">
-            <div class="contact-form">
-              <%= @contact.email %>
-            </div>
-          </td>
-        </tr>
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                メールアドレス
+                <span class="badge rounded-pill text-bg-danger">必須</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <div class="contact-form">
+                <%= @contact.email %>
+              </div>
+            </td>
+          </tr>
 
-        <tr>
-          <th class="col-md-4">
-            <div class="contact-label">
-              返信を
-              <span class="badge rounded-pill text-bg-danger">必須</span>
-            </div>
-          </th>
-          <td class="col-md-8">
-            <div class="contact-form">
-              <%= @contact.callback_requested_text %>
-            </div>
-          </td>
-        </tr>
-      </table>
-      
-        <h3 class="text-center fw-bold contact-title2">お客様情報</h3>
-        <p class="text-center fw-bold mb-5">弊社からの返答・返信をご希望の場合は必ずご記入ください。</p>
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                返信を
+                <span class="badge rounded-pill text-bg-danger">必須</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <div class="contact-form">
+                <%= @contact.callback_requested_text %>
+              </div>
+            </td>
+          </tr>
+        </table>
+        
+          <h3 class="text-center fw-bold contact-title2">お客様情報</h3>
+          <p class="text-center fw-bold mb-5">弊社からの返答・返信をご希望の場合は必ずご記入ください。</p>
 
-      <table class="table contact-table">
-        <tr>
-          <th class="col-md-4">
-            <div class="contact-label">
-              連絡方法
-              <span class="badge rounded-pill text-bg-success">任意</span>
-            </div>
-          </th>
-          <td class="col-md-8">
-            <div class="contact-form">
-              <%= @contact.contact_method_text %>
-            </div>
-          </td>
-        </tr>
+        <table class="table contact-table">
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                連絡方法
+                <span class="badge rounded-pill text-bg-success">任意</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <div class="contact-form">
+                <%= @contact.contact_method_text %>
+              </div>
+            </td>
+          </tr>
 
-        <tr>
-          <th class="col-md-4">
-            <div class="contact-label">
-              お名前
-              <span class="badge rounded-pill text-bg-success">任意</span>
-            </div>
-          </th>
-          <td class="col-md-8">
-            <div class="contact-form">
-              <%= @contact.name %>
-            </div>
-          </td>
-        </tr>
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                お名前
+                <span class="badge rounded-pill text-bg-success">任意</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <div class="contact-form">
+                <%= @contact.name %>
+              </div>
+            </td>
+          </tr>
 
-        <tr>
-          <th class="col-md-4">
-            <div class="contact-label">
-              フリガナ
-              <span class="badge rounded-pill text-bg-success">任意</span>
-            </div>
-          </th>
-          <td class="col-md-8">
-            <div class="contact-form">
-              <%= @contact.name_kana %>
-            </div>
-          </td>
-        </tr>
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                フリガナ
+                <span class="badge rounded-pill text-bg-success">任意</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <div class="contact-form">
+                <%= @contact.name_kana %>
+              </div>
+            </td>
+          </tr>
 
-        <tr>
-          <th class="col-md-4">
-            <div class="contact-label">
-              お電話番号
-              <span class="badge rounded-pill text-bg-success">任意</span>
-            </div>
-          </th>
-          <td class="col-md-8">
-            <div class="contact-form">
-              <%= @contact.phone_number %>
-            </div>
-          </td>
-        </tr>
+          <tr>
+            <th class="col-md-4">
+              <div class="contact-label">
+                お電話番号
+                <span class="badge rounded-pill text-bg-success">任意</span>
+              </div>
+            </th>
+            <td class="col-md-8">
+              <div class="contact-form">
+                <%= @contact.phone_number %>
+              </div>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
 

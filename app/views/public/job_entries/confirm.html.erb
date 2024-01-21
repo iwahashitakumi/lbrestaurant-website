@@ -1,0 +1,147 @@
+<h1 class="h1style mb-5rem fw-bold">応募について（確認）</h1>
+
+<div class="wrap">
+  <div class="job-entry-content">
+    <h3 class="job-entry-title text-center fw-bold">内容を確認</h3>
+    <tbody>
+      <table class="table job-entry-table">
+        <tr>
+          <th class="col-md-4">
+            <div class="job-entry-label">
+              応募するタイプ
+              <span class="badge rounded-pill text-bg-danger">必須</span>
+            </div>
+          </th>
+          <td class="col-md-8">
+            <div class="job-entry-form">
+              <%= @job_entry.recruit_type_text %>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="col-md-4">
+            <div class="job-entry-label">
+              お名前
+              <span class="badge rounded-pill text-bg-danger">必須</span>
+            </div>
+          </th>
+          <td class="col-md-8">
+            <div class="job-entry-form">
+              <%= @job_entry.name %>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="col-md-4">
+            <div class="job-entry-label">
+              フリガナ
+              <span class="badge rounded-pill text-bg-danger">必須</span>
+            </div>
+          </th>
+          <td class="col-md-8">
+            <div class="job-entry-form">
+              <%= @job_entry.name_kana %>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="col-md-4">
+            <div class="job-entry-label">
+              性別
+              <span class="badge rounded-pill text-bg-danger">必須</span>
+            </div>
+          </th>
+          <td class="col-md-8">
+            <div class="job-entry-form">
+              <%= @job_entry.sex_text %>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="col-md-4">
+            <div class="job-entry-label">
+              生年月日
+              <span class="badge rounded-pill text-bg-danger">必須</span>
+            </div>
+          </th>
+          <td class="col-md-8">
+            <div class="job-entry-form">
+              <%= format_date(@job_entry.birth_date) %>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="col-md-4">
+            <div class="job-entry-label">
+              メールアドレス
+              <span class="badge rounded-pill text-bg-danger">必須</span>
+            </div>
+          </th>
+          <td class="col-md-8">
+            <div class="job-entry-form">
+              <%= @job_entry.email %>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="col-md-4">
+            <div class="job-entry-label">
+              お電話番号
+              <span class="badge rounded-pill text-bg-danger">必須</span>
+            </div>
+          </th>
+          <td class="col-md-8">
+            <div class="job-entry-form">
+              <%= @job_entry.phone_number %>
+            </div>
+          </td>
+        </tr>
+        
+        <tr>
+          <th class="col-md-4">
+            <div class="job-entry-label">
+              住所
+              <span class="badge rounded-pill text-bg-danger">必須</span>
+            </div>
+          </th>
+          <td class="col-md-8">
+            <div class="job-entry-form">
+              <%= @job_entry.prefecture.name %><%= @job_entry.city_name %><%= @job_entry.address %>
+            </div>
+          </td>
+        </tr>       
+      </table>
+    </tbody>
+
+    <%= form_with model: @job_entry, local: true do |f| %>
+      <%= f.hidden_field :recruit_type %>
+      <%= f.hidden_field :name %>
+      <%= f.hidden_field :name_kana %>
+      <%= f.hidden_field :sex %>
+      <%= f.hidden_field :birth_date %>      
+      <%= f.hidden_field :email %>
+      <%= f.hidden_field :phone_number %>
+      <%= f.hidden_field :prefecture_id %>
+      <%= f.hidden_field :city_name %>
+      <%= f.hidden_field :address %>
+      
+
+      <div class="job-entry-btn-box">
+        <ul class="list-inline">
+          <li class="list-inline-item"><%= f.submit "修正する", name: "back", class: 'btn btn-secondary' %></li>
+          <li class="list-inline-item"><%= f.submit "送信する", class: 'btn btn-primary' %></li>
+        </ul>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+
+

@@ -7,10 +7,12 @@ class Contact < ApplicationRecord
   enumerize :contact_method, in: { email: 1, phone_number: 2 }, scope: true, predicates: true
   enumerize :status, in: {not_started: 1, in_progress: 2, completed: 3}, default: :not_started, scope: true, predicates: true
 
-  validates :contact_type, presence: true
-  validates :message, presence: true
-  validates :email, presence: true
-  validates :callback_requested, presence: true
+  with_options presence: true do
+    validates :contact_type
+    validates :message
+    validates :email, length: { maximum: 255 }, email: true
+    validates :callback_requested
+  end
 
   scope :search_by_contact_type, ->(type) { where(contact_type: type) }
   scope :search_by_contact_method, ->(method) { where(contact_method: method) }

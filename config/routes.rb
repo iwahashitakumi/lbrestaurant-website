@@ -29,6 +29,14 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'home#show'
+    resources :lbr, only: [] do
+      collection do
+        get :show
+        get :about
+        get :company
+        get :staff
+      end
+    end
     resources :news, only: [:index, :show]
     resources :articles, only: [:index, :show]
     resources :shops, only: [:index]
@@ -36,6 +44,15 @@ Rails.application.routes.draw do
       collection do
         post :confirm
         get :complete
+      end
+    end
+    resources :job_entries, only: [:create] do
+      collection do
+        get :show
+        post :confirm
+        get :complete
+        get :recruitment_info
+        get :faq
       end
     end
   end

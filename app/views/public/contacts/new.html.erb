@@ -11,134 +11,137 @@
 
     <h3 class="contact-title text-center fw-bold">内容を入力</h3>
     <%= form_with model: @contact, url: confirm_contacts_url(@contact), local: true  do |f| %>
-      <div class="table-responsive">
+      <div>
         <table class="table contact-table">
-          <tr>
-            <th class="col-md-4">
-              <div class="contact-label">
-                <%= f.label :contact_type %>
-                <span class="badge rounded-pill text-bg-danger">必須</span>
-              </div>
-            </th>
-            <td class="col-md-8">
-              <div class="contact-form">
-                <%= f.select :contact_type, Contact.contact_type.options, { prompt: '問い合わせ内容をお選びください' }, { selected: f.object.contact_type, class: 'form-select' } %>
-                <%= show_error_messages(f.object, :contact_type) %>
-              </div>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <th class="col-md-4">
+                <div class="contact-label">
+                  <%= f.label :contact_type %>
+                  <span class="badge rounded-pill text-bg-danger">必須</span>
+                </div>
+              </th>
+              <td class="col-md-8">
+                <div class="contact-form">
+                  <%= f.select :contact_type, Contact.contact_type.options, { prompt: '問い合わせ内容をお選びください' }, { selected: f.object.contact_type, class: 'form-select' } %>
+                  <%= show_error_messages(f.object, :contact_type) %>
+                </div>
+              </td>
+            </tr>
 
-          <tr>
-            <th class="col-md-4">
-              <div class="contact-label">
-                <%= f.label :message %>
-                <span class="badge rounded-pill text-bg-danger">必須</span>
-              </div>
-            </th>
-            <td class="col-md-8">
-              <div class="contact-form">
-                <%= f.text_area :message, class: 'form-control', value: f.object.message, placeholder: "店舗へのご意見、ご感想の場合は『ご利用店舗・ご利用日時・お時間帯』をご記入お願いいたします。", rows: 12 %>
-                <%= show_error_messages(f.object, :message) %>
-              </div>
-            </td>
-          </tr>
+            <tr>
+              <th class="col-md-4">
+                <div class="contact-label">
+                  <%= f.label :message %>
+                  <span class="badge rounded-pill text-bg-danger">必須</span>
+                </div>
+              </th>
+              <td class="col-md-8">
+                <div class="contact-form">
+                  <%= f.text_area :message, class: 'form-control', value: f.object.message, placeholder: "店舗へのご意見、ご感想の場合は『ご利用店舗・ご利用日時・お時間帯』をご記入お願いいたします。", rows: 12 %>
+                  <%= show_error_messages(f.object, :message) %>
+                </div>
+              </td>
+            </tr>
 
-          <tr>
-            <th class="col-md-4">
-              <div class="contact-label">
-                <%= f.label :email %>
-                <span class="badge rounded-pill text-bg-danger">必須</span>
-              </div>
-            </th>
-            <td class="col-md-8">
-              <div class="contact-form">
-                <%= f.email_field :email, autocomplete: "email", class: "form-control", value: f.object.email, placeholder: "lbrestaurant@example.com" %>
-                <%= show_error_messages(f.object, :email) %>
-              </div>
-            </td>
-          </tr>
+            <tr>
+              <th class="col-md-4">
+                <div class="contact-label">
+                  <%= f.label :email %>
+                  <span class="badge rounded-pill text-bg-danger">必須</span>
+                </div>
+              </th>
+              <td class="col-md-8">
+                <div class="contact-form">
+                  <%= f.email_field :email, autocomplete: "email", class: "form-control", value: f.object.email, placeholder: "lbrestaurant@example.com" %>
+                  <%= show_error_messages(f.object, :email) %>
+                </div>
+              </td>
+            </tr>
 
-          <tr>
-            <th class="col-md-4">
-              <div class="contact-label">
-                <%= f.label :callback_requested %>
-                <span class="badge rounded-pill text-bg-danger">必須</span>
-              </div>
-            </th>
-            <td class="col-md-8">
-              <div class="contact-form">
-                <% Contact.callback_requested.values.collect.each do |key, value| %>
-                  <div class="form-check contact-as-radio">
-                    <%= f.radio_button :callback_requested, key, class: 'form-check-input' %>
-                    <%= f.label key, value, class: 'form-check-label' %>
-                  </div>
-                <% end %>
-                <%= show_error_messages(f.object, :callback_requested) %>
-              </div>
-            </td>
-          </tr>
-        </table>
-        
-          <h3 class="text-center fw-bold contact-title2">お客様情報</h3>
-          <p class="text-center fw-bold mb-5">弊社からの返答・返信をご希望の場合は必ずご記入ください。</p>
+            <tr>
+              <th class="col-md-4">
+                <div class="contact-label">
+                  <%= f.label :callback_requested %>
+                  <span class="badge rounded-pill text-bg-danger">必須</span>
+                </div>
+              </th>
+              <td class="col-md-8">
+                <div class="contact-form">
+                  <% Contact.callback_requested.values.collect.each do |key, value| %>
+                    <div class="form-check contact-as-radio">
+                      <%= f.radio_button :callback_requested, key, class: 'form-check-input' %>
+                      <%= f.label key, value, class: 'form-check-label' %>
+                    </div>
+                  <% end %>
+                  <%= show_error_messages(f.object, :callback_requested) %>
+                </div>
+              </td>
+            </tr>
+          </table>
+          
+            <h3 class="text-center fw-bold contact-title2">お客様情報</h3>
+            <p class="text-center fw-bold mb-5">弊社からの返答・返信をご希望の場合は必ずご記入ください。</p>
 
-        <table class="table contact-table">
-          <tr>
-            <th class="col-md-4">
-              <div class="contact-label">
-                <%= f.label :contact_method %>
-                <span class="badge rounded-pill text-bg-success">任意</span>
-              </div>
-            </th>
-            <td class="col-md-8">
-              <contactmethod-component
-                  data-props="<%= { contactMethodValuesCollect: Contact.contact_method.values, contactMethod: f.object.contact_method }.to_json %>"
-                >
-                </contactmethod-component>
-            </td>
-          </tr>
+          <table class="table contact-table">
+            <tr>
+              <th class="col-md-4">
+                <div class="contact-label">
+                  <%= f.label :contact_method %>
+                  <span class="badge rounded-pill text-bg-success">任意</span>
+                </div>
+              </th>
+              <td class="col-md-8">
+                <%= vite_javascript_tag 'Contact.tsx' %>
+                <contact-component
+                    data-props="<%= { contactMethodValuesCollect: Contact.contact_method.values, contactMethod: f.object.contact_method }.to_json %>"
+                  >
+                  </contact-component>
+              </td>
+            </tr>
 
-          <tr>
-            <th class="col-md-4">
-              <div class="contact-label">
-                <%= f.label :name %>
-                <span class="badge rounded-pill text-bg-success">任意</span>
-              </div>
-            </th>
-            <td class="col-md-8">
-              <div class="contact-form">
-                <%= f.text_field :name, class: 'form-control', value: f.object.name, placeholder: "飲食太郎" %>
-              </div>
-            </td>
-          </tr>
+            <tr>
+              <th class="col-md-4">
+                <div class="contact-label">
+                  <%= f.label :name %>
+                  <span class="badge rounded-pill text-bg-success">任意</span>
+                </div>
+              </th>
+              <td class="col-md-8">
+                <div class="contact-form">
+                  <%= f.text_field :name, class: 'form-control', value: f.object.name, placeholder: "飲食太郎" %>
+                </div>
+              </td>
+            </tr>
 
-          <tr>
-            <th class="col-md-4">
-              <div class="contact-label">
-                <%= f.label :name_kana %>
-                <span class="badge rounded-pill text-bg-success">任意</span>
-              </div>
-            </th>
-            <td class="col-md-8">
-              <div class="contact-form">
-                <%= f.text_field :name_kana, class: 'form-control', value: f.object.name_kana, placeholder: "インショクタロウ" %>
-              </div>
-            </td>
-          </tr>
+            <tr>
+              <th class="col-md-4">
+                <div class="contact-label">
+                  <%= f.label :name_kana %>
+                  <span class="badge rounded-pill text-bg-success">任意</span>
+                </div>
+              </th>
+              <td class="col-md-8">
+                <div class="contact-form">
+                  <%= f.text_field :name_kana, class: 'form-control', value: f.object.name_kana, placeholder: "インショクタロウ" %>
+                </div>
+              </td>
+            </tr>
 
-          <tr>
-            <th class="col-md-4">
-              <div class="contact-label">
-                <%= f.label :phone_number %>
-                <span class="badge rounded-pill text-bg-success">任意</span>
-              </div>
-            </th>
-            <td class="col-md-8">
-              <div class="contact-form">
-                <%= f.text_field :phone_number, class: 'form-control', value: f.object.phone_number, placeholder: "012-3456-789" %>
-              </div>
-            </td>
-          </tr>
+            <tr>
+              <th class="col-md-4">
+                <div class="contact-label">
+                  <%= f.label :phone_number %>
+                  <span class="badge rounded-pill text-bg-success">任意</span>
+                </div>
+              </th>
+              <td class="col-md-8">
+                <div class="contact-form">
+                  <%= f.text_field :phone_number, class: 'form-control', value: f.object.phone_number, placeholder: "012-3456-789" %>
+                </div>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
 

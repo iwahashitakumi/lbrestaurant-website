@@ -1,0 +1,42 @@
+<h1 class="h1style mb-5rem fw-bold">採用詳細</h1>
+<div class="owner-wrap mb-5">
+  <div class="job-entry-content">
+    <div class="d-flex flex-wrap">
+      <div class="col-md-6 mb-4 p-3 mobile-p-0">
+        <%= image_tag('default.owner.jpg', class: 'owner-image') %>
+      </div>
+      <div class="col-md-6 mb-4 p-3 mobile-p-0">
+        <div class="recruitment-info">
+          <h3 class="job-entry-title text-center fw-bold">このページを見てくださっている皆様へ</h3>
+          <div>
+            <p  class="mb-3">
+              この度は、Lbrestaurantに興味を持っていただきまして誠にありがとうございます。<br>
+              私たちLBrestaurantは飲食業に本気で携わるすべての人の地位向上を日本で1番実現することを目標として採用活動を行っております。
+            </p>
+            <p  class="mb-3">
+              飲食業に本気で携わるすべての人の 地位向上とは一言で言うと、
+              飲食で本気で飯を食べたい、
+              本気で自分なりの自己実現をしたいと真面目に考えている人。
+              このような本気の人達こそ、もっと評価されるようにしたいと私は考えております
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="job-info-btn-box">
+  <ul class="list-inline">
+    <li class="list-inline-item"><%= link_to "応募はこちら", recruitment_info_job_entries_path, class: 'btn btn-primary' %></li>
+  </ul>
+</div>
+
+<div>
+  <%= link_to "応募はこちら", recruitment_info_job_entries_path,  class: "entry_btn fw-bold" %>
+</div>
+
+<div>
+  <%= link_to "よくある質問はこちら", faq_job_entries_path,  class: "faq_btn fw-bold" %>
+</div>

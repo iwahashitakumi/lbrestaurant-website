@@ -155,6 +155,8 @@
 }
 
 
+
+
 .article-wrap {
   padding: 0 80px;
 }
@@ -420,5 +422,45 @@
 @media (max-width: 1024px){
   .job-entry-search-form {
     margin: 0;
+  }
+}
+
+.news-search-select {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .news-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .news-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+}
+
+.news-search-form {
+  margin: 0;
+}
+
+@media (max-width: 1085px){
+  .news-search-form {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .news-search-form {
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px){
+  .news-search-form-box {
+    width: 100%;
   }
 }

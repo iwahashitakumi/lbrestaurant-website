@@ -27,6 +27,12 @@ em {
   }
 }
 
+@media (max-width: 599px) {
+  .mobile-news-block {
+    display: block !important;
+  }
+}
+
 @media (max-width: 576px) {
   .mobile-gutter {
     --bs-gutter-x: 0;
@@ -93,8 +99,20 @@ em {
   }
 }
 
+@media (max-width: 576px) {
+  .mobile-news-full-width {
+    width: 100%;
+  }
+}
+
 @media (max-width: 1085px) {
   .mobile-btn-full-width {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .mobile-news-btn-full-width {
     width: 100%;
   }
 }

@@ -11,7 +11,7 @@ const App: React.FC = (props: any) => {
   React.useEffect(() => {
     rewrap('articlecontents-component', ArticleContents, true);
   }, []);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = React.useCallback(() => {
     if (isSidebarOpen) {
       setIsSidebarOpen(false);

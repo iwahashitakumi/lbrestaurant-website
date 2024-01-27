@@ -148,6 +148,12 @@
   }
 }
 
+@media (max-width: 1320px) {
+  .mobile-title {
+    margin-bottom: 1.5rem;
+  }
+}
+
 
 .article-wrap {
   padding: 0 80px;
@@ -377,10 +383,42 @@
   }
 }
 
-
 @media (max-width: 767px){
   .search-form-box {
     width: 100%;
   }
 }
 
+.job-entry-search-select {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .job-entry-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 767px){
+  .job-entry-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+}
+
+.job-entry-search-form {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .job-entry-search-form {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 1024px){
+  .job-entry-search-form {
+    margin: 0;
+  }
+}

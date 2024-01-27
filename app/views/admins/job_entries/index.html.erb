@@ -1,15 +1,19 @@
 <% breadcrumb :admins_job_entries %>
 <div class="d-flex justify-content-between mb-4 mobile-block">
-  <h3 class="fw-bold"><%= link_to '採用応募一覧', admins_job_entries_path, class: 'text-dark text-decoration-none' %></h3>
+  <h3 class="fw-bold mobile-title"><%= link_to '採用応募一覧', admins_job_entries_path, class: 'text-dark text-decoration-none' %></h3>
   <%= search_form_for @q, url: admins_job_entries_path, class: 'form-inline' do |f| %>
     <div class="input-group">
-      <%= f.select :search_by_recruit_type, JobEntry.recruit_type.options, { include_blank: '全ての採用タイプ' }, class: 'form-select-sm me-4' %>
-      <%= f.select :search_by_sex, JobEntry.sex.options, { include_blank: '全ての性別' }, class: 'form-select-sm me-4' %>
-      <%= f.select :search_by_status, JobEntry.status.options, { include_blank: '全ての対応状況' }, class: 'form-select-sm me-4' %>
-      <%= f.search_field :name_cont, class: 'form-control me-2', placeholder: '名前で検索' %>
-      <%= f.search_field @search_residence_scope, class: 'form-control', placeholder: '住所で検索' %>
-      <div class="input-group-append">
-        <%= f.submit '検索', class: 'btn btn-primary' %>
+      <%= f.select :search_by_recruit_type, JobEntry.recruit_type.options, { include_blank: '全ての採用タイプ' }, class: 'form-select-sm job-entry-search-select search-form-box' %>
+      <%= f.select :search_by_sex, JobEntry.sex.options, { include_blank: '全ての性別' }, class: 'form-select-sm job-entry-search-select search-form-box' %>
+      <%= f.select :search_by_status, JobEntry.status.options, { include_blank: '全ての対応状況' }, class: 'form-select-sm job-entry-search-select search-form-box' %>
+      <div class="mobile-full-width job-entry-search-form">
+        <%= f.search_field :name_cont, class: 'form-control', placeholder: '名前で検索' %>
+      </div>
+      <div class="mobile-full-width">
+        <%= f.search_field @search_residence_scope, class: 'form-control', placeholder: '住所で検索' %>
+      </div> 
+      <div class="input-group-append  mobile-btn-full-width">
+        <%= f.submit '検索', class: 'btn btn-primary  mobile-btn-full-width' %>
       </div>
     </div>
   <% end %>

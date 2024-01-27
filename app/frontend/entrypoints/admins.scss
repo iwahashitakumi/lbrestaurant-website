@@ -142,6 +142,13 @@
   margin-bottom: 5rem;
 }
 
+@media (max-width: 767px) {
+  .mobile-title {
+    margin-bottom: 1rem;
+  }
+}
+
+
 .article-wrap {
   padding: 0 80px;
 }
@@ -335,3 +342,45 @@
     font-size: 14px;
   }
 }
+
+.contact-search-select {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .contact-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 767px){
+  .contact-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+}
+
+.contact-search-form {
+  margin: 0;
+}
+
+@media (max-width: 1085px){
+  .contact-search-form {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 767px){
+  .contact-search-form {
+    margin: 0;
+  }
+}
+
+
+@media (max-width: 767px){
+  .search-form-box {
+    width: 100%;
+  }
+}
+

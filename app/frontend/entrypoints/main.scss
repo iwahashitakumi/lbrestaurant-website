@@ -117,3 +117,13 @@ em {
   }
 }
 
+@media (max-width: 576px) {
+  .mobile-article-full-width {
+    width: 100%;
+  }
+}
+@media (max-width: 616px) {
+  .mobile-article-btn-full-width {
+    width: 100%;
+  }
+}

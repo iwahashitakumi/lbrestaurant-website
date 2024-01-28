@@ -1,6 +1,15 @@
 @use '@/stylesheets/application';
 @import 'main.scss';
 
+
+
+  @media (max-width: 320px) {
+    .list-inline-item:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+
 .admin-header {
   position: fixed;
   top: 0;
@@ -153,9 +162,6 @@
     margin-bottom: 1.5rem;
   }
 }
-
-
-
 
 .article-wrap {
   padding: 0 80px;
@@ -461,6 +467,46 @@
 
 @media (max-width: 576px){
   .news-search-form-box {
+    width: 100%;
+  }
+}
+
+.article-search-select {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .article-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .article-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+}
+
+.article-search-form {
+  margin: 0;
+}
+
+@media (max-width: 1085px){
+  .article-search-form {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .article-search-form {
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px){
+  .article-search-form-box {
     width: 100%;
   }
 }

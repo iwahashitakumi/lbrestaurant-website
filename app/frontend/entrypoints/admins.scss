@@ -1,6 +1,15 @@
 @use '@/stylesheets/application';
 @import 'main.scss';
 
+
+
+  @media (max-width: 375px) {
+    .list-inline-item:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+
 .admin-header {
   position: fixed;
   top: 0;
@@ -140,6 +149,18 @@
 
 .mb-5rem {
   margin-bottom: 5rem;
+}
+
+@media (max-width: 767px) {
+  .mobile-title {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 1320px) {
+  .mobile-title {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .article-wrap {
@@ -333,5 +354,200 @@
 @media (max-width: 576px){
   .shop-title {
     font-size: 14px;
+  }
+}
+
+.contact-search-select {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .contact-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 767px){
+  .contact-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+}
+
+.contact-search-form {
+  margin: 0;
+}
+
+@media (max-width: 1085px){
+  .contact-search-form {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 767px){
+  .contact-search-form {
+    margin: 0;
+  }
+}
+
+@media (max-width: 767px){
+  .search-form-box {
+    width: 100%;
+  }
+}
+
+.job-entry-search-select {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .job-entry-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 767px){
+  .job-entry-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+}
+
+.job-entry-search-form {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .job-entry-search-form {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 1024px){
+  .job-entry-search-form {
+    margin: 0;
+  }
+}
+
+.news-search-select {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .news-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .news-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+}
+
+.news-search-form {
+  margin: 0;
+}
+
+@media (max-width: 1085px){
+  .news-search-form {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .news-search-form {
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px){
+  .news-search-form-box {
+    width: 100%;
+  }
+}
+
+.article-search-select {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .article-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .article-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+}
+
+.article-search-form {
+  margin: 0;
+}
+
+@media (max-width: 1085px){
+  .article-search-form {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .article-search-form {
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px){
+  .article-search-form-box {
+    width: 100%;
+  }
+}
+
+
+.admin-user-search-select {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .admin-user-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 430px){
+  .admin-user-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+}
+
+.admin-user-search-form {
+  margin: 0;
+}
+
+@media (max-width: 1085px){
+  .admin-user-search-form {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .admin-user-search-form {
+    margin: 0;
+  }
+}
+
+@media (max-width: 430px){
+  .admin-user-search-form-box {
+    width: 100%;
   }
 }

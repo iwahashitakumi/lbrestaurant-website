@@ -25,7 +25,7 @@
   <% if admin_signed_in? %>
     <%= vite_javascript_tag 'AdminApplication.tsx' %>
     <app-component data-props="<%= { currentAdmin: current_admin.data_props }.to_json %>">
-      <div class="container mobile-gutter mobile-p-3">
+      <div class="mobile-gutter">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb" >
             <%= breadcrumbs separator: " &rsaquo; ", class: "custom-breadcrumb" %>

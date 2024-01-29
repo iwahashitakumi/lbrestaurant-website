@@ -3,7 +3,7 @@
 
 
 
-  @media (max-width: 320px) {
+  @media (max-width: 375px) {
     .list-inline-item:not(:last-child) {
       margin-bottom: 0.5rem;
     }
@@ -507,6 +507,47 @@
 
 @media (max-width: 576px){
   .article-search-form-box {
+    width: 100%;
+  }
+}
+
+
+.admin-user-search-select {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1085px){
+  .admin-user-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 430px){
+  .admin-user-search-select {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+}
+
+.admin-user-search-form {
+  margin: 0;
+}
+
+@media (max-width: 1085px){
+  .admin-user-search-form {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .admin-user-search-form {
+    margin: 0;
+  }
+}
+
+@media (max-width: 430px){
+  .admin-user-search-form-box {
     width: 100%;
   }
 }

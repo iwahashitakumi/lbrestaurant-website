@@ -39,6 +39,12 @@ em {
   }
 }
 
+@media (max-width: 599px) {
+  .mobile-admin-users-block {
+    display: block !important;
+  }
+}
+
 @media (max-width: 576px) {
   .mobile-gutter {
     --bs-gutter-x: 0;
@@ -130,6 +136,17 @@ em {
 }
 @media (max-width: 616px) {
   .mobile-article-btn-full-width {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .mobile-admin-user-full-width {
+    width: 100%;
+  }
+}
+@media (max-width: 430px) {
+  .mobile-admin-user-btn-full-width {
     width: 100%;
   }
 }

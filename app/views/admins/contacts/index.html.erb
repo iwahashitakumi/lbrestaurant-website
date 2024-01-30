@@ -1,14 +1,16 @@
 <% breadcrumb :admins_contacts %>
 <div class="d-flex justify-content-between mb-4 mobile-block">
-  <h3 class="fw-bold"><%= link_to '問い合わせ一覧', admins_contacts_path, class: 'text-dark text-decoration-none' %></h3>
+  <h3 class="fw-bold mobile-title"><%= link_to '問い合わせ一覧', admins_contacts_path, class: 'text-dark text-decoration-none' %></h3>
   <%= search_form_for @q, url: admins_contacts_path, class: 'form-inline' do |f| %>
     <div class="input-group">
-      <%= f.select :search_by_contact_type, Contact.contact_type.options, { include_blank: '全ての問い合わせタイプ' }, class: 'form-select-sm me-4' %>
-      <%= f.select :search_by_contact_method, Contact.contact_method.options, { include_blank: '全ての連絡方法' }, class: 'form-select-sm me-4' %>
-      <%= f.select :search_by_status, Contact.status.options, { include_blank: '全ての対応状況' }, class: 'form-select-sm me-4' %>
-      <%= f.search_field :name_cont, class: 'form-control', placeholder: '名前で検索' %>
-      <div class="input-group-append">
-        <%= f.submit '検索', class: 'btn btn-primary' %>
+      <%= f.select :search_by_contact_type, Contact.contact_type.options, { include_blank: '全ての問い合わせタイプ' }, class: 'form-select-sm contact-search-select search-form-box' %>
+      <%= f.select :search_by_contact_method, Contact.contact_method.options, { include_blank: '全ての連絡方法' }, class: 'form-select-sm contact-search-select search-form-box' %>
+      <%= f.select :search_by_status, Contact.status.options, { include_blank: '全ての対応状況' }, class: 'form-select-sm contact-search-select search-form-box' %>
+      <div class="mobile-full-width contact-search-form">
+        <%= f.search_field :name_cont, class: 'form-control', placeholder: '名前で検索' %>
+      </div>
+      <div class="input-group-append mobile-btn-full-width">
+        <%= f.submit '検索', class: 'btn btn-primary mobile-btn-full-width' %>
       </div>
     </div>
   <% end %>

@@ -11,7 +11,7 @@ const App: React.FC = (props: any) => {
   React.useEffect(() => {
     rewrap('articlecontents-component', ArticleContents, true);
   }, []);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = React.useCallback(() => {
     if (isSidebarOpen) {
       setIsSidebarOpen(false);
@@ -44,7 +44,7 @@ const App: React.FC = (props: any) => {
           newAdminsAdminUsersPath="/admins/admin_users/new"
           adminsAdminUsersPath="/admins/admin_users"
          ></Sidebar>
-        <main className={`${isSidebarOpen ? 'ml-sm-auto col-lg-10 col-md-9' : ''}  px-md-4 py-md-4 main-top`}>
+        <main className={`${isSidebarOpen ? 'ml-sm-auto col-lg-10 col-md-9' : ''}  p-md-4 p-3 main-top`}>
           {props.children}
         </main>
       </div>

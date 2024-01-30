@@ -14,6 +14,7 @@ class Public::JobEntriesController < Public::ApplicationController
         render "recruitment_info"
       else
         @job_entry.save!
+        NotificationMailer.job_entry_notification(@job_entry).deliver_now
         redirect_to complete_job_entries_path
       end
     rescue

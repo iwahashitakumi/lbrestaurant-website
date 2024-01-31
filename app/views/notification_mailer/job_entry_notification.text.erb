@@ -1,0 +1,10 @@
+新しい採用応募があります。
+
+お名前: <%= @job_entry.name %>(<%= @job_entry.name_kana %>)
+性別: <%= @job_entry.sex_text %>
+メールアドレス: <%= @job_entry.email %>
+電話番号: <%= @job_entry.phone_number %>
+
+
+採用応募の詳細を確認するには以下のリンクをコピーし、ブラウザで開いてください:
+<%= @job_entry_show_url %>

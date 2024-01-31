@@ -1,0 +1,4 @@
+* * * * * /bin/bash -l -c 'cd /path/to/your/app && RAILS_ENV=your_environment bundle exec rake article_status:change_to_be_published --silent >> /path/to/your/app/log/cron.log 2>&1'
+* * * * * /bin/bash -l -c 'cd /path/to/your/app && RAILS_ENV=your_environment bundle exec rake article_status:change_to_be_expire --silent >> /path/to/your/app/log/cron.log 2>&1'
+* * * * * /bin/bash -l -c 'cd /path/to/your/app && RAILS_ENV=your_environment bundle exec rake news_status:change_to_be_published --silent >> /path/to/your/app/log/cron.log 2>&1'
+* * * * * /bin/bash -l -c 'cd /path/to/your/app && RAILS_ENV=your_environment bundle exec rake news_status:change_to_be_expire --silent >> /path/to/your/app/log/cron.log 2>&1'

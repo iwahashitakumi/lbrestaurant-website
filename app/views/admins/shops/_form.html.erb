@@ -93,7 +93,7 @@
 <div class="mb-4">
   <%= f.label :google_map_iframe, class: "form-label" %>
   <span class="badge rounded-pill text-bg-danger">任意</span>
-  <%= f.text_field :google_map_iframe, class: 'form-control', value: f.object.google_map_iframe, placeholder: "ifameのq=以降を入力" %>
+  <%= f.text_field :google_map_iframe, class: 'form-control', value: f.object.google_map_iframe, placeholder: "ifameのq=以降から”までを入力" %>
   <%= show_error_messages(f.object, :google_map_iframe) %>
 </div>
 
@@ -101,14 +101,14 @@
   <div class="mt-5">
     <ul class="list-inline">
       <li class="list-inline-item"><%= f.submit "登録完了する", class: 'btn btn-primary' %></li>
-      <li class="list-inline-item"><%= link_to "店舗一覧に戻る", @shops_index_url, class: 'btn btn-secondary' %></li>
+      <li class="list-inline-item"><%= link_to "店舗一覧に戻る", @shops_index_url || admins_shops_path, class: 'btn btn-secondary' %></li>
     </ul>
   </div>
 <% else %>
   <div class="mt-5">
     <ul class="list-inline">
       <li class="list-inline-item"><%= f.submit "編集を完了する", class: 'btn btn-primary' %></li>
-      <li class="list-inline-item"><%= link_to "店舗一覧に戻る", @shops_index_url, class: 'btn btn-secondary' %></li>
+      <li class="list-inline-item"><%= link_to "店舗一覧に戻る", @shops_index_url || admins_shops_path, class: 'btn btn-secondary' %></li>
     </ul>
   </div>
 <% end %>

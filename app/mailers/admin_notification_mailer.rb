@@ -1,4 +1,4 @@
-class NotificationMailer < ApplicationMailer
+class AdminNotificationMailer < ApplicationMailer
   default to: -> { [ENV['ADMIN_EMAIL'], ENV['ADMIN_INFO_EMAIL'], ENV['ADMIN_OFFICER_EMAIL']].compact }
 
   def contact_notification(contact)

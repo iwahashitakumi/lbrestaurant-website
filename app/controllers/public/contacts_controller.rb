@@ -11,6 +11,7 @@ class Public::ContactsController < Public::ApplicationController
       else
         @contact.save!
         AdminNotificationMailer.contact_notification(@contact).deliver_now
+        PublicNotificationMailer.contact_notification(@contact).deliver_now
         redirect_to complete_contacts_path
       end
     rescue

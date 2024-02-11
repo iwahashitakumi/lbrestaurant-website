@@ -15,6 +15,7 @@ class Public::JobEntriesController < Public::ApplicationController
       else
         @job_entry.save!
         AdminNotificationMailer.job_entry_notification(@job_entry).deliver_now
+        PublicNotificationMailer.job_entry_notification(@job_entry).deliver_now
         redirect_to complete_job_entries_path
       end
     rescue

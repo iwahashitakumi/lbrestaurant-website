@@ -6,13 +6,13 @@ class Admins::AdminUsersController < Admins::ApplicationController
     @admin_users = @q.result(distinct: true).page(params[:page])
     session[:admin_users_index_url] = request.url
   end
-  
+
   def new
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.new
     @new_role_options = new_role_options
   end
-  
+
   def create
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.new(admin_user_params)
@@ -30,14 +30,14 @@ class Admins::AdminUsersController < Admins::ApplicationController
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
   end
-  
+
   def edit
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
     @edit_role_options = edit_role_options
     editable_owner_admin_user!
   end
-  
+
   def update
     @admin_users_index_url = session[:admin_users_index_url]
     @admin_user = Admin.find(params[:id])
@@ -63,9 +63,9 @@ class Admins::AdminUsersController < Admins::ApplicationController
       render 'index'
     end
   end
-  
+
   private
-  
+
   def admin_user_params
     params.require(:admin).permit(:name, :email, :role, :password, :password_confirmation)
   end
@@ -85,12 +85,12 @@ class Admins::AdminUsersController < Admins::ApplicationController
   def index_path_for_redirect
     session[:admin_users_index_url] || admins_admin_users_path
   end
-  
+
   def editable_owner_admin_user!
     return if current_admin.role.owner?
     return unless @admin_user.role.owner?
     flash[:alert] = "オーナー情報を編集する権限がありません。"
-     redirect_to admins_admin_users_path
+    redirect_to admins_admin_users_path
   end
 
   def authenticate_role!

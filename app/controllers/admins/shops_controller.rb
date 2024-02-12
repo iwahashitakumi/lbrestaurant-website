@@ -1,5 +1,4 @@
 class Admins::ShopsController < Admins::ApplicationController
-
   def index
     @q = Shop.kept.ransack(params[:q])
     @shops = @q.result(distinct: true).page(params[:page])
@@ -21,7 +20,7 @@ class Admins::ShopsController < Admins::ApplicationController
     @shop = Shop.new
     @prefectures = Prefecture.all
   end
-  
+
   def create
     @shops_index_url = session[:shops_index_url]
     @shop = Shop.new(shop_params)
@@ -34,7 +33,7 @@ class Admins::ShopsController < Admins::ApplicationController
       render "new"
     end
   end
-  
+
   def show
     @shops_index_url = session[:shops_index_url]
     @shops_discarded_url = session[:shops_discarded_url]
@@ -47,7 +46,7 @@ class Admins::ShopsController < Admins::ApplicationController
     @shop = Shop.find(params[:id])
     @prefectures = Prefecture.all
   end
-  
+
   def update
     @shops_index_url = session[:shops_index_url]
     @shop = Shop.find(params[:id])
@@ -60,7 +59,7 @@ class Admins::ShopsController < Admins::ApplicationController
       render 'edit'
     end
   end
-  
+
   def destroy
     @shop = Shop.find(params[:id])
     begin
@@ -82,16 +81,14 @@ class Admins::ShopsController < Admins::ApplicationController
       render 'discarded'
     end
   end
-  
 
   private
-  
+
   def shop_params
-    params.require(:shop).permit(:name, :postcode, :address, :access, :business_time, :phone_number, :counter_seat, :table_seat, :site_name, :gourmet_site_link, :city_name, :shop_image,:shop_image_cache, :google_map_iframe, :prefecture_id)
+    params.require(:shop).permit(:name, :postcode, :address, :access, :business_time, :phone_number, :counter_seat, :table_seat, :site_name, :gourmet_site_link, :city_name, :shop_image, :shop_image_cache, :google_map_iframe, :prefecture_id)
   end
 
   def index_path_for_redirect
     session[:shops_index_url] || admins_shops_path
   end
-  
 end

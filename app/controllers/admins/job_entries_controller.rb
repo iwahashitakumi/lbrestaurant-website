@@ -1,5 +1,4 @@
 class Admins::JobEntriesController < Admins::ApplicationController
-
   def index
     @q = JobEntry.ransack(params[:q])
     @job_entries = @q.result(distinct: true).page(params[:page])

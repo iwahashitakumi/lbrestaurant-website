@@ -1,5 +1,4 @@
 class PublicNotificationMailer < ApplicationMailer
-
   def contact_notification(contact)
     @contact = contact
     mail(to: @contact.email, subject: '【株式会社LBrestaurant】お問い合わせ有難うございます。')

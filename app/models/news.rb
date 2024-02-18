@@ -1,5 +1,4 @@
 class News < ApplicationRecord
-  
   extend Enumerize
   enumerize :status, in: { unpublished: 1, published: 2, expired: 3 }, default: :unpublished, predicates: true, scope: true
 
@@ -13,7 +12,7 @@ class News < ApplicationRecord
   end
   validate :start_at_in_future
   validate :end_at_after_start_at
-  
+
   scope :before_published, -> { where("start_at <= ? AND end_at > ?", Time.zone.now, Time.zone.now) }
   scope :next_expired, -> { where('end_at <= ?', Time.zone.now) }
   scope :search_by_status, ->(status) { where(status: status) }

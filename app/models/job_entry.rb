@@ -3,9 +3,9 @@ class JobEntry < ApplicationRecord
   belongs_to :prefecture
 
   extend Enumerize
-  enumerize :recruit_type, in: {regular_employee: 1, franchisee: 2}, scope: true, predicates: true
-  enumerize :sex, in: {male: 1, female: 2}, scope: true, predicates: true
-  enumerize :status, in: {not_started: 1, in_progress: 2, completed: 3}, default: :not_started, scope: true, predicates: true
+  enumerize :recruit_type, in: { regular_employee: 1, franchisee: 2 }, scope: true, predicates: true
+  enumerize :sex, in: { male: 1, female: 2 }, scope: true, predicates: true
+  enumerize :status, in: { not_started: 1, in_progress: 2, completed: 3 }, default: :not_started, scope: true, predicates: true
 
   with_options presence: true do
     validates :recruit_type
@@ -19,7 +19,7 @@ class JobEntry < ApplicationRecord
     validates :city_name
     validates :address
   end
-  
+
   scope :search_by_recruit_type, ->(type) { where(recruit_type: type) }
   scope :search_by_sex, ->(method) { where(sex: method) }
   scope :search_by_status, ->(status) { where(status: status) }
@@ -29,7 +29,7 @@ class JobEntry < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["name","city_name", "address", "recruit_type", "sex", "status" ]
+    ["name", "city_name", "address", "recruit_type", "sex", "status"]
   end
 
   def self.ransackable_associations(auth_object = nil)

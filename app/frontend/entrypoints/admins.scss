@@ -156,6 +156,12 @@
   }
 }
 
+@media (max-width: 767px) {
+  .mobile-title {
+    margin-bottom: 1rem;
+  }
+}
+
 .article-wrap {
   padding: 0 80px;
 }

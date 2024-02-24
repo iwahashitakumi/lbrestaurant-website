@@ -1,6 +1,7 @@
 @use '@/stylesheets/application';
 @import 'main.scss';
 
+
 @media (max-width: 375px) {
   .list-inline-item:not(:last-child) {
     margin-bottom: 0.5rem;
@@ -438,7 +439,6 @@
     margin-bottom: 0.5rem;
     margin-right: 0;
   }
-
   .admin-user-search-form-box {
     width: 100%;
   }

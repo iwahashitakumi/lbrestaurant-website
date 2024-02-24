@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_08_185226) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_18_070959) do
   create_table "admins", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false, comment: "管理者のメールアドレス"
     t.string "encrypted_password", default: "", null: false, comment: "管理者のパスワード"
@@ -116,6 +116,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_08_185226) do
     t.string "postcode", null: false, comment: "店舗の郵便番号"
     t.string "google_map_iframe", comment: "Google Map Iframe"
     t.index ["discarded_at"], name: "index_shops_on_discarded_at"
+    t.index ["name"], name: "index_shops_on_name", unique: true
+    t.index ["postcode"], name: "index_shops_on_postcode", unique: true
     t.index ["prefecture_id"], name: "index_shops_on_prefecture_id"
   end
 

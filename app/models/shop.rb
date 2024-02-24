@@ -2,11 +2,11 @@ class Shop < ApplicationRecord
   include Discard::Model
   mount_uploader :shop_image, ShopImageUploader
   belongs_to :prefecture
-  
-  VALID_POSTAL_CODE_REGEX = /\A\d{3}[-]?\d{4}\z/ 
+
+  VALID_POSTAL_CODE_REGEX = /\A\d{3}[-]?\d{4}\z/
 
   with_options presence: true do
-    validates :postcode, format: { with: VALID_POSTAL_CODE_REGEX }
+    validates :postcode, format: { with: VALID_POSTAL_CODE_REGEX }, uniqueness: true
     validates :name, uniqueness: true
     validates :prefecture_id
     validates :city_name
@@ -23,7 +23,7 @@ class Shop < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["name","city_name", "address"]
+    ["name", "city_name", "address"]
   end
 
   def self.ransackable_associations(auth_object = nil)

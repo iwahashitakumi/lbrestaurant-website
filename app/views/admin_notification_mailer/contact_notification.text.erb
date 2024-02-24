@@ -1,0 +1,11 @@
+新しいお問い合わせがあります。
+
+お問い合わせタイプ: <%= @contact.contact_type_text %>
+お名前: <%= @contact.name %>(<%= @contact.name_kana %>)
+メールアドレス: <%= @contact.email %>
+電話番号: <%= @contact.phone_number %>
+お問い合わせ内容: <%= @contact.message %>
+
+
+お問い合わせの詳細を確認するには以下のリンクをコピーし、ブラウザで開いてください:
+<%= @contact_show_url %>

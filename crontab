@@ -1,0 +1,4 @@
+* * * * *  bundle exec rake /rails/lib/tasks/article_status.rake article_status:change_to_be_published
+* * * * *  bundle exec rake /rails/lib/tasks/article_status.rake article_status:change_to_be_expire
+* * * * *  bundle exec rake /rails/lib/tasks/news_status.rake news_status:change_to_be_published
+* * * * *  bundle exec rake /rails/lib/tasks/news_status.rake news_status:change_to_be_expire

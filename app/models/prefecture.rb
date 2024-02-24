@@ -3,10 +3,10 @@ class Prefecture < ApplicationRecord
   has_many :shops, class_name: 'Shop'
 
   def self.ransackable_attributes(auth_object = nil)
-    ["name"] 
+    ["name"]
   end
 
   def self.ransackable_associations(auth_object = nil)
     ["job_entries", "shops"]
-    end
+  end
 end

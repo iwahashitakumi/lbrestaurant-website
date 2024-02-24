@@ -4,7 +4,7 @@ class ShopImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.production?    
+  if Rails.env.production?
     storage :fog
   else
     storage :file
@@ -18,9 +18,9 @@ class ShopImageUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url(*args)
-     ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default_shop_image.png"].compact.join('_'))
+    ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default_shop_image.png"].compact.join('_'))
   end
-  
+
   def extension_whitelist
     %w(jpg jpeg gif png)
   end

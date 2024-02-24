@@ -37,14 +37,14 @@
   <div class="mt-5">
     <ul class="list-inline">
       <li class="list-inline-item"><%= f.submit "登録完了する", class: 'btn btn-primary' %></li>
-      <li class="list-inline-item"><%= link_to "ブログ一覧に戻る", @articles_index_url, class: 'btn btn-secondary' %></li>
+      <li class="list-inline-item"><%= link_to "ブログ一覧に戻る", @articles_index_url || admins_articles_path, class: 'btn btn-secondary' %></li>
     </ul>
   </div>
 <% else %>
   <div class="mt-5">
     <ul class="list-inline">
       <li class="list-inline-item"><%= f.submit "編集を完了する", class: 'btn btn-primary' %></li>
-      <li class="list-inline-item"><%= link_to "ブログ一覧に戻る", @articles_index_url, class: 'btn btn-secondary' %></li>
+      <li class="list-inline-item"><%= link_to "ブログ一覧に戻る", @articles_index_url || admins_articles_path, class: 'btn btn-secondary' %></li>
     </ul>
   </div>
 <% end %>

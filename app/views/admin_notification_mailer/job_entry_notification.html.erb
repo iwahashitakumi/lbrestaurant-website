@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h4>新しい採用応募があります。</h4>
+    <p>お名前: <%= @job_entry.name %>(<%= @job_entry.name_kana %>)</p>
+    <p>性別: <%= @job_entry.sex_text %></p>
+    <p>メールアドレス: <%= @job_entry.email %></p>
+    <p>電話番号: <%= @job_entry.phone_number %></p>
+
+
+    <p>採用応募の詳細は以下のリンクからご確認ください:</p>
+    <%= link_to '採用応募の詳細', @job_entry_show_url %>
+  </body>
+</html>

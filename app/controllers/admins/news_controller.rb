@@ -1,5 +1,4 @@
 class Admins::NewsController < Admins::ApplicationController
- 
   def index
     @q = News.ransack(params[:q])
     @news = @q.result(distinct: true).page(params[:page])
@@ -14,7 +13,7 @@ class Admins::NewsController < Admins::ApplicationController
     @end_at_options = end_at_options
     @news = News.new
   end
-  
+
   def create
     @news_index_url = session[:news_index_url]
     @calendar_date_options = calendar_date_options
@@ -29,7 +28,7 @@ class Admins::NewsController < Admins::ApplicationController
       render "new"
     end
   end
-  
+
   def show
     @news_index_url = session[:news_index_url]
     @news = News.find(params[:id])
@@ -42,7 +41,7 @@ class Admins::NewsController < Admins::ApplicationController
     @end_at_options = end_at_options
     @news = News.find(params[:id])
   end
-  
+
   def update
     @news_index_url = session[:news_index_url]
     @calendar_date_options = calendar_date_options
@@ -57,7 +56,7 @@ class Admins::NewsController < Admins::ApplicationController
       render 'edit'
     end
   end
-  
+
   def destroy
     @news = News.find(params[:id])
     begin
@@ -68,7 +67,6 @@ class Admins::NewsController < Admins::ApplicationController
       render 'index'
     end
   end
-  
 
   private
 
@@ -81,7 +79,7 @@ class Admins::NewsController < Admins::ApplicationController
   end
 
   def start_at_options
-    {  min: Time.zone.now.strftime("%Y-%m-%dT%H:%M"), max: (Time.zone.now + 1.year), value: Time.zone.now.strftime("%Y-%m-%dT%H:%M") }
+    { min: Time.zone.now.strftime("%Y-%m-%dT%H:%M"), max: (Time.zone.now + 1.year), value: Time.zone.now.strftime("%Y-%m-%dT%H:%M") }
   end
 
   def end_at_options

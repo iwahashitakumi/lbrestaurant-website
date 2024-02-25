@@ -1,5 +1,6 @@
 @use '@/stylesheets/application';
 @import 'main.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   border: 0;
@@ -17,9 +18,8 @@ html, body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Meiryo, YuGothic, "Yu Gothic Medium", "Yu Gothic", 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN', sans-serif;
-  line-height: 1.625;
-  color: #000;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #2C2C2C;
   background-image: url('/assets/background_image.jpg');
   margin: 0;
   padding: 0;
@@ -28,7 +28,6 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--bs-nav-link-color);
 }
 
 ul {
@@ -210,8 +209,11 @@ a:hover {
 .header {
   z-index: 997;
   background: #fff;
-  padding: 20px 40px;
+  padding: 23px 97px;
   border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  font-weight: 500;
+  color: #4B4B4B;
 }
 
 @media screen and (max-width: 576px){
@@ -235,14 +237,6 @@ a:hover {
     padding: 20px 0 40px 0;
     background-color: #FAFAFA;
   }
-}
-
-.logo {
-  font-size: 28px;
-  margin: 0;
-  line-height: 1;
-  font-weight: 400;
-  letter-spacing: 1px;
 }
 
 .scrolled-offset {
@@ -340,8 +334,6 @@ a:hover {
   padding: 0;
 }
 
-
-
 @media screen and (max-width: 991px){
   .nav-list {
     display: block;
@@ -367,6 +359,7 @@ a:hover {
 
 .navbar li {
   position: relative;
+  margin-left: 31px;
 }
 
 @media (max-width: 991px) {
@@ -478,6 +471,11 @@ a:hover {
   .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
   }
+}
+
+.header .nav-link {
+  padding: 0 !important;
+  color: #4B4B4B !important;
 }
 
 /**

@@ -9,11 +9,11 @@ default: &default
 
 development:
   <<: *default
-  database: my_testdb_development
+  database: my_testdb
 
 test:
   <<: *default
-  database: my_testdb_test
+  database: my_testdb
 
 production:
   adapter: postgresql

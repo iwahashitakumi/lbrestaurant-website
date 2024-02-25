@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_02_18_070959) do
-  create_table "admins", charset: "utf8", force: :cascade do |t|
+  create_table "admins", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "email", default: "", null: false, comment: "管理者のメールアドレス"
     t.string "encrypted_password", default: "", null: false, comment: "管理者のパスワード"
     t.string "reset_password_token"
@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_18_070959) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "articles", charset: "utf8", force: :cascade do |t|
+  create_table "articles", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "title", default: "", null: false, comment: "ブログ記事のタイトル"
     t.datetime "start_at", null: false, comment: "ブログ記事の公開開始時間"
     t.datetime "end_at", null: false, comment: "ブログ記事の公開終了時間"
@@ -35,7 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_18_070959) do
     t.integer "status", null: false, comment: "ブログの状態"
   end
 
-  create_table "contacts", charset: "utf8", force: :cascade do |t|
+  create_table "contacts", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "contact_type", null: false, comment: "問い合わせの種類"
     t.text "message", null: false, comment: "問い合わせの内容"
     t.string "name", default: "", comment: "問い合わせ者の名前"
@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_18_070959) do
     t.index ["update_by"], name: "fk_rails_281088f36f"
   end
 
-  create_table "contents", charset: "utf8", force: :cascade do |t|
+  create_table "contents", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.text "body", null: false, comment: "ブログの内容"
     t.string "article_image", comment: "ブログの画像"
     t.datetime "created_at", null: false
@@ -60,7 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_18_070959) do
     t.index ["article_id"], name: "index_contents_on_article_id"
   end
 
-  create_table "job_entries", charset: "utf8", force: :cascade do |t|
+  create_table "job_entries", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.integer "recruit_type", null: false, comment: "希望雇用形態"
     t.string "name", default: "", null: false, comment: "応募者の名前"
     t.string "name_kana", default: "", null: false, comment: "応募者の名前(カナ)"
@@ -79,7 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_18_070959) do
     t.index ["update_by"], name: "fk_rails_d213f37d18"
   end
 
-  create_table "news", charset: "utf8", force: :cascade do |t|
+  create_table "news", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.date "calendar_date", null: false, comment: "お知らせ日"
     t.string "title", default: "", null: false, comment: "お知らせタイトル"
     t.datetime "start_at", null: false, comment: "お知らせ公開開始日"
@@ -90,14 +90,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_18_070959) do
     t.integer "status", null: false, comment: "お知らせの状態"
   end
 
-  create_table "prefectures", charset: "utf8", force: :cascade do |t|
+  create_table "prefectures", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", default: "", null: false, comment: "都道府県名"
     t.integer "code", null: false, comment: "都道府県コード"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "shops", charset: "utf8", force: :cascade do |t|
+  create_table "shops", charset: "utf8mb4", collation: "utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "name", default: "", null: false, comment: "店舗名"
     t.string "address", default: "", null: false, comment: "店舗の番地"
     t.text "access", null: false, comment: "店舗へのアクセス"

@@ -1,1 +1,20 @@
-<h1>公開側の画面</h1>
+<%= image_tag('top.png', width: "100%") %>
+<div class="home-about-content">
+  <div class="about-content">
+    <div class="about-flex">
+      <div>
+        <h3 class="about-title">ABOUT US</h3>
+        <p class="about-text">社名のLBrestaurantとは地域密着の飲食店という意味です。その名の通り、地域になくてはならないと思っていただける飲食店を作ることが理念です。<br>
+        そして、その過程や結果により全従業員が少しでも豊かな人生を物心両面で歩めることを最大の目的としています。<br>
+        全従業員が豊かになれるよう、さまざまな取り組みをしています。
+        </p>
+        <div class="about-link">
+          <%= link_to 'LBrestaurantの特徴', '/path/to/destination', class: 'btn about-btn' %>
+        </div>
+      </div>
+      <div class="about-img">
+        <%= image_tag('about_us.png') %>
+      </div>
+    </div>
+  </div>
+</div>

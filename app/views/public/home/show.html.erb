@@ -1,19 +1,39 @@
 <%= image_tag('home/top.png', width: "100%") %>
 <div class="home-about-us-wrap">
   <div class="home-content-box about-us-content">
-    <div class="about-us-flex">
+    <div class="d-flex">
       <div>
         <h3 class="about-us-title">ABOUT US</h3>
-        <p class="about-us-text">社名のLBrestaurantとは地域密着の飲食店という意味です。その名の通り、地域になくてはならないと思っていただける飲食店を作ることが理念です。<br>
-        そして、その過程や結果により全従業員が少しでも豊かな人生を物心両面で歩めることを最大の目的としています。<br>
-        全従業員が豊かになれるよう、さまざまな取り組みをしています。
+        <p class="about-us-text">
+          社名のLBrestaurantとは地域密着の飲食店という意味です。その名の通り、地域になくてはならないと思っていただける飲食店を作ることが理念です。<br>
+          そして、その過程や結果により全従業員が少しでも豊かな人生を物心両面で歩めることを最大の目的としています。<br>
+          全従業員が豊かになれるよう、さまざまな取り組みをしています。
         </p>
         <div class="about-us-link">
-          <%= link_to 'LBrestaurantの特徴', '/path/to/destination', class: 'btn about-btn' %>
+          <%= link_to 'LBrestaurantの特徴', '/path/to/destination', class: 'btn about-us-btn' %>
         </div>
       </div>
       <div class="about-us-img">
         <%= image_tag('home/about_us.png') %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="home-restaurant-wrap">
+  <div class="home-content-box restaurant-content">
+    <h3 class="restaurant-title">RESTAURANT</h3>
+    <h4 class="restaurant-sub-title">LBrestaurantについて</h4>
+    <p class="restaurant-text">
+      2023年に法人化した新しい会社です。様々な制度がまだまだ未完成です。<br>
+      【ないものは作るしかない】この精神でどんどんチャレンジすることが可能です。未経験のことでもどんどんやれる<br>
+      チャレンジ精神で、共に道を切り開きましょう！
+    </p>
+    <div class="d-flex  justify-content-center">
+      <div class="restaurant-link">
+        <%= link_to '店舗一覧', '/path/to/destination', class: 'btn restaurant-btn' %>
+      </div>
+      <div class="restaurant-link">
+        <%= link_to '会社概要', '/path/to/destml-ination', class: 'btn restaurant-btn' %>
       </div>
     </div>
   </div>

@@ -585,6 +585,40 @@ a:hover {
 /*--------------------------------------------------------------
 # Home
 --------------------------------------------------------------*/
+.home {
+  .btn {
+    padding: 0px !important;
+  }
+
+  .btn:hover {
+    color: initial !important;
+    background-color: initial !important;
+    border-color: initial !important;
+  }
+
+  a:hover {
+    color: initial !important;
+    text-decoration: none !important;
+  }
+
+  a:hover {
+    --bs-link-color-rgb: initial !important;
+  }
+}
+
+.home .btn::after {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.home-content-box {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
 // about-us
 
 .home-about-us-wrap {
@@ -593,17 +627,8 @@ a:hover {
   height: 701px;
 }
 
-.home-content-box {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
 .about-us-content {
   padding-top: 182px;
-}
-
-.about-us-flex {
-  display: flex;
 }
 
 .about-us-title {
@@ -638,37 +663,6 @@ a:hover {
   justify-content: center;
   align-items: center;
   position: relative;
-}
-
-.about-us-link,
-.restaurant-link {
-  .btn {
-    padding: 0px !important;
-  }
-
-  .btn:hover {
-    color: initial !important;
-    background-color: initial !important;
-    border-color: initial !important;
-  }
-
-  a:hover {
-    color: initial !important;
-    text-decoration: none !important;
-  }
-
-  a:hover {
-    --bs-link-color-rgb: initial !important;
-  }
-}
-
-.about-us-btn::after,
-.restaurant-btn::after {
-  content: ">";
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
 }
 
 // shop
@@ -711,12 +705,59 @@ a:hover {
   padding: 20px 100px;
 }
 
-.restaurant-link:nth-child(2) {
+.restaurant-link:nth-child(2),
+.carrer-link:nth-child(2) {
   padding-left: 50px; 
 }
 
+// carrer
 
+.home-carrer-wrap {
+  width: 100%;
+  background-color: #FFFFFF;
+  height: 568px;
+  padding: 50px 0;
+}
 
+.carrer-content {
+  background-color: #D32600;
+  border-radius: 10px;
+  height: 400px;
+}
+
+.carrer-img {
+  text-align: center;
+  padding: 40px 0 30px 0;
+}
+
+.carrer-title {
+  font-size: 34px;
+  font-weight: 900;
+  color: #FFFFFF;
+  transform: skew(-10deg);
+  text-align: center;
+}
+
+.carrer-text {
+  font-size: 16px;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 30px;
+  padding: 20px 100px;
+}
+
+.carrer-btn {
+  width: 280px;
+  height: 60px;
+  background-color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 900;
+  color: #D32600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
 .company-title {
   margin-bottom: 3rem;

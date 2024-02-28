@@ -18,4 +18,8 @@ module ApplicationHelper
   def format_date(date)
     date.strftime("%Y/ %m/ %d")
   end
+
+  def puiblic_calender_date(date)
+    date.strftime("%Y. %m. %d")
+  end
 end

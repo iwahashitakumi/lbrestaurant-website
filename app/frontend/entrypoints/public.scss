@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn,
 }
 
 .footer {
-  background-color: white;
+  background-color: #2C2C2C;
   margin-top: 300px;
 }
 
@@ -33,9 +33,9 @@ ul {
   list-style: none;
 }
 
-a:hover {
-  color: #fd5c28;
-  text-decoration: none;
+.user-btn {
+  border-radius: 4px;
+  border: none;
 }
 
 .btn-toggle {
@@ -586,19 +586,8 @@ a:hover {
 # Home
 --------------------------------------------------------------*/
 .home {
-  .btn {
+  .user-btn {
     padding: 0px !important;
-  }
-
-  .btn:hover {
-    color: initial !important;
-    background-color: initial !important;
-    border-color: initial !important;
-  }
-
-  a:hover {
-    color: initial !important;
-    text-decoration: none !important;
   }
 
   a:hover {
@@ -606,9 +595,9 @@ a:hover {
   }
 }
 
-.home-about-us-wrap .btn::after,
-.home-restaurant-wrap .btn::after,
-.home-carrer-wrap .btn::after {
+.home-about-us-wrap .user-btn::after,
+.home-restaurant-wrap .user-btn::after,
+.home-carrer-wrap .user-btn::after {
   content: ">";
   position: absolute;
   top: 50%;
@@ -818,7 +807,7 @@ a:hover {
 .home-news-content {
   background-color: #FFFFFF;;
   border-radius: 10px;
-  height: 260px;
+  height: 300px;
   border: 6px solid #E2E2E2;
   padding: 45px;
   margin-top: 30px;

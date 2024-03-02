@@ -66,148 +66,106 @@
   </div>
   <div class="home-news-wrap">
     <div class="home-news-title"><%= image_tag('home/news-title.png') %></div>
-    <div class="d-flex justify-content-center">
-      <div>
-        <button id="news-button" class="user-btn news-btn">お知らせ</button>
+    <div class="tab_container">
+      <div class="d-flex justify-content-center">
+        <div>
+          <input id="tab1" type="radio" name="tab_item" checked>
+          <label class="tab_item user-btn news-btn" for="tab1">お知らせ</label>
+        </div>
+        <div>
+          <input id="tab2" type="radio" name="tab_item">
+          <label class="tab_item user-btn article-btn" for="tab2">ブログ</label>
+        </div>
       </div>
-      <div>
-         <button id="article-button" class="user-btn article-btn">ブログ</button>
-      </div>
-    </div>
-    <div class="home-content-box home-news-content">
-      <div id="news-section">
-        <% if @latest_news.present? %>
-          <div class="home-news-textbox">
-            <%= link_to news_path(@latest_news) do %>
-              <span class="home-news-calender-date"><%= puiblic_calender_date(@latest_news.calendar_date) %></span>
-              <%= @latest_news.title %>
-            <% end %>
-          </div>
-        <% end %>
+      <div id="tab_content" class="home-content-box home-news-content">
+        <div class="tab_content" id="tab1_content">
+          <% if @latest_news.present? %>
+            <div class="home-news-textbox">
+              <%= link_to news_path(@latest_news) do %>
+                <span class="home-news-calender-date"><%= puiblic_calender_date(@latest_news.calendar_date) %></span>
+                <%= @latest_news.title %>
+              <% end %>
+            </div>
+          <% end %>
 
-        <% if @second_latest_news.present? %>
-          <div class="home-news-textbox">
-            <%= link_to news_path(@second_latest_news) do %>
-              <span class="home-news-calender-date"><%= puiblic_calender_date(@second_latest_news.calendar_date) %></span>
-              <%= @second_latest_news.title %>
-            <% end %>
-          </div>
-        <% end %>
+          <% if @second_latest_news.present? %>
+            <div class="home-news-textbox">
+              <%= link_to news_path(@second_latest_news) do %>
+                <span class="home-news-calender-date"><%= puiblic_calender_date(@second_latest_news.calendar_date) %></span>
+                <%= @second_latest_news.title %>
+              <% end %>
+            </div>
+          <% end %>
 
-        <% if @third_latest_news.present? %>
-          <div class="home-news-textbox">
-            <%= link_to news_path(@third_latest_news) do %>
-              <span class="home-news-calender-date"><%= puiblic_calender_date(@third_latest_news.calendar_date) %></span>
-              <%= @third_latest_news.title %>
-            <% end %>
-          </div>
-        <% end %>
+          <% if @third_latest_news.present? %>
+            <div class="home-news-textbox">
+              <%= link_to news_path(@third_latest_news) do %>
+                <span class="home-news-calender-date"><%= puiblic_calender_date(@third_latest_news.calendar_date) %></span>
+                <%= @third_latest_news.title %>
+              <% end %>
+            </div>
+          <% end %>
 
-        <% if @fourth_latest_news.present? %>
-          <div class="home-news-textbox">
-            <%= link_to news_path(@fourth_latest_news) do %>
-              <span class="home-news-calender-date"><%= puiblic_calender_date(@fourth_latest_news.calendar_date) %></span>
-              <%= @fourth_latest_news.title %>
-            <% end %>
-          </div>
-        <% end %>
+          <% if @fourth_latest_news.present? %>
+            <div class="home-news-textbox">
+              <%= link_to news_path(@fourth_latest_news) do %>
+                <span class="home-news-calender-date"><%= puiblic_calender_date(@fourth_latest_news.calendar_date) %></span>
+                <%= @fourth_latest_news.title %>
+              <% end %>
+            </div>
+          <% end %>
 
-        <% if @fifth_latest_news.present? %>
-          <div class="home-news-textbox">
-            <%= link_to news_path(@fifth_latest_news) do %>
-              <span class="home-news-calender-date"><%= puiblic_calender_date(@fifth_latest_news.calendar_date) %></span>
-              <%= @fifth_latest_news.title %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-      <div id="article-section">
-        <% if @latest_article.present? %>
-          <div class="home-article-textbox">
-            <%= link_to news_path(@latest_article) do %>
-              <%= @latest_article.title %>
-            <% end %>
-          </div>
-        <% end %>
+          <% if @fifth_latest_news.present? %>
+            <div class="home-news-textbox">
+              <%= link_to news_path(@fifth_latest_news) do %>
+                <span class="home-news-calender-date"><%= puiblic_calender_date(@fifth_latest_news.calendar_date) %></span>
+                <%= @fifth_latest_news.title %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="tab_content" id="tab2_content">
+          <% if @latest_article.present? %>
+            <div class="home-article-textbox">
+              <%= link_to news_path(@latest_article) do %>
+                <%= @latest_article.title %>
+              <% end %>
+            </div>
+          <% end %>
 
-        <% if @second_latest_article.present? %>
-          <div class="home-article-textbox">
-            <%= link_to news_path(@second_latest_article) do %>
-              <%= @second_latest_article.title %>
-            <% end %>
-          </div>
-        <% end %>
+          <% if @second_latest_article.present? %>
+            <div class="home-article-textbox">
+              <%= link_to news_path(@second_latest_article) do %>
+                <%= @second_latest_article.title %>
+              <% end %>
+            </div>
+          <% end %>
 
-        <% if @third_latest_article.present? %>
-          <div class="home-article-textbox">
-            <%= link_to news_path(@third_latest_article) do %>
-              <%= @third_latest_article.title %>
-            <% end %>
-          </div>
-        <% end %>
+          <% if @third_latest_article.present? %>
+            <div class="home-article-textbox">
+              <%= link_to news_path(@third_latest_article) do %>
+                <%= @third_latest_article.title %>
+              <% end %>
+            </div>
+          <% end %>
 
-        <% if @fourth_latest_article.present? %>
-          <div class="home-article-textbox">
-            <%= link_to news_path(@fourth_latest_article) do %>
-              <%= @fourth_latest_article.title %>
-            <% end %>
-          </div>
-        <% end %>
+          <% if @fourth_latest_article.present? %>
+            <div class="home-article-textbox">
+              <%= link_to news_path(@fourth_latest_article) do %>
+                <%= @fourth_latest_article.title %>
+              <% end %>
+            </div>
+          <% end %>
 
-        <% if @fifth_latest_article.present? %>
-          <div class="home-article-textbox">
-            <%= link_to news_path(@fifth_latest_article) do %>
-              <%= @fifth_latest_article.title %>
-            <% end %>
-          </div>
-        <% end %>
+          <% if @fifth_latest_article.present? %>
+            <div class="home-article-textbox">
+              <%= link_to news_path(@fifth_latest_article) do %>
+                <%= @fifth_latest_article.title %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const newsSection = document.getElementById('news-section');
-    const articleSection = document.getElementById('article-section');
-    const newsButton = document.getElementById('news-button');
-    const articleButton = document.getElementById('article-button');
-
-    if (newsSection && articleSection && newsButton && articleButton) {
-      newsSection.style.display = 'block';
-      articleSection.style.display = 'none';
-      newsButton.classList.add('active');
-
-      if (newsButton) {
-        newsButton.style.backgroundColor = '#D32600';
-        newsButton.style.color = '#FFFFFF';
-
-        newsButton.addEventListener('click', () => {
-          newsSection.style.display = 'block';
-          articleSection.style.display = 'none';
-          newsButton.style.backgroundColor = '#D32600';
-          newsButton.style.color = '#FFFFFF';
-
-          articleButton.style.backgroundColor = '';
-          articleButton.style.color = '';
-          newsButton.classList.add('active');
-          articleButton.classList.remove('active');
-        });
-      }
-
-      if (articleButton) {
-        articleButton.addEventListener('click', () => {
-          newsSection.style.display = 'none';
-          articleSection.style.display = 'block';
-          articleButton.style.backgroundColor = '#D32600';
-          articleButton.style.color = '#FFFFFF';
-
-          newsButton.style.backgroundColor = '';
-          newsButton.style.color = '';
-          articleButton.classList.add('active');
-          newsButton.classList.remove('active');
-        });
-      }
-    }
-  });
-</script>

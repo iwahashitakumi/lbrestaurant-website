@@ -652,7 +652,8 @@ ul {
 
 .home-about-us-wrap .user-btn::after,
 .home-restaurant-wrap .user-btn::after,
-.home-carrer-wrap .user-btn::after {
+.home-carrer-wrap .user-btn::after,
+.home-news-wrap .news-index-btn::after {
   content: "\f105";
   font-family: "Font Awesome 5 Free";
   position: absolute;
@@ -662,7 +663,8 @@ ul {
 
 .home-about-us-wrap .user-btn:hover::after,
 .home-restaurant-wrap .user-btn:hover::after,
-.home-carrer-wrap .user-btn:hover::after {
+.home-carrer-wrap .user-btn:hover::after,
+.home-news-wrap .news-index-btn:hover::after {
   right: 15px; 
 }
 
@@ -701,7 +703,8 @@ ul {
 }
 
 .about-us-btn,
-.restaurant-btn {
+.restaurant-btn,
+.news-index-btn {
   width: 280px;
   height: 60px;
   background-color: #D32600;
@@ -806,7 +809,7 @@ ul {
   width: 100%;
   background-color: #FFF7E3;
   height: 760px;
-  border: 6px solid #2C2C2C;
+  border: 6px solid #000000;
 }
 
 .home-news-wrap button {
@@ -846,7 +849,7 @@ ul {
 
 .tab_pointer_space {
   width: calc(100%/4);
-  border-bottom: 1px solid #fff ;
+  border-bottom: 1px solid #fff7e3 ;
   display: block;
   float: left;
   visibility: hidden;

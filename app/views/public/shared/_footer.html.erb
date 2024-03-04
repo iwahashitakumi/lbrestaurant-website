@@ -1,10 +1,33 @@
-<div class="footer">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© 2023 LBrestaurant, Inc</span>
+<footer class="footer">
+  <div class="footer-content-box d-flex">
+    <div class="footer-content1">
+      <div class="footer-img">
+        <%= image_tag('footer/Icon.png') %>
+      </div>
+      <div class="footer-text1">
+        株式会社LBrestaurant
+      </div>
+      <div class="footer-text2">
+        〒553-0006<br>
+        大阪府大阪市福島区吉野３丁目８番３号
+      </div>
     </div>
-  </footer>
-</div>
+    <div class="footer-content2">
+      <div class="footer-link-box">
+        <div class="footer-link1"><%= link_to "Lbrの特徴", lbr_index_path %></div>
+        <div class="footer-link2"><%= link_to "採用情報", lbr_index_path %></div>
+      </div>
+      <div class="footer-link-box">
+        <div class="footer-link1"><%= link_to "お知らせ", lbr_index_path %></div>
+        <div class="footer-link2"><%= link_to "会社概要", lbr_index_path %></div>
+      </div>
+      <div class="footer-link-box">
+        <div class="footer-link1"><%= link_to "ブログ", lbr_index_path %></div>
+        <div class="footer-link2"><%= link_to "お問い合わせ", lbr_index_path %></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-content-box2">
+    <%= image_tag('footer/Ltd.png') %>
+  </div>
+</footer>

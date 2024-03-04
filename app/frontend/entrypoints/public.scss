@@ -9,11 +9,6 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn,
   vertical-align: baseline;
 }
 
-.footer {
-  background-color: #2C2C2C;
-  margin-top: 300px;
-}
-
 html, body {
   height: 100%;
 }
@@ -324,6 +319,66 @@ ul {
   background-color: white ;
   transition: opacity .3s;
 }
+
+/*-------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+  background-color: #2C2C2C;
+  color: #FFFFFF;
+  width: 100%;
+  height: 325px;
+  font-weight: 900;
+}
+
+.footer a {
+  color: #FFFFFF !important;
+}
+
+.footer-content-box {
+  max-width: 1080px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.footer-content-box2 {
+  margin-top: 80px;
+  text-align: center;
+  border-top: 1px solid #FFFFFF;
+}
+
+.footer-content1 {
+  padding-top: 80px;
+}
+
+.footer-content2 {
+  display: flex;
+  padding-top: 90px;
+}
+
+.footer-text1 {
+  padding-top: 10px;
+}
+
+.footer-text2 {
+  padding-top: 15px;
+}
+
+.footer-link-box {
+  padding-left: 35px;
+}
+
+.footer-link1 {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-link2 {
+  text-decoration: none;
+  padding-top: 28px;
+  font-size: 16px;
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -1718,163 +1773,9 @@ input[name="tab_item"] {
 
 
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-#footer {
-  color: #b4aca8;
-  font-size: 14px;
-  background: #14100f;
-}
 
-#footer .footer-top {
-  padding: 60px 0 30px 0;
-  background: black;
-}
 
-#footer .footer-top .footer-contact {
-  margin-bottom: 30px;
-}
 
-#footer .footer-top .footer-contact h3 {
-  font-size: 22px;
-  margin: 0 0 10px 0;
-  padding: 2px 0 2px 0;
-  line-height: 1;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-#footer .footer-top .footer-contact p {
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 0;
-  font-family: "Muli", sans-serif;
-  color: #b4aca8;
-}
-
-#footer .footer-top h4 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#footer .footer-top .footer-links ul i {
-  padding-right: 2px;
-  color: #fd6f41;
-  font-size: 18px;
-  line-height: 1;
-}
-
-#footer .footer-top .footer-links ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-#footer .footer-top .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
-#footer .footer-top .footer-links ul a {
-  color: #b4aca8;
-  transition: 0.3s;
-  display: inline-block;
-  line-height: 1;
-}
-
-#footer .footer-top .footer-links ul a:hover {
-  text-decoration: none;
-  color: #fd6f41;
-}
-
-#footer .footer-newsletter {
-  font-size: 15px;
-}
-
-#footer .footer-newsletter h4 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-#footer .footer-newsletter form {
-  margin-top: 30px;
-  background: #fff;
-  padding: 6px 10px;
-  position: relative;
-  border-radius: 4px 0 0 4px;
-  text-align: left;
-}
-
-#footer .footer-newsletter form input[type=email] {
-  border: 0;
-  padding: 4px 8px;
-  width: calc(100% - 100px);
-}
-
-#footer .footer-newsletter form input[type=submit] {
-  position: absolute;
-  top: 0;
-  right: -4px;
-  bottom: 0;
-  border: 0;
-  background: none;
-  font-size: 16px;
-  padding: 0 20px;
-  background: #f03c02;
-  color: #fff;
-  transition: 0.3s;
-  border-radius: 0 4px 4px 0;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-#footer .footer-newsletter form input[type=submit]:hover {
-  background: #fd5c28;
-}
-
-#footer .credits {
-  padding-top: 5px;
-  font-size: 13px;
-  color: #b4aca8;
-}
-
-#footer .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #f03c02;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-
-#footer .social-links a:hover {
-  background: #fd5c28;
-  color: #fff;
-  text-decoration: none;
-}
 #header {
   height: 70px;
   transition: all 0.5s;

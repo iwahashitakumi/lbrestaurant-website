@@ -67,19 +67,21 @@
   
   <div class="home-news-wrap">
     <div class="home-news-title"><%= image_tag('home/news-title.png') %></div>
-    <div class="tab_container">
-      <div class="d-flex justify-content-center">
-        <div>
-          <input id="tab1" type="radio" name="tab_item" checked>
-          <label class="tab_item user-btn news-btn" for="tab1">お知らせ</label>
-        </div>
-        <div>
-          <input id="tab2" type="radio" name="tab_item">
-          <label class="tab_item user-btn article-btn" for="tab2">ブログ</label>
-        </div>
+    <div class="tab_container clearfix">
+      <input id="tab1" type="radio" name="tab_item" checked>
+      <label class="tab_item tab_item_left_margin user-btn news-btn" for="tab1">お知らせ</label>
+      <input id="tab2" type="radio" name="tab_item">
+      <label class="tab_item tab_item_right_margin user-btn article-btn" for="tab2">ブログ</label>
+      <div class="tab_pointer_space"></div>
+      <div class="tab_pointer_space" id="tab_pointer_space1">
+        <div class="tab_pointer"></div>
       </div>
-      <div id="tab_content" class="home-content-box home-news-content">
-        <div class="tab_content" id="tab1_content">
+      <div class="tab_pointer_space" id="tab_pointer_space2">
+        <div class="tab_pointer"></div>
+      </div>
+      <div class="tab_pointer_space"></div>
+      <div class="tab_content_wrap home-content-box home-news-content" id="tab1_content">
+        <div class="tab_content">
           <% if @latest_news.present? %>
             <div class="home-news-textbox">
               <%= link_to news_path(@latest_news) do %>
@@ -125,7 +127,9 @@
             </div>
           <% end %>
         </div>
-        <div class="tab_content" id="tab2_content">
+      </div>
+      <div class="tab_content_wrap home-content-box home-news-content" id="tab2_content">
+        <div class="tab_content">
           <% if @latest_article.present? %>
             <div class="home-article-textbox">
               <%= link_to news_path(@latest_article) do %>
@@ -167,6 +171,12 @@
           <% end %>
         </div>
       </div>
+      <button class="restaurant-link tab_button" id="tab1_button">
+        <%= link_to 'お知らせ一覧をみる', '/path/to/destination', class: 'user-btn restaurant-btn' %>
+      </button>
+      <button class="restaurant-link tab_button" id="tab2_button">
+        <%= link_to 'ブログ一覧をみる', '/path/to/destination', class: 'user-btn restaurant-btn' %>
+      </button>
     </div>
   </div>
 </div>

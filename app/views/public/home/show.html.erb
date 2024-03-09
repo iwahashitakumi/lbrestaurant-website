@@ -43,28 +43,7 @@
       </div>
     </div>
   </div>
-  <div class="home-carrer-wrap">
-    <div class="home-content-box carrer-content">
-      <div class="carrer-img">
-        <%= image_tag('home/carrer.png', width: '181px', height: '34px') %>
-      </div>
-      <div class="carrer-title"><%= image_tag('home/carrer-title.png', width: '128px', height: '27px') %></div>
-      <p class="carrer-text">
-        年功序列は一切ありません。実力のある人をどんどん登用・抜擢していきます。自分に自信のある方、ここで自分の人<br>
-        生変えたい！と思う方にはうってつけの環境です。飲食未経験でもチャレンジ精神があれば大歓迎！ぜひ一緒に働き<br>
-        ましょう！
-      </p>
-      <div class="d-flex  justify-content-center">
-        <div class="carrer-link">
-          <%= link_to '採用情報', '/path/to/destination', class: 'user-btn carrer-btn' %>
-        </div>
-        <div class="carrer-link">
-          <%= link_to '代表メッセージ', '/path/to/destml-ination', class: 'user-btn carrer-btn' %>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+  <%= render 'public/shared/carrer-contents' %>
   <div class="home-news-wrap">
     <div class="home-news-title"><%= image_tag('home/news-title.png', width: '128px', height: '30px') %></div>
     <div class="tab_container clearfix">

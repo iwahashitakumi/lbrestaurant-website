@@ -1,16 +1,75 @@
-<h1 class="h1style mb-5rem fw-bold">お知らせ!</h1>
-<div class="wrap">
-  <% if @news.present? %>
-    <% @news.each do |news| %>
-      <div class="news-content">
-        <div class="news-date fw-bold"><%= format_date(news.calendar_date) %></div>
-        <div class="py-3 fw-bold news-title"><%= link_to news.title, [news] %></div>
-      </div>
-    <% end %>
-  <% else %>
-    <div class="py-3 text-center">
-      <h2>お知らせはありません!</h2>
+<%= render partial: 'public/shared/section-title', locals: { section_title: 'ニュース' } %>
+<div class="news-wrap">
+  <div class="tab_container clearfix news-content">
+    <input id="tab1" type="radio" name="tab_item" checked>
+    <label class="tab_item tab_item_left_margin tab_item_top_margin user-btn news-btn" for="tab1">お知らせ</label>
+    <input id="tab2" type="radio" name="tab_item">
+    <label class="tab_item tab_item_right_margin tab_item_top_margin user-btn article-btn" for="tab2">ブログ</label>
+    <div class="tab_pointer_space"></div>
+    <div class="tab_pointer_space" id="tab_pointer_space1">
+      <div class="tab_pointer"></div>
     </div>
-  <% end %>
+    <div class="tab_pointer_space" id="tab_pointer_space2">
+      <div class="tab_pointer"></div>
+    </div>
+    <div class="tab_pointer_space"></div>
+    <div class="tab_content_wrap" id="tab1_content">
+      <div class="tab_content">
+        <% if @news.present? %>
+          <% @news.each do |news| %>
+            <div class="news-content">
+              <div class="news-date fw-bold"><%= format_date(news.calendar_date) %></div>
+              <div class="py-3 fw-bold news-title"><%= link_to news.title, [news] %></div>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="py-3 text-center">
+            <h2>お知らせはありません!</h2>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab_content_wrap news-tab_content_wrap" id="tab2_content" style="margin-top: 10px;">
+      <div class="tab_content article-tab">
+        <% if @articles.present? %>
+          <% @articles.each do |article| %>
+            <%= link_to [article] do %>
+              <div class="article-content">
+                <div class="">
+                  <% if article.contents.first.article_image.present? %>
+                    <% if request.from_smartphone? %>
+                      <%= image_tag(article.contents.first.article_image.url(:mobile), alt: 'ブログ画像', class: "img-fluid") %>
+                    <% else %>
+                      <%= image_tag(article.contents.first.article_image.url(:pc), alt: 'ブログ画像', class: "img-fluid") %>
+                    <% end %>
+                  <% else %>
+                    <% if request.from_smartphone? %>
+                      <img src="/assets/default_blog_image.png" class="default-article-image">
+                    <% else %>
+                      <img src="/assets/default_blog_image.png" class="default-article-image">
+                    <% end %>
+                  <% end %>
+                </div>
+                <div class="article-info">
+                  <div class="article-category">
+                    カテゴリー / <span class="<%= article.category %>-category"><%= article.category_text %></span>
+                  </div>
+                  <div class="article-title"><%= article.title %></div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% else %>
+          <div class="py-3 text-center">
+            <h2>
+              ブログはまだありません<br>
+              配信開始までお待ちください！
+            </h2>
+          </div>
+        <% end %>
+        <%= paginate @articles, theme: 'bootstrap-5' %>
+      </div>
+    </div>
+  </div>
 </div>
-<%= paginate @news, theme: 'bootstrap-5' %>
+

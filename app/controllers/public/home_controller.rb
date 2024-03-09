@@ -2,6 +2,7 @@ class Public::HomeController < Public::ApplicationController
   def show
     load_news
     load_articles
+    @active_tab = "tab2"
   end
 
   private

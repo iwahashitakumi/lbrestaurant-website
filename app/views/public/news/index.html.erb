@@ -34,7 +34,7 @@
       <div class="tab_content article-tab">
         <% if @articles.present? %>
           <% @articles.each do |article| %>
-            <%= link_to [article] do %>
+            <%= link_to article_news_path(article) do %>
               <div class="article-content">
                 <div class="">
                   <% if article.contents.first.article_image.present? %>

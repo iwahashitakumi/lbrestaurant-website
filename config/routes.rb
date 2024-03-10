@@ -37,8 +37,11 @@ Rails.application.routes.draw do
         get :staff
       end
     end
-    resources :news, only: [:index, :show]
-    resources :articles, only: [:index, :show]
+    resources :news, only: [:index, :show] do
+      member do
+        get 'article'
+      end
+    end
     resources :shops, only: [:index]
     resources :contacts, only: [:new, :create] do
       collection do

@@ -7,6 +7,9 @@ class Public::NewsController < Public::ApplicationController
 
   def show
     @news = News.with_status(:published).find(params[:id])
+  end
+
+  def article
     @article = Article.with_status(:published).find(params[:id])
   end
 end

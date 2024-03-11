@@ -24,7 +24,7 @@
           <%= link_to "採用情報", job_entries_path , class: "nav-link #{'active' if controller_name == 'job_entries' && ['recruitment_info', 'confirm', 'complette','show', 'faq'].include?(action_name)}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "会社について", news_index_path, class: "nav-link #{'active' if controller_name == 'news' && ['show', 'index'].include?(action_name)}" %>
+          <%= link_to "会社について", news_index_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "お問い合わせ", new_contact_path , class: "nav-link #{'active' if controller_name == 'contacts' && ['new', 'confirm', 'complette'].include?(action_name)}" %>

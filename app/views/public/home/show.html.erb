@@ -112,6 +112,7 @@
           <% if @latest_article.present? %>
             <div class="home-article-textbox">
               <%= link_to news_path(@latest_article) do %>
+                <span class="home-article-category">カテゴリー / <span class="<%= @latest_article.category %>-category"><%= @latest_article.category_text %></span></span>
                 <%= @latest_article.title %>
               <% end %>
             </div>
@@ -120,6 +121,7 @@
           <% if @second_latest_article.present? %>
             <div class="home-article-textbox">
               <%= link_to news_path(@second_latest_article) do %>
+                <span class="home-article-category">カテゴリー / <span class="<%= @second_latest_article.category %>-category"><%= @second_latest_article.category_text %></span></span>
                 <%= @second_latest_article.title %>
               <% end %>
             </div>
@@ -128,6 +130,7 @@
           <% if @third_latest_article.present? %>
             <div class="home-article-textbox">
               <%= link_to news_path(@third_latest_article) do %>
+                <span class="home-article-category">カテゴリー / <span class="<%= @third_latest_article.category %>-category"><%= @third_latest_article.category_text %></span></span>
                 <%= @third_latest_article.title %>
               <% end %>
             </div>
@@ -136,6 +139,7 @@
           <% if @fourth_latest_article.present? %>
             <div class="home-article-textbox">
               <%= link_to news_path(@fourth_latest_article) do %>
+                <span class="home-article-category">カテゴリー / <span class="<%= @fourth_latest_article.category %>-category"><%= @fourth_latest_article.category_text %></span></span>
                 <%= @fourth_latest_article.title %>
               <% end %>
             </div>
@@ -144,6 +148,7 @@
           <% if @fifth_latest_article.present? %>
             <div class="home-article-textbox">
               <%= link_to news_path(@fifth_latest_article) do %>
+                <span class="home-article-category">カテゴリー / <span class="<%= @fifth_latest_article.category %>-category"><%= @fifth_latest_article.category_text %></span></span>
                 <%= @fifth_latest_article.title %>
               <% end %>
             </div>

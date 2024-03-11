@@ -952,6 +952,11 @@ input[name="tab_item"] {
   text-decoration: none;
 }
 
+.home-news-textbox:hover,
+.home-article-textbox:hover {
+  opacity: 0.75;
+}
+
 .home-news-textbox:nth-of-type(-n+4),
 .home-article-textbox:nth-of-type(-n+4) {
   padding-bottom: 15px;
@@ -963,7 +968,8 @@ input[name="tab_item"] {
   text-decoration: none;
 }
 
-.home-news-calender-date {
+.home-news-calender-date,
+.home-article-category {
   padding-right: 15px;
 }
 

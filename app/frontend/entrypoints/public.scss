@@ -825,6 +825,7 @@ ul {
 
 .tab_container {
   margin: 0 auto;
+  max-width: 1080px;
 }
 
 .tab_item {
@@ -865,13 +866,11 @@ input[name="tab_item"] {
 }
 
 .tab_content_wrap {
-  width: 80%;
-  margin: 0 11.1%;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 55px;
   display: none;
   float: left;
-  max-width: 1080px;
 }
 
 .tab_pointer {

@@ -30,7 +30,7 @@
         <%= paginate @news, :param_name => 'news_page', params: { active_tab: 'tab1' }, theme: 'bootstrap-5' %>
       </div>
     </div>
-    <div class="tab_content_wrap news-tab_content_wrap" id="tab2_content" style="margin-top: 10px;">
+    <div class="tab_content_wrap news-tab_content_wrap" id="tab2_content">
       <div class="tab_content article-tab">
         <% if @articles.present? %>
           <% @articles.each do |article| %>

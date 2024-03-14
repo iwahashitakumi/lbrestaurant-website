@@ -1,19 +1,18 @@
-<h1 class="h1style mb-5rem fw-bold">店舗一覧</h1>
+<%= render partial: 'public/shared/section-title', locals: { section_title: '店舗一覧' } %>
 <div class="shops-wrap">
-  <% @shops.each do |shop| %> 
-    <div class="shop-border">
-      <div class="py-2 d-flex align-items-center">
-        <div class="text-center shop-title fw-bold">
+  <% @shops.each do |shop| %>
+    <div class="shop-content">
+      <div class="d-flex align-items-center">
+        <div class="text-center shop-title">
           <%= shop.name %>
         </div>
         <button class="btn btn-toggle d-inline-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#shopDetails<%= shop.id %>" aria-expanded="false">
           <span class="d-none d-sm-inline">詳しく見る</span>
         </button>
-
       </div>
       <div id="shopDetails<%= shop.id %>" class="collapse">
         <div class="shop-card">
-          <div class="shop-content">
+          <div class="shop-card-content">
             <div class="d-flex flex-wrap">
               <div class="col-md-6 mb-4 p-3 mobile-p-0">
                 <% if shop.shop_image? %>
@@ -45,5 +44,5 @@
       </div>
     </div>
   <% end %>
-</div>
+<div>
 <%= paginate @shops, theme: 'bootstrap-5' %>

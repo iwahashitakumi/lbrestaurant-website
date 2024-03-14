@@ -34,7 +34,6 @@ Rails.application.routes.draw do
       collection do
         get :show
         get :about
-        get :company
         get :staff
       end
     end
@@ -44,6 +43,11 @@ Rails.application.routes.draw do
       end
     end
     resources :shops, only: [:index]
+    resources :company, only: [] do
+      collection do
+        get :show
+      end
+    end
     resources :contacts, only: [:new, :create] do
       collection do
         post :confirm

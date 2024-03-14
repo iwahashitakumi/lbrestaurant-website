@@ -1,13 +1,11 @@
 <%= render partial: 'public/shared/section-title', locals: { section_title: 'ニュース' } %>
-<div class="wrap">
-  <div class="newsHeaderbox">
-    <h1><%= @news.title %></h1>
-    <ul>
-      <li class="news-show-date"><%= format_date(@news.calendar_date) %></li>
-    </ul>
-  </div>
-  <div class="newsContentbox">
-    <p><%=safe_join(@news.body.split("\n"),tag(:br))%></p>
+<div class="article-show-wrap">
+  <div class="article-contents">
+    <div class="article-show-category">
+      <%= puiblic_calender_date(@news.calendar_date) %>
+    </div>
+    <div class="article-show-title"><%= @news.title %></div>
+      <div class="article-show-text"><%=safe_join(@news.body.split("\n"),tag(:br))%></div>
   </div>
 </div>
-
+<%= render 'public/shared/carrer-contents' %>

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'home#show'
+    get 'blog', to: 'news#index', active_tab: 'tab2', as: 'blog_index'
     resources :lbr, only: [] do
       collection do
         get :show

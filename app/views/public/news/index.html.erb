@@ -27,7 +27,7 @@
             <h2>お知らせはありません!</h2>
           </div>
         <% end %>
-        <%= paginate @news, :param_name => 'news_page', params: { active_tab: 'tab1' }, theme: 'bootstrap-5' %>
+        <%= paginate @news, :param_name => 'news_page', theme: 'bootstrap-5' %>
       </div>
     </div>
     <div class="tab_content_wrap news-tab_content_wrap" id="tab2_content">
@@ -68,7 +68,7 @@
             </h2>
           </div>
         <% end %>
-        <%= paginate @articles, param_name: 'article_page', params: { active_tab: 'tab2' }, theme: 'bootstrap-5' %>
+        <%= paginate @articles, param_name: 'blog_page', params: { active_tab: 'tab2' }, theme: 'bootstrap-5' %>
       </div>
     </div>
   </div>

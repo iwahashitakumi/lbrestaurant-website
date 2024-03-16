@@ -54,7 +54,7 @@ Rails.application.routes.draw do
         get :complete
       end
     end
-    resources :job_entries, only: [:create] do
+    resources :job_entries, only: [:new, :create] do
       collection do
         get :show
         post :confirm

@@ -1,5 +1,5 @@
 class Public::JobEntriesController < Public::ApplicationController
-  def recruitment_info
+  def new
     @job_entry = JobEntry.new
     @birth_date_options = birth_date_options
     @prefectures = Prefecture.all

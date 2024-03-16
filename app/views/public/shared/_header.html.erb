@@ -27,7 +27,7 @@
           <%= link_to "会社について", company_index_path, class: "nav-link  #{'active' if controller_name == 'company' && ['show'].include?(action_name)}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "お問い合わせ", new_contact_path , class: "nav-link #{'active' if controller_name == 'contacts' && ['new', 'confirm', 'complette'].include?(action_name)}" %>
+          <%= link_to "お問い合わせ", new_contact_path , class: "nav-link #{'active' if controller_name == 'contacts' && ['new', 'confirm', 'complete'].include?(action_name)}" %>
         </li>
       </ul>
     </div>

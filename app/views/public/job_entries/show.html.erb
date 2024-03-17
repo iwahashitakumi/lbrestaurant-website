@@ -1,42 +1,21 @@
-<h1 class="h1style mb-5rem fw-bold">採用詳細</h1>
-<div class="owner-wrap mb-5">
-  <div class="job-entry-content">
-    <div class="d-flex flex-wrap">
-      <div class="col-md-6 mb-4 p-3 mobile-p-0">
-        <%= image_tag('default.owner.jpg', class: 'owner-image') %>
-      </div>
-      <div class="col-md-6 mb-4 p-3 mobile-p-0">
-        <div class="recruitment-info">
-          <h3 class="job-entry-title text-center fw-bold">このページを見てくださっている皆様へ</h3>
-          <div>
-            <p  class="mb-3">
-              この度は、Lbrestaurantに興味を持っていただきまして誠にありがとうございます。<br>
-              私たちLBrestaurantは飲食業に本気で携わるすべての人の地位向上を日本で1番実現することを目標として採用活動を行っております。
-            </p>
-            <p  class="mb-3">
-              飲食業に本気で携わるすべての人の 地位向上とは一言で言うと、
-              飲食で本気で飯を食べたい、
-              本気で自分なりの自己実現をしたいと真面目に考えている人。
-              このような本気の人達こそ、もっと評価されるようにしたいと私は考えております
-            </p>
-          </div>
-        </div>
-      </div>
+<%= render partial: 'public/shared/section-title', locals: { section_title: '採用情報' } %>
+<div class="job-profile-wrap">
+  <div class="job-profile-content">
+    <div class="job-profile-title"><%= image_tag('job_entry/profile-title.png', width: '240px', height: '40px') %></div>
+    <div class="job-profile-text">
+      <p>１つでも当てはまっていたら迷わずご応募ください！</p>
+      <p>もしくは<span class="alert-text">見た人特典</span>から、社長と食事しながらざっくばらんに話しましょう！</p>
+    </div>
+    <div class="job-profile-card">
+      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>チャンスを物にできる人/チャンスを物にできる人になりたい人</p>
+      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>凡事徹底/率先垂範できる人</p>
+      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>言い訳をしない人</p>
+      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>夢がある、もしくは何でもいいから頑張る理由がある人</p>
+      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>サプライズなど人を喜ばすのが好きな人</p>
+      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>料理と接客と経営を全部学びたい人</p>
+      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>1-2年で独立したい人（もっと早くしたい人も可）</p>
+      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>将来起業したい人</p>
+      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>コミュ力に自信あってそれを活かして仕事したい人</p>
     </div>
   </div>
-</div>
-
-
-<div class="job-info-btn-box">
-  <ul class="list-inline">
-    <li class="list-inline-item"><%= link_to "応募はこちら", recruitment_info_job_entries_path, class: 'btn btn-primary' %></li>
-  </ul>
-</div>
-
-<div>
-  <%= link_to "応募はこちら", recruitment_info_job_entries_path,  class: "entry_btn fw-bold" %>
-</div>
-
-<div>
-  <%= link_to "よくある質問はこちら", faq_job_entries_path,  class: "faq_btn fw-bold" %>
 </div>

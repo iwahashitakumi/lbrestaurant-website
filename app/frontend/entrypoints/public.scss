@@ -1202,6 +1202,7 @@ input[name="tab_item"] {
 .news-content {
   background-color: #FFFFFF;
   padding: 25px 55px;
+  border-radius: 4px;
 }
 
 .news-content:first-child {
@@ -1304,6 +1305,7 @@ input[name="tab_item"] {
   margin-bottom: 30px;
   display: flex;
   background-color: #FFFFFF;
+  border-radius: 4px;
 }
 
 .article-content:hover,
@@ -1316,6 +1318,7 @@ input[name="tab_item"] {
   color: #000000;
   text-decoration: none;
 }
+
 
 .news-tab_content_wrap {
   margin-bottom: 0;
@@ -1427,6 +1430,7 @@ input[name="tab_item"] {
   margin-left: auto;
   margin-bottom: 15px;
   padding: 20px 0;
+  border-radius: 4px;
 }
 
 .shop-card {
@@ -1581,30 +1585,49 @@ input[name="tab_item"] {
 /*--------------------------------------------------------------
 # JobEntry
 --------------------------------------------------------------*/
-.owner-wrap {
-  background-color: #000;
-  color: white;
-  padding-top: 80px;
-  padding-right: 30px;
-  padding-bottom: 120px;
-  padding-left: 30px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  border-width: 0px 0px 0px 0px;
-  border-color: #ffffff;
-  border-style: solid;
+
+
+.job-profile-wrap {
+  width: 100%;
+  background-color: #FFFFFF;
 }
 
-.job-entry-wrap {
-  padding-top: 80px;
-  padding-right: 30px;
-  padding-bottom: 120px;
-  padding-left: 30px;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  border-width: 0px 0px 0px 0px;
-  border-color: #ffffff;
-  border-style: solid;
+.job-profile-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.job-profile-title {
+  margin: 100px 0 40px 0;
+  text-align: center;
+}
+
+.job-profile-text{
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 30px;
+  text-align: center;
+  color: #2C2C2C;
+  margin-bottom: 30px;
+}
+
+.job-profile-card {
+  padding: 25px 50px;
+  background-color: #FFF7E3;
+  border-radius: 4px;
+  margin-bottom: 70px;
+}
+
+.profile-card-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  color: #2C2C2C;
+}
+
+.profile-card-icon {
+   margin-right: 4px;
 }
 
 .job-info-btn-box {
@@ -1645,12 +1668,6 @@ input[name="tab_item"] {
 
 .wrap-mission {
   line-height: 2;
-}
-
-@media (max-width: 576px){
-  .job-entry-content {
-    font-size: 14px;
-  }
 }
 
 .recruit_info {

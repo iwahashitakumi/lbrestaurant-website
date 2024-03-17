@@ -1,6 +1,7 @@
 @use '@/stylesheets/application';
 @import 'main.scss';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
 
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
@@ -1099,7 +1100,62 @@ input[name="tab_item"] {
   padding-right: 15px;
 }
 
-// 会社概要
+
+/*--------------------------------------------------------------
+# lbr
+--------------------------------------------------------------*/
+
+.owner-message-wrap {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-bottom: 150px;
+}
+
+.owner-message-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.owner-message-title {
+  text-align: center;
+  padding: 100px 0px 40px;
+}
+
+.owner-message-text-box {
+  margin-top: 60px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2C2C2C;
+}
+
+.owner-message-text {
+  margin-bottom: 30px;
+}
+
+.owner-name {
+  font-family: 'Yusei Magic', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: right;
+  color: #000000;
+}
+
+.owner-post {
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# conpany
+--------------------------------------------------------------*/
 
 .company-wrap {
   width: 100%;

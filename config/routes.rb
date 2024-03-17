@@ -59,8 +59,6 @@ Rails.application.routes.draw do
         get :show
         post :confirm
         get :complete
-        get :recruitment_info
-        get :faq
       end
     end
   end

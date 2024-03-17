@@ -1,7 +1,7 @@
-<div class="contact-wrap">
-  <div class="contact-content">
-    <div class="contact-title"><%= image_tag('contact/title.png', width: '213px', height: '31px') %></div>
-    <ul class="contact-attention-text">
+<div class="form-wrap">
+  <div class="form-content">
+    <div class="form-title"><%= image_tag('contact/title.png', width: '213px', height: '31px') %></div>
+    <ul class="form-attention-text">
       <li class="alert-text">※ お忘れ物など、お急ぎの場合は直接店舗までご連絡ください。</li>
       <li>※ ご入力いただいた情報は当社グループ及び店舗と皆さまのコミュニケーションを目的として利用し、その他の目的で外部に流出するようなことは一切ございません。</li>
       <li>※ 内容によりましては、ご返答までに数日いただく場合や、ご返答出来かねる場合もございます。予めご了承ください。</li>
@@ -44,8 +44,8 @@
           <%= show_error_messages(f.object, :message) %>
         </div>
       </div>
-      <h3 class="text-center fw-bold contact-title2">お客様情報</h3>
-      <p class="text-center contact-subtitle">※ 弊社からの返答・返信をご希望の場合は必ずご記入ください。</p>
+      <h3 class="text-center fw-bold form-title2">お客様情報</h3>
+      <p class="text-center form-subtitle">※ 弊社からの返答・返信をご希望の場合は必ずご記入ください。</p>
       <div class="form-box">
         <div class="form">
           <%= f.label :contact_method, class: "form-label form-text" %>

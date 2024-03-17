@@ -1150,7 +1150,70 @@ input[name="tab_item"] {
   margin-right: 20px;
 }
 
+.interview-wrap {
+  width: 100%;
+  background-color: #FFF7E3;
+  padding: 60px 40px 120px;
+}
 
+.interview-content-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.interview-title {
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.employee-post {
+  width: 76px;
+  height: 20px;
+  background-color: #D32600;
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14.48px;
+  letter-spacing: 0em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.employee-name {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0em;
+  color: #000000;
+}
+
+.employee-name-en {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  color: #6F6F6F;
+  margin-left: 5px;
+}
+
+.employ-date {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.employee-text {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 23px;
+  letter-spacing: 0em;
+  color: #000000;
+}
 
 
 /*--------------------------------------------------------------

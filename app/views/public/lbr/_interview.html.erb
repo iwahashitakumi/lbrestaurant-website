@@ -12,16 +12,18 @@
           そう思われる環境を提供したい
         </div>
       </div>
-      <div class="interview-card">
-        <div class="staff-img"><%= image_tag('lbr/staff2.png') %></div>
-        <div class="staff-post">野田本店店長</div>
-        <div class="staff-name">松村 紘平<span class="staff-name-en">KOHEI MATSUMURA</span></div>
-        <div class="employ-date">2023年3月入社</div>
-        <div class="staff-text">
-          自分が成長できる<br>
-          楽しい職場をつくりたい
+      <%= link_to staff_interview_lbr_index_path do %>
+        <div class="interview-card">
+          <div class="staff-img"><%= image_tag('lbr/staff2.png') %></div>
+          <div class="staff-post">野田本店店長</div>
+          <div class="staff-name">松村 紘平<span class="staff-name-en">KOHEI MATSUMURA</span></div>
+          <div class="employ-date">2023年3月入社</div>
+          <div class="staff-text">
+            自分が成長できる<br>
+            楽しい職場をつくりたい
+          </div>
         </div>
-      </div>
+      <% end %>
       <div class="interview-card">
         <div class="staff-img"><%= image_tag('lbr/staff3.png') %></div>
         <div class="staff-post">野田スタッフ</div>

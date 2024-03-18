@@ -1153,10 +1153,15 @@ input[name="tab_item"] {
 .interview-wrap {
   width: 100%;
   background-color: #FFF7E3;
-  padding: 60px 40px 120px;
+  padding: 40px 0px 120px;
 }
 
-.interview-content-box {
+.interview-content {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+ 
+.interview-card-box {
   display: flex;
   justify-content: space-between;
 }
@@ -1166,7 +1171,7 @@ input[name="tab_item"] {
   padding-bottom: 60px;
 }
 
-.employee-post {
+.staff-post {
   width: 76px;
   height: 20px;
   background-color: #D32600;
@@ -1181,7 +1186,7 @@ input[name="tab_item"] {
   margin-top: 12px;
 }
 
-.employee-name {
+.staff-name {
   font-size: 18px;
   font-weight: 700;
   line-height: 26px;
@@ -1189,7 +1194,7 @@ input[name="tab_item"] {
   color: #000000;
 }
 
-.employee-name-en {
+.staff-name-en {
   font-size: 12px;
   font-weight: 700;
   line-height: 17px;
@@ -1207,7 +1212,7 @@ input[name="tab_item"] {
   margin-bottom: 10px;
 }
 
-.employee-text {
+.staff-text {
   font-size: 16px;
   font-weight: 900;
   line-height: 23px;

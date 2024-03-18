@@ -15,7 +15,7 @@
           <%= link_to "Lbrの特徴", lbr_index_path, class: "nav-link #{'active' if controller_name == 'lbr' && ['company'].include?(action_name)}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "求職者のみなさまへ", shops_path, class: "nav-link #{'active' if controller_name == 'shops' && ['index'].include?(action_name)}" %>
+          <%= link_to "求職者のみなさまへ", message_lbr_index_path, class: "nav-link #{'active' if controller_name == 'lbr' && ['message', 'staff'].include?(action_name)}" %>
         </li>
         <li class="nav-item">
           <%= link_to "ニュース", news_index_path, class: "nav-link #{'active' if controller_name == 'news' && ['show', 'index', 'article'].include?(action_name)}" %>

@@ -5,6 +5,6 @@ class Public::LbrController < Public::ApplicationController
   def show
   end
 
-  def staff
+  def staff_interview
   end
 end

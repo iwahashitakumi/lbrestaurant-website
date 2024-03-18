@@ -34,7 +34,7 @@ Rails.application.routes.draw do
       collection do
         get :show
         get :message
-        get :staff
+        get :staff_interview
       end
     end
     resources :news, only: [:index, :show] do

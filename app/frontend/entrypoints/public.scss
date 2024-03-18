@@ -181,7 +181,7 @@ ul {
 .form-subtitle {
   margin-bottom: 25px;
   color: #D32600;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 23px;
 }
@@ -208,21 +208,21 @@ ul {
 
 .form-attention-text {
   margin: 0 40px 30px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 23px;
 }
 
 .form-text,
 .form-box a {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 17px;
   color: #2C2C2C;
 }
 
 .form-box li {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 17px;
 }
@@ -1795,16 +1795,16 @@ input[name="tab_item"] {
   margin-bottom: 30px;
 }
 
+
 .job-system-card-text {
   font-size: 16px;
   font-weight: 700;
   line-height: 30px;
-  letter-spacing: 0em;
   text-align: center;
   color: #2C2C2C;
 }
 
-.job-system-card-text:first-child {
+.job-system-card-text-margin {
   margin-bottom: 30px;
 }
 
@@ -1868,6 +1868,7 @@ input[name="tab_item"] {
   letter-spacing: 0em;
   color: #2C2C2C;
 }
+
 
 .job-entry-link {
   display: flex;

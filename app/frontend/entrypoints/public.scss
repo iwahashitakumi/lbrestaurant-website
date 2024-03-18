@@ -765,7 +765,8 @@ ul {
 .home-restaurant-wrap .user-btn::after,
 .home-carrer-wrap .user-btn::after,
 .home-news-wrap .news-index-btn::after,
-.job-entry-btn::after {
+.job-entry-btn::after,
+.lbr-dream-btn::after {
   content: "\f105";
   font-family: "Font Awesome 5 Free";
   position: absolute;
@@ -777,7 +778,8 @@ ul {
 .home-restaurant-wrap .user-btn:hover::after,
 .home-carrer-wrap .user-btn:hover::after,
 .home-news-wrap .news-index-btn:hover::after,
-.job-entry-btn:hover::after {
+.job-entry-btn:hover::after,
+.lbr-dream-btn:hover::after {
   right: 15px; 
 }
 
@@ -833,6 +835,7 @@ ul {
 .restaurant-btn,
 .news-index-btn,
 .job-entry-btn,
+.lbr-dream-btn,
 .form-btn {
   width: 280px;
   height: 60px;
@@ -1104,6 +1107,85 @@ input[name="tab_item"] {
 /*--------------------------------------------------------------
 # lbr
 --------------------------------------------------------------*/
+
+.lbr-dream-wrap {
+  width: 100%;
+  background-color: #FFF7E3;
+  padding: 80px 0 120px;
+}
+
+.lbr-dream-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lbr-dream-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.lbr-dream-text-box {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #2C2C2C;
+}
+
+.lbr-dream-text {
+  margin-bottom: 20px;
+}
+
+.lbr-merit-wrap {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 80px 0 10px;
+}
+
+.lbr-merit-content-box {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.lbr-merit-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.lbr-merit-content {
+  display: flex;
+  margin-bottom: 80px;
+}
+
+.lbr-merit-margin-right {
+  margin-right: 30px;
+}
+
+.lbr-merit-margin-left {
+  margin-left: 30px;
+}
+
+.lbr-merit-content-info {
+  color:  #2C2C2C;
+}
+
+
+.lbr-merit-content-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 52.13px;
+  margin-bottom: 20px;
+}
+
+.lbr-merit-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.lbr-merit-notion-text {
+  font-size: 18px;
+  font-weight: 900;
+}
 
 .owner-message-wrap {
   width: 100%;
@@ -1945,7 +2027,8 @@ input[name="tab_item"] {
 }
 
 
-.job-entry-link {
+.job-entry-link,
+.lbr-dream-link {
   display: flex;
   justify-content: center;
 }

@@ -1241,6 +1241,60 @@ input[name="tab_item"] {
   margin-bottom: 6px;
 }
 
+.staff-interview-wrap {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.staff-interview-content-box {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.staff-interview-margin-right {
+  margin-right: 30px;
+}
+
+.staff-interview-margin-left {
+  margin-left: 30px;
+}
+
+.staff-interview-content1,
+.staff-interview-content3 {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.staff-interview-content2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.staff-interview-content-info {
+  color:  #2C2C2C;
+}
+
+.staff-interview-content-subtitle {
+  color: #D32600;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.staff-interview-content-title {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 41px;
+  margin-bottom: 20px;
+}
+
+.staff-interview-content-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+}
 
 /*--------------------------------------------------------------
 # conpany

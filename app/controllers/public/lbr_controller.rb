@@ -1,5 +1,5 @@
 class Public::LbrController < Public::ApplicationController
-  def about
+  def message
   end
 
   def show

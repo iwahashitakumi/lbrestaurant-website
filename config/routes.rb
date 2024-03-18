@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     resources :lbr, only: [] do
       collection do
         get :show
-        get :about
+        get :message
         get :staff
       end
     end

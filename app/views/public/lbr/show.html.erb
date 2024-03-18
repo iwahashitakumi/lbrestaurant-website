@@ -30,7 +30,7 @@
   <div class="lbr-merit-content-box">
     <div class="lbr-merit-title"><%= image_tag('lbr/merit-title.png', width: '350px', height: '40px') %></div>
     <div class="lbr-merit-content">
-      <img><%= image_tag('lbr/merit-img1.png', width: '500px', height: '350px') %></img>
+      <div><%= image_tag('lbr/merit-img1.png', width: '500px', height: '350px') %></div>
       <div class="lbr-merit-content-info lbr-merit-margin-left">
         <h2 class="lbr-merit-content-title">
           社長や役員と<br>
@@ -51,10 +51,10 @@
           年功序列は一切ありません。サッカーで例えたら、Jリーグを目指している社会人のアマチュアリーグくらいの認識です。<span class="lbr-merit-notion-text">実力のある人をどんどん登用・抜擢していきます。</span>自分に自信のある方、ここで自分の人生変えたい!と思う方にはうってつけの環境です。本気でやれば1-2年でどこに行っても通用する実力をつけられます。
         </p>
       </div>
-      <img><%= image_tag('lbr/staff2-interview-img2.png', width: '500px', height: '350px') %></img>
+      <div><%= image_tag('lbr/staff2-interview-img2.png', width: '500px', height: '350px') %></div>
     </div>
     <div class="lbr-merit-content">
-      <img><%= image_tag('lbr/merit-img2.png', width: '500px', height: '350px') %></img>
+      <div><%= image_tag('lbr/merit-img2.png', width: '500px', height: '350px') %></div>
       <div class="lbr-merit-content-info lbr-merit-margin-left">
         <h2 class="lbr-merit-content-title">
           <span class="alert-text">１から会社を作っていく</span><br>
@@ -66,4 +66,56 @@
       </div>
     </div>
   </div>
+</div>
+<div class="lbr-img-wrap">
+  <div class="swiper swiper1">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><%= image_tag('lbr/merit-img1.png', width: '350px', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/merit-img2.png', width: '350px', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/merit-img3.png', width: '350px', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/merit-img4.png', width: '350px', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/merit-img5.png', width: '350px', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/staff2-interview-img2.png', width: '350px', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/staff2-interview-img1.png', width: '350px', height: '250px') %></div>
+    </div>
+  </div>
+  <div class="swiper swiper2">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><%= image_tag('lbr/merit-img1.png', width: '420', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/merit-img2.png', width: '420', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/merit-img3.png', width: '420', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/merit-img4.png', width: '420', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/merit-img5.png', width: '420', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/staff2-interview-img2.png', width: '420', height: '250px') %></div>
+      <div class="swiper-slide"><%= image_tag('lbr/staff2-interview-img1.png', width: '420', height: '250px') %></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const mySwiper1 = new Swiper('.swiper1', {
+      loop: true,
+      spaceBetween: 10,
+	    slidesPerView: 4,
+      autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+        reverseDirection: false
+      },
+    });
+
+    const mySwiper2 = new Swiper('.swiper2', {
+      loop: true,
+      spaceBetween: 10,
+	    slidesPerView: 3,
+      autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+        reverseDirection: false
+      },
+    });
+  </script>
 </div>

@@ -1,64 +1,60 @@
 <div class="home">
-  <%= image_tag('home/top.png', width: "100%") %>
+  <%= image_tag('home/top.png', class: "top-img") %>
   <div class="home-about-us-wrap">
-    <div class="home-content-box about-us-content">
-      <div class="d-flex">
+    <div class="home-content-box">
+      <div class=" about-us-content-box d-flex reverse-flex">
+        <div class="about-us-img">
+          <%= image_tag('home/about_us.png', class: 'sm-img') %>
+        </div>
         <div>
-          <div class="about-us-title"><%= image_tag('home/about-us-title.png', width: '213px', height: '31px') %></div>
+          <div class="about-us-title"><%= image_tag('home/about-us-title.png', class: 'about-us-title-img') %></div>
           <p class="about-us-text">
             社名のLBrestaurantとは地域密着の飲食店という意味です。その名の通り、地域になくてはならないと思っていただける飲食店を作ることが理念です。<br>
             そして、その過程や結果により全従業員が少しでも豊かな人生を物心両面で歩めることを最大の目的としています。<br>
             全従業員が豊かになれるよう、さまざまな取り組みをしています。
           </p>
           <div class="about-us-link">
-            <div class="about-us-link">
-              <%= link_to 'LBrestaurantの特徴', '/path/to/destination', class: 'user-btn about-us-btn' %>
-            </div>
+            <%= link_to 'LBrestaurantの特徴', lbr_index_path, class: 'user-btn about-us-btn' %>
           </div>
-        </div>
-        <div class="about-us-img">
-          <%= image_tag('home/about_us.png') %>
         </div>
       </div>
     </div>
   </div>
   <div class="home-restaurant-wrap">
     <div class="home-content-box restaurant-content">
-      <div class="restaurant-title"><%= image_tag('home/restaurant-title.png', width: '282px', height: '30px') %></div>
+      <div class="restaurant-title"><%= image_tag('home/restaurant-title.png', class: 'restaurant-title-img') %></div>
       <h4 class="restaurant-sub-title">LBrestaurantについて</h4>
       <p class="restaurant-text">
         2023年に法人化した新しい会社です。様々な制度がまだまだ未完成です。<br>
         【ないものは作るしかない】この精神でどんどんチャレンジすることが可能です。未経験のことでもどんどんやれる<br>
         チャレンジ精神で、共に道を切り開きましょう！
       </p>
-      <div class="d-flex  justify-content-center">
+      <div class="d-flex  justify-content-center restaurant-link-box">
         <div class="restaurant-link">
-          <div class="restaurant-link">
-            <%= link_to '店舗一覧', shops_path, class: 'user-btn restaurant-btn' %>
-          </div>
+          <%= link_to '店舗一覧', shops_path, class: 'user-btn restaurant-btn' %>
         </div>
         <div class="restaurant-link">
-          <%= link_to '会社概要', '/path/to/destml-ination', class: 'user-btn restaurant-btn' %>
+          <%= link_to '会社概要', company_index_path, class: 'user-btn restaurant-btn' %>
         </div>
       </div>
     </div>
   </div>
   <%= render 'public/shared/carrer-contents' %>
   <div class="home-news-wrap">
-    <div class="home-news-title"><%= image_tag('home/news-title.png', width: '128px', height: '30px') %></div>
+    <div class="home-news-title"><%= image_tag('home/news-title.png', class: 'news-title-img') %></div>
     <div class="tab_container clearfix">
       <input id="tab1" type="radio" name="tab_item" checked>
       <label class="tab_item tab_item_left_margin user-btn news-btn" for="tab1">お知らせ</label>
       <input id="tab2" type="radio" name="tab_item">
       <label class="tab_item tab_item_right_margin user-btn article-btn" for="tab2">ブログ</label>
-      <div class="tab_pointer_space"></div>
-      <div class="tab_pointer_space" id="tab_pointer_space1">
+      <div class="tab_pointer_space tab_pointer_space_sm1"></div>
+      <div class="tab_pointer_space tab_pointer_space_sm1" id="tab_pointer_space1">
         <div class="tab_pointer"></div>
       </div>
-      <div class="tab_pointer_space" id="tab_pointer_space2">
+      <div class="tab_pointer_space tab_pointer_space_sm2 float_right_sm" id="tab_pointer_space2">
         <div class="tab_pointer"></div>
       </div>
-      <div class="tab_pointer_space"></div>
+      <div class="tab_pointer_space tab_pointer_space_sm2"></div>
       <div class="tab_content_wrap home-content-box home-news-content" id="tab1_content">
         <div class="tab_content">
           <% if @latest_news.present? %>

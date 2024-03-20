@@ -1698,7 +1698,7 @@ input[name="tab_item"] {
 
   .merit-img {
     width: 100%;
-    height: 250px;
+    height: auto;
   }
 
   .lbr-merit-margin-right {
@@ -1756,7 +1756,7 @@ input[name="tab_item"] {
 .owner-message-wrap {
   width: 100%;
   background-color: #FFFFFF;
-  padding-bottom: 150px;
+  padding: 100px 0 150px;
 }
 
 .owner-message-content {
@@ -1766,7 +1766,12 @@ input[name="tab_item"] {
 
 .owner-message-title {
   text-align: center;
-  padding: 100px 0px 40px;
+  padding-bottom: 40px;
+}
+
+.message-title-img {
+  width: 252px;
+  height: 40px;
 }
 
 .owner-message-text-box {
@@ -1793,6 +1798,39 @@ input[name="tab_item"] {
   color: #000000;
 }
 
+@media screen and (max-width: 767px) {
+  .owner-message-wrap {
+    padding: 40px 0;
+  }
+
+  .owner-message-content {
+    max-width: none;
+    margin: 0 32px;
+  }
+
+  .owner-message-title {
+    padding-bottom: 20px;
+  }
+
+  .message-title-img {
+    width: 176px;
+    height: 28px;
+  }
+
+  .owner-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .owner-message-text-box {
+    margin-top: 20px;
+  }
+
+  .owner-message-text {
+    margin-bottom: 15px;
+  }
+}
+
 .owner-post {
   font-size: 18px;
   margin-right: 20px;
@@ -1808,22 +1846,48 @@ input[name="tab_item"] {
   max-width: 1080px;
   margin: 0 auto;
 }
-
-@media screen and (max-width: 767px) {
-  .interview-content {
-    max-width: none !important;
-    padding: 0 32px;
-  }
-}
  
 .interview-card-box {
   display: flex;
   justify-content: space-between;
 }
 
+.interview-title-img {
+  width: 340px;
+  height: 40px;
+}
+
 .interview-title {
   text-align: center;
   padding-bottom: 60px;
+}
+
+@media screen and (max-width: 767px) {
+  .interview-wrap {
+    padding: 40px 0 10px;
+  }
+
+  .interview-content {
+    max-width: none !important;
+    margin: 0 32px;
+  }
+
+  .interview-card-box {
+    display: block;
+  }
+
+  .interview-card {
+    padding-bottom: 30px;
+  }
+
+  .interview-title {
+    padding-bottom: 20px;
+  }
+
+  .interview-title-img {
+    width: 230px;
+    height: 28px;
+  }
 }
 
 .staff-post {

@@ -2,15 +2,18 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white align-items-center">
     <div class="header-sm">
       <%= link_to(root_path) do %>
-        <%= image_tag('Icon.png', width: '291px', height: '53px') %>
+        <%= image_tag('Icon.png', class: "icon-png") %>
       <% end %>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      <input type="checkbox" id="toggle-nav">
+      <label for="toggle-nav" class="hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
     </div>
     <div class="header-linklist collapse navbar-collapse active" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto">
+      <div class="navbar-nav ms-auto">
         <li class="nav-item">
           <%= link_to "Lbrの特徴", lbr_index_path, class: "nav-link #{'active' if controller_name == 'lbr' && ['show'].include?(action_name)}" %>
         </li>
@@ -29,7 +32,7 @@
         <li class="nav-item">
           <%= link_to "お問い合わせ", new_contact_path , class: "nav-link #{'active' if controller_name == 'contacts' && ['new', 'confirm', 'complete'].include?(action_name)}" %>
         </li>
-      </ul>
+      </div>
     </div>
   </nav>
 </header>

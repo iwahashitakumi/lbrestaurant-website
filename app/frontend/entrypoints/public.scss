@@ -30,6 +30,14 @@ ul {
   list-style: none;
 }
 
+.sm-display {
+  display: none;
+}
+
+.display {
+  display: block;
+}
+
 .reverse-flex {
   flex-direction: row-reverse ;
 }
@@ -53,6 +61,14 @@ ul {
 @media screen and (max-width: 767px) {
   .d-flex {
     display: block !important;;
+  }
+
+  .sm-display {
+    display: block;
+  }
+
+  .display {
+    display: none;
   }
 }
 
@@ -2595,7 +2611,7 @@ input[name="tab_item"] {
 
 .job-profile-wrap {
   width: 100%;
-  padding-bottom: 70px;
+  padding-bottom: 80px;
   background-color: #FFFFFF;
 }
 
@@ -2603,6 +2619,11 @@ input[name="tab_item"] {
 .job-system-content {
   max-width: 800px;
   margin: 0 auto;
+}
+
+.profile-title-img {
+  width: 240px;
+  height: 40px;
 }
 
 .job-profile-title,
@@ -2626,16 +2647,24 @@ input[name="tab_item"] {
   border-radius: 4px;
 }
 
+
 .profile-card-text {
   font-size: 16px;
   font-weight: 500;
   line-height: 30px;
   letter-spacing: 0em;
   color: #2C2C2C;
+  display: flex;
+  align-items: baseline;
 }
 
 .profile-card-icon {
    margin-right: 4px;
+}
+
+.system-title-img {
+  width: 290px;
+  height: 40px;
 }
 
 .job-system-wrap {
@@ -2674,6 +2703,15 @@ input[name="tab_item"] {
   margin-bottom: 30px;
 }
 
+.system-card-title1-img {
+  width: 180px;
+  height: 35px;
+}
+
+.system-card-title2-img {
+  width: 210px;
+  height: 35px;
+}
 
 .job-system-card-text {
   font-size: 16px;
@@ -2691,6 +2729,7 @@ input[name="tab_item"] {
   font-size: 12px;
 }
 
+
 .job-entry-wrap {
   width: 100%;
   background-color: #FFF7E3;
@@ -2702,16 +2741,14 @@ input[name="tab_item"] {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 767px) {
-  .job-entry-content {
-    max-width: none !important;
-    padding: 0 32px;
-  }
-}
-
 .job-entry-title {
   text-align: center;
   padding: 80px 0 100px 0;
+}
+
+.enrtry-title-img {
+  width: 170px;
+  height: 40px;
 }
 
 .job-entry-card {
@@ -2753,6 +2790,101 @@ input[name="tab_item"] {
   line-height: 30px;
   letter-spacing: 0em;
   color: #2C2C2C;
+}
+
+@media screen and (max-width: 767px) {
+  .job-profile-wrap,
+  .job-system-wrap,
+  .job-entry-wrap {
+    padding-bottom: 40px;
+  }
+
+  .profile-title-img {
+    width: 168px;
+    height: 28px;
+  }
+
+  .job-profile-content,
+  .job-system-content,
+  .job-entry-content {
+    max-width: none;
+    margin: 0 32px;
+  }
+
+  .job-profile-title,
+  .job-system-title,
+  .job-entry-title {
+    padding: 40px 0 20px 0;
+  }
+
+  .job-profile-card {
+    padding: 15px 40px;
+    margin-bottom: 20px;
+  }
+
+  .system-title-img {
+    width: 220px;
+    height: 28px;
+  }
+
+  .job-system-text {
+    margin-bottom: 20px;
+  }
+
+  .job-system-card {
+    padding: 40px 15px;
+  }
+
+  .job-system-card-title {
+    margin-bottom: 15px;
+  }
+
+  .system-card-title1-img {
+    width: 120px;
+    height: 22px;
+  }
+  
+  .system-card-title2-img {
+    width: 140px;
+    height: 22px
+  }
+
+  .job-system-card-text {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .job-system-card-text-margin {
+    margin-bottom: 15px;
+  }
+
+  .enrtry-title-img {
+    width: 120px;
+    height: 28px;
+  }
+
+  .job-entry-card {
+    padding: 25px 15px;
+  }
+
+  .job-entry-card-text-box {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .job-entry-card-text-icon {
+    width: 100px;
+    height: 29px;
+    font-size: 14px;
+    line-height: 20px;
+    margin-right: 20px;
+  }
+
+  .job-entry-card-text-icon-sm {
+    width: 100px;
+    margin-right: 20px;
+  }
 }
 
 

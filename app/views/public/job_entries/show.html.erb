@@ -1,41 +1,40 @@
 <%= render partial: 'public/shared/section-title', locals: { section_title: '採用情報' } %>
 <div class="job-profile-wrap">
   <div class="job-profile-content">
-    <div class="job-profile-title"><%= image_tag('job_entry/profile-title.png', width: '240px', height: '40px') %></div>
+    <div class="job-profile-title"><%= image_tag('job_entry/profile-title.png', class: 'profile-title-img') %></div>
     <div class="job-profile-text">
-      <p>１つでも当てはまっていたら迷わずご応募ください！</p>
-      <p>もしくは<span class="alert-text">見た人特典</span>から、社長と食事しながらざっくばらんに話しましょう！</p>
+      <p>１つでも当てはまっていたら<br class="sm-display">迷わずご応募ください！</p>
+      <p>もしくは<span class="alert-text">見た人特典</span>から、<br class="sm-display">社長と食事しながらざっくばらんに話しましょう！</p>
     </div>
     <div class="job-profile-card">
-      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>チャンスを物にできる人/チャンスを物にできる人になりたい人</p>
-      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>凡事徹底/率先垂範できる人</p>
-      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>言い訳をしない人</p>
-      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>夢がある、もしくは何でもいいから頑張る理由がある人</p>
-      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>サプライズなど人を喜ばすのが好きな人</p>
-      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>料理と接客と経営を全部学びたい人</p>
-      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>1-2年で独立したい人（もっと早くしたい人も可）</p>
-      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>将来起業したい人</p>
-      <p class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i>コミュ力に自信あってそれを活かして仕事したい人</p>
+      <div class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i><p>チャンスを物にできる人/チャンスを物にできる人になりたい人</p></div>
+      <div class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i><p>凡事徹底/率先垂範できる人</p></div>
+      <div class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i><p>言い訳をしない人</p></div>
+      <div class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i><p>夢がある、もしくは何でもいいから頑張る理由がある人</p></div>
+      <div class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i><p>サプライズなど人を喜ばすのが好きな人</p></div>
+      <div class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i><p>料理と接客と経営を全部学びたい人</p></div>
+      <div class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i><p>1-2年で独立したい人（もっと早くしたい人も可）</p></div>
+      <div class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i><p>将来起業したい人</p></div>
+      <div class="profile-card-text"><i class="fa-regular fa-circle-check alert-text profile-card-icon"></i><p>コミュ力に自信あってそれを活かして仕事したい人</p></div>
     </div>
   </div>
 </div>
 <div class="job-system-wrap">
   <div class="job-system-content">
-    <div class="job-system-title"><%= image_tag('job_entry/system-title.png', width: '290px', height: '40px') %></div>
+    <div class="job-system-title"><%= image_tag('job_entry/system-title.png', class: 'system-title-img') %></div>
     <div class="job-system-text">
-      <p>他の企業にはないLBR独自の制度があります!</p>
+      <p>他の企業にはない<br class="sm-display">LBR独自の制度があります!</p>
     </div>
     <div class="job-system-card">
       <p class="job-system-card-subtitle">制度1</p>
-      <div class="job-system-card-title"><%= image_tag('job_entry/system-card-title1.png', width: '180px', height: '35px') %></div>
+      <div class="job-system-card-title"><%= image_tag('job_entry/system-card-title1.png', class: 'system-card-title1-img') %></div>
       <div class="job-system-card-text job-system-card-text-margin">
         <p>社長とサシ飯。実際に働くとどうなるのか？どんなキャリアがあるのか？社長ってどんな人なのか？どんな会社なのか？社長のおごりで運営店舗で食事(酒あり)しながらの座談会です！</p>
       </div>
       <p class="job-system-card-subtitle">制度2</p>
-      <div class="job-system-card-title"><%= image_tag('job_entry/system-card-title2.png', width: '210px', height: '35px') %></div>
+      <div class="job-system-card-title"><%= image_tag('job_entry/system-card-title2.png', class: 'system-card-title2-img') %></div>
       <div class="job-system-card-text">
-        <p>内定後、圧倒的なポテンシャルを見せていただいた方にのみ付与。</p>
-        <p>当社規定のタイミングでいつでも入社することができます!</p>
+        <p>内定後、圧倒的なポテンシャルを見せていただいた方にのみ付与。<br class="display">当社規定のタイミングでいつでも入社することができます!</p>
         <p class="job-system-card-sub-text">※例)弊社内定後、3年以内であれば別の会社に就職していても、弊社へ再度エントリーなしで転職可能!</p>
       </div>
     </div>
@@ -43,26 +42,36 @@
 </div>
 <div class="job-entry-wrap">
   <div class="job-entry-content">
-    <div class="job-entry-title"><%= image_tag('job_entry/entry-title.png', width: '170px', height: '40px') %></div>
+    <div class="job-entry-title"><%= image_tag('job_entry/entry-title.png', class: 'enrtry-title-img') %></div>
     <div class="job-entry-card">
       <div class="job-entry-card-text-box">
-        <div class="job-entry-card-text-icon">年齢</div>
+        <div class="job-entry-card-text-icon-sm">
+          <div class="job-entry-card-text-icon">年齢</div>
+        </div>
         <p class="job-entry-card-text">16~55歳</p>
       </div>
       <div class="job-entry-card-text-box">
-        <div class="job-entry-card-text-icon">勤務地</div>
-        <p class="job-entry-card-text">会社が指定する店舗（野田本店・香里園店）</p>
+        <div class="job-entry-card-text-icon-sm">
+          <div class="job-entry-card-text-icon">勤務地</div>
+        </div>
+        <p class="job-entry-card-text">会社が指定する店舗<br class="sm-display">（野田本店・香里園店）</p>
       </div>
       <div class="job-entry-card-text-box">
-        <div class="job-entry-card-text-icon">業務内容</div>
+        <div class="job-entry-card-text-icon-sm">
+          <div class="job-entry-card-text-icon">業務内容</div>
+        </div>
         <p class="job-entry-card-text">ホール・キッチン業務全般、数値管理など焼き鳥屋の運営に関する全ての業務</p>
       </div>
       <div class="job-entry-card-text-box">
-        <div class="job-entry-card-text-icon">給与</div>
+        <div class="job-entry-card-text-icon-sm">
+          <div class="job-entry-card-text-icon">給与</div>
+        </div>
         <p class="job-entry-card-text">未経験23万～ 経験者25～ 店長・マネージャー候補28～32万</p>
       </div>
       <div class="job-entry-card-text-box">
-        <div class="job-entry-card-text-icon">福利厚生</div>
+        <div class="job-entry-card-text-icon-sm">
+          <div class="job-entry-card-text-icon">福利厚生</div>
+        </div>
         <p class="job-entry-card-text">社会保険完備</p>
       </div>
     </div>

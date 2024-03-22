@@ -301,7 +301,7 @@ ul {
 @media screen and (max-width: 768px) {
   .icon-container {
     position: absolute;
-    right: 40px;
+    right: 20px;
     color: #FFFFFF;
     font-size: 18px;
   }
@@ -310,9 +310,9 @@ ul {
     right: 20px;
   }
 
-  .form-link:hover .icon-container
+  .form-link:hover .icon-container,
   .form-fix-link:hover .icon-container {
-    right: 35px;
+    right: 15px;
   }
 
   .fix-box {

@@ -1,6 +1,6 @@
 <div class="form-wrap">
   <div class="form-content">
-    <div class="form-title"><%= image_tag('contact/title.png', width: '213px', height: '31px') %></div>
+    <div class="form-title"><%= image_tag('contact/title.png', width: '213px', height: '31px', class: 'title-img') %></div>
     <ul class="form-attention-text">
       <li class="alert-text">※ お忘れ物など、お急ぎの場合は直接店舗までご連絡ください。</li>
       <li>※ ご入力いただいた情報は当社グループ及び店舗と皆さまのコミュニケーションを目的として利用し、その他の目的で外部に流出するようなことは一切ございません。</li>
@@ -75,9 +75,12 @@
           <%= f.text_field :phone_number, class: 'form-control form-text', value: f.object.phone_number, placeholder: "012-3456-789" %>
         </div>
 
-        <ul class="form-btn-box">
-          <li class="list-inline-item"><%= f.submit "確認する", class: 'user-btn form-btn' %></li>
-        </ul>
+        <div class="form-link">
+          <%= f.submit "確認ページへ", class: 'user-btn form-btn' %>
+          <div class="icon-container">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

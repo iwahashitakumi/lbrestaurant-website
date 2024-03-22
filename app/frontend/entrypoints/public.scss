@@ -2520,17 +2520,17 @@ input[name="tab_item"] {
 .shops-wrap {
   width: 100%;
   background-color: #FFF7E3;
-  padding: 60px 0;
+  padding: 80px 0 65px;
 }
 
 @media (max-width: 767px){
   .shops-wrap {
     width: 100%;
-    padding: 0;
+    padding: 40px 0 25px;
   }
 }
 
-.shop-content {
+.shop-content-box {
   background-color: #FFFFFF;
   max-width: 1080px;
   margin-right: auto;
@@ -2540,10 +2540,16 @@ input[name="tab_item"] {
   border-radius: 4px;
 }
 
+.shop-content {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 767px) {
-  .shop-content {
+  .shop-content-box {
     max-width: none !important;
-    padding: 0 32px;
+    margin: 0 32px 15px;
   }
 }
 
@@ -2606,7 +2612,7 @@ input[name="tab_item"] {
 
 @media (max-width: 767px){
   .shop-title {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 

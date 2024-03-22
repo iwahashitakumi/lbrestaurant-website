@@ -1,8 +1,8 @@
 <%= render partial: 'public/shared/section-title', locals: { section_title: '店舗一覧' } %>
 <div class="shops-wrap">
   <% @shops.each do |shop| %>
-    <div class="shop-content">
-      <div class="d-flex align-items-center">
+    <div class="shop-content-box">
+      <div class="shop-content">
         <div class="text-center shop-title">
           <%= shop.name %>
         </div>

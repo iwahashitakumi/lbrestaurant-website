@@ -1,6 +1,6 @@
 <div class="form-wrap">
   <div class="form-content">
-    <div class="form-title"><%= image_tag('job_entry/title.png', width: '270px', height: '28px') %></div>
+    <div class="form-title"><%= image_tag('job_entry/title.png', width: '270px', height: '28px', class: 'title-img') %></div>
     <ul class="form-attention-text text-center">
       <li>【業界・職種未経験／第二新卒／フリーターさんも歓迎！】</li>
       <li>学歴不問＆前職の雇用形態なども一切問いません。</li>
@@ -87,9 +87,12 @@
           <%= f.text_field :address, class: 'form-control form-text', value: f.object.address %>
         </div>
 
-        <ul class="form-btn-box">
-          <li class="list-inline-item"><%= f.submit "確認する", class: 'user-btn form-btn' %></li>
-        </ul>
+        <div class="form-link">
+          <%= f.submit "確認ページへ", class: 'user-btn form-btn' %>
+          <div class="icon-container">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

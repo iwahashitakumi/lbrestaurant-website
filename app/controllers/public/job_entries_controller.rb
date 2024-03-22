@@ -11,7 +11,7 @@ class Public::JobEntriesController < Public::ApplicationController
     @prefectures = Prefecture.all
     begin
       if params[:back]
-        render "recruitment_info"
+        render "new"
       else
         @job_entry.save!
         AdminNotificationMailer.job_entry_notification(@job_entry).deliver_now
@@ -19,7 +19,7 @@ class Public::JobEntriesController < Public::ApplicationController
         redirect_to complete_job_entries_path
       end
     rescue
-      render "recruitment_info"
+      render "new"
     end
   end
 
@@ -28,7 +28,7 @@ class Public::JobEntriesController < Public::ApplicationController
     @birth_date_options = birth_date_options
     @prefectures = Prefecture.all
     if @job_entry.invalid?
-      render "recruitment_info"
+      render "new"
     end
   end
 

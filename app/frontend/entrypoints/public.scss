@@ -532,7 +532,6 @@ ul {
 
   .navbar-nav.ms-auto {
     margin: auto;
-    margin-top: 35px
   }
 
   #toggle-nav {
@@ -622,12 +621,6 @@ ul {
   }
 }
 
-@media (max-width: 767px) {
-  .navbar-nav.ms-auto {
-    margin: auto;
-    margin-top: 18px
-  }
-}
 
 #toggle-nav {
   display: none;
@@ -2310,6 +2303,8 @@ input[name="tab_item"] {
   background-color: #FFFFFF;
   padding: 25px 55px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
 }
 
 .news-content:first-child {
@@ -2320,19 +2315,8 @@ input[name="tab_item"] {
   padding-bottom: 55px;
 }
 
-
 .tab_item_top_margin {
   margin-top: 80px;
-}
-
-.news-date {
-  font-size: 1.25rem;
-}
-
-@media (max-width: 767px){
-  .news-show-date{
-    margin-top: 8px;
-  }
 }
 
 .news-calender-date {
@@ -2348,11 +2332,41 @@ input[name="tab_item"] {
 }
 
 
+
 @media (max-width: 767px) {
-  .news-date {
+  .news-content {
+    background-color: #FFFFFF;
+    padding: 15px 10px;
+    border-radius: 4px;
+    display: block;
+  }
+  
+  .news-content:first-child {
+    padding-top: 20px;
+  }
+  
+  .news-content:nth-child(5) {
+    padding-bottom: 20px;
+  }
+
+  .news-show-date{
+    margin-top: 8px;
+  }
+
+  .tab_item_top_margin {
+    margin-top: 40px;
+  }
+
+  .news-calender-date {
+    padding: 0 0 5px;
     font-size: 12px;
   }
+  
+  .news-title {
+    font-size: 16px;
+  }
 }
+
 
 .newsHeaderbox {
   display: flex;
@@ -2402,13 +2416,12 @@ input[name="tab_item"] {
 
 @media screen and (max-width: 767px){
   .default-article-image {
-    width: 242px;
-    height: 111px;
+    width: 100%;
+    height: auto;
   }
 }
 
 .article-content {
-  height: 297px;
   margin-bottom: 30px;
   display: flex;
   background-color: #FFFFFF;
@@ -2434,7 +2447,6 @@ input[name="tab_item"] {
 
 
 .article-info {
-  width: 708px;
   padding: 10px 55px;
 }
 
@@ -2464,6 +2476,31 @@ input[name="tab_item"] {
 .article-title {
   font-size: 24px;
   font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .article-content > div:first-child {
+    flex: 4;
+  }
+  
+  .article-content > div:last-child {
+    flex: 6;
+  }
+  
+  .article-info {
+    padding: 10px 10px;
+  }
+  
+  .article-category {
+    font-size: 10px;
+    margin-bottom: 7px;
+    color: #8F8F8F;
+  }
+
+  .article-title {
+    font-size: 14px;
+    font-weight: 500;
+  }
 }
 
 .article-image img {
@@ -2501,18 +2538,42 @@ input[name="tab_item"] {
   text-align: center;
 }
 
-.article-show-image {
-  max-height: 350px;
-  text-align: center;
-  margin-bottom: 14px;
-}
-
 .article-show-text {
   font-size: 18px;
   font-weight: 400;
   line-height: 30px;
   margin-bottom: 14px;
 }
+
+@media (max-width: 767px) {
+  .article-show-wrap {
+    padding: 40px 20px;
+  }
+
+  .article-show-category {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 7px;
+  }
+
+  .article-show-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .article-show-text {
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+}
+
+.article-show-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 14px;
+}
+
+
 
 /*--------------------------------------------------------------
 # Shop

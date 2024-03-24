@@ -5,21 +5,21 @@
     <label class="tab_item tab_item_left_margin tab_item_top_margin user-btn news-btn" for="tab1">お知らせ</label>
     <input id="tab2" type="radio" name="tab_item" <%= "checked" if @active_tab == 'tab2' %>>
     <label class="tab_item tab_item_right_margin tab_item_top_margin user-btn article-btn" for="tab2">ブログ</label>
-    <div class="tab_pointer_space"></div>
-    <div class="tab_pointer_space" id="tab_pointer_space1">
+    <div class="tab_pointer_space tab_pointer_space_sm1"></div>
+    <div class="tab_pointer_space tab_pointer_space_sm1" id="tab_pointer_space1">
       <div class="tab_pointer"></div>
     </div>
-    <div class="tab_pointer_space" id="tab_pointer_space2">
+    <div class="tab_pointer_space tab_pointer_space_sm2 float_right_sm" id="tab_pointer_space2">
       <div class="tab_pointer"></div>
     </div>
-    <div class="tab_pointer_space"></div>
+    <div class="tab_pointer_space tab_pointer_space_sm2"></div>
     <div class="tab_content_wrap" id="tab1_content">
       <div class="tab_content news-tab">
         <% if @news.present? %>
           <% @news.each do |news| %>
             <div class="news-content">
-              <span class="news-calender-date"><%= puiblic_calender_date(news.calendar_date) %></span>
-              <span class="news-title"><%= link_to news.title, [news] %></span>
+              <div class="news-calender-date"><%= puiblic_calender_date(news.calendar_date) %></div>
+              <div class="news-title"><%= link_to news.title, [news] %></div>
             </div>
           <% end %>
         <% else %>
@@ -36,7 +36,7 @@
           <% @articles.each do |article| %>
             <%= link_to article_news_path(article) do %>
               <div class="article-content">
-                <div class="">
+                <div class="article-img">
                   <% if article.contents.first.article_image.present? %>
                     <% if request.from_smartphone? %>
                       <%= image_tag(article.contents.first.article_image.url(:mobile), alt: 'ブログ画像', class: "img-fluid") %>

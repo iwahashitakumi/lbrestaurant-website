@@ -355,7 +355,7 @@ ul {
 @media screen and (max-width: 767px) {
   .form-content {
     max-width: none;
-    margin: 20px 32px;
+    margin: 20px 20px;
   }
 
   .form-box {
@@ -756,7 +756,7 @@ ul {
 @media screen and (max-width: 767px) {
   .footer-content-box {
     max-width: none !important;
-    margin: 0 32px;
+    margin: 0 20px;
   }
 
   .footer-content-box2 {
@@ -1076,8 +1076,19 @@ ul {
   }
 }
 
-.top-img {
+.home-top-img-wrap {
   width: 100%;
+  height: 596px;
+  background-image: url('/assets/home/top.png');
+  background-size: 100% 100%;
+  display: grid;
+  justify-content: center;
+}
+
+.home-top-title-img {
+  width: 890px;
+  text-align: center;
+  margin-top: 330px;
 }
 
 .home-about-us-wrap .user-btn::after,
@@ -1110,9 +1121,21 @@ ul {
 
 
 @media screen and (max-width: 767px) {
+  .home-top-img-wrap {
+    height: auto;
+    background-image: url('/assets/home/top-sp.png');
+  }
+  
+  .home-top-title-img {
+    width: 380px;
+    text-align: center;
+    margin-top: 240px;
+    margin-bottom: 60px;
+  }
+
   .home-content-box {
     max-width: none !important;
-    margin: 0 32px;
+    margin: 0 20px;
   }
 }
 
@@ -1123,15 +1146,16 @@ ul {
 .home-about-us-wrap {
   width: 100%;
   background-color: #FFF7E3;
+  padding-bottom: 40px;
 }
 
-.about-us-content-box {
-  padding-top: 182px;
-  padding-bottom: 178px;
+.about-us-content {
+  padding-top: 180px;
+  padding-bottom: 60px;
 }
 
 @media screen and (max-width: 767px) {
-  .about-us-content-box {
+  .about-us-content {
     padding: 40px 0;
   }
 }
@@ -1186,11 +1210,97 @@ ul {
   }
 }
 
+.home-premium-content {
+  background-color: #D32600;
+  border-radius: 10px;
+  padding: 5px 5px 30px;
+}
+
+.home-premium-title-box {
+  padding: 15px 0;
+  background-color: #FFFFFF;
+  font-weight: 900;
+  text-align: center;
+}
+
+.home-premium-subtitle {
+  font-size: 28px;
+  letter-spacing: 15%;
+  color: #000000;
+}
+
+.home-premium-title {
+  font-size: 40px;
+  letter-spacing: 15%;
+  color: #D32600;
+}
+
+.home-premium-info {
+  padding: 20px 100px 0;
+}
+
+.home-premium-text {
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 37px;
+  padding-bottom: 25px;
+}
+
+.home-premium-link {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+  .home-premium-content {
+    background-color: #D32600;
+    border-radius: 10px;
+    padding: 5px 5px 30px;
+  }
+  
+  .home-premium-title-box {
+    padding: 10px 0;
+  }
+  
+  .home-premium-subtitle {
+    font-size: 16px;
+    letter-spacing: 15%;
+    color: #000000;
+  }
+  
+  .home-premium-title {
+    font-size: 28px;
+    letter-spacing: 15%;
+    color: #D32600;
+  }
+  
+  .home-premium-info {
+    padding: 10px 20px 0;
+  }
+  
+  .home-premium-text {
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 37px;
+    padding-bottom: 25px;
+  }
+  
+  .home-premium-link {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .sm-img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
   }
+}
+
+.sm-max-img {
+  max-width: 100%;
+  height: auto;
 }
 
 .form-fix-btn {
@@ -1243,6 +1353,8 @@ ul {
 @media screen and (max-width: 767px) {
   .home-restaurant-wrap {
     padding: 40px 0;
+    background-size: 100% auto;
+    background-image: url('/assets/home/restaurant-sp.png');
   }
 }
 
@@ -1261,12 +1373,6 @@ ul {
 
 .restaurant-title {
   text-align: center;
-}
-
-@media screen and (max-width: 767px) {
-  .restaurant-title {
-    padding-top: 40px;
-  }
 }
 
 .restaurant-title-img {
@@ -1370,7 +1476,8 @@ ul {
   padding: 20px 0px 45px;
 }
 
-.carrer-btn {
+.carrer-btn,
+.home-premium-btn {
   width: 280px;
   height: 60px;
   background-color: #FFFFFF;
@@ -1427,7 +1534,7 @@ ul {
 @media screen and (max-width: 767px) {
   .tab_container {
     max-width: none !important;
-    margin: 0 32px;
+    margin: 0 20px;
   }
 }
 
@@ -1675,7 +1782,7 @@ input[name="tab_item"] {
 
   .lbr-dream-content {
     max-width: none;
-    margin: 0 32px;
+    margin: 0 20px;
   }
 
   .dream-title-img {
@@ -1788,7 +1895,7 @@ input[name="tab_item"] {
 
   .lbr-merit-content-box {
     max-width: none !important;
-    margin: 0 32px;
+    margin: 0 20px;
   }
 
   .merit-title-img {
@@ -1914,7 +2021,7 @@ input[name="tab_item"] {
 
   .owner-message-content {
     max-width: none;
-    margin: 0 32px;
+    margin: 0 20px;
   }
 
   .owner-message-title {
@@ -1978,7 +2085,7 @@ input[name="tab_item"] {
 
   .interview-content {
     max-width: none !important;
-    margin: 0 32px;
+    margin: 0 20px;
   }
 
   .interview-card-box {
@@ -2171,7 +2278,7 @@ input[name="tab_item"] {
   .staff-interview-content2,
   .staff-interview-content3,
   .staff-interview-content4 {
-    padding: 0 32px;
+    padding: 0 20px;
   }
 
   .staff-interview-content1,
@@ -2255,7 +2362,7 @@ input[name="tab_item"] {
 @media screen and (max-width: 767px) {
   .company-content {
     max-width: none !important;
-    margin: 40px 32px;
+    margin: 40px 20px;
     font-size: 14px;
   }
 
@@ -2571,6 +2678,7 @@ input[name="tab_item"] {
   width: 100%;
   height: auto;
   margin-bottom: 14px;
+  text-align: center;
 }
 
 
@@ -2610,7 +2718,7 @@ input[name="tab_item"] {
 @media screen and (max-width: 767px) {
   .shop-content-box {
     max-width: none !important;
-    margin: 0 32px 15px;
+    margin: 0 20px 15px;
   }
 }
 
@@ -2962,7 +3070,7 @@ input[name="tab_item"] {
   .job-system-content,
   .job-entry-content {
     max-width: none;
-    margin: 0 32px;
+    margin: 0 20px;
   }
 
   .job-profile-title,

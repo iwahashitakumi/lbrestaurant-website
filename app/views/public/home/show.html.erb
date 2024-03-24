@@ -1,13 +1,16 @@
 <div class="home">
-  <%= image_tag('home/top.png', class: "top-img") %>
+  <div class="home-top-img-wrap">
+    <%= image_tag('home/top-title.png', class: 'sm-max-img home-top-title-img display') %>
+    <%= image_tag('home/top-title-sp.png', class: 'sm-max-img home-top-title-img sm-display') %>
+  </div>
   <div class="home-about-us-wrap">
     <div class="home-content-box">
-      <div class=" about-us-content-box d-flex reverse-flex">
+      <div class=" about-us-content d-flex reverse-flex">
         <div class="about-us-img">
           <%= image_tag('home/about_us.png', class: 'sm-img') %>
         </div>
         <div>
-          <div class="about-us-title"><%= image_tag('home/about-us-title.png', class: 'about-us-title-img') %></div>
+          <div class="about-us-title"><%= image_tag('home/about-us-title.png', class: 'about-us-title-img sm-max-img') %></div>
           <p class="about-us-text">
             社名のLBrestaurantとは地域密着の飲食店という意味です。その名の通り、地域になくてはならないと思っていただける飲食店を作ることが理念です。<br>
             そして、その過程や結果により全従業員が少しでも豊かな人生を物心両面で歩めることを最大の目的としています。<br>
@@ -18,12 +21,24 @@
           </div>
         </div>
       </div>
+      <div class="home-premium-content">
+        <div class="home-premium-title-box">
+          <h4 class="home-premium-subtitle">＼ホームページ限定特典／</h4>
+          <h3 class="home-premium-title">社長とサシメシ</h3>
+        </div>
+        <div class="home-premium-info">
+          <p class="home-premium-text">採用情報に興味がある方はぜひホームページ限定特典の「社長とサシメシ（社長のおごりで店舗でご飯を食べながら座談会）」をご覧ください！</p>
+          <div class="home-premium-link">
+            <%= link_to '詳しく見る', premium_lbr_index_path, class: 'user-btn home-premium-btn' %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="home-restaurant-wrap">
     <div class="home-content-box restaurant-content">
-      <div class="restaurant-title"><%= image_tag('home/restaurant-title.png', class: 'restaurant-title-img') %></div>
-      <h4 class="restaurant-sub-title">LBrestaurantについて</h4>
+      <div class="restaurant-title"><%= image_tag('home/restaurant-title.png', class: 'restaurant-title-img sm-max-img') %></div>
+      <h3 class="restaurant-sub-title">LBrestaurantについて</h3>
       <p class="restaurant-text">
         2023年に法人化した新しい会社です。様々な制度がまだまだ未完成です。<br>
         【ないものは作るしかない】この精神でどんどんチャレンジすることが可能です。未経験のことでもどんどんやれる<br>
@@ -41,7 +56,7 @@
   </div>
   <%= render 'public/shared/carrer-contents' %>
   <div class="home-news-wrap">
-    <div class="home-news-title"><%= image_tag('home/news-title.png', class: 'news-title-img') %></div>
+    <div class="home-news-title"><%= image_tag('home/news-title.png', class: 'news-title-img sm-max-img') %></div>
     <div class="tab_container clearfix">
       <input id="tab1" type="radio" name="tab_item" checked>
       <label class="tab_item tab_item_left_margin user-btn news-btn" for="tab1">お知らせ</label>

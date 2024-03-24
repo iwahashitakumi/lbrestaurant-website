@@ -35,6 +35,7 @@ Rails.application.routes.draw do
         get :show
         get :message
         get :staff_interview
+        get :premium
       end
     end
     resources :news, only: [:index, :show] do

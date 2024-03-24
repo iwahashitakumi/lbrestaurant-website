@@ -7,4 +7,7 @@ class Public::LbrController < Public::ApplicationController
 
   def staff_interview
   end
+
+  def premium
+  end
 end

@@ -1100,9 +1100,10 @@ ul {
 
 .home-top-img-wrap {
   width: 100%;
-  height: 596px;
+  height: auto;
   background-image: url('/assets/home/top.png');
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center;
   display: grid;
   justify-content: center;
 }
@@ -1110,7 +1111,7 @@ ul {
 .home-top-title-img {
   width: 890px;
   text-align: center;
-  margin-top: 330px;
+  margin: 400px 0 60px;
 }
 
 .home-about-us-wrap .user-btn::after,
@@ -1157,6 +1158,13 @@ ul {
 
 
 @media screen and (max-width: 767px) {
+  .home-content-box {
+    max-width: none !important;
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
   .home-top-img-wrap {
     height: auto;
     background-image: url('/assets/home/top-sp.png');
@@ -1167,11 +1175,6 @@ ul {
     text-align: center;
     margin-top: 240px;
     margin-bottom: 60px;
-  }
-
-  .home-content-box {
-    max-width: none !important;
-    margin: 0 20px;
   }
 }
 

@@ -2,16 +2,18 @@
   <div class="interview-content">
     <div class="interview-title"><%= image_tag('lbr/interview-title.png', class: 'interview-title-img sm-max-img') %></div>
     <div class="interview-card-box">
-      <div class="interview-card">
-        <div class="staff-img"><%= image_tag('lbr/staff1.png', class: 'owner-img') %></div>
-        <div class="staff-post">取締役</div>
-        <div class="staff-name">佐藤 保<span class="staff-name-en">KOHEI SATO</span></div>
-        <div class="employ-date">創業メンバー</div>
-        <div class="staff-text">
-          あそこに入社して成長できた<br>
-          そう思われる環境を提供したい
+      <%= link_to staff_interview1_lbr_index_path do %>
+        <div class="interview-card">
+          <div class="staff-img"><%= image_tag('lbr/staff1.png', class: 'owner-img') %></div>
+          <div class="staff-post">取締役</div>
+          <div class="staff-name">佐藤 保<span class="staff-name-en">KOHEI SATO</span></div>
+          <div class="employ-date">創業メンバー</div>
+          <div class="staff-text">
+            あそこに入社して成長できた<br>
+            そう思われる環境を提供したい
+          </div>
         </div>
-      </div>
+      <% end %>
       <%= link_to staff_interview2_lbr_index_path do %>
         <div class="interview-card">
           <div class="staff-img"><%= image_tag('lbr/staff2.png', class: 'owner-img') %></div>
@@ -24,26 +26,30 @@
           </div>
         </div>
       <% end %>
-      <div class="interview-card">
-        <div class="staff-img"><%= image_tag('lbr/staff3.png', class: 'owner-img') %></div>
-        <div class="staff-post">野田スタッフ</div>
-        <div class="staff-name">新田 剛史<span class="staff-name-en">TSUYOSHI NITTA</span></div>
-        <div class="employ-date">2022年9月入社</div>
-        <div class="staff-text">
-          お客さまが満足する<br>
-          焼き鳥を焼いていきたい
+      <%= link_to staff_interview3_lbr_index_path do %>
+        <div class="interview-card">
+          <div class="staff-img"><%= image_tag('lbr/staff3.png', class: 'owner-img') %></div>
+          <div class="staff-post">野田スタッフ</div>
+          <div class="staff-name">新田 剛史<span class="staff-name-en">TSUYOSHI NITTA</span></div>
+          <div class="employ-date">2022年9月入社</div>
+          <div class="staff-text">
+            お客さまが満足する<br>
+            焼き鳥を焼いていきたい
+          </div>
         </div>
-      </div>
-      <div class="interview-card">
-        <div class="staff-img"><%= image_tag('lbr/staff4.png', class: 'owner-img') %></div>
-        <div class="staff-post">野田スタッフ</div>
-        <div class="staff-name">野田 渚<span class="staff-name-en">NAGISA NODA</span></div>
-        <div class="employ-date">2022年8月入社</div>
-        <div class="staff-text">
-          しっかりと後輩指導ができる<br>
-          教育体制に力を入れたい
+      <% end %>
+      <%= link_to staff_interview4_lbr_index_path do %>
+        <div class="interview-card">
+          <div class="staff-img"><%= image_tag('lbr/staff4.png', class: 'owner-img') %></div>
+          <div class="staff-post">野田スタッフ</div>
+          <div class="staff-name">野田 渚<span class="staff-name-en">NAGISA NODA</span></div>
+          <div class="employ-date">2022年8月入社</div>
+          <div class="staff-text">
+            しっかりと後輩指導ができる<br>
+            教育体制に力を入れたい
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

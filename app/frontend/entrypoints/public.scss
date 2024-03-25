@@ -110,6 +110,15 @@ ul {
   .user-btn {
     font-size: 14px !important;
   }
+
+  .pagination {
+    margin: 20px 0  0!important;
+  }
+
+  .pagination .page-link {
+    font-size: 14px !important;
+    padding: 3px 10px !important;
+  }
 }
 
 .btn-toggle {
@@ -1712,6 +1721,10 @@ input[name="tab_item"] {
 }
 
 @media screen and (max-width: 767px) {
+  .tab_content_wrap {
+    margin-bottom: 0px;
+  }
+
   .clearfix {
     padding-bottom: 40px 
   }

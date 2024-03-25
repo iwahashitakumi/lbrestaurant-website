@@ -34,7 +34,9 @@ Rails.application.routes.draw do
       collection do
         get :show
         get :message
-        get :staff_interview
+        (1..4).each do |num|
+          get "staff_interview#{num}"
+        end
         get :premium
       end
     end

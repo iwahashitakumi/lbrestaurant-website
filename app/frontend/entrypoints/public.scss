@@ -34,6 +34,14 @@ ul {
   max-width: 100%;
 }
 
+.alert-text {
+  color: #D32600;
+}
+
+.default-text {
+  color: #2C2C2C;
+}
+
 .sm-display {
   display: none;
 }
@@ -1779,7 +1787,7 @@ input[name="tab_item"] {
 .lbr-dream-wrap {
   width: 100%;
   background-color: #FFF7E3;
-  padding: 80px 0 120px;
+  padding: 80px 0 60px;
 }
 
 .lbr-dream-content {
@@ -1790,6 +1798,64 @@ input[name="tab_item"] {
 .dream-title-img {
   width: 296px;
   height: 40px;
+}
+
+.lbr-dream-title {
+  text-align: center;
+}
+
+.lbr-dream-subtitle {
+  background-color: #FFFFFF;
+  margin: 30px 0;
+  padding: 20px 40px;
+  font-weight: 900;
+  font-size: 24px;
+  color: #D32600;
+  text-align: center;
+}
+
+.lbr-dream-subtitle-logo {
+  font-size: 18px;
+  color: #2C2C2C;
+}
+
+.lbr-dream-subtitle-margin {
+  margin-right: 16px
+}
+
+.lbr-dream-text-box {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #2C2C2C;
+  text-align: center;
+}
+
+.lbr-dream-text {
+  margin-bottom: 20px;
+}
+
+.lbr-mission-title {
+  text-align: center;
+  margin: 60px 0 40px;
+}
+
+.mission-title-img {
+  width: 310px;
+  height: 40px;
+}
+
+.lbr-mission-text-box {
+  background-color: #FFFFFF;
+  padding: 20px 40px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #2C2C2C;
+  margin-bottom: 40px;
+}
+
+.lbr-mission-text-box li:nth-child(-n+2) {
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 767px) {
@@ -1806,22 +1872,50 @@ input[name="tab_item"] {
     width: 205px;
     height: 28px;
   }
-}
 
-.lbr-dream-title {
-  text-align: center;
-  margin-bottom: 25px;
-}
+  .lbr-dream-subtitle {
+    margin: 20px 0;
+    padding: 18px 60px;
+    font-size: 18px;
+  }
 
-.lbr-dream-text-box {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 30px;
-  color: #2C2C2C;
-}
+  .lbr-dream-subtitle li:first-child {
+    margin-bottom: 10px;
+  }
+  
+  .lbr-dream-subtitle-logo {
+    font-size: 14px;
+    color: #2C2C2C;
+  }
+  
+  .lbr-dream-subtitle-margin {
+    margin: 0;
+  }
 
-.lbr-dream-text {
-  margin-bottom: 20px;
+  .lbr-dream-text-box {
+    text-align: left;
+  }
+  
+  .lbr-mission-title {
+    text-align: center;
+    margin: 40px 0 20px;
+  }
+  
+  .mission-title-img {
+    width: auto;
+    height: 28px;
+  }
+  
+  .lbr-mission-text-box {
+    background-color: #FFFFFF;
+    padding: 18px 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .lbr-mission-text-box li:nth-child(-n+2) {
+    margin-bottom: 20px;
+  }
 }
 
 .lbr-merit-wrap {
@@ -1989,7 +2083,7 @@ input[name="tab_item"] {
 .owner-message-wrap {
   width: 100%;
   background-color: #FFFFFF;
-  padding: 100px 0 150px;
+  padding: 80px 0 120px;
 }
 
 .owner-message-content {
@@ -2864,12 +2958,6 @@ input[name="tab_item"] {
 /*--------------------------------------------------------------
 # Contacts
 --------------------------------------------------------------*/
-
-
-.alert-text {
-  color: #D32600;
-}
-
 .contact-table {
   height: 0;
 }

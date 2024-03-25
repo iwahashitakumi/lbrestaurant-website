@@ -1,26 +1,38 @@
 <%= render partial: 'public/shared/section-title', locals: { section_title: 'LBrestaurantの特徴' } %>
 <div class="lbr-dream-wrap">
   <div class="lbr-dream-content">
-    <div class="lbr-dream-title"><%= image_tag('lbr/dream-title.png', class: 'dream-title-img') %></div>
+    <div class="lbr-dream-title"><%= image_tag('lbr/dream-title.png', class: 'dream-title-img sm-max-img') %></div>
+    <ul class="lbr-dream-subtitle">
+      <li>
+        地域密着の飲食店の創出<br class="sm-display"><span class="lbr-dream-subtitle-logo">×</span><br class="sm-display">店長の高収入<br class="sm-display"><span class="lbr-dream-subtitle-logo">×</span><br class="sm-display">店長の人間らしい生活
+      </li>
+      <li>
+        <span class="default-text lbr-dream-subtitle-margin">を同時に達成する</span><br class="sm-display">’ブラックな業界を変える！’
+      </li>
+    </ul>
     <div class="lbr-dream-text-box">
       <p class="lbr-dream-text">
-        社名のLBrestaurantとは地域密着の飲食店という意味です。<br>
-        その名の通り、地域に必要とされる、なくてはならないと思っていただける飲食店を作ることが理念です。<br>
-        そして、その過程や結果によって全従業員が少しでも豊かな人生を物心両面で歩めることが最大の目的です。<br>
+        私たちは<span class="alert-text">家族経営</span>を掲げています。<br>
+        従業員は家族と捉え、<span class="alert-text">居場所を得られるような会社</span>になります。<br>
+        <span class="alert-text">どうすればみんなが輝く</span>のか、これを追及するのが社長の一番の仕事といっても過言ではありません。
       </p>
       <p class="lbr-dream-text">
-        私たちは家族経営を掲げています。<br>
-        従業員は家族と捉え、居場所を得られるような会社になります。<br>
-        どうやったらみんなが輝くのか、これを追及するのが社長の一番の仕事といっても過言ではありません。<br>
+        お店は<span class="alert-text">従業員が輝いてないと、輝きません。</span><br>
+        全ての店舗ビジネスに通ずる<span class="alert-text">心理</span>です。<br>
+        <span class="alert-text">輝いてる従業員は店長になれます。</span><br>
+        そして、その輝いてる店長の数だけ店舗を増やせます。
       </p>
       <p class="lbr-dream-text">
-        お店は従業員が輝いてないと、輝きません。<br>
-        全ての店舗ビジネスに通ずる心理です。<br>
-        輝いてる従業員は店長になれます。<br>
-        そして、その輝いてる店長と同じ数だけ店舗を増やせます。<br>
-        私たちは、そんな輝いてるスタッフが助け合える店舗をできるだけ多く作ることを会社の最大の理念としています。
+        私たちは、そんな<span class="alert-text">輝いてるスタッフが助け合える店舗を</span><br>
+        できるだけ多く作ることを会社の最大の<span class="alert-text">理念</span>としています。
       </p>
     </div>
+    <div class="lbr-mission-title"><%= image_tag('lbr/mission-title.png', class: 'mission-title-img sm-max-img') %></div>
+    <ul class="lbr-mission-text-box">
+      <li>地域で１番の○○を多くの業態で創出する（流行りはおわない）</li>
+      <li>ぼったくたないのれん分け制度を確立する</li>
+      <li>自助・共助の精神で各オーナーや本部と助け合うことで休みをとれる体制を構築する</li>
+    </ul>
     <div class="lbr-dream-link">
       <%= link_to '代表メッセージ', message_lbr_index_path, class: 'user-btn lbr-dream-btn' %>
     </div>

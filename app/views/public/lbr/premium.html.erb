@@ -1,0 +1,20 @@
+<%= render partial: 'public/shared/section-title', locals: { section_title: '社長とサシメシ' } %>
+<div class="premium-wrap">
+  <div class="premium-content">
+    <div class="premium-title"><%= image_tag('lbr/premium-title.png', class: 'premium-title-img sm-max-img') %></div>
+    <div class="premium-text-box">
+      <p>店舗に電話をし、サシメシ希望の旨を伝えてください。</p>
+    </div>
+    <i class="fa-solid fa-angles-down"></i>
+    <div class="premium-text-box">
+      <p>サシメシの日程を決めます。</p>
+    </div>
+    <i class="fa-solid fa-angles-down"></i>
+    <div class="premium-text-box">
+      <p>社長と飲み食いしながらざっくばらんにお話しください！</p>
+    </div>
+    <div class="premium-link">
+      <%= link_to 'サシメシ電話はこちら', "tel:+1234567890", class: 'user-btn premium-btn' %>
+    </div>
+  </div>
+</div>

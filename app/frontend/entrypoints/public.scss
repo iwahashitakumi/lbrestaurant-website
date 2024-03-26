@@ -558,7 +558,6 @@ ul {
 @media (max-width: 991px) {
   .header-linklist {
     position: fixed;
-    display: flex;
     top: 70px;
     right: -100%;
     width: 100%; 
@@ -574,7 +573,7 @@ ul {
   }
 
   .navbar-nav.ms-auto {
-    margin: auto;
+    margin-top: 20px;
   }
 
   #toggle-nav {
@@ -807,7 +806,7 @@ ul {
   }
 
   .icon-img {
-    width: 200px;
+    width: auto;
     height: 36px;
   }
 
@@ -882,7 +881,11 @@ ul {
 @media (max-width: 991px) {
   .navbar li {
     width: 100%;
-    text-align: center;
+    padding: 0 45px;
+  }
+
+  .navbar .nav-link  {
+    border-bottom: 1px solid #CF553A;
   }
 }
 
@@ -3246,7 +3249,7 @@ input[name="tab_item"] {
 }
 
 .job-carrer-step-content {
-  max-width: 1080px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }

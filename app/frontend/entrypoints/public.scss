@@ -108,7 +108,7 @@ ul {
   }
 
   .user-btn {
-    font-size: 14px !important;
+    font-size: 16px !important;
   }
 
   .pagination {
@@ -356,7 +356,7 @@ ul {
 @media screen and (max-width: 767px) {
   .icon-container {
     position: absolute;
-    right: 20px;
+    right: 30px;
     color: #FFFFFF;
     font-size: 18px;
   }
@@ -367,7 +367,7 @@ ul {
 
   .form-link:hover .icon-container,
   .form-fix-link:hover .icon-container {
-    right: 15px;
+    right: 20px;
   }
 
   .fix-box {
@@ -1185,6 +1185,27 @@ ul {
   .home-content-box {
     max-width: none !important;
     margin: 0 20px;
+  }
+
+  .home-about-us-wrap .user-btn::after,
+  .home-restaurant-wrap .user-btn::after,
+  .home-carrer-wrap .user-btn::after,
+  .home-news-wrap .news-index-btn::after,
+  .system-premium-btn::after,
+  .job-entry-btn::after,
+  .lbr-dream-btn::after {
+    right: 30px;
+    top: 32%;
+  }
+
+  .home-about-us-wrap .user-btn:hover::after,
+  .home-restaurant-wrap .user-btn:hover::after,
+  .home-carrer-wrap .user-btn:hover::after,
+  .home-news-wrap .news-index-btn:hover::after,
+  .system-premium-btn:hover::after,
+  .job-entry-btn:hover::after,
+  .lbr-dream-btn:hover::after {
+    right: 20px;
   }
 }
 

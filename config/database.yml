@@ -9,19 +9,11 @@ default: &default
 
 development:
   <<: *default
-<<<<<<< Updated upstream
-  database: my_testdb
-
-test:
-  <<: *default
-  database: my_testdb
-=======
   database: lbrestaurant_db
 
 test:
   <<: *default
   database: lbrestaurant_db
->>>>>>> Stashed changes
 
 production:
   adapter: postgresql

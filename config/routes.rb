@@ -29,30 +29,39 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'home#show'
+    get 'blog', to: 'news#index', active_tab: 'tab2', as: 'blog_index'
     resources :lbr, only: [] do
       collection do
         get :show
-        get :about
-        get :company
-        get :staff
+        get :message
+        (1..4).each do |num|
+          get "staff_interview#{num}"
+        end
+        get :premium
       end
     end
-    resources :news, only: [:index, :show]
-    resources :articles, only: [:index, :show]
+    resources :news, only: [:index, :show] do
+      member do
+        get 'article'
+      end
+    end
     resources :shops, only: [:index]
+    resources :company, only: [] do
+      collection do
+        get :show
+      end
+    end
     resources :contacts, only: [:new, :create] do
       collection do
         post :confirm
         get :complete
       end
     end
-    resources :job_entries, only: [:create] do
+    resources :job_entries, only: [:new, :create] do
       collection do
         get :show
         post :confirm
         get :complete
-        get :recruitment_info
-        get :faq
       end
     end
   end

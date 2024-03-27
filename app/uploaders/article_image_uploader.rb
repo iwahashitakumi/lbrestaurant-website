@@ -33,7 +33,7 @@ class ArticleImageUploader < CarrierWave::Uploader::Base
   # end
 
   version :pc do
-    process resize_to_fill: [524, 242]
+    process resize_to_fill: [372, 297]
   end
 
   version :mobile do

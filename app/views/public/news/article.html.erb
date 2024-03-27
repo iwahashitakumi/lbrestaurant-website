@@ -1,0 +1,16 @@
+<%= render partial: 'public/shared/section-title', locals: { section_title: 'ニュース' } %>
+<div class="article-show-wrap">
+  <div class="article-contents">
+    <div class="article-show-category">
+      カテゴリー / <span class="<%= @article.category %>-category"><%= @article.category_text %></span>
+    </div>
+    <div class="article-show-title"><%= @article.title %></div>
+    <% @article.contents.each do |content| %>
+      <% if content.article_image.present? %>
+        <div class="article-show-image"><%= image_tag(content.article_image.url, alt: 'ブログ画像', class: "img-fluid") %></div>
+      <% end %>
+        <div class="article-show-text"><%= content.body.html_safe %></div>
+    <% end %>
+  </div>
+</div>
+<%= render 'public/shared/carrer-contents' %>

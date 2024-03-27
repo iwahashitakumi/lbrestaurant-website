@@ -1,1 +1,177 @@
-<h1>公開側の画面</h1>
+<div class="home">
+  <div class="home-top-img-wrap">
+    <%= image_tag('home/top-title.png', class: 'home-top-title-img sm-max-img display') %>
+    <%= image_tag('home/top-title-sp.png', class: 'sm-max-img home-top-title-img sm-display') %>
+  </div>
+  <div class="home-about-us-wrap">
+    <div class="home-content-box">
+      <div class=" about-us-content d-flex reverse-flex">
+        <div class="about-us-img">
+          <%= image_tag('home/about_us.png', class: 'sm-img') %>
+        </div>
+        <div>
+          <div class="about-us-title"><%= image_tag('home/about-us-title.png', class: 'about-us-title-img sm-max-img') %></div>
+          <p class="about-us-text">
+            社名のLBrestaurantとは地域密着の飲食店という意味です。その名の通り、地域になくてはならないと思っていただける飲食店を作ることが理念です。<br>
+            そして、その過程や結果により全従業員が少しでも豊かな人生を物心両面で歩めることを最大の目的としています。<br>
+            全従業員が豊かになれるよう、さまざまな取り組みをしています。
+          </p>
+          <div class="about-us-link">
+            <%= link_to 'LBrestaurantの特徴', lbr_index_path, class: 'user-btn about-us-btn' %>
+          </div>
+        </div>
+      </div>
+      <div class="home-premium-content">
+        <div class="home-premium-title-box">
+          <h4 class="home-premium-subtitle">＼ホームページ限定特典／</h4>
+          <h3 class="home-premium-title">社長とサシメシ</h3>
+        </div>
+        <div class="home-premium-info">
+          <p class="home-premium-text">採用情報に興味がある方はぜひホームページ限定特典の「社長とサシメシ（社長のおごりで店舗でご飯を食べながら座談会）」をご覧ください！</p>
+          <div class="premium-link">
+            <%= link_to '詳しく見る', premium_lbr_index_path, class: 'user-btn home-premium-btn' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="home-restaurant-wrap">
+    <div class="home-content-box restaurant-content">
+      <div class="restaurant-title"><%= image_tag('home/restaurant-title.png', class: 'restaurant-title-img sm-max-img') %></div>
+      <h3 class="restaurant-sub-title">LBrestaurantについて</h3>
+      <p class="restaurant-text">
+        2023年に法人化した新しい会社です。様々な制度がまだまだ未完成です。<br>
+        【ないものは作るしかない】この精神でどんどんチャレンジすることが可能です。未経験のことでもどんどんやれる<br>
+        チャレンジ精神で、共に道を切り開きましょう！
+      </p>
+      <div class="d-flex  justify-content-center restaurant-link-box">
+        <div class="restaurant-link">
+          <%= link_to '店舗一覧', shops_path, class: 'user-btn restaurant-btn' %>
+        </div>
+        <div class="restaurant-link">
+          <%= link_to '会社概要', company_index_path, class: 'user-btn restaurant-btn' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render 'public/shared/carrer-contents' %>
+  <div class="home-news-wrap">
+    <div class="home-news-title"><%= image_tag('home/news-title.png', class: 'news-title-img sm-max-img') %></div>
+    <div class="tab_container clearfix">
+      <input id="tab1" type="radio" name="tab_item" checked>
+      <label class="tab_item tab_item_left_margin user-btn news-btn" for="tab1">お知らせ</label>
+      <input id="tab2" type="radio" name="tab_item">
+      <label class="tab_item tab_item_right_margin user-btn article-btn" for="tab2">ブログ</label>
+      <div class="tab_pointer_space tab_pointer_space_sm1"></div>
+      <div class="tab_pointer_space tab_pointer_space_sm1" id="tab_pointer_space1">
+        <div class="tab_pointer"></div>
+      </div>
+      <div class="tab_pointer_space tab_pointer_space_sm2 float_right_sm" id="tab_pointer_space2">
+        <div class="tab_pointer"></div>
+      </div>
+      <div class="tab_pointer_space tab_pointer_space_sm2"></div>
+      <div class="tab_content_wrap home-content-box home-news-content" id="tab1_content">
+        <div class="tab_content">
+          <% if @latest_news.present? %>
+            <div class="home-news-textbox">
+              <%= link_to news_path(@latest_news) do %>
+                <span class="home-news-calender-date"><%= puiblic_calender_date(@latest_news.calendar_date) %></span>
+                <%= @latest_news.title %>
+              <% end %>
+            </div>
+          <% end %>
+
+          <% if @second_latest_news.present? %>
+            <div class="home-news-textbox">
+              <%= link_to news_path(@second_latest_news) do %>
+                <span class="home-news-calender-date"><%= puiblic_calender_date(@second_latest_news.calendar_date) %></span>
+                <%= @second_latest_news.title %>
+              <% end %>
+            </div>
+          <% end %>
+
+          <% if @third_latest_news.present? %>
+            <div class="home-news-textbox">
+              <%= link_to news_path(@third_latest_news) do %>
+                <span class="home-news-calender-date"><%= puiblic_calender_date(@third_latest_news.calendar_date) %></span>
+                <%= @third_latest_news.title %>
+              <% end %>
+            </div>
+          <% end %>
+
+          <% if @fourth_latest_news.present? %>
+            <div class="home-news-textbox">
+              <%= link_to news_path(@fourth_latest_news) do %>
+                <span class="home-news-calender-date"><%= puiblic_calender_date(@fourth_latest_news.calendar_date) %></span>
+                <%= @fourth_latest_news.title %>
+              <% end %>
+            </div>
+          <% end %>
+
+          <% if @fifth_latest_news.present? %>
+            <div class="home-news-textbox">
+              <%= link_to news_path(@fifth_latest_news) do %>
+                <span class="home-news-calender-date"><%= puiblic_calender_date(@fifth_latest_news.calendar_date) %></span>
+                <%= @fifth_latest_news.title %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="tab_content_wrap home-content-box home-news-content" id="tab2_content">
+        <div class="tab_content">
+          <% if @latest_article.present? %>
+            <div class="home-article-textbox">
+              <%= link_to news_path(@latest_article) do %>
+                <span class="home-article-category">カテゴリー / <span class="<%= @latest_article.category %>-category"><%= @latest_article.category_text %></span></span>
+                <%= @latest_article.title %>
+              <% end %>
+            </div>
+          <% end %>
+
+          <% if @second_latest_article.present? %>
+            <div class="home-article-textbox">
+              <%= link_to news_path(@second_latest_article) do %>
+                <span class="home-article-category">カテゴリー / <span class="<%= @second_latest_article.category %>-category"><%= @second_latest_article.category_text %></span></span>
+                <%= @second_latest_article.title %>
+              <% end %>
+            </div>
+          <% end %>
+
+          <% if @third_latest_article.present? %>
+            <div class="home-article-textbox">
+              <%= link_to news_path(@third_latest_article) do %>
+                <span class="home-article-category">カテゴリー / <span class="<%= @third_latest_article.category %>-category"><%= @third_latest_article.category_text %></span></span>
+                <%= @third_latest_article.title %>
+              <% end %>
+            </div>
+          <% end %>
+
+          <% if @fourth_latest_article.present? %>
+            <div class="home-article-textbox">
+              <%= link_to news_path(@fourth_latest_article) do %>
+                <span class="home-article-category">カテゴリー / <span class="<%= @fourth_latest_article.category %>-category"><%= @fourth_latest_article.category_text %></span></span>
+                <%= @fourth_latest_article.title %>
+              <% end %>
+            </div>
+          <% end %>
+
+          <% if @fifth_latest_article.present? %>
+            <div class="home-article-textbox">
+              <%= link_to news_path(@fifth_latest_article) do %>
+                <span class="home-article-category">カテゴリー / <span class="<%= @fifth_latest_article.category %>-category"><%= @fifth_latest_article.category_text %></span></span>
+                <%= @fifth_latest_article.title %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <button class="tab_button" id="tab1_button">
+        <%= link_to 'お知らせ一覧をみる', news_index_path, class: 'user-btn news-index-btn' %>
+      </button>
+      <button class="tab_button" id="tab2_button">
+        <%= link_to 'ブログ一覧をみる', blog_index_path, class: 'user-btn news-index-btn' %>
+      </button>
+    </div>
+  </div>
+</div>

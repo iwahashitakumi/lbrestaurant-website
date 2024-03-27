@@ -27,10 +27,10 @@
           <%= f.label :callback_requested, class: "form-label form-text" %>
           <span class="badge rounded-pill badge-alert">必須</span>
           <div class="contact-form">
-            <% Contact.callback_requested.values.collect.each do |key, value| %>
+            <% Contact.callback_requested.options.each do |text, value| %>
               <div class="form-check contact-as-radio form-text">
-                <%= f.radio_button :callback_requested, key, class: 'form-check-input' %>
-                <%= f.label key, value, class: 'form-check-label' %>
+                <%= f.radio_button :callback_requested, value, class: 'form-check-input' %>
+                <%= f.label :callback_requested, text, value: value, class: 'form-check-label' %>
               </div>
             <% end %>
           </div>

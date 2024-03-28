@@ -110,10 +110,19 @@
       <%= f.hidden_field :name_kana %>
       <%= f.hidden_field :phone_number %>
 
-      <ul class="form-btn-box form-flex">
-        <li class="list-inline-item"><%= f.submit "修正する", name: "back", class: 'user-btn form-fix-btn  form-confirm-btn' %></li>
-        <li class="list-inline-item"><%= f.submit "送信する", class: 'user-btn form-btn form-confirm-btn' %></li>
-      </ul>
+      <div class="form-link-box d-flex">
+        <div class="d-block fix-box form-fix-link">
+          <%= f.submit "修正する", name: "back", class: 'user-btn form-fix-btn' %>
+          <div class="icon-container confirm-icon">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+        <div class="d-block form-fix-link">
+          <%= f.submit "送信する", class: 'user-btn form-btn' %>
+          <div class="icon-container confirm-icon">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
     <% end %>
   </div>
 </div>

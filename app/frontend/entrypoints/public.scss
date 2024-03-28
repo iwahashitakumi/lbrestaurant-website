@@ -2985,6 +2985,11 @@ input[name="tab_item"] {
   align-items: center;
 }
 
+.shop-img {
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (max-width: 767px) {
   .shop-content-box {
     max-width: none !important;

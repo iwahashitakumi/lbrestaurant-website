@@ -16,9 +16,9 @@
             <div class="d-flex flex-wrap">
               <div class="col-md-6 mb-4 p-3 mobile-p-0">
                 <% if shop.shop_image? %>
-                  <%= image_tag shop.shop_image.url, class: "img-fluid" %>
+                  <%= image_tag shop.shop_image.url, class: "shop-img" %>
                 <% else %>
-                  <%= image_tag '/assets/default_shop_image.png', alt: '店舗画像', class: "img-fluid" %>
+                  <%= image_tag '/assets/default_shop_image.png', alt: '店舗画像', class: "shop-img" %>
                 <% end %>
               </div>
               <div class="col-md-6 mb-4 p-3 mobile-p-0">

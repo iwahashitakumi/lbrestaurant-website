@@ -102,3 +102,5 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 
 gem "dockerfile-rails", ">= 1.6", :group => :development
+
+gem "meta-tags"

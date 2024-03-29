@@ -2052,16 +2052,11 @@ input[name="tab_item"] {
 }
 
 .swiper2 {
-  padding: 10px 30px 0;
+  padding: 10px 90px 0;
 }
 
-.swiper1-img {
+.swiper-img {
   width: 350px;
-  height: 250px;
-}
-
-.swiper2-img {
-  width: 420px;
   height: 250px;
 }
 
@@ -2108,40 +2103,15 @@ input[name="tab_item"] {
     line-height: 28.96px;
     margin-top: 15px;
   }
-}
 
-@media screen and (max-width: 374px) {
-  .swiper1-img {
-    width: 87px;
-    height: 80px;
-  }
-  
-  .swiper2-img {
-    width: 120px;
-    height: 80px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .swiper1-img {
-    width: 130px;
-    height: 100px;
-  }
-  
-  .swiper2-img {
-    width: 180px;
-    height: 100px;
+  .swiper2 {
+    padding: 10px 20px 0 0;
   }
 }
 
 @media screen and (max-width: 630px) {
-  .swiper1-img {
+  .swiper-img {
     width: 180px;
-    height: 120px;
-  }
-  
-  .swiper2-img {
-    width: 200px;
     height: 120px;
   }
 }

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LbrestaurantWebsite</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://kit.fontawesome.com/50cd9f29f3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -14,16 +13,7 @@
     <%= vite_client_tag %>
     <%= vite_typescript_tag 'application' %>
     <%= vite_react_refresh_tag %>
-    <!--
-      If using a TypeScript entrypoint file:
-        vite_typescript_tag 'application'
-
-      If using a .jsx or .tsx entrypoint, add the extension:
-        vite_javascript_tag 'application.jsx'
-
-      Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
-    -->
-
+    <%= display_meta_tags(default_meta_tags) %>
   </head>
   <body>
     <%= render 'public/shared/header' %>

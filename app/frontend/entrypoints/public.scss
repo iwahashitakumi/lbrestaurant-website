@@ -42,7 +42,8 @@ ul {
   color: #2C2C2C;
 }
 
-.sm-display {
+.sm-display,
+.header-sm-display {
   display: none;
 }
 
@@ -543,6 +544,10 @@ ul {
     justify-content: space-between;
     align-items: center;
   }
+
+  .header-sm-display {
+    display: block;
+  }
 }
 
 .scrolled-offset {
@@ -571,7 +576,7 @@ ul {
 @media (max-width: 991px) {
   .header-linklist {
     position: fixed;
-    top: 70px;
+    top: 0;
     right: -100%;
     width: 100%; 
     height: 100%;
@@ -586,7 +591,7 @@ ul {
   }
 
   .navbar-nav.ms-auto {
-    margin-top: 20px;
+    margin-top: 90px;
   }
 
   #toggle-nav {

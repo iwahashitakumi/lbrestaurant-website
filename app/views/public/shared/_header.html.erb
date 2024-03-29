@@ -15,6 +15,9 @@
     <div class="header-linklist collapse navbar-collapse active" id="navbarSupportedContent">
       <div class="navbar-nav ms-auto">
         <li class="nav-item">
+          <%= link_to "TOPページ", root_path, class: "nav-link header-sm-display" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "LBRの特徴", lbr_index_path, class: "nav-link #{'active' if controller_name == 'lbr' && ['show'].include?(action_name)}" %>
         </li>
         <li class="nav-item">

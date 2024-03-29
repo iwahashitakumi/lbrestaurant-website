@@ -1712,6 +1712,9 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails-i18n (7.0.9)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (7.0.8)
       actionpack (= 7.0.8)
       activesupport (= 7.0.8)
@@ -1853,6 +1856,7 @@ DEPENDENCIES
   rack-user_agent
   rails (~> 7.0.8)
   rails-erd
+  rails-i18n
   ransack
   rubocop-airbnb
   selenium-webdriver

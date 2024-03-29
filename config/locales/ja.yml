@@ -1,4 +1,11 @@
 ja:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+      restrict_dependent_destroy:
+        has_one: "%{record}が存在しているので削除できません"
+        has_many: "%{record}が存在しているので削除できません"
   views:
     pagination:
       first: "&laquo; 最初のページ"
@@ -6,13 +13,7 @@ ja:
       previous: "&lsaquo; 前のページ"
       next: "次のページ &rsaquo;"
       truncate: "..."
-  activerecord:
-    errors:
-      messages:
-        record_invalid: 'バリデーションに失敗しました: %{errors}'
-        restrict_dependent_destroy:
-          has_one: "%{record}が存在しているので削除できません"
-          has_many: "%{record}が存在しているので削除できません"
+
   date:
     formats:
       default: "%Y/%m/%d"

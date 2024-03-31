@@ -1,3 +1,14 @@
+<% set_meta_tags  title: "お知らせ | #{@news.title}",
+                  description: "LBrestaurant株式会社の公式ホームページ。LBrestaurant株式会社のお知らせです。　日付: #{@news.calendar_date}、　タイトル: #{@news.title}",
+                  canonical: "https://lbrestaurant.net/news/#{@news.id}/",
+                  og: {
+                    title: "お知らせ | #{@news.title} | LBrestaurant(株式会社)公式サイト(暖簾分け希望者、求職者募集中!)",
+                    description: "LBrestaurant株式会社の公式ホームページ。LBrestaurant株式会社のお知らせです。　日付: #{@news.calendar_date}、　タイトル: #{@news.title}",
+                    type: 'article',
+                    url: "https://lbrestaurant.net/news/#{@news.id}/"
+                  }
+%>
+
 <%= render partial: 'public/shared/section-title', locals: { section_title: 'ニュース' } %>
 <div class="article-show-wrap">
   <div class="article-contents">

@@ -1,3 +1,14 @@
+<% set_meta_tags  title: '店舗紹介',
+                  description: 'LBrestaurant株式会社の公式ホームページ。LBrestaurant株式会社の各店舗のご紹介！',
+                  canonical: 'https://lbrestaurant.net/shops/',
+                  og: {
+                    title: '店舗紹介 | LBrestaurant(株式会社)公式サイト(暖簾分け希望者、求職者募集中!)',
+                    description: 'LBrestaurant株式会社の公式ホームページ。LBrestaurant株式会社の各店舗のご紹介！',
+                    type: 'article',
+                    url: 'https://lbrestaurant.net/shops/'
+                  }
+%>
+
 <%= render partial: 'public/shared/section-title', locals: { section_title: '店舗一覧' } %>
 <div class="shops-wrap">
   <% @shops.each do |shop| %>

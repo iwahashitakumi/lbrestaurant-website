@@ -3,7 +3,7 @@ class JobEntry < ApplicationRecord
   belongs_to :prefecture
 
   extend Enumerize
-  enumerize :recruit_type, in: { regular_employee: 1, franchisee: 2 }, scope: true, predicates: true
+  enumerize :recruit_type, in: { regular_employee: 1, franchisee: 2, part_time_job: 3, meal_with_president: 4 }, scope: true, predicates: true
   enumerize :sex, in: { male: 1, female: 2, other: 3 }, scope: true, predicates: true
   enumerize :status, in: { not_started: 1, in_progress: 2, completed: 3 }, default: :not_started, scope: true, predicates: true
 

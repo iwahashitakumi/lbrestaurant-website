@@ -1170,16 +1170,24 @@ ul {
   top: 30%;
 }
 
-.premium-btn::before {
-  content: "\f095";
+.carrer-entry-link::after {
+  content: "\f105";
   font-family: "Font Awesome 5 Free";
   position: absolute;
-  left: 20px;
+  left: 180px;
+  top: 5%;
+}
+
+.premium-btn::after {
+  content: "\f2e7";
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  right: 20px;
   top: 30%;
 }
 
-.premium-btn:hover::before {
-  left: 15px; 
+.premium-btn:hover::after {
+  transform: rotate(180deg);
 }
 
 .home-about-us-wrap .user-btn:hover::after,
@@ -1189,7 +1197,11 @@ ul {
 .system-premium-btn:hover::after,
 .job-entry-btn:hover::after,
 .lbr-dream-btn:hover::after {
-  right: 15px; 
+  right: 15px;
+}
+
+.carrer-entry-link:hover::after {
+  left: 185px;
 }
 
 
@@ -1248,12 +1260,11 @@ ul {
 .home-about-us-wrap {
   width: 100%;
   background-color: #FFF7E3;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 }
 
 .about-us-content {
-  padding-top: 180px;
-  padding-bottom: 60px;
+  padding: 60px 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -1524,7 +1535,7 @@ ul {
 .carrer-content {
   background-color: #D32600;
   border-radius: 10px;
-  padding: 40px 110px 120px;
+  padding: 40px 110px 60px;
 }
 
 @media screen and (max-width: 767px) {
@@ -1580,6 +1591,23 @@ ul {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+.carrer-entry {
+  margin-top: 30px;
+}
+
+.carrer-entry-link {
+  font-size: 18px;
+  font-weight: 900;
+  color: #FFFFFF;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .carrer-entry-link {
+    font-size: 16px;
+  }
 }
 
 // ニュース
@@ -3299,7 +3327,7 @@ input[name="tab_item"] {
 
 .job-entry-title {
   text-align: center;
-  padding: 80px 0 100px 0;
+  padding: 80px 0 30px 0;
 }
 
 .enrtry-title-img {

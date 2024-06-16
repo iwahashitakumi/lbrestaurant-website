@@ -75,7 +75,7 @@ class Admins::NewsController < Admins::ApplicationController
   end
 
   def calendar_date_options
-    { min: (Time.zone.today - 1.year), max: (Time.zone.today + 1.year), value: Time.zone.today }
+    { max: (Time.zone.today + 1.year), value: Time.zone.today }
   end
 
   def start_at_options

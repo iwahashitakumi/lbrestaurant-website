@@ -184,6 +184,8 @@ ja:
       recruit_type:
         regular_employee: 正社員
         franchisee: 暖簾分け希望正社員
+        part_time_job: アルバイト
+        meal_with_president: 社長とサシ飯(お気軽に!)
       sex:
         male: 男性
         female: 女性

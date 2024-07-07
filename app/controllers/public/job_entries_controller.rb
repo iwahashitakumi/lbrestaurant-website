@@ -18,7 +18,9 @@ class Public::JobEntriesController < Public::ApplicationController
         PublicNotificationMailer.job_entry_notification(@job_entry).deliver_now
         redirect_to complete_job_entries_path
       end
-    rescue
+    rescue  => e
+      # メール送信中にエラーが発生した場合の処理
+      Rails.logger.error "メール送信中にエラーが発生しました: #{e.message}"
       render "new"
     end
   end

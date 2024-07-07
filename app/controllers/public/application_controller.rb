@@ -1,5 +1,5 @@
 class Public::ApplicationController < ApplicationController
-  before_action :basic_auth
+  # before_action :basic_auth
   protect_from_forgery with: :exception
 
   layout 'public'

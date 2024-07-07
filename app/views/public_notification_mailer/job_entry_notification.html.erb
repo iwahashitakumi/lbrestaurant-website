@@ -22,7 +22,7 @@
     <p>性別：　　　　          <%= @job_entry.sex_text %></p>
     <p>メールアドレス:　　　　  <%= @job_entry.email %></p>
     <p>電話番号：　　　　       <%= @job_entry.phone_number %></p>
-    <p>生年月日：　　　　      <%= format_date(@job_entry.birth_date) %></p>
+    <p>生年月日：　　　　      <%= @job_entry.birth_date.strftime("%Y/ %m/ %d") %></p>
     <p>住所：　　　　         <%= "#{@job_entry.prefecture.name}#{@job_entry.city_name}#{@job_entry.address}" %></p>
 
     <hr>

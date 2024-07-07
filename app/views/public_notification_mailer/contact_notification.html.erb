@@ -23,20 +23,20 @@
     <hr>
     <p>お問い合わせタイプ:      <%= @contact.contact_type_text %></p>
     <% unless @contact.name.nil? %>
-      <p>お名前：　　　　　<%= @contact.name %></p>
+      <p>お名前：    <%= @contact.name %></p>
     <% end %>
     <% unless @contact.name_kana.nil? %>
-      <p>フリガナ：　　　　<%= @contact.name_kana %></p>
+      <p>フリガナ：    <%= @contact.name_kana %></p>
     <% end %>
-    <p>メールアドレス：　　　　<%= @contact.email %> 様</p>
+    <p>メールアドレス：    <%= @contact.email %> 様</p>
     <% unless @contact.phone_number.nil? %>
-      <p>お電話番号：　　　　　　<%= @contact.phone_number %></p>
+      <p>お電話番号：    <%= @contact.phone_number %></p>
     <% end %>
-    <p>返信が必要か：　　　　<%= @contact.callback_requested_text %> 様</p>
+    <p>返信が必要か：    <%= @contact.callback_requested_text %> 様</p>
     <% unless @contact.contact_method.nil? %>
-      <p>連絡方法：　　　　　　<%= @contact.contact_method %></p>
+      <p>連絡方法：    <%= @contact.contact_method_text %></p>
     <% end %>
-    <p>内容:                <%= @contact.message %></p>
+    <p>内容:    <%= @contact.message %></p>
     <hr>　　　
     <p>LBrestaurant株式会社</p>
     <p>住所 : 大阪市福島区吉野3-8-3</p>

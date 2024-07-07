@@ -65,6 +65,7 @@
           <%= f.label :phone_number, class: "form-label form-text" %><span class="form-text">(ハイフン可)</span>
           <span class="badge rounded-pill badge-alert">必須</span>
           <%= f.text_field :phone_number, class: 'form-control form-text', value: f.object.phone_number, placeholder: "012-3456-789" %>
+          <%= show_error_messages(f.object, :phone_number) %>
         </div>
       
         <div class="form">

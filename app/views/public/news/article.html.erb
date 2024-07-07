@@ -1,0 +1,27 @@
+<% set_meta_tags  title: "ブログ | #{@article.title}",
+                  description: "LBrestaurant株式会社の公式ホームページ。LBrestaurant株式会社のブログです。　カテゴリー: #{@article.category_text}、 タイトル:　#{@article.title}",
+                  canonical: "https://lbrestaurant.net/news/#{@article.id}/",
+                  og: {
+                    title: "ブログ | #{@article.title} | LBrestaurant(株式会社)公式サイト(暖簾分け希望者、求職者募集中!)",
+                    description: "LBrestaurant株式会社の公式ホームページ。LBrestaurant株式会社のブログです。 カテゴリー: #{@article.category_text}、 タイトル:　#{@article.title}",
+                    type: 'blog',
+                    url: "https://lbrestaurant.net/news/#{@article.id}/"
+                  }
+%>
+
+<%= render partial: 'public/shared/section-title', locals: { section_title: 'ニュース' } %>
+<div class="article-show-wrap">
+  <div class="article-contents">
+    <div class="article-show-category">
+      カテゴリー / <span class="<%= @article.category %>-category"><%= @article.category_text %></span>
+    </div>
+    <div class="article-show-title"><%= @article.title %></div>
+    <% @article.contents.each do |content| %>
+      <% if content.article_image.present? %>
+        <div class="article-show-image"><%= image_tag(content.article_image.url, alt: 'ブログ画像', class: "img-fluid") %></div>
+      <% end %>
+        <div class="article-show-text"><%= content.body.html_safe %></div>
+    <% end %>
+  </div>
+</div>
+<%= render 'public/shared/carrer-contents' %>

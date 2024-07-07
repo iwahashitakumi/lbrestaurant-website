@@ -1,13 +1,22 @@
-<h1 class="h1style mb-5rem fw-bold">お知らせ!</h1>
-<div class="wrap">
-  <div class="newsHeaderbox">
-    <h1><%= @news.title %></h1>
-    <ul>
-      <li class="news-show-date"><%= format_date(@news.calendar_date) %></li>
-    </ul>
-  </div>
-  <div class="newsContentbox">
-    <p><%=safe_join(@news.body.split("\n"),tag(:br))%></p>
+<% set_meta_tags  title: "お知らせ | #{@news.title}",
+                  description: "LBrestaurant株式会社の公式ホームページ。LBrestaurant株式会社のお知らせです。　日付: #{@news.calendar_date}、　タイトル: #{@news.title}",
+                  canonical: "https://lbrestaurant.net/news/#{@news.id}/",
+                  og: {
+                    title: "お知らせ | #{@news.title} | LBrestaurant(株式会社)公式サイト(暖簾分け希望者、求職者募集中!)",
+                    description: "LBrestaurant株式会社の公式ホームページ。LBrestaurant株式会社のお知らせです。　日付: #{@news.calendar_date}、　タイトル: #{@news.title}",
+                    type: 'article',
+                    url: "https://lbrestaurant.net/news/#{@news.id}/"
+                  }
+%>
+
+<%= render partial: 'public/shared/section-title', locals: { section_title: 'ニュース' } %>
+<div class="article-show-wrap">
+  <div class="article-contents">
+    <div class="article-show-category">
+      <%= puiblic_calender_date(@news.calendar_date) %>
+    </div>
+    <div class="article-show-title"><%= @news.title %></div>
+      <div class="article-show-text"><%=safe_join(@news.body.split("\n"),tag(:br))%></div>
   </div>
 </div>
-
+<%= render 'public/shared/carrer-contents' %>

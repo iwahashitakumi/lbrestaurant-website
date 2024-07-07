@@ -1,5 +1,5 @@
 class Public::JobEntriesController < Public::ApplicationController
-  def recruitment_info
+  def new
     @job_entry = JobEntry.new
     @birth_date_options = birth_date_options
     @prefectures = Prefecture.all
@@ -11,15 +11,17 @@ class Public::JobEntriesController < Public::ApplicationController
     @prefectures = Prefecture.all
     begin
       if params[:back]
-        render "recruitment_info"
+        render "new"
       else
         @job_entry.save!
         AdminNotificationMailer.job_entry_notification(@job_entry).deliver_now
         PublicNotificationMailer.job_entry_notification(@job_entry).deliver_now
         redirect_to complete_job_entries_path
       end
-    rescue
-      render "recruitment_info"
+    rescue  => e
+      # メール送信中にエラーが発生した場合の処理
+      Rails.logger.error "メール送信中にエラーが発生しました: #{e.message}"
+      render "new"
     end
   end
 
@@ -28,7 +30,7 @@ class Public::JobEntriesController < Public::ApplicationController
     @birth_date_options = birth_date_options
     @prefectures = Prefecture.all
     if @job_entry.invalid?
-      render "recruitment_info"
+      render "new"
     end
   end
 

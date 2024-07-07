@@ -135,17 +135,6 @@ create_news(
   'お知らせ：新商品が豊富に入荷しました！今回のラインナップでは、お得なキャンペーンも実施中です。ぜひお早めにご覧いただき、お買い逃しのないようにご注意ください。'
 )
 
-def create_news(calendar_date, title, body)
-  News.create!(
-    calendar_date: calendar_date,
-    title: title,
-    status: News.status.published.value,
-    start_at: Time.zone.now + 1.day,
-    end_at: Time.zone.now + 30.days,
-    body: body
-  )
-end
-
 
 Shop.create!(
   name: '焼き鳥とおつまみ佐藤 野田店',
@@ -162,7 +151,7 @@ Shop.create!(
   gourmet_site_link: 'https://tabelog.com/osaka/A2701/A270108/27131378/',
   shop_image: File.open(Rails.root.join('app/assets/images', 'default_shop_image.png')),
   google_map_iframe: 'place_id:ChIJEwbna0znAGARxPPVhfv--qc&key=AIzaSyBMnYsvSSlG2bIRomcwcLyRGxQgJYYw1YU',
-)
+  )
 
 Shop.create!(
   name: '焼き鳥とおつまみ佐藤 香里園店',
@@ -180,4 +169,3 @@ Shop.create!(
   shop_image: File.open(Rails.root.join('app/assets/images', 'default_shop_image.png')),
   google_map_iframe: 'place_id:ChIJo6EP9XodAWARABKdkEI-Y8E&key=AIzaSyBMnYsvSSlG2bIRomcwcLyRGxQgJYYw1YU'
 )
-

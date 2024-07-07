@@ -1,19 +1,19 @@
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   pool: 5
   username: docker
   password: docker
   host: 127.0.0.1
-  database: my_testdb
+  database: lbrestaurant_db
 
 development:
   <<: *default
-  database: my_testdb_development
+  database: lbrestaurant_db
 
 test:
   <<: *default
-  database: my_testdb_test
+  database: lbrestaurant_db
 
 production:
   adapter: postgresql

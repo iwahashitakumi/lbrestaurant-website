@@ -1,13 +1,15 @@
 class Public::LbrController < Public::ApplicationController
-  def about
-  end
-
-  def company
+  def message
   end
 
   def show
   end
 
-  def staff
+  (1..4).each do |num|
+    define_method("staff_interview#{num}") do
+    end
+  end
+
+  def premium
   end
 end

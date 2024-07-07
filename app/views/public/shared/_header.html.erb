@@ -1,52 +1,41 @@
-<header class="header  fixed-top">
+<header class="header fixed-top">
   <nav class="navbar navbar-expand-lg navbar-light bg-white align-items-center">
     <div class="header-sm">
-      <%= link_to "LBrestaurant", root_path, class: "navbar-brand navbar-brand-sm fw-bold logo header-mobile-text" %>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      <%= link_to(root_path) do %>
+        <%= image_tag('Icon.png', class: "icon-png") %>
+      <% end %>
+      <input type="checkbox" id="toggle-nav">
+      <label for="toggle-nav" class="hamburger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <div></div>
+        <div></div>
+        <div></div>
+      </label>
     </div>
     <div class="header-linklist collapse navbar-collapse active" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto">
-        <li class="recruit-drop nav-item drop-menu menu-item ms-5">
-          <%= link_to "Lbrについて", lbr_index_path, class: "nav-link fw-bold #{'active' if controller_name == 'lbr' && ['company'].include?(action_name)}" %>
-          <div class="drop-menu-list drop-menu-list2">
-            <div class="drop-menu-item nav-item">
-              <%= link_to "LBrの特徴!", about_lbr_index_path, class: "drop-top-line nav-link fw-bold" %>
-            </div>
-            <div class="drop-menu-item nav-item">
-              <%= link_to "スタッフについて", staff_lbr_index_path, class: "drop-top-line nav-link fw-bold" %>
-            </div>
-            <div class="drop-menu-item nav-item">
-              <%= link_to "会社概要", company_lbr_index_path, class: "drop-top-line nav-link fw-bold" %>
-            </div>
-          </div>
+      <div class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <%= link_to "TOPページ", root_path, class: "nav-link header-sm-display" %>
         </li>
-        <li class="nav-item ms-5">
-          <%= link_to "店舗情報", shops_path, class: "nav-link fw-bold #{'active' if controller_name == 'shops' && ['index'].include?(action_name)}" %>
+        <li class="nav-item">
+          <%= link_to "LBRの特徴", lbr_index_path, class: "nav-link #{'active' if controller_name == 'lbr' && ['show'].include?(action_name)}" %>
         </li>
-        <li class="nav-item ms-5">
-          <%= link_to "お知らせ", news_index_path, class: "nav-link fw-bold #{'active' if controller_name == 'news' && ['show', 'index'].include?(action_name)}" %>
+        <li class="nav-item">
+          <%= link_to "求職者のみなさまへ", message_lbr_index_path, class: "nav-link #{'active' if controller_name == 'lbr' && ['message', 'staff_interview premium'].include?(action_name)}" %>
         </li>
-        <li class="nav-item ms-5">
-          <%= link_to "ブログ", articles_path , class: "nav-link fw-bold #{'active' if controller_name == 'articles' && ['show', 'index'].include?(action_name)}" %>
+        <li class="nav-item">
+          <%= link_to "ニュース", news_index_path, class: "nav-link #{'active' if controller_name == 'news' && ['show', 'index', 'article'].include?(action_name)}" %>
         </li>
-        <li class="recruit-drop nav-item drop-menu menu-item ms-5">
-          <%= link_to "採用情報", job_entries_path , class: "nav-link fw-bold #{'active' if controller_name == 'job_entries' && ['recruitment_info', 'confirm', 'complette','show', 'faq'].include?(action_name)}" %>
-          <div class="drop-menu-list ">
-            <div class="drop-menu-item nav-item">
-              <%= link_to "応募はこちら", recruitment_info_job_entries_path, class: "drop-top-line nav-link fw-bold" %>
-            </div>
-            <div class="drop-menu-item nav-item">
-              <%= link_to "よくある問い合わせ", faq_job_entries_path, class: "drop-top-line nav-link fw-bold" %>
-            </div>
-          </div>
+        <li class="nav-item">
+          <%= link_to "採用情報", job_entries_path , class: "nav-link #{'active' if controller_name == 'job_entries' && ['new', 'confirm', 'complete','show'].include?(action_name)}" %>
         </li>
-        <li class="nav-item ms-5">
-          <%= link_to "問い合わせ", new_contact_path , class: "nav-link fw-bold #{'active' if controller_name == 'contacts' && ['new', 'confirm', 'complette'].include?(action_name)}" %>
+        <li class="nav-item">
+          <%= link_to "会社について", company_index_path, class: "nav-link  #{'active' if controller_name == 'company' && ['show'].include?(action_name)}" %>
         </li>
-      </ul>
+        <li class="nav-item">
+          <%= link_to "お問い合わせ", new_contact_path , class: "nav-link #{'active' if controller_name == 'contacts' && ['new', 'confirm', 'complete'].include?(action_name)}" %>
+        </li>
+      </div>
     </div>
   </nav>
 </header>

@@ -4,17 +4,29 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
+    <p>（このメールはご応募確認用に自動的に送信されています）</p>
     <p><%= @job_entry.name %>様</p>
-    <p>お世話になっております。<br> 株式会社LBrestaurantです。</p>
-
+    <p>お世話になっております。<br> LBrestaurant株式会社です。</p>
     <p>この度は、弊社の求人にご応募いただきまして誠にありがとうございます。</p>
 
-    <p>今後の選考に関しましては追ってご連絡させていただきますので、誠に恐れ入りますが、今しばらくお待ちいただけますようお願いいたします。</p>
+    <p>今後の選考に関しましては追ってご連絡させていただきますので、誠に恐れ入りますが、今しばらくお待ちいただけますようお願い申し上げます。</p>
 
     <p>何かご不明な点等ございましたら、ご遠慮なくお問い合わせくださいませ。</p>
 
     <hr>
-    <p>株式会社LBrestaurant</p>
+    <p>■ご応募内容</p>
+    <hr>
+    <p>応募するタイプ：    <%= @job_entry.recruit_type_text %></p>
+    <p>お名前：           <%= @job_entry.name %></p>
+    <p>フリガナ：　　　　   <%= @job_entry.name_kana %></p>
+    <p>性別：　　　　      <%= @job_entry.sex_text %></p>
+    <p>メールアドレス:　　　<%= @job_entry.email %></p>
+    <p>電話番号：　　　　   <%= @job_entry.phone_number %></p>
+    <p>生年月日：　　　　   <%= @job_entry.birth_date.strftime("%Y/ %m/ %d") %></p>
+    <p>住所：　　　　      <%= "#{@job_entry.prefecture.name}#{@job_entry.city_name}#{@job_entry.address}" %></p>
+
+    <hr>
+    <p>LBrestaurant株式会社</p>
     <p>住所 : 大阪市福島区吉野3-8-3</p>
     <p>電話番号 : 06-6459-7396</p>
     <p>メールアドレス : kawamoto@lbrestaurant.net</p>

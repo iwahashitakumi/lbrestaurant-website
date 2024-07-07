@@ -14,7 +14,9 @@ class Public::ContactsController < Public::ApplicationController
         PublicNotificationMailer.contact_notification(@contact).deliver_now
         redirect_to complete_contacts_path
       end
-    rescue
+    rescue StandardError => e
+      # メール送信中にエラーが発生した場合の処理
+      Rails.logger.error "メール送信中にエラーが発生しました: #{e.message}"
       render "new"
     end
   end

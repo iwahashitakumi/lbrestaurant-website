@@ -30,7 +30,7 @@ const ContactMethod: React.FC<ContactMethodProps> = (props) => {
     <React.Fragment>
       <div className="contact-form">
         {contactMethodValuesCollect.map((option: string, index: number) => (
-          <div key={option} className="form-check contact-as-radio">
+          <div key={option} className="form-check contact-as-radio form-text">
             <input
               type="radio"
               id={option}

@@ -1,0 +1,103 @@
+<% set_meta_tags noindex: true %>
+
+<div class="form-wrap">
+  <div class="form-content">
+    <div class="form-title"><%= image_tag('job_entry/title.png', class: 'form-title-img sm-max-img') %></div>
+    <ul class="form-attention-text text-center">
+      <li>【業界・職種未経験／第二新卒／フリーターさんも歓迎！】</li>
+      <li>学歴不問＆前職の雇用形態なども一切問いません。</li>
+      <li>調理も接客も、すべて入社後に学べます！</li>
+      <li>気軽にエントリーください！</li>
+    </ul>
+    <%= form_with model: @job_entry, url: confirm_job_entries_url(@job_entry), local: true  do |f| %>
+      <div class="form-box">
+        <div class="form">
+          <%= f.label :recruit_type, class: "form-label form-text" %>
+          <span class="badge rounded-pill badge-alert">必須</span>
+          <%= f.select :recruit_type, JobEntry.recruit_type.options, { prompt: '応募するタイプをお選びください' }, { selected: f.object.recruit_type, class: 'form-select form-text' } %>
+          <%= show_error_messages(f.object, :recruit_type) %>
+        </div>
+
+        <div class="form">
+          <%= f.label :name, class: "form-label form-text" %>
+          <span class="badge rounded-pill badge-alert">必須</span>
+          <%= f.text_field :name, class: 'form-control form-text', value: f.object.name, placeholder: "飲食太郎" %>
+        </div>
+
+        <div class="form">
+          <%= f.label :name_kana, class: "form-label form-text" %>
+          <span class="badge rounded-pill badge-alert">必須</span>
+          <%= f.text_field :name_kana, class: 'form-control form-text', value: f.object.name_kana, placeholder: "インショクタロウ" %>
+        </div>
+
+        <div class="form">
+          <%= f.label :sex, class: "form-label form-text" %>
+          <span class="badge rounded-pill badge-alert">必須</span>
+          <div class="contact-form">
+            <% JobEntry.sex.values.collect.each do |key, value| %>
+              <div class="form-check job-entry-as-radio form-text">
+                <%= f.radio_button :sex, key, class: 'form-check-input' %>
+                <%= f.label key, value, class: 'form-check-label' %>
+              </div>
+            <% end %>
+          </div>
+          <%= show_error_messages(f.object, :sex) %>
+        </div>
+
+        <div class="form">
+          <%= f.label :birth_date, class: "form-label form-text" %>
+          <span class="badge rounded-pill badge-alert">必須</span>
+          <div class="job-entry-form birthday-wrap">
+            <%= raw sprintf(
+              f.date_select(:birth_date, class: 'form-control form-text', **@birth_date_options, value: f.object.birth_date,
+                date_separator: '%s'), '年 ', '月 ') + '日' 
+            %>
+          </div>
+          <%= show_error_messages(f.object, :birth_date) %>
+        </div>
+        <div class="form">
+          <%= f.label :email, class: "form-label form-text" %>
+          <span class="badge rounded-pill badge-alert">必須</span>
+          <%= f.email_field :email, autocomplete: "email", class: "form-control form-text", value: f.object.email, placeholder: "lbrestaurant@example.com" %>
+          <%= show_error_messages(f.object, :email) %>
+        </div>
+        <div class="form">
+          <%= f.label :phone_number, class: "form-label form-text" %><span class="form-text">(ハイフン可)</span>
+          <span class="badge rounded-pill badge-alert">必須</span>
+          <%= f.text_field :phone_number, class: 'form-control form-text', value: f.object.phone_number, placeholder: "012-3456-789" %>
+          <%= show_error_messages(f.object, :phone_number) %>
+        </div>
+      
+        <div class="form">
+          <%= f.label :prefecture_id, class: "form-label form-text" %>
+          <span class="badge rounded-pill badge-alert">必須</span>
+          <div class="job-entry-form birthday-wrap">
+            <%= f.collection_select :prefecture_id, @prefectures, :id, :name, { prompt: "選択してください" }, { selected: f.object.prefecture_id, class: 'form-select form-text' } %>
+          </div>
+          <%= show_error_messages(f.object, :prefecture_id) %>
+        </div>
+
+
+        <div class="form">
+          <%= f.label :city_name, class: "form-label form-text" %>
+          <span class="badge rounded-pill badge-alert">必須</span>
+          <%= f.text_field :city_name, class: 'form-control form-text', value: f.object.city_name %>
+        </div>
+
+        <div class="form">
+          <%= f.label :address, class: "form-label form-text" %>
+          <span class="badge rounded-pill badge-alert">必須</span>
+          <%= f.text_field :address, class: 'form-control form-text', value: f.object.address %>
+        </div>
+
+        <div class="form-link">
+          <%= f.submit "確認ページへ", class: 'user-btn form-btn' %>
+          <div class="icon-container">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

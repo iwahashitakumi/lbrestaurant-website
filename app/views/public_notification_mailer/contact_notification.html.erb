@@ -5,7 +5,7 @@
   </head>
   <body>
     <p>（このメールはお問い合わせ確認用に自動的に送信されています）</p>
-    <% unless @contact.name.nil? %>
+    <% unless @contact.name.blank? %>
       <p><%= @contact.name %>様</p>
     <% end %>
 
@@ -22,18 +22,18 @@
     <p>■お問い合わせ内容</p>
     <hr>
     <p>お問い合わせタイプ:      <%= @contact.contact_type_text %></p>
-    <% unless @contact.name.nil? %>
+    <% unless @contact.name.blank? %>
       <p>お名前：    <%= @contact.name %></p>
     <% end %>
-    <% unless @contact.name_kana.nil? %>
+    <% unless @contact.name_kana.blank? %>
       <p>フリガナ：    <%= @contact.name_kana %></p>
     <% end %>
     <p>メールアドレス：    <%= @contact.email %> 様</p>
-    <% unless @contact.phone_number.nil? %>
+    <% unless @contact.phone_number.blank? %>
       <p>お電話番号：    <%= @contact.phone_number %></p>
     <% end %>
     <p>返信が必要か：    <%= @contact.callback_requested_text %> 様</p>
-    <% unless @contact.contact_method.nil? %>
+    <% unless @contact.contact_method.blank? %>
       <p>連絡方法：    <%= @contact.contact_method_text %></p>
     <% end %>
     <p>内容:    <%= @contact.message %></p>

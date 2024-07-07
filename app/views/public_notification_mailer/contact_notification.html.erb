@@ -10,12 +10,38 @@
     <% end %>
 
 　　 <p>お世話になっております</p>
-    <p>この度は、Lbrestaurant株式会社にお問い合わせいただきまして、誠にありがとうございます。</p>
+    <p>この度は、LBrestaurant株式会社にお問い合わせいただき、誠に有難うございます。</p>
 
-    <p>以下の内容でお問い合わせを受け付けいたしました</p>。
+    <p>以下の内容でお問い合わせを受け付けいたしました。</p>
     <p>弊社にて内容を確認のうえ、順次回答させていただきます。</p>
     <p>お急ぎのところ誠に恐れ入りますが、今しばらくお待ちくださいますようお願いいたします。<br> なお、お問い合わせの内容によりましては、回答までにお時間をいただく場合がございます。あらかじめご了承ください。</p>
 
-    <p>ご連絡をいただき、ありがとうございました。</p>
+    <p>何かご不明点等ございましたら、お問い合わせくださいませ。<br> 今後とも、LBrestaurant株式会社を宜しくお願い致します。</p>
+
+    ----------------------
+    ■お問い合わせ内容
+    ----------------------
+    <p>お問い合わせタイプ:      <%= @contact.contact_type_text %></p>
+    <% unless @contact.name.nil? %>
+      <p>お名前：　　　　　<%= @contact.name %></p>
+    <% end %>
+    <% unless @contact.name_kana.nil? %>
+      <p>フリガナ：　　　　<%= @contact.name_kana %></p>
+    <% end %>
+    <p>メールアドレス：　　　　<%= @contact.email %> 様</p>
+    <% unless @contact.phone_number.nil? %>
+      <p>お電話番号：　　　　　　<%= @contact.phone_number %></p>
+    <% end %>
+    <p>返信が必要か：　　　　<%= @contact.callback_requested_text %> 様</p>
+    <% unless @contact.contact_method.nil? %>
+      <p>連絡方法：　　　　　　<%= @contact.contact_method %></p>
+    <% end %>
+    <p>内容:                <%= @contact.message %></p>
+    <hr>　　　
+    <p>LBrestaurant株式会社</p>
+    <p>住所 : 大阪市福島区吉野3-8-3</p>
+    <p>電話番号 : 06-6459-7396</p>
+    <p>メールアドレス : kawamoto@lbrestaurant.net</p>
+    <hr>
   </body>
 </html>

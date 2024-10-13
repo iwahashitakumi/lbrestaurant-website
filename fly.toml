@@ -24,9 +24,16 @@ console_command = "/rails/bin/rails console"
   processes = ["web"]
 
 [[vm]]
+  processes = ["web"]
+  cpu_kind = "shared"
+  cpus = 2
+  memory = '4gb'
+
+[[vm]]
+  processes = ["cron"]
   cpu_kind = "shared"
   cpus = 1
-  memory_mb = 256
+  memory = '256mb'
 
 [[statics]]
   guest_path = "/rails/public"

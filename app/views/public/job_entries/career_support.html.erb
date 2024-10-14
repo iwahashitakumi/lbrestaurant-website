@@ -1,0 +1,103 @@
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h1, h2 {
+        color: #333;
+        text-align: center;
+    }
+
+    .intro-text {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .training-section {
+        margin-top: 40px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .training-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .training-list li {
+        background-color: #f0f0f0;
+        margin: 10px 0;
+        padding: 15px;
+        border-left: 5px solid #D32600;
+        border-radius: 5px;
+    }
+
+    .training-title {
+        font-weight: bold;
+        color: #D32600;
+    }
+
+    .qualification-section {
+        margin-top: 40px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .qualification-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .qualification-list li {
+        margin: 10px 0;
+    }
+</style>
+<%= render partial: 'public/shared/section-title', locals: { section_title: '成長支援' } %>
+<div class="job-entry-wrap">
+  <div class="job-entry-content">
+    <div class="job-entry-title"><%= image_tag('job_entry/career-support.png', class: 'enrtry-title-img sm-max-img') %></div>
+    <div class="job-profile-text">
+      <p>未経験の方でもステップアップしていけるよう、研修や社内資格制度をご用意しています。</p>
+      <p>学びの機会を創出することで、より働きがいを感じられる職場づくりを目指します！！</p>
+    </div>
+
+    <div class="job-system-card">
+      <div class="job-system-card-title"><%= image_tag('job_entry/career-support-card-title1.png', class: 'system-card-title1-img sm-max-img') %></div>
+      <ul class="training-list">
+        <li>
+          <span class="training-title">理念研修</span> - LBRの企業理念への理解を深め、大切にする考え方やルールを学びます。
+        </li>
+        <li>
+          <span class="training-title">ビジネスマナー研修</span> - 社会人としての立ち振る舞いや言葉遣い、行動の基礎を習得します。
+        </li>
+        <li>
+          <span class="training-title">座学研修</span> - 料理に関する基礎知識を学び、焼き鳥の仕込み、塩加減、焼き加減まで幅広くレクチャーします。
+        </li>
+        <li>
+          <span class="training-title">接客研修</span> - 接客の基礎知識と立ち振る舞い、挨拶や案内、店舗での動き方を学びます。
+        </li>
+        <li>
+          <span class="training-title">ロジカルシンキング・選択理論研修</span> - 社会人の基礎として必要な物事の考え方・伝え方を学びます。
+        </li>
+      </ul>
+    </div>
+
+    <div class="qualification-section">
+      <div class="job-system-card-title"><%= image_tag('job_entry/career-support-card-title2.png', class: 'system-card-title1-img sm-max-img') %></div>
+      <ul class="qualification-list">
+        <li>焼き士検定 - 1級～3級</li>
+        <li>接客検定 - 1級～3級</li>
+        <li>管理職検定 - 1級～3級</li>
+      </ul>
+      <p>
+        その後も定期的にフォローし、必要なスキルや考え方を学べる環境を整えていきます。
+      </p>
+    </div>
+  </div>
+</div>

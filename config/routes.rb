@@ -62,6 +62,7 @@ Rails.application.routes.draw do
         get :show
         post :confirm
         get :complete
+        get :career_support
       end
     end
   end
